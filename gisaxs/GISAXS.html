@@ -1,0 +1,2745 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+
+
+
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  
+  <meta name="Author" content="Detlef Smilgies">
+
+  
+  <meta name="GENERATOR" content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]"><title>GISAXS</title></head><body style="color: rgb(0, 0, 128); background-color: rgb(255, 192, 64);" alink="#00ffff" link="#0000ff" vlink="#008000">
+
+<script language="JavaScript" type="text/javascript" src="http://www.classe.cornell.edu/cgi-bin/dms79/incrementCounter.pl">
+</script>
+
+
+<div style="text-align: center;">&nbsp;
+<big style="font-weight: bold;"><big><big><big><br>
+<big><font size="+3"><big>GISAXS and GIWAXS</big></font></big></big></big></big></big><br>
+<h3>update 3/2019<br>
+</h3>
+</div>
+
+<center>
+<p><b><font point-size="14"><big>Detlef-M.
+Smilgies</big></font></b></p>
+<p>[<a href="../index.html">home</a>]</p>
+<h3 style="text-align: left;">A personal note:&nbsp; D-line - the little beamline that could</h3>
+<div style="text-align: left;">
+In the course of the CHESS-Upgrade project, D-line, the beamline that I have worked on for many years, had to be
+decommissioned and removed. Despite the D-line history of pushing the
+envelope in multiprobe in-situ and real-time measurements, a successor
+general user in-situ materials processing beamline was not funded. As a
+result I have retired. <br>
+
+<br>
+
+In case this page inspires you to do experiments as described here, but you would like to get some help, I'll be happy to <a href="mailto:sbc.beamline@gmail.com">consult</a>
+for beamline scientists and users about optics, goniometers, and
+detectors as well as on custom sample environments. As my many users
+and collaborators have shown at D-line, even a small station at a
+bending magnet can be developed into a cutting-edge GISAXS/GIWAXS
+beamline. For more information on <a href="https://www.linkedin.com/profile/view?id=AAIAAAG_BvAB2nrP6eLUZMj5-KlH57_XJ6iB4WI&amp;trk=nav_responsive_tab_profile">Smilgies Beamline Consulting</a>, see my <a href="https://www.linkedin.com/profile/view?id=AAIAAAG_BvAB2nrP6eLUZMj5-KlH57_XJ6iB4WI&amp;trk=nav_responsive_tab_profile">Linked In</a> page. <a href="mailto:dms79@cornell.edu">DS</a><br>
+
+
+</div>
+</center>
+
+<h3><br>
+</h3>
+<h3>Scattering geometry<br>
+</h3>
+
+
+Grazing-Incidence Small-Angle X-ray Scattering (GISAXS) is a
+versatile
+tool for characterizing nanoscale density correlations and/or the shape
+of nanoscopic objects at surfaces, at buried interfaces, or in thin
+films.
+GISAXS combines features from Small-Angle X-ray Scattering (the
+mesoscopic
+length scale, incident beam definition by multiple slits, area
+detector)
+and diffuse X-ray Reflectivity (the scattering geometry and sample
+goniometer).
+Furthermore, GISAXS can be considered as the little brother of
+Grazing-Incidence
+Diffraction (scattering geometry and sample goniometer). The technique
+was originally introduced by Joanna Levine and Jerry Cohen [<a href="#levine">Levine</a>],[<a href="#Levine2">Levine2</a>],
+but
+has come to full flourish only in the past decade for the study of
+nanostructured thin films. <br>
+
+<center>
+<p><img src="ScatteringGeometry.gif" height="378" width="412"></p>
+</center>
+
+<p><br>
+In order to make x-ray scattering surface sensitive, a grazing
+incidence
+angle <font face="Symbol">a</font>
+is chosen between about half the critical angle <font face="Symbol">a</font><sub>c</sub>
+and several times the critical angles of the film material. The actual
+choice
+depends on the system to
+be studied. For free-standing quantum dots, an
+incident angle below <font face="Symbol">a</font><sub>c</sub>
+may be
+chosen to make the scattering exclusively surface-sensitive. Largest
+scattering cross sections are achieved when the incident angle is
+inbetween the critical angles of the film and the substrate, however,
+multiple scattering effects have to be taken into account to properly
+model the data. If the
+incident
+angle is somewhat above the critical angle<sub> </sub>of
+the
+substrate,
+dynamic scattering effect are much reduced, and often the data can be
+modeled well within the quasi-kinematic approximation introduced by
+[<a href="#naudon">Naudon</a>]. In each of the latter two cases, a full
+penetration of the
+sample of several 100 nm is ensured.
+</p>
+
+<p>The area detector records the scattering intensity of
+scattered rays
+over a range of exit angles <font face="Symbol">b</font>
+and
+scattering
+angles <font face="Symbol">y</font> in the surface
+plane. A beam stop
+has to be set up to
+block
+spill-over direct beam as well as the reflected beam and the intense
+diffuse
+scattering in the scattering plane. The scattering geometry is thus
+relatively simple, and lends itself to study samples in in-situ
+environments [<a href="GISAXS.php#renaud">Renaud</a>, <a href="../refs/SRN-GISAXS.pdf">Smilgies</a>]. As the scattering
+intensity in the forward direction is
+high, real-time studies have become feasible [<a href="#renaud">Renaud</a>,
+<a href="#dourdain">Dourdain</a>, <a href="#kim">Kim</a>,&nbsp; <a href="#Smilgies2">Smilgies2</a>,&nbsp;<a href="#Papadakis2">Papadakis2</a>,
+<a href="#paik">Paik</a>, <a href="#zhang2">Zhang2</a>].<br>
+</p>
+
+<p>In the scattering plane the GISAXS intensity distribution
+corresponds
+to a detector scan in Diffuse Reflectivity [<a href="#sinha">Sinha</a>].
+The intensity distribution
+parallel to the surface plane corresponds to a line cut through the
+corresponding transmission SAXS pattern. The full GISAXS
+intensity
+map can be theoretically described within the framework of
+the Distorted-Wave
+Born-Approximation [<a href="#sinha">Sinha</a>, <a href="#rauscher">Rauscher</a>,
+<a href="#lazzari">Lazzari</a>, <a href="#lee1">Lee1</a>,
+<a href="busch3">Busch3</a>, <a href="#tate">Tate</a>, <a href="#stein">Stein</a>]. <br>
+</p>
+
+<p>GIWAXS is a related scattering technique probing atomic and
+molecular distances in crystal lattices. It is closely related to
+Grazing Incidence Diffraction, however, typically area detectors are
+used as in GISAXS. GIWAXS is typically used to probe the morphology of
+conjugated molecules and polymers[ <a href="#sirringhaus">Sirringhaus</a>,
+<a href="#breiby">Breiby</a>,<a href="#Chabinyc"> Chabinyc</a>, <a href="#he">He</a>, <a href="#huang">Huang</a>, <a href="#osaka">Osaka</a>].
+Combined GISAXS and GIWAXS studies reveal the orientational order of
+crystalline blocks in polymers [<a href="#busch5">Busch5</a>, <a href="#sasaki">Sasaki</a>, <a href="#darko">Darko</a>] and
+orientational order of nonspherical nanocrystals on their superlattice
+sites [<a href="#bian">Bian</a>, <a href="#choi">Choi</a>, <a href="#choi2">Choi2</a>].<br>
+</p>
+
+<br>
+
+<h3><b>Structure factor - lateral and normal density
+correlations</b></h3>
+
+<p>GISAXS provides information both about lateral and normal
+ordering
+at
+a surface or inside a thin film. This shall be illustrated with the
+example
+of lamellar films formed by symmetric polystyrene-polybutadiene block
+copolymers.
+In a block copolymer two immiscible polymer chains are coupled by a
+chemical
+bond. If both chains occupy equal volumes, a lamellar phase is formed.
+In a thin film, i.e. if the thickness of the film is on the order of
+the
+lamellar period, the presence of two interfaces, air-film and film
+substrate,
+may induce preferential order in the film as compared to the bulk
+polymer which forms a 3D powder of micron-sized lamellar domains:
+</p>
+
+<center>
+<p><img src="PrefOrientation.gif" height="221" width="496"></p>
+</center>
+
+<p><br>
+If interfacial energies are the dominant factor, i.e. if one of the
+block strongly favors the interface, parallel lamellae are formed. If
+the interfacial energies of the blocks are similar, interfacial entropy
+will determine the orientation of the blocks. In particular, chain
+stretching in the vicinity of the bond between the chains yields a
+perpendicular orientation of the lamellae, while the chain end effect
+favors a parallel orientation [<a href="#pickett">Pickett</a>].
+As the
+entropic effects scale with the chain lengths, even a morphology change
+as a function of chain length is possible. This has been indeed
+observed for PS-PB, where parallel lamellae are observed for short
+chains and perpendicular lamellae for long chains [<a href="#papadakis">Papadakis</a>]<br>
+<br>
+<br>
+</p>
+
+<p>What kind of scattering will result from these two extreme
+cases ?
+<br>
+&nbsp;
+<table border="5" cellpadding="20" cellspacing="0" width="100%">
+  <tbody>
+    <tr>
+      <td><img src="ParallelLamellae.gif" height="274" width="168"></td>
+      <td>If one of the blocks strongly favors one of the two
+interfaces, or
+even both, the lamellae will be parallel to the substrate. The classic
+example is PS-PMMA on a Si wafer covered with the native oxide [<a href="#anastasiadis">Anastasiadis</a>].
+The signature of parallel lamellae in GISAXS are stripes of intensity
+at
+regular spacings along the q<sub>z</sub> direction. In
+Langmuir-Blodgett
+films, such stripes in the diffuse reflectivity are referred to as
+Bragg
+sheets. The schematic shows the diffuse scattering only (the intense
+specular reflection from the surface is omitted).
+      <p>Strictly speaking, the sketched pattern is obtained
+within the
+validity
+of the Born-Approximation, i.e. if the incident angles and scattering
+angles are well above
+the critical angles of film and substrate. For incident angles between
+the critical angles of film and substrate,
+scattering patterns may be more complicated, which can be explained
+within
+the framework of DBWA theory [<a href="#busch3">Busch3</a>]&nbsp;</p>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="PerpendicularLamellae.gif" height="276" width="182"></td>
+      <td>If both blocks have similar interface energies, chain
+stretching at
+the interface comes into play. Chain stretching occurs at the link
+between
+the immiscible blocks of the polymer. A nematic ordering of this
+stretched
+part parallel to the interface may become favorable giving rise to the
+formation of perpendicular lamellae. As both interactions scale
+differently
+with the degree of polymerization [<a href="#pickett">Pickett</a>, <a href="#potemkin">Potemkin</a>],
+there
+can be a transition from parallel lamellae to vertical lamellae, as we
+have found for PS-PB [<a href="#busch">Busch</a>].
+The signature of
+perpendicular
+lamellae are correlation peaks parallel to the interface, with a
+rod-like
+shape normal to the surface, similar to the scattering rods in
+Grazing-Incidence
+Diffraction [<a href="#als-nielsen">Als-Nielsen</a>].&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+&nbsp;
+</p>
+
+<p>Note that perpendicular lamellae still have the freedom to
+change
+direction
+parallel to the surface plane - in fact AFM pictures [<a href="#busch">Busch</a>,
+<a href="#busch2">Busch2</a>]
+show that meandering lamellae are formed (aka "fingerprint patterns").
+Such a system constitutes a
+<span style="font-weight: bold;">2D
+powder</span>, similar to monolayers at the air-water interface [<a href="#als-nielsen">Als-Nielsen</a>].
+Another way of describing thin film samples is that they have <span style="font-weight: bold;">uniaxial alignment</span>.
+Closely related to such scattering patterns is fiber diffraction, and
+sometimes such images are also refered to as having "fiber texture" [<a href="#breiby">Breiby</a>].
+While a fiber is the dual system to a thin film, it should be kept in
+mind that fiber diffration is a transmission experiment and well
+described within the kinematic approximation, while GISAXS works in
+reflection geometry, and reflection-refraction effect have to be
+included in a proper interpretation.<br>
+&nbsp;
+<br>
+&nbsp;
+</p>
+
+<center>
+<table border="0" cellpadding="30" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><img src="AFM.gif" height="348" width="413">
+      <center>
+      <p>AFM image of a diblock copolymer film <br>
+displaying vertical lamellae [<a href="#busch2">Busch2</a>]<br>
+      </p>
+      </center>
+      </td>
+      <td>
+      <center><img src="Lamellae-GISAXS.gif" height="288" width="288">
+      <p>GISAXS from the polymer film <br>
+shown on the left. <br>
+[<a href="../refs/SRN-GISAXS.pdf">Smilgies</a>]</p>
+      </center>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<p>The scattering from such a lamellar system with a period of
+about 75 nm is strong and the ordering kinetics sufficiently slow, so
+that in-situ time-resolved measurements of the
+swelling
+of the film in solvent vapor on a timescale of tens of seconds were
+possible [<a href="../refs/SRN-GISAXS.pdf">Smilgies</a>].
+<br>
+&nbsp;
+</p>
+
+<p>Often, though, the ordering is not quite so perfect:
+<br>
+&nbsp;
+<table border="5" cellpadding="20" cellspacing="0" width="100%">
+  <tbody>
+    <tr>
+      <td><img src="DisorderedLamellae.gif" height="245" width="431"></td>
+      <td>In thick films the ordering induced at the interfaces
+may not
+prevail throughout the film, and the interior of the film may assume
+the 3D powder bulk structure.<br>
+      <br>
+Rings
+or partial rings in the intensity maps can indicate anything from
+complete
+disorder of the lamellar domains to partial ordering, e.g. lamellae
+with
+a finite distribution of tilt angles with respect to the interface.</td>
+    </tr>
+  </tbody>
+</table>
+</p>
+
+<p><br>
+Not always does the kinetics of the film formation allow a
+complete
+ordering of the films. This is particularly important in a system like
+PS-PB [<a href="GISAXS.html#busch">Busch</a>, <a href="#papadakis">Papadakis</a>,
+<a href="#busch3">Busch3</a>, <a href="busch4">Busch4</a>,
+<a href="#potemkin">Potemkin</a>],
+where the morphology
+changes from
+parallel
+lamellae to perpendicular lamellae as a function of chain length. At
+intermediate chain lengths there is only a small preference of one
+morphology
+over the other, and the system is hence slow to reach equilibrium. In
+this case a mixture of different structures is observed.<br>
+</p>
+
+<p style="text-align: center;"><img alt="sample PSPB-V5" src="Sample-V5-Image19.png" style="width: 386px; height: 336px;"><br>
+</p>
+
+<p style="text-align: center;">PS-PB sample with a chain
+length in the
+intermediate regime.<br>
+A mixture of&nbsp; parallel, perpendicular, and unoriented lamellae<br>
+is observed. (Busch, Smilgies, Posselt, Papadakis, unpublished)<br>
+</p>
+
+<p><br>
+Thin films with other block copolymer morphologies than the lamellar
+phase have been
+analyzed as well: Du et al. characterized and modelled a monolayer of
+spherical voids in a matrix [<a href="#du">Du</a>]
+using the IsGISAXS
+code by [<a href="#lazzari">Lazzari</a>] and applying Babinet's
+theorem. [<a href="GISAXS.php#xu">Xu</a>]
+and [<a href="GISAXS.php#li">Li</a>]
+characterized standing hexagonal cylinders. The Ree
+group investigated
+lying
+hexagonally-packed cylinders, hexagonal perforated layers, and gyroid
+phases [<a href="#lee1">Lee1</a>, <a href="#park-i">Park-I</a>] and
+modeled the scattering for the cylinder phase within DWBA. In addition
+they characterized and modelled a film with randomly distributed
+spherical pores
+[<a href="#lee2">Lee2</a>].&nbsp; The Hillhouse group
+independently&nbsp; analyzed
+the
+gyroid phase [<a href="#tate">Tate</a>, <a href="#urade">Urade</a>].
+Ed Kramer's group&nbsp; performed a comprehensive study of thin
+film
+ordered spherical phases, from hexagonally packed monolayers to several
+tens of monolayers that form bcc-packed spheres with a (110)
+orientation, as expected from the bulk equilibrium phase [<a href="#stein">Stein</a>]. More recently [<a href="#zhang-Q">Zhang-Q</a>] and collaborators described how to form single gyroid superlattices, Hence most of the regular
+bulk phases have
+been characterized, as they occur in thin film morphology, and
+preferential alignment with regard to the substrate surface could
+always be achieved.<br>
+</p>
+
+<p>In
+their study of silica
+surfactant
+mesophases the kinetics of the formation of various morphologies has
+been
+studied by [<a href="#gibaud">Gibaud</a>].
+[<a href="GISAXS.php#wolff">Wolff</a>] studied the absorption of
+spherical
+micelles from the liquid onto a silicon substrate with
+grazing-incedence neutron
+scattering . Jin Wang,
+Sunil Sinha, and
+collaborators have shown, how nanoparticles trapped between two polymer
+surfaces diffuse laterally using resonance-enhanced GISAXS [<a href="#narayanan">Narayanan</a>]. The Korgel group
+showed that
+monodisperse CuS nanodisks can form ordered columnar arrays on drop
+casting [<a href="#saunders">Saunders</a>].
+Many more papers on nanoparticle self-assembly into two and three
+dimensional superlattices have been published recently, for example [<a href="#alexandrovic">Alexandrovic</a>, <a href="#bian">Bian</a>, <a href="#campolongo">Campolongo</a>, <a href="#choi">Choi</a>, <a href="#dunphy"><span style="text-decoration: underline;">Dunphy</span></a><a href="#dunphy">,</a> <a href="#goodfellow"><span style="text-decoration: underline;">Goodfellow</span></a><a href="#goodfellow">,</a> <a href="#hanrath">Hanrath</a>, <a href="#heitsch">Heitsch</a>, <a href="#smith">Smith</a>, <a href="#zhang">Zhang</a>]<br>
+</p>
+
+<p>Hierarchical ordering has been reported by [<a href="#busch5">Busch5</a>]
+where a block copolymer in the cylindrical phase and with liquid
+crystalline side chains in the majority block showed ordering on the
+mesocopic scale (30 nm), the scale of the scale of the smectic layers
+(3 nm), and the molecular scale of the alkyl chain packing (0.5 nm). [<a href="GISAXS.php#sasaki">Sasaki</a>] studied thermal treatment of
+polyethylene films
+in-situ
+with simultaneous small- and wide-angle scattering.
+Simultaneous small and wide angle scattering was also the key to
+unravel the intricate relation of superlattice symmetry and on-site
+orientation of individual particles in PbS and PbSe nanocrystal
+assemblies [<a href="#bian">Bian</a>, <a href="#choi">Choi</a>, <a href="#choi2">Choi2</a>].<br>
+&nbsp;
+<br>&nbsp; [Ree] has recently provided a comprehensive review on the multitude of scattering patterns observed in polymer films. <br>
+
+</p>
+
+<h3><b>Preferential lateral ordering and patterning</b></h3>
+
+<p>All examples discussed so far were 2D powders, i.e. had a
+well-aligned axis perpendicular to the substrate and rotational
+averaging
+with respect to the surface normal, resulting in a rotationally
+homogeneous
+scattering intensity with respect to the azimuth angle <font face="Symbol">f</font>. However, by patterning the substrate, further
+ordering
+may be imposed on the film, and structures may show a preferential
+lateral orientation
+with respect to the substrate as seen in polymer blends, where the
+surface
+had been prepared by alternating hydrophobic and hydrophilic stripes [<a href="#boltau">B&ouml;ltau</a>].
+</p>
+
+<p>Similarly, regular patterns can be prepared in photoresists by
+lithographic
+techniques
+representing artificial lamellar systems. In these cases the
+GISAXS intensity distribution depends now also on the azimuth angle <font face="Symbol">f</font> of the substrate. The
+Kowalewski group has
+developed the method of zone casting, which makes the preparation of
+laterally oriented block copolymer domains possible, and after
+calcination, the creation of oriented carbon nanogratings [<a href="#tang">Tang</a>]. Nanogratings can also be
+prepared by using
+oriented block copolymer films as templates for reactive ion etching [<a href="#park-m">Park-M</a>], as shown in the example
+below. A quantitative description of such in-plane texture for the use
+with area detectors has been suggested by [<a href="#breiby">Breiby</a>]
+et al.</p>
+
+<p><br>
+</p>
+
+<center>
+<p><img src="GIXS.gif" height="222" width="258"></p>
+<p>Basic scattering angles for a GISAXS experiment. If the
+structure is
+anisotropic in the film plane,<br>
+the GISAXS intensity map will depend on the sample azimuth <font face="Symbol">f</font>.</p>
+<p><br>
+</p>
+<p><img style="width: 640px; height: 333px;" alt="laterally oriented nanostructure" src="pelletier2.png"><br>
+</p>
+<p>Scattering off an ordered array of Al nanowires, prepared by
+reactive ion etching of an shear-oriented <br>
+block copolymer template [<a href="#angelescu">Angelescu</a>,
+<a href="#pelletier">Pelletier</a>]. When the sample
+is rotated by <font face="Symbol">f</font>, the
+scattering features become weaker. <br>
+Note that on the macroscopic scale, i.e. in the illuminated area of
+about 0.5 mm by 10 mm, the grating is
+not perfect.<br>
+Sample: Pelletier &amp; Chaikin, Princeton. Scattering data:
+Smilgies
+&amp; Gruner, CHESS (unpublished). <br>
+</p>
+</center>
+
+<p>
+<br>
+</p>
+
+<h3><b>Form factor</b></h3>
+
+<p>Another type of scattering is observed for nano-objects with a
+narrow
+size distribution and well-defined shape. Here the form factor
+dominates
+the scattering, in particular, if the nano-objects are randomly placed
+on the surface. Examples are monodisperse voids in a silica film on a
+wafer
+surface [<a href="#du">Du</a>], molecular sieves
+based on standing
+block copolymer cylinders with the cylinder material removed [<a href="#li">Li</a>]
+as
+well as quantum dot arrays [<a href="#metzger">Metzger</a>].
+Below the calculated scattering intensity from a dilute layer of oblate
+elliptical
+nanoparticles on a wafer surface is shown in the quasikinematic
+approximation
+(left panel).
+<br>
+&nbsp;
+<br>
+&nbsp;
+</p>
+
+<center>
+<table border="0" cellpadding="0" cellspacing="30">
+  <tbody>
+    <tr>
+      <td><img src="Model-F&amp;V.gif" height="288" width="288">
+      <p>elliptical nanoparticles: dilute layer <br>
+&nbsp;</p>
+      </td>
+      <td><img src="Model-F&amp;V&amp;S.gif" height="288" width="288">
+      <p>oblate elliptical nanoparticles: dense layer<br>
+with in-plane correlations<br>
+&nbsp;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+<p>The characteristic form factor oscillations are clearly to be
+seen
+in
+the parallel and the perpendicular direction. When the exit angle of
+the
+scattered beam is close to the critical angle, signal enhancement due
+to
+the Vineyard effect [<a href="#vinyard">Vineyard</a>]
+occurs, resulting
+in a bright band of intensity at the critical angle. This
+is also referred to as the Yoneda peak [<a href="#yoneda">Yoneda</a>].
+Below the critical angle the
+scattering
+intensity falls quadratically off to zero. For thin films the <span style="font-weight: bold;">Yoneda band</span>
+extends between the critical angles of the film and the substrate, in
+particular if the former is smaller than the latter, as often
+encountered in organic thin films.<br>
+</p>
+
+<p>For a dense layer of nano-objects, particles have more or less
+well-defined
+nearest-neighbor distances. This density correlation gives rise to a
+structure
+factor with characteristic modulations parallel to the surface, but
+constant
+in the perpendicular direction (right panel).&nbsp; The
+characteristic
+intensity streaks are related to the scattering rods in
+Grazing-Incidence
+Diffraction [<a href="#als-nielsen">Als-Nielsen</a>],
+and are modulated
+by the form factor.
+</p>
+
+<p><br>
+<br>
+&nbsp;
+<br>
+&nbsp;
+</p>
+
+<center>
+<table border="0" cellpadding="30" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><img src="F&amp;S&amp;T.gif" align="left" height="288" width="288"></td>
+      <td>
+      <center>structure factor <br>
+S(q<sub>y</sub>) <br>
+&nbsp; <br>
+&nbsp;
+      <p>form factor <br>
+F(q<sub>y</sub>,q<sub>z</sub>) <br>
+(log scale) <br>
+&nbsp; </p>
+      <p>Vineyard factor <br>
+T(q<sub>z</sub>)</p>
+      </center>
+      </td>
+    </tr>
+  </tbody>
+</table>
+Contributions to a GISAXS intensity map in the quasikinematic
+approximation.<br>
+</center>
+
+<br>
+
+<br>
+
+Note that in this simulation, all the structure was produced by the
+product of
+just three functions, the form factor F(q<sub>y</sub>,q<sub>z</sub>),
+the structure factor
+S(q<sub>y</sub>),
+and the Vineyard factor T(q<sub>z</sub>), where the q<sub>y</sub>
+and q<sub>z</sub>
+components of the
+scattering
+vector <b>q</b> are parallel and perpendicular to the
+substrate
+surface, respectively.
+This <span style="font-weight: bold;">quasi-kinematic approach</span>
+was first introduced by [<a href="../../%7Esmilgies/gisaxs/GISAXS.php#naudon">Naudon</a>] for
+studying
+the formation of nanoparticles on surfaces and in buried layers, and is
+based on the
+seminal work by [<a href="../../%7Esmilgies/gisaxs/GISAXS.php#vinyard">Vineyard</a>]
+on
+grazing-icidence diffraction. [<a href="../../%7Esmilgies/gisaxs/GISAXS.php#heitsch">Heitsch</a>] and
+[<a href="#smilgies5">Smilgies5</a>] have recently
+applied the quasi-kinematic approximation to model full 2D scattering
+images of monolayers and multilayers of PtFe
+nanocrystals deposited by the Langmuir-Blodgett and Langmuir-Schaefer
+techniques. Particle size distribution and deposition techniques were
+correlated with the degree of order observed in the layers, as modeled
+by a static
+Debye-Waller Factor [<a href="../../%7Esmilgies/gisaxs/GISAXS.php#foerster">Foerster</a>].<br>
+
+<br>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 500px; height: 243px;" alt="NC monolayer" src="NC-monolayer.gif"><br>
+<br>
+GISAXS image from a Langmuir-Blodgett film of FePt nanocrystals (left)
+and simulation within the quasi-kinematic approximation (right). [<a href="#heitsch">Heitsch</a>].<br>
+</div>
+
+<br>
+
+<br>
+
+<h3><b>Laterally oriented nanostructures<br>
+</b></h3>
+
+<p>The highest degree of information on nanoparticles is
+obtained, if
+these
+have not only uniform shape, but also uniform orientation. The classic
+example are pyramid-shaped quantum dots on single crystalline surfaces
+[<a href="GISAXS.php#metzger">Metzger</a>]. In the latter case
+the scattering
+intensity
+of a line scan taken parallel to the surface depends on the relative
+orientation
+of the pyramids to the beam as given by the azimuth angle <font face="Symbol">f</font>
+of the sample. Another spectacular example of very highly oriented
+monodisperse
+nanoparticles are the in-situ growth studies by Renaud et al. in an
+all-vacuum,
+windowless small-angle scattering set-up [<a href="GISAXS.php#renaud">Renaud</a>].
+[<a href="#tang">Tang</a>]
+created carbon nanogratings based on zone casting of a lamellar block
+copolymer and subsequent pyrolysis which removed one block and
+converted the other to carbon.<br>
+&nbsp;
+<br>
+&nbsp;
+<br>
+<br>
+</p>
+
+<center>
+<p><img src="Pyramids.gif" height="262" width="380"></p>
+<p>Orientation-dependence of the scattering from quantum dots
+<br>
+shaped like three-sided pyramids [<a href="GISAXS.php#metzger">Metzger</a>].</p>
+<p style="text-align: left;"><br>
+</p>
+<p style="text-align: left;">GISAXS from nanoscale gratings were
+characterized in great detail by [<a href="GISAXS.php#hofmann">Hofmann</a>]
+and [<a href="GISAXS.php#rueda">Rueda</a>].
+[<a href="GISAXS.php#lu"><span style="text-decoration: underline;">Lu</span></a>]
+introduced a new way of obtaining grazing-incidence
+transmission patterns which considerably simplifies the scattering
+theory. [<a href="GISAXS.php#park-s">Park-S</a>]
+showed that laterally highly oriented hexagonal arrays of block
+copolymer cylinders can be obtained on a miscut surface with regular
+steps.<br>
+</p>
+</center>
+
+<span style="font-weight: bold;"><br>
+</span>
+<h3>Dynamic scattering effects</h3>
+
+A well-known feature of grazing
+incidence scattering is the Yoneda-Vineyard peak which shows up as a
+bright line of enhanced diffuse scattering intensity on an area
+detector when the exit angle equals the critical angle of the surface,
+a result of the Vinyard function introduced in the above section. The
+origin of the enhancement lies in the fact that at the critical angle
+incident beam and reflected beam are of similar amplitude and in phase
+[<a href="#vinyard">Vineyard</a>, <a href="#als-nielsen">Als-Nielsen</a>].
+The situation is more complex for thin films
+which feature two critical angles for film and substrate, and the line
+expands into the Yoneda band of enhanced scattering between the
+critical angles.<br>
+
+<br>
+
+If the film has lower electron density than the substrate, as is
+usually the case for organic thin films on silicon wafers, the
+reflectivity shows pronounced oscillations between the critical angles
+which are related to the incident wave resonantly coupling to waveguide
+modes inside the layer [<a href="#feng">Feng</a>]. At such a resonance,
+the electric field
+inside the film is greatly enhanced [<a href="#wang">Wang-J</a>]. As a
+consequence, the
+scattering intensity is also enhanced. If a film has a well-defined
+thickness such as a spin-coated polymer film, the Yoneda band features
+bright bands of intensity corresponding to waveguide resonance in the
+exit wavefunction. If in addition the incident wave is tuned to a
+waveguide resonance, too, the largest enhancement effect results [<a href="#pfeiffer">Pfeiffer</a>, <a href="#narayanan">Narayanan</a>].
+Samples may also be engineered to optimize waveguide performance by
+coating them with a thin metal top layer such as Ti or Al. <br>
+
+<br>
+
+Resonant scattering making use of several waveguide modes can also be
+applied to reconstruct the electron density in the film [<a href="#babonneau2">Babonneau2</a>, <a href="#jiang2">Jiang2</a>].
+As the number of nodes of the waveguide mode incleases, the parts of
+the films at the antinodes are probed, while the parts at the nodes do
+not contribute much. This provides additional information for the
+reconstruction of the electron density profile in the film.<br>
+
+<br>
+
+Another interesting angle range is when the incident wave is below the
+critical angle of the film. In this case the wave penetrating into the
+film is evanescent, i.e. exponentially damped. This can be used to
+separate information of near-surface structure, using an angle of
+incidence of about half the critical angle of the film, from the full
+film scattering at higher angles. Again perfect films are needed, so
+that the incident angle is well-defined. In addition for a quantitative
+analysis, care has to be taken to properly include the reflected wave
+from the interface to the substrate. This calculation can be done
+withing the framework of the DWBA theory, which describes all 3
+scattering regimes in GISAXS - evanescent, dynamic, and quasi-kinematic [<a href="#smilgies7">Smilgies7</a>].<br>
+
+<br>
+
+<h3>Full scattering simulations</h3>
+
+An exact formulation of the scattering theory has been given by [<a href="GISAXS.php#rauscher">Rauscher</a>]
+within the framework of
+distorted-wave
+Born approximation (DWBA) [<a href="#sinha">Sinha</a>, <a href="#vinyard">Vinyard</a>] which was further elaborated by [<a href="GISAXS.php#lazzari">Lazzari</a>] for the case of self-organized
+metal clusters on oxide surfacs [<a href="#renaud">Renaud</a>]. Remi
+Lazzari's
+"IsGISAXS" program is available on the web (see links). In this work
+the case of
+finite objects on a substrate surface is treated.<br>
+
+<br>
+
+&nbsp;[<a href="GISAXS.php#lee1">Lee1</a>, <a href="GISAXS.php#lee2">Lee2</a>]
+and [<a href="GISAXS.php#busch3">Busch3</a>]
+investigated basic DWBA models suitable for porogens, cylindrical block
+copolymers, and lamellar block copolymers, respectively. [<a href="GISAXS.php#tate2">Tate2</a>]
+presented an approach of combining scattering calculations with
+electron density models using discrete Fourier transforms. Recently [<a href="GISAXS.php#babonneau">Babonneau</a>] made his program
+"FitGISAXS" available (see links),
+which is capable of modelling nanostructures in buried layers.
+In these formulations of the DWBA objects embedded in a thin film are
+treated. The thin film itself gives rise to new phenomena, such as two
+critical angles for film and substrate, wave guide resonances inbetween
+the two critical angles, as well as oscillations related to Kiessig
+fringes above the critical angle of the substrate. Hence scattering
+from thin film systems features additional
+complexity and is important to consider in the interpretation of GISAXS
+scattering data [<a href="GISAXS.php#busch3">Busch3</a>].<br>
+
+<br>
+
+Detailed
+modelling of the scattering from block copolymer thin films
+has&nbsp;been
+preformed by Ree's group [<a href="#lee2">Lee2</a>, <a href="#yoon">Yoon</a>,
+<a href="#yoon2">Yoon2</a>,
+<a href="#jin">Jin</a>] for lying and standing
+cylinders,
+lamellar, and gyroid phases, respectively, while [<a href="#du">Du</a>]
+and&nbsp;[<a href="#stein">Stein</a>] analyzed
+spherical
+phases. Finally [<a href="#lee3">Lee3</a>]
+introduced a phasing method to solve the previously not very well known
+structure of the hexagonal perforated layer phase. This means that now
+detailed models of all block copolymer phases exist.<br>
+
+<br>
+
+Detailed modelling goes beyond structure simulation - the fading of the
+intensity at higher q-values is related to the kind of disorder in the
+system. Disorder models employed so far include the paracrystal model
+[<a href="#lazzari">Lazzari</a>, <a href="#lee2">Lee2</a>]
+and the static Debye-Waller factor model [<a href="#foerster">Foerster</a>,
+<a href="#heitsch">Heitsch</a>], which
+describe disorder of the second kind and of the first kind,
+respectively. More support from theoretical modelling would be highly
+desireable, in
+order to quantify which kind of disorder is present in a given sample,
+and how to best model it.<br>
+
+&nbsp;<br>
+
+&nbsp; <br>
+
+<h3><b><b>Indexation of complex scattering patterns<br>
+</b></b></h3>
+
+<p>Self-organized
+nanoparticles synthesized by solution chemistry have attained better
+and better quality and monodispersity. Some spectacular results have
+been achieved for monolayers deposited on the air-water interface [<a href="#schultz">Schultz</a>] and on solid substrates&nbsp; [<a href="#alexandrovic">Alexandrovic</a>, <a href="#jiang">Jiang</a>, <a href="#heitsch">Heitsch</a>]. Moreover, highly ordered and oriented
+unary [<a href="#saunders">Saunders</a>, <a href="#dunphy">Dunphy</a>,&nbsp;<a href="#hanrath">Hanrath,</a> <a href="#zhang">Zhang</a>] and binary [<a href="#smith">Smith</a>]
+superlattices have be obtained. A key
+for these latter studies was careful tuning of
+deposition technique and annealing conditions.</p>
+
+<p style="text-align: center;"><img style="width: 592px; height: 437px;" alt="crystallization of PbS and PbSe nanoparticles" src="Hanrath-NC-crystallization.jpg"></p>
+
+<div style="text-align: center;">Crystallization of PbSe (top) and PbS
+(bottom) nanocrystals dropcast onto a Si wafer into an FCC
+superlattice. <br>
+Fast
+drying (left) yields randomly oriented FCC domains, while slow drying
+(right) leads to <br>
+oriented 3D assemblies with their (111)&nbsp;faces
+parallel to the substrate [<a href="#hanrath">Hanrath</a>].&nbsp;
+</div>
+
+<p><br>
+</p>
+
+<p>Indexation schemes for such complex patterns have been described by [<a href="GISAXS.php#breiby">Breiby</a><a href="#smilgies3">, Smilgies3</a>,
+<a href="#tate">Tate</a>]. <br>
+</p>
+
+<p>Other
+3D nanostructures than nanoparticle assemblies and block copolymers
+have been studied with GISAXS as well: Nanotube forests can be grown
+using metal nanoparticles as
+nuclei and have been analyzed with GISAXS [<a href="#sendja">Sendja</a>].
+Complex 3D nanostructured materials recently studied with
+GISAXS are block-copolymer templated nanoporous materials [<a href="#urade">Urade</a>, <a href="#crossland">Crossland</a>]
+which are of
+interest for organic solar cells, catalyst scaffolds, and molecular
+sieves. Such structures a based on bicontinous phases such as the
+double gyroid and give rise to complex spot patterns.<br>
+</p>
+
+<p><br>
+</p>
+
+<h3>Grazing-Incidence Wide-Angle Scattering (GIWAXS) and Soft X-ray
+Scattering (GISoXS)</h3>
+
+<div style="text-align: center;"><img style="width: 500px; height: 323px;" alt="Fused Thiophenes" src="FusedThiophenes.gif"><br>
+</div>
+
+<br>
+
+<div style="text-align: center;">Structure-function relationship of a
+family of fused thiophenes.The fused moieties corresponding to the
+GIWAXS series have 3, 4, and 5 rings, respectively [<a href="#he">He</a>].<br>
+</div>
+
+<br>
+
+<br>
+
+GISAXS can be extended into the wide-angle region (GIWAXS), the
+transition is somewhat fluid. GID and GIWAXS are quite similar except
+for the data collection strategy - GIWAXS uses an area detector without
+collimation which works reasonably up to about 30deg scattering angle,
+while in GID typically a point or line detector is used, with
+appropriate collimation and mounted on a diffractometer detector arm.
+As such GID has better resolution and access to the full range of
+scattering angles, while GIWAXS is advantageous because of the simple
+collection geometry enabling fast experiments [<a href="#smilgies6">Smilgies6</a>].
+Typically
+semicrystalline polymer films such as conjugated polymers [<a href="GISAXS.php#sirringhaus">Sirringhaus</a>, <a href="#Chabinyc">Chabinyc</a>,
+<a href="#osaka">Osaka</a>]
+are efficiently studied with GIWAXS. Also full crystal
+structure determination for conjugated molecules has been shown using
+large area detectors
+[<a href="GISAXS.php#breiby">Breiby</a>,<a href="#mannsfeld"> Mannsfeld</a>].<br>
+
+<br>
+
+Combined GISAXS and GIWAXS studies have been employed by [<a href="#sasaki">Sasaki</a>, <a href="#darko">Darko</a>] to correlate
+polymer morphology with polymer crystallization. In oriented
+nanoparticle superlattices, complementary GIWAXS from the crystalline
+cores provided detailed information of the orientation of non-spherical
+nanocrystals on their lattice sites [<a href="#bian">Bian</a>, <a href="#choi">Choi</a>, <a href="#choi2">Choi2</a>].<br>
+
+<br>
+
+[<a href="#wang-c">Wang-C</a>] developed grazing-incidence scattering
+using soft x-rays in the vicinity of the carbon edge. The pronounced
+resonant scattering of carbon atoms in different bonding configurations
+permits to distinguish between different polymer blocks with chemical
+sensitivity; in addition, contrast matching is possible.<br>
+
+<br>
+
+<table style="text-align: left; width: 1184px; height: 266px; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><img style="width: 500px; height: 254px;" alt="Bain transition" src="Bain-transition.gif"><br>
+      <br>
+Bain transition in PbS nanocrystal superlattices as a function of
+drying dynamics. Structures covering the whole Bain path fcc &gt; bct
+&gt; bcc can be obtained by tweaking the drying kinetics. As structures
+approach bcc, nanocrystals display increasing relative orientation on
+their superlattice sites.<br>
+      </td>
+      <td style="vertical-align: top;"><img style="width: 633px; height: 251px;" alt="nanocrystal superlattices" src="NCsuperlattices.gif"><br>
+      <br>
+Orientational ordering of nanocrystals in oriented FCC(111) and
+BCC(110) superlattices [<a href="GISAXS.php#choi">Choi</a>]. <br>
+In the FCC lattice nanocrystals behave like spheres and have random
+orientation on their lattice sites. <br>
+In the BCC lattice formed by PbS
+nanocrystals with reduced ligand density GIWAXS data of the <br>
+PbS atomic
+lattice reveals that particles are highly oriented.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<br>
+
+<h3><b><b>Microstructure characterization</b></b></h3>
+
+<div style="text-align: center;"><img style="width: 500px; height: 253px;" alt="lamellar order" src="Lamellar-order.gif"><br>
+</div>
+
+<br>
+
+<div style="text-align: center;">Microstructure of a conjugated polymer
+derived from GIWAXS (center) correlated with device properties (left)
+and AFM (right) [<a href="GISAXS.php#osaka">Osaka</a>].<br>
+</div>
+
+<br>
+
+<br>
+
+From spot-like diffraction patterns information about the
+microstructure of soft materials can be obtained. The basic
+ingredients of the microstructure are<br>
+
+<ul>
+
+  <li>the radial widths of the spots</li>
+  <ul>
+    <li>within the Scherrer equation information on the average grain
+size of ordered material can be
+obtained, provided a careful determination of the resolution is done [<a href="GISAXS.php#Smilgies4">Smilgies4</a>].</li>
+    <li>if the spot width increases with q (after a proper <a href="#Smilgies4">resolution correction</a> !), further information
+about the type of disorder in the system can be obtained [<a href="#rivnay">Rivnay</a>]<br>
+    </li>
+  </ul>
+  <li>the angular width of the spots</li>
+  <ul>
+    <li>the angular width of the spots or arcs in the GISAXS image is
+related to the degree of orientation of lamellae, cylinders, or
+lattices with regard to the substrate surface [<a href="#huang">Huang</a>].
+Orientation distribution functions for the so-called mosaicity can be
+extracted from the images following [<a href="http://staff.chess.cornell.edu/%7Esmilgies/gisaxs/GISAXS.php#breiby">Breiby</a>]
+or [<a href="http://staff.chess.cornell.edu/%7Esmilgies/gisaxs/GISAXS.php#baker2">Baker2</a>],
+for instance see [<a href="http://staff.chess.cornell.edu/%7Esmilgies/gisaxs/GISAXS.php#darko">Darko</a>]
+or [<a href="http://staff.chess.cornell.edu/%7Esmilgies/gisaxs/GISAXS.php#baker">Baker</a>].&nbsp;</li>
+    <li>azimuthal scans reveal whether there is in-plane texture of the
+deposits [<a href="#tang">Tang</a>, <a href="#breiby">Breiby</a>, <a href="#park-s">Park-S</a>]. Such studies are of particluar interest,
+if
+the deposition process or substrate modification break the isotropy of
+the substrate.</li>
+  </ul>
+  <li>in some cases orientational thin film polymorphs occur, when
+structures crystallize with two or more preferred planes parallel to
+the interface. In thin films, competing structures can be formed at the
+air-film and film-substrate interfaces [<a href="#choi2">Choi2</a>].<br>
+  </li>
+  <li>the complete orientational effects can be described with the
+Orientation
+Distribution Function (ODF).</li>
+</ul>
+
+The microstructure provides may clues about the film formation and may
+help to optimize process parameter. Moreover the microstructure often
+can be related to devices performance, for instance mobility in organic
+thin film transistors or efficiency of organic solar cell materials.<br>
+
+<br>
+
+<h3>Spatially resolved studies</h3>
+
+<table style="text-align: left; width: 1135px; height: 266px; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><img style="width: 379px; height: 254px;" alt="OFET scanning" src="OFET-scan.jpg"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><img style="width: 307px; height: 250px;" alt="Solution Shearing" src="ShearCoating.gif"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<div style="text-align: center;">Left: Scanning GIWAXS to elucidate the
+morphology of a TIPS-pentacen film in the gate channel of an organic
+transistor [<a href="#li-r">Li-R</a>]. <br>
+Right: Scanning the meniscus region during solution shearing of a
+TIPS-pentacene film [<a href="#smilgies6">Smilgies6</a>].<br>
+</div>
+
+<br>
+
+<br>
+
+<ul>
+
+  <li>[<a href="GISAXS.php#roth">Roth</a>] and [<a href="GISAXS.php#mb">Muller-B</a>]
+demonstrated that GISAXS studies can be performed with a spatial
+resolution down to a 5 microns. They studied the ordering in
+concentration gradients of self-organized gold clusters deposited on a
+polymer film.</li>
+  <li>[<a href="#kuhlmann">Kuhlmann</a>] showed that GISAXS can be
+combined with tomography, in order to characterize nanoparticle "coffee
+rings" resolved in 2D <br>
+  </li>
+  <li><a href="GISAXS.php#campolongo">[Campolongo]</a> devised a
+"lab-on-a-drop" experiment, to study the equilibrium configuration of
+Gibbs layers of DNA-coated gold nanoparticles. In this experiment the
+temperature, the nanoparticle concentration, the buffer salt
+concentration, and vapor pressure inside the sample cell are well
+defined. The Gibbs layer on the surface of the drop is in contact with
+a reservoir of nanoparticles and buffer salt in the interior of the
+drop. Vapor pressure is controlled by adding identical buffer solution
+to a reservoir below the drop. After a brief equilibration period the
+shape and size of the drop is stable. The sample cell consists mainly
+of aluminum and provides a homogeneous temperatures around the drop.
+Thus a small drop can be kept stable and fully equilibrated for hours.
+Finally, the particles in the Gibbs layer are free to move laterally
+due to the liquid substrate. They do not experience sticking or strain
+due to drying forces as in nanoparticles on a solid substrate. Hence
+these Gibbs layers constitute an ideally equilibrated system allowing
+detailed study of DNA-mediated particle interactions. In order to
+accomodate the curved surface of the drop, the usual GISAXS scattering
+geometry had to be modified. It was found that by keeping the x-ray
+beam parallel to the substrate ("parSAXS"), the apex of the drop could
+be studied with GISAXS, while the interior of the drop could be studied
+with transmission SAXS.</li>
+  <li>[<a href="GISAXS.php#li-r">Li-R</a>]
+used a 10 micron x-ray beam to study the microstructure of thin films
+of conjugated molecules in organic field-effect transistor structure
+with gate channels of 10-100 microns width. They found that the
+morphology on the gold source and drain electrodes is maintained on the
+silicon oxide gate electrode for tens of microns. However in wider
+channels a second orientational polymorph develops, that correlates
+with a much reduced mobility. Coating the device structure with a
+self-assembled monolayer helped to reduce the formation of the
+parasitic polymorph.</li>
+  <li>[<a href="GISAXS.php#bottiger">B&ouml;ttiger</a>]
+prepared a library of P3HT-PCBM bulk heterostructure film with varying
+composition by slot-die coating. They could read out the microstructure
+using a band transprt system with a barcode reader to identify
+individual composition. Such combinatorical studies show great promise
+for fine-tuning a large range of deposition parameters efficiently.</li>
+  <li>[<a href="GISAXS.php#smilgies6">Smilgies6</a>,<a href="#giri">Giri</a>]
+demonstrated that the onset of crystallization of conjugated molecules
+can be studied in the meniscus region during shear coating with 15
+micron spatial resolution and 10 msec time resolution.</li>
+  <li>[<a href="#jacobs">Jacobs</a>] performed detailed studies of
+laser spike annealed traces in a block copolymer film using microGISAXS
+with a resolution of 15 microns<br>
+  </li>
+
+</ul>
+
+<br>
+
+<div style="text-align: center;"><img style="width: 613px; height: 251px;" alt="Gibbs layers" src="parSAXS.gif"><br>
+<br>
+Scanning a droplet of a solution of DNA-coated gold
+nanoparticles revealed formation of an ordered Gibbs layer at the apex
+of the drop [<a href="GISAXS.php#campolongo">Campolongo</a>]. <br>
+The x-ray beam was parallel to the substrate (parSAXS). <br>
+</div>
+
+<br>
+
+<br>
+
+<h3>In-situ and
+real-time studies</h3>
+
+Recently the focus of GISAXS studies has shifted towards the
+study
+of sample processing conditions and in-situ treatment of samples (such
+as heating, solvent annealing, or thermal quenching as well as the
+study of deposition techniques in-situ) [<a href="GISAXS.php#smilgies">Smilgies</a>,
+<a href="GISAXS.php#renaud">Renaud</a>, <a href="GISAXS.php#gibaud">Gibaud</a>,
+<a href="GISAXS.php#wolff">Wolff</a>,&nbsp;<a href="GISAXS.php#dourdain">Dourdain</a>,&nbsp;<a href="GISAXS.php#kim">Kim</a>,
+<a href="GISAXS.php#narayanan">Narayanan</a>, <a href="GISAXS.php#Smilgies2">Paik,
+Smilgies2</a>, <a href="GISAXS.php#Papadakis2">Papadakis2</a>, <a href="GISAXS.php#hanrath">Hanrath</a>, <a href="GISAXS.php#smilgies6">Smilgies6</a>].
+<br>
+
+<br>
+
+<table style="text-align: left; width: 1092px; height: 738px; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"><br>
+      </div>
+      <img style="width: 500px; height: 280px;" alt="instability" title="instability" src="papadakis.gif"><br>
+      <br>
+Instabilities during swelling of block copolymer lamellae [<a href="#Papadakis2">Papadakis2</a>].<br>
+      <br>
+      </td>
+      <td style="vertical-align: top;"><img style="width: 500px; height: 300px;" alt="Kirkwood-Alder transition" src="Zhang2.gif"><br>
+      <br>
+Kirkwood-Alder transition in dropcast PtCu nanoctahedra during drying
+under <br>
+controlled vapor pressure [<a href="#zhang2">Zhang2</a>].<br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><small><small><small><br>
+      <br>
+      <br>
+      <br>
+      </small></small></small><img style="width: 500px; height: 208px;" alt="nanocube crystallization" src="Choi2.gif"><br>
+      <br>
+Crystallization of nanocubes with competing structures at the
+substrate-solution interface and the air-solution interface [<a href="GISAXS.php#choi2">Choi2</a>].<br>
+      <br>
+      </td>
+      <td style="vertical-align: top;"><img style="width: 500px; height: 258px;" alt="self-organized Oswald ripening" src="goddfellow.gif"><br>
+      <br>
+Self-organized Oswald ripening of 2nm gold nanocrystals during heating.
+Binary <br>
+superlattices of large fused particles and the original small particles
+are formed [<a href="GISAXS.php#goodfellow">Goodfellow</a>].<br>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<br>
+
+A current trend is towards a
+more detailed understanding of the thermodynamics, the kinetics and the
+driving forces of self-organization processes in soft materials thin
+films: <br>
+
+<p>Block copolymers:<br>
+</p>
+
+<ul>
+
+  <li><a href="#Papadakis2">[Papadakis]</a>&nbsp; identified
+the lowering of the glass transition and the order-disorder transition
+during solvent vapor precessing of block copolymers as determining
+factors whether a given polymer film can be vapor-annealed. They found
+that the degree of swelling or the solvent volume fraction in the block
+copolymer film should be chosen to lower the glass temperature as much
+as possible, while preventing the system to cross the order-disorder
+transition [<a href="#di">Di</a>]. <br>
+  </li>
+  <li><a href="GISAXS.php#paik">[Paik]</a> found that block copolymer
+film morphology can be changed by swelling with a highly selective
+solvent. Using fast drying, this non-equilibrium structure can be
+quenched with a small vertical distortion due to drying. Treating such
+films with a non-selective solvent transformed the films back to their
+equilibrium configuration at high swelling ratio. This processing cycle
+could be repeated several times.</li>
+  <li>[<a href="GISAXS.php#zhang-j">Zhang-J</a>] observed the formation
+of a disordered PB top layer during swelling of vertical PS-PB block
+polymer lamellae in solvent vapor, and the formation of protrusions
+during successive controlled drying.</li>
+  <li>[<a href="#Chavis">Chavis</a>] found a full range of block
+copolymer nanostructures be annealing a block copolymer varying the
+mixsture solvents which were selective to one of the blocks. In
+addition a transition from BCC(110) to SC(100) was observed for the
+shorter one of two studied polymers. <br>
+  </li>
+  <li>[<a href="#Gu">Gu</a>]
+observed the formation of a skin layer forming regular square pore
+lattice in PI-PS-P2VP triblock copolymers after doctor blading.</li>
+  <li>[<a href="#posselt">Posselt</a>] and collaborators compiled a major review on real-time in-situ scattering studies of solvent vapor annealing.<br>
+  </li>
+  <li>Recently a powerful new modelling method, dispersive particle
+dynamic (DPD), was developed in Igor Potemkin's group at moscow State
+University [<a href="#rudov"><span style="text-decoration: underline;">Rudov</span></a>]
+as well as the groups of Juan de Pablo and Glen Frederikson. First
+direct comparisons between experiment and theory look very promising [<a href="#berezkin">Berezkin</a>]. This can potentially lead to design block copolymers for specific purposes and predict the best annealing route.</li>
+  <li>While most solvent vapor annealing temperatures were performed at ambient temperature, [<a href="#Berezkin2">Berezkin2</a>] and collaborators developed a set-up for solvothermal vapor annealing.<br>
+  </li>
+
+
+</ul>
+
+Nanoparticles:<br>
+
+<ul>
+
+  <li><a href="#hanrath">[Hanrath]</a> found that
+evaporation kinetics has a profound effect on the degree of order
+and the degree of orientation attained in nanocrystal superlattices. By
+optimizing deposition conditions via slow drying of vapor annealing
+close to perfect FCC(111) and BCC(110) lattices could be obtained.
+Moreover, the exact packing of
+such objects was found to be dependent on nanocrystal shape [<a href="#bian">Bian</a>] and the nanocrystal ligand density [<a href="#choi">Choi</a>].
+Using a combination of GISAXS and GIWAXS, first well-oriented
+superlattices were prepared and then the degree of orientation of
+individual nanocrystals on their lattice sites was probed. While
+nanocrystals should an uniform distribution in FCC(111), as to be
+expected for isotropic nanoparticle interaction, nanoparticles forming
+BCC(110) lattices were highly oriented. Lattices with an intermediate
+degree of on-site orientation were found to be tetragonal, covering the
+well-know Bain path between FCC and BCC. While BCC superlattices had
+been observed before, this work provided the first proof of the
+important on non-isotropic interactions in a BCC lattice.<br>
+  </li>
+  <li>[<a href="#zhang2">Zhang2</a>] observed a Kirkwood-Alder
+transition during the self-assembly of PtCu nanoctahedra to oriented
+BCC superlattices on a silicon wafer.<br>
+  </li>
+  <li><a href="#senesi">[Senesi]</a> engineered DNA-coated gold and
+silver nanoparticles in a way
+that they can do a strict layer-by-layer deposition of particles onto a
+gold film functionalized with complementary DNA.</li>
+  <li>[<a href="#choi2">Choi2</a>] found competing structures of PbS
+nanocubes at the substrate solution (simple cubic 001) and the
+solution-air (rhombohedral 111) interfaces.</li>
+  <li><a href="GISAXS.php#goodfellow">[Goodfellow</a>] observed
+complex fusion processes in gold nanoparticle superlattices upon
+heating that gave rise to ordered structures typically observed in
+binary superlattices.</li>
+  <li>[<a href="#Yu">Yu</a>] found ordering upon heating in superlattices of small gold nanocrystals.<br>
+  </li>
+
+  <li>[<a href="#Ocier">Ocier</a>] observed reorganization of CdSe-CdS nanorods during
+solvent vapor uptake simultaneously with GISAXS, GIWAXS, and optical
+soectroscopy.<br>
+  </li>
+  <li>[<a href="#Weidman">Weidman</a>] obtained detailed simultaneous GISAXS/GIWAXS images on the
+Bain Transition in PbS superlattices during controled drying. The Bain
+transition is driven by the densification of the deposit. The FCC to
+BCC transition is accompanied by a rotation of the superlattice grains
+from FCC(111) to BCC(110).</li>
+  <li>[<a href="#smilgies8">Smilgies8</a>] and Hanrath wrote an invited minireview on in-situ and realtime studies of nanocrystal self-assembly.<br>
+  </li>
+
+
+</ul>
+
+Organic electronics:<br>
+
+<ul>
+
+  <li>[<a href="#sanyal">Sanyal</a>] studied the drying kinetics of
+P3HT-PCBM bulk heterojunctions after doctor blading.<br>
+  </li>
+  <li>[<a href="#perlich">Perlich</a>] studied the formation of
+nanocrystal monolayers during dip coating. <br>
+  </li>
+  <li>[<a href="#smilgies6">Smilgies6</a>] found that the
+crystallization of conjugated molecules at the edge of the meniscus can
+be studied with 15 micron spatial resolution and down to 10 msec time
+resolution during solution shearing. <br>
+  </li>
+  <li>In-situ real-time studies of spin coating were performed by [<a href="#Chou">Chou</a>] and [<a href="#perez">Perez</a>].</li>
+  <li>[<a href="#Wan">Wan</a>] found intermediate phases in the crystallization of the small-molecule semiconductor C8-BTBT after hollow-pen writing.</li>
+  <li>[<a href="#Pozdin">Pozdin</a>] observed thermal reorganization processes in a semiconducting conjugated polymer under inert atmosphere.</li>
+  <li>The upcoming materials for solar cells in recent years have been
+hybrid organinc-inorganic perovskites, such as methylammonium lead
+iodide with photon conversion efficiencies over 20%, i.e. on par with
+amorphous silicon. Thermal annealing at 100degC of spincoated solutions
+yield high-performance films [<a href="#moore">Moore</a>]. [<a href="#foley">Foley</a>]
+could show that highly oriented films could be obtained by using proper
+chemical additives. Other important in-situ results were the formation
+of 2D perovskites with well-defined orientation [<a href="#chen">Chen</a>] which show higher stability in heat and humidity at a lower performance [<a href="#zhang-x">Zhang-X</a>].
+An alternative to the usual 2-step process of spin coating and then
+thermal annealing was recently found in 1-step blade coating at
+elevated temperature&nbsp; and efficiencies of over 17% were obtained [<a href="GISAXS.html#zhong">Zhong</a>][<a href="#li-j">Li-J</a>].
+A major challenge with lead iodide-based perovskites remains their poor
+stability at elevated temperatures and in humidity. First ways of
+overcoming this issue by using mixed 2D and 3D perovskites have been
+demonstrated by [<a href="#niu">Niu</a>].<br>
+  </li>
+
+
+
+</ul>
+
+<p>These discoveries were facilitated by the ability to study
+nanostructured materials in a well-controlled in-situ sample
+environment and in real time. It is to be
+expected
+that the GISAXS
+technique will unfold its full potential here. <br>
+</p>
+
+<p><br>
+</p>
+
+<h3>Coherence Effects</h3>
+
+At third-generation sources GISAXS can be combined with coherent
+scattering methods. [<a href="#sun">Sun</a>]
+have recently used Coherent Diffraction Imaging in GISAXS mode to
+reconstruct a nanosized non-periodic test object. By including the
+incident angle dependence of the scattering images a full 3D
+reconstruction of the test object was obtained.<br>
+
+<br>
+
+[<a href="#bicondoa">Bicondoa</a>] have combined GISAXS with x-ray
+photon correlation spectroscopy to study the nanostructuring of a GaSb
+surface during sputter ablation.<br>
+
+<br>
+
+Both approaches show high promise to obtain further insights into
+model-free structure reconstruction on non-periodic objects (CDI) or
+nanoscale dynamics and kinetics (XPCS) beyond regular GISAXS
+measurements.<br>
+
+<br>
+
+<br>
+
+<h3>Summary and Outlook<br>
+</h3>
+
+<p>Mesoscopic systems can display a large range of ordering
+properties.
+Each of these has a well-defined signature in its GISAXS and/or GIWAXS
+intensity
+pattern.&nbsp;
+Moreover, due to the penetration power of x-rays, not only surface
+structures,
+but also the internal structure of thin films and buried interfaces can
+be studied without any need of elaborate sample preparation, as needed
+for instance for cross-section transmission electron microscopy. <br>
+</p>
+
+<p>Hard
+x-rays
+can penetrate air, vapor, and small amounts of liquid allowing samples
+to be studied in-situ [<a href="../refs/SRN-preprint.pdf">Smilgies</a>].
+The GISAXS and GIWAXS scattering geometries&nbsp; are straightforward
+and, in many
+cases, without the need for scanning, making GISAXS and GIWAXS very
+attractive to
+combine with elaborate in-situ chambers [<a href="#renaud">Renaud</a>].
+GISAXS scattering intensities are high compared to grazing incidence
+diffraction, and in combination with the essentially static scattering
+geometry, make GISAXS an ideal technique to combine with real-time
+measurements. Typical CCD cameras acquire at 1 frame per 10 sec down to
+1 frame per sec; commercially available pixel array detector can
+acquire data up to 100 frames per second.&nbsp; While swelling kinetics
+in block copolymers happens on
+the
+time scale of minutes, and is well matched for the study of polymer
+kinetics, conjugated&nbsp; molecules crsytallize from solution on a
+msec time scale. As area detectors are evolving, the msec time scale
+has
+become readily accessible with the Pilatus pixel array detector family,
+opening a
+new window in the self-organization kinetics of nanostructured
+materials. <br>
+</p>
+
+<p>All of these features make GISAXS and GIWAXS versatile tools to
+study
+shape
+and density correlations in nanoscopic systems <span style="font-style: italic;">in situ</span> and in real time.
+</p>
+
+<p>
+</p>
+
+<center>
+<p>(based on a talk given at the Physical Electronics Conference
+on
+Cornell
+Campus in June 2003)</p>
+
+<p><br>
+</p>
+</center>
+
+<h3>Links</h3>
+
+<a href="http://en.wikipedia.org/wiki/Grazing-incidence_small-angle_scattering">Wikipedia
+GISAXS page</a><br>
+
+<a href="http://www.gisaxs.de/">GISAXS tutorial by Andreas Meyer (Uni
+Hamburg)</a><br>
+
+<a href="http://ln-www.insp.upmc.fr/axe4/Oxydes/IsGISAXS/isgisaxs.htm">IsGISAXS
+manual by Remi Lazzari (Universit&eacute; Curie)</a><br>
+
+<a href="https://sites.google.com/site/byeongdu/home">Byeongdu Lee's
+SAXS and GISAXS pages (Advanced Photon Source)</a><br>
+
+<a href="http://www.pprime.fr/?q=fr/nanoparticules-nanostructures">FitGISAXS
+page by David Babonneau (Universit</a><a href="http://ln-www.insp.upmc.fr/axe4/Oxydes/IsGISAXS/isgisaxs.htm">&eacute;</a><a href="http://www.pprime.fr/?q=fr/nanoparticules-nanostructures">
+Poitiers)</a><br>
+
+<a href="http://smallangle.org/content/software">SAS Portal: overview
+of SAXS/GISAXS software</a><br>
+
+<br>
+
+<br>
+<h3>D-line - the little beamline that could</h3>
+A personal note: In the course of the CHESS-U project, D-line had to be
+decommissioned and removed. Despite the D-line history of pushing the
+envelope in multiprobe in-situ and real-time measurements, a successor
+general user in-situ materials processing beamline was not funded. As a
+result I have retired. <br>
+<br>
+In case this page inspired you to do experiments as described here, but you would like to get some help, I'll be happy to <a href="mailto:cbs.beamline@gmail.com">consult</a>
+for beamline scientists and users about optics, goniometers, and
+detectors as well as on custom sample environments. As my many users
+and collaborators have shown at D-line, even a small beamline at a
+bending magnet can be developed into a cutting-edge GISAXS/GIWAXS
+beamline. For more information on <a href="https://www.linkedin.com/profile/view?id=AAIAAAG_BvAB2nrP6eLUZMj5-KlH57_XJ6iB4WI&amp;trk=nav_responsive_tab_profile">Smilgies Beamline Consulting</a>, see my <a href="https://www.linkedin.com/profile/view?id=AAIAAAG_BvAB2nrP6eLUZMj5-KlH57_XJ6iB4WI&amp;trk=nav_responsive_tab_profile">Linked In</a> page. <a href="mailto:dms79@cornell.edu">DS</a><br>
+<br>
+
+
+<br>
+
+<h3>A Final Comment </h3>
+
+<p>GISAXS and GIWAXS experiments, particaly for the charactrization of
+soft materials thin films, have recently experienced tremendous
+popularity and it has become hard to keep this tutorial up to date.
+Many new groups have gotten involved and are building up their own
+expertise. Please do not hesitate to point out papers describing new
+applications or technical break throughs that I
+may have missed. And please take a moment to fill out the feedback
+below. <a href="mailto:dms79@cornell.edu">DS</a></p>
+
+<p><br>
+</p>
+
+<div style="text-align: center;">
+</div>
+
+<form action="http://www.classe.cornell.edu/cgi-bin/dms79/storeFeedback.pl" method="post">
+  <div style="text-align: center;"> The content of this
+tutorial is
+  <select name="useful">
+  <option value="please choose one"> please choose one </option>
+  <option value="useful"> useful - I learned something new </option>
+  <option value="not very useful"> not very useful </option>
+  <option value="do not know"> do not know </option>
+  </select>
+  <br>
+If somone asks you about GISAXS:
+  <select name="recommend">
+  <option value="please choose one"> please choose one </option>
+  <option value="recommend"> I can recommend this page </option>
+  <option value="cannot recommend"> I cannot recommend
+this page </option>
+  <option value="do not know"> do not know </option>
+  </select>
+  <br>
+This web page was
+  <select name="obscure">
+  <option value="please choose one"> please choose one </option>
+  <option value="easy to find"> easy to find </option>
+  <option value="obscure"> obscure </option>
+  <option value="do not know"> do not know </option>
+  </select>
+  <br>
+Other comments <input name="other" size="80" type="text"> <br>
+  </div>
+  <br>
+  <div style="text-align: center;"><input name="submit" value="submit" type="submit"></div>
+</form>
+
+<br>
+
+<h3><b>References</b>
+</h3>
+
+<p>
+<table style="width: 100%;" border="0" cellpadding="0" cellspacing="10">
+  <tbody>
+    <tr>
+      <td><a name="alexandrovic"></a>[Alexandrovic]</td>
+      <td>Vesna Aleksandrovic, Denis Greshnykh, Igor Randjelovic,
+Andreas Fr&ouml;msdorf, Andreas Kornowski, Stephan Volker Roth,
+Christian
+Klinke, and Horst Weller: "Preparation and Electrical Properties of
+Cobalt-Platinum Nanoparticle Monolayers Deposited by the
+Langmuir-Blodgett Technique", ACS Nano 2,&nbsp; 1123&ndash;1130 (
+2008).</td>
+    </tr>
+    <tr valign="top">
+      <td style="vertical-align: middle;"><a name="als-nielsen"></a>[Als-Nielsen]</td>
+      <td>J. Als-Nielsen and D. McMorrow: "Elements of modern
+X-ray
+physics",
+(John Wiley &amp; Sons, New York, 2001).</td>
+    </tr>
+    <tr valign="top">
+      <td style="vertical-align: middle;"><a name="anastasiadis"></a>[Anastasiadis]</td>
+      <td>S. H. Anastasiadis, T. P. Russell, S. K. Satija, and C.
+F.
+Majkrzak:
+"Neutron reflectivity studies of the surface-induced ordering of
+diblock
+copolymer films", Phys. Rev. Lett. 62, 1852-1855 (1989)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="angelescu"></a>[Angelescu]<br>
+      </td>
+      <td style="vertical-align: top;">Dan E. Angelescu,
+J. H. Waller,
+D. H. Adamson, P. Deshpande, S. Y. Chou, R.A. Register, and P. M.
+Chaikin: "Macroscopic Orientation of Block Copolymer Cylinders in
+Single-Layer Films by Shearing", Adv. Mater. 16, 1736-1740 (2004).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="babonneau"></a>[Babonneau]</td>
+      <td>David Babonneau: "<span style="font-style: italic;">FitGISAXS</span>:
+software package for modelling and analysis of GISAXS data using IGOR
+Pro", J. Appl. Cryst.&nbsp;43, 929&ndash;936 (2010).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="babonneau2"></a>[Babonneau2]</td>
+      <td style="vertical-align: top;">D. Babonneau, S. Camelio, D.
+Lantiat, L. Simonot, and A. Michel, "Waveguiding and correlated
+roughness effects in layered nanocomposite thin films studied by
+grazing-incidence small-angle x-ray scattering", Phys. Rev. B 80,
+155446 (2009).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="baker"></a>[Baker]</td>
+      <td>Jessy L. Baker, Asaph
+Widmer-Cooper, Michael F. Toney, Phillip L. Geissler, and A. Paul
+Alivisatos: "Device-Scale Perpendicular Alignment ofColloidal
+Nanorods", Nano Lett.&nbsp;10, 195-201 (2010).</td>
+    </tr>
+    <tr>
+      <td><a name="baker2"></a>[Baker2]</td>
+      <td>Jessy
+L. Baker, Leslie H. Jimison, Stefan Mannsfeld, Steven Volkman, Shong
+Yin, Vivek Subramanian, Alberto Salleo, A. Paul Alivisatos, and Michael
+F. Toney: "Quantification of Thin Film Crystallographic Orientation
+Using X-ray Diffraction with an Area Detector", Langmuir 26, 9146
+(2010).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="berezkin"></a>[Berezkin]<br>
+      </td>
+      <td style="vertical-align: top;"><big><small>Anatoly V. Berezkin, Florian Jung, Dorthe Posselt, Detlef M. Smilgies,
+and Christine M. Papadakis: "Vertical vs. Lateral Macrophase Separation
+in Thin Films of Block Copolymer Mixtures: Computer Simulations and
+GISAXS Experiments", ACS Appl. Mater. Interfaces 2017, 9, 31291&ndash;31301</small></big></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="Berezkin2"></a>[Berezkin2]<br>
+      </td>
+      <td style="vertical-align: top;"><big><small>Anatoly V. Berezkin, Florian Jung, Dorthe Posselt, Detlef-M. Smilgies,
+and Christine M. Papadakis: "In Situ Tracking of Composition and
+Morphology of a Diblock Copolymer Film with GISAXS during Exchange of
+Solvent Vapors at Elevated Temperatures", Adv. Funct. Mater. 2018,
+1706226 <br>
+</small></big></td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="bian"></a>[Bian]<br>
+      </td>
+      <td style="vertical-align: top;">Kaifu Bian, Joshua J. Choi,
+Ananth Kaushik, Paulette Clancy,
+Detlef-M. Smilgies, and Tobias Hanrath: "<span style="font-size: 12pt; font-family: &quot;Times&quot;,&quot;serif&quot;;">Shape-anisotropy
+driven symmetry transformations in
+nanocrystal superlattice polymorphs", ACS Nano. 5&nbsp; 2815&ndash;2823
+(2011).</span></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="bicondoa"></a>[Bicondoa]<br>
+      </td>
+      <td style="vertical-align: top;">Oier Bikondoa, Dina Carbone,
+Virginie Chamard, Till Hartmut Metzger: "Ageing dynamics of ion
+bombardment induced self-organization processes", Scientific Reports 3,
+1850; DOI:10.1038/srep01850 (2013)<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="breiby"></a>[Breiby]</td>
+      <td>Dag W.
+Breiby, Oliver Bunk, Jens W. Andreasen, Henrik T. Lemked and Martin M.
+Nielsen: "Simulating X-ray diffraction of textured films", J. Appl.
+Cryst.&nbsp;41, 262&ndash;271(2008). </td>
+    </tr>
+    <tr>
+      <td><a name="boltau"></a>[B&ouml;ltau]</td>
+      <td>M. B&ouml;ltau, S. Walheim, J. Mlynek, G. Krausch, U.
+Steiner, Nature
+391, 877 (1998).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="bottiger"></a>[B&ouml;ttiger]<br>
+      </td>
+      <td style="vertical-align: top;">Arvid P. L. B&ouml;ttiger,
+Mikkel
+J&oslash;rgensen, Andreas Menzel, Frederik C. Krebs, and Jens W.
+Andreasen:
+"High-throughput roll-to-roll X-ray characterization of polymer solar
+cell active layers", J. Mater. Chem. 22, 22501&ndash;22509 (2012).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="busch"></a>[Busch]</td>
+      <td>P. Busch, D.-M. Smilgies, D. Posselt, F. Kremer, and
+C.M.
+Papadakis:
+"Grazing-incidence small-angle x-ray scattering (GISAXS) - Inner
+structure
+und kinetics of thin block copolymer films", Macromol. Chem. Phys. 204,
+F18-F19 (2003). (<a href="../refs/PSPB-Freiburg.pdf">preprint</a>)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="busch2"></a>[Busch2]<br>
+      </td>
+      <td style="vertical-align: top;">P. Busch, D.
+Posselt, D.-M.
+Smilgies, F. Kremer and C. M. Papadakis: ''Diblock copolymer thin films
+investigated by tapping mode AFM: Molar mass dependence of surface
+ordering'', Macromolecules 36, 8717-8727 (2003).</td>
+    </tr>
+    <tr>
+      <td><a name="busch3"></a>[Busch3]</td>
+      <td>P. Busch, M. Rauscher, D.-M. Smilgies, D. Posselt, and
+C. M.
+Papadakis:
+"Grazing-incidence small-angle x-ray scattering (GISAXS) as a tool for
+the investigation of thin nanostructured block copolymer films - The
+scattering cross-section in the distorted wave
+Born approximation", J.
+Appl. Cryst. 39, 433-442 (2006).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="busch4"></a>[Busch4]<br>
+      </td>
+      <td style="vertical-align: top;">P. Busch, D.
+Posselt, D.-M.
+Smilgies, M.Rauscher, and C.M.
+Papadakis: "The Inner Structure of Thin
+Films of Lamellar Poly(Styrene-b-Butadiene) Diblock Copolymers as
+Revealed by Grazing-Incidence Small-Angle Scattering", Macromolecules
+40, 630-640 (2007).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="busch5"></a>[Busch5]<br>
+      </td>
+      <td style="vertical-align: top;">Peter Busch,
+Sitaraman Krishnan,
+Marvin Paik, Gilman E. S. Toombes,
+Detlef-M. Smilgies, Sol M. Gruner, and Christopher K. Ober:
+"Surface induced tilt propagation in thin films of semifluorinated
+liquid-crystalline side-chain block copolymers", Macromolecules 40,
+81-89 (2007). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="campolongo"></a>[Campolongo]<br>
+      </td>
+      <td style="vertical-align: top;">Michael J. Campolongo, Shawn J.
+Tan, Detlef-M. Smilgies, Mervin Zhao, Yi Chen, Iva Xhangolli, Wenlong
+Cheng, and Dan Luo:"Crystalline Gibbs Monolayers of DNA-Capped
+Nanoparticles at the Air&ndash;Liquid Interface", ACS Nano (2011),
+Article
+ASAP, DOI: 10.1021/nn202383b<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="Chabinyc"></a>[Chabinyc]<br>
+      </td>
+      <td style="vertical-align: top;">Michael L. Chabinyc, Michael F.
+Toney, R. Joseph Kline, Iain McCulloch, and Martin Heeney, "X-ray
+Scattering Study of Thin Films of Poly(2,5-bis(3-alkylthiophen-2-yl)thieno[3,2-b]thiophene)", JACS 129,
+3226-3237 (2007).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="Chavis"></a>[Chavis]<br>
+      </td>
+      <td style="vertical-align: top;">
+
+Michelle A. Chavis, Detlef-M. Smilgies, Ulrich B. Wiesner and
+Christopher K. Ober: "Widely Tunable Morphologies in Block Copolymer
+Thin Films Through Solvent Vapor Annealing Using Mixtures of Selective
+Solvents", Adv. Funct. Mater. 25, 3057&ndash;3065 (2015).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="chen"></a>[Chen]<br>
+      </td>
+      <td style="vertical-align: top;">Alexander Z. Chen, Michelle Shiu, Jennifer H. Ma, Matthew R. Alpert,
+Depei Zhang, Benjamin J. Foley, Detlef-M. Smilgies, Seung-Hun Lee &amp;
+Joshua J. Choi: "Origin of vertical orientation in two-dimensional
+metal halide perovskites and its effect on photovoltaic performance",
+Nature Commun. (2018) 9:1336.</td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="choi"></a>[Choi]<br>
+      </td>
+      <td style="vertical-align: top;">Joshua J. Choi, Clive R.
+Bealing, Kaifu Bian, Kevin J. Hughes, Wenyu
+Zhang, Detlef-M. Smilgies, Richard G. Hennig, James R. Engstrom, and
+Tobias Hanrath, "Controlling Nanocrystal Superlattice Symmetry and
+Shape-Anisotropic Interactions through Variable Ligand Surface
+Coverage", J. Am. Chem. Soc. 2011, 133, 3131&ndash;3138.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="choi2"></a>[Choi2]<br>
+      </td>
+      <td style="vertical-align: top;">Joshua J. Choi, Kaifu Bian,
+William J. Baumgardner, Detlef-M.
+Smilgies, and Tobias Hanrath: " Interface-Induced Nucleation,
+Orientational Alignment and Symmetry Transformations in Nanocube
+Superlattices", Nano Lett. 12, 4791&ndash;4798 (2012).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="Chou"></a>[Chou]<br>
+      </td>
+      <td style="vertical-align: top;">Kang Wei Chou, Buyi Yan, Ruipeng
+Li, Er Qiang Li, Kui Zhao, Dalaver H. Anjum, Steven Alvarez, Robert
+Gassaway, Alan Biocca, Sigurdur T. Thoroddsen, Alexander Hexemer, and
+Aram Amassian: "Spin-Cast Bulk Heterojunction Solar Cells: A Dynamical
+Investigation", Adv. Mater. 25, 1923&ndash;1929 (2013).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="crossland"></a>[Crossland]</td>
+      <td>Edward Crossland,
+Marleen&nbsp;Kamperman,&nbsp;Mihaela
+Nedelcu,&nbsp;Caterina Ducati,&nbsp;Ulrich
+Wiesner,&nbsp;Gilman Toombes,&nbsp;Marc
+Hillmyer,&nbsp;Sabine Ludwigs,&nbsp;Ullrich
+Steiner,&nbsp;Detlef-M. Smilgies, and
+Henry&nbsp;Snaith:&nbsp; "A bicontinuous double gyroid hybrid
+solar cell", Nano Lett. 9,&nbsp;2807-2812 (2009). </td>
+    </tr>
+    <tr>
+      <td><a name="darko"></a>[Darko]</td>
+      <td>C.
+Darko, I. Botiz, G. Reiter, D.W. Breiby, J.W. Andreasen, S.V. Roth,
+D.-M. Smilgies, E. Metwalli, and C.M. Papadakis: "Multiscale study of
+crystallization in diblock copolymer thin films at different
+supercooling", Phys. Rev. E 79, 041802 (2009).</td>
+    </tr>
+    <tr>
+      <td><a name="di"></a>[Di]</td>
+      <td>Zhenyu
+Di,&nbsp;DorthePosselt,&nbsp;Detlef-M. Smilgies, and Christine
+Papadakis:&nbsp;"Structural rearrangements in a lamellar diblock
+copolymer thin film during&nbsp;treatment with saturated solvent
+vapor",&nbsp; Macromolecules 43, 418&ndash;427 (2010).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="dourdain"></a>[Dourdain]<br>
+      </td>
+      <td style="vertical-align: top;">S. Dourdain, A.
+Rezaire, A.
+Mehdi, B.M. Ocko, A. Gibaud: "Real time GISAXS study of micelle
+hydration in CTAB templated silica thin films", Physica B 357,
+180&ndash;184
+(2005).<br>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="vertical-align: middle;"><a name="du"></a>[Du]</td>
+      <td>Phong Du, Mingqi Li, Katsuji Douki, Xuefa Li, Carlos
+B.W. Garcia, Anurag Jain, Detlef- M. Smilgies, Lewis J. Fetters, Sol M.
+Gruner, Ulrich
+Wiesner, Christopher K. Ober: "Additive-driven Phase Selective
+Chemistry in
+Block Copolymer Thin Films:&nbsp; The Convergence of Top Down and
+Bottoms
+Up Processing", Advanced Materials 16, 953-957 (2004).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="dunphy"></a>[Dunphy]</td>
+      <td>Darren Dunphy, Hongyou
+Fan, Xuefa Li, Jin Wang, and C. Jeffrey Brinker: "Dynamic Investigation
+of Gold Nanocrystal Assembly Using In Situ Grazing-Incidence
+Small-Angle X-ray Scattering", Langmuir 24, 10575-10578 (2008).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="feng"></a>[Feng]<br>
+      </td>
+      <td style="vertical-align: top;">Y. P. Feng, S. K. Sinha, H. W.
+Deckman, J. B. Hastings, and D. P. Siddons: "X-Ray Flux Enhancement in
+Thin-Film Waveguides Using Resonant Beam Couplers", PRL 71, 537-540
+(1993).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="foerster"></a>[Foerster]</td>
+      <td>Forster, S.; Timmann, A.; Konrad, M.; Schellbach, C.;
+Meyer, A.; Funari, S. S.; Mulvaney, P.; Knott, R. "Scattering Curves of
+Ordered Mesoscopic Materials", J. Phys. Chem. B 109, 1347&ndash;1360
+(2005).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="foley"></a>[Foley]<br>
+      </td>
+      <td style="vertical-align: top;">Benjamin J. Foley, Justin Girard, Blaire A. Sorenson, Alexander Z.
+Chen, J. Scott Niezgoda, Matthew R. Alpert, Angela F. Harper, Detlef
+Smilgies, Paulette Clancy, Wissam A Saidi and Joshua J. Choi:
+"Controlling Nucleation, Growth, and Orientation of Metal Halide
+Perovskite Thin Films with Rationally Selected Additives", J. Mater.
+Chem. A, 2017, 5, 113-123. &nbsp; </td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="gibaud"></a>[Gibaud]</td>
+      <td>A. Gibaud et al.: "Evaporation-Controlled Self-Assembly
+of Silica Surfactant Mesophases",&nbsp; J. Phys. Chem. B 107, 6114-6118
+(2003).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="giri"></a>[Giri]<br>
+      </td>
+      <td style="vertical-align: top;">Gaurav Giri, Ruipeng Li,
+Detlef-M Smilgies, Er Qiang Li, Ying Diao,
+Kristina M. Lenn, Melanie Chiu, Debora W. Lin, Ranulfo Allen, Julia
+Reinspach,&nbsp;&nbsp;&nbsp; Stefan C. B. Mannsfeld,&nbsp;&nbsp;&nbsp;
+Sigurdur T. Thoroddsen,&nbsp;&nbsp;&nbsp; Paulette Clancy, Zhenan Bao
+and Aram Amassian: "One-dimensional self-confinement promotes polymorph
+selection in large-area organic semiconductor thin films", Nature
+Communications 5, 3573 (2014).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="goodfellow"></a>[Goodfellow]<br>
+      </td>
+      <td style="vertical-align: top;">Brian W. Goodfellow, Michael R.
+Rasch, Colin M. Hessel, Reken N. Patel,
+Detlef-M. Smilgies, and Brian A. Korgel: "Ordered Structure
+Rearrangements In Heated Gold Nanocrystal Superlattices", Nano Lett.
+13, 5710&ndash;5714 (2013).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="Gu"></a>[Gu]<br>
+      </td>
+      <td style="vertical-align: top;"><big><small>
+Yibei Gu, Rachel M. Dorin, Kwan W. Tan, Detlef-M. Smilgies, and Ulrich
+Wiesner, In Situ Study of Evaporation-Induced Surface Structure
+Evolution in Asymmetric Triblock Terpolymer Membranes, Macromolecules 2016, 49, 4195&minus;4201.</small></big></td>
+    </tr>
+<tr>
+      <td><a name="hanrath"></a>[Hanrath]</td>
+      <td>Tobias
+Hanrath, Joshua J. Choi, and Detlef-M. Smilgies: "Structure/Processing
+Relationships of Highly Ordered Lead Salt Nanocrystal Superlattices",
+ACS Nano 3, 2975&ndash;2988 (2009).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="he"></a>[He]<br>
+      </td>
+      <td style="vertical-align: top;">Mingqian He, Jianfeng Li,
+Michael L. Sorensen, Feixia Zhang, Robert R. Hancock, Hon Hang Fong,
+Vladimir A. Pozdin, Detlef-M. Smilgies and George G. Malliaras:
+"Alkylsubstituted Thienothiophene Semiconducting Materials:
+Structure&minus;Property Relationships", J. Am. Chem. Soc., 2009, 131,&nbsp; 11930&ndash;11938. <br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="heitsch"></a>[Heitsch]</td>
+      <td>Andrew
+T. Heitsch, Reken N. Patel, Brian W. Goodfellow, Detlef-M. Smilgies,
+and Brian A. Korgel: "GISAXS Characterization of Order in Hexagonal
+Monolayers of FePt Nanocrystals", J. Phys. Chem. C 2010, 114, 14427&ndash;14432.<br>
+</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="hofmann"></a>[Hofmann]<br>
+      </td>
+      <td>T.
+Hofmann, E. Dobisz, and B. M. Ocko: "Grazing incident small angle x-ray
+scattering: A metrology to probe nanopatterned surfaces", J. Vac. Sci.
+Technol. B 27, 3238 (2009).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="huang"></a>[Huang]<br>
+      </td>
+      <td style="vertical-align: top;">Yi-Fang
+Huang, Chan-Wei Chang, Detlef-Matthias Smilgies, U-Ser Jeng, Anto R.
+Inigo, Jonathon David White, Kang-Chuang Li, Tsong-Shin Lim, Tai-De Li,
+Hsiang-Yun Chen, Show-An Chen, Wen-Chang Chen, and Wun-Shain Fann:
+"Correlating Nanomorphology with Charge-Transport Anisotropy in
+Conjugated-Polymer Thin Films",&nbsp;Adv. Mater. 21, 1&ndash;5
+(2009). <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="jacobs"></a>[Jacobs]<br>
+      </td>
+      <td style="vertical-align: top;">Alan G. Jacobs, Clemens Liedel,
+Hui Peng, Linxi Wang, Detlef-M. Smilgies, Christopher K. Ober, and
+Michael O. Thompson: "Kinetics of Block Copolymer Phase Segregation
+during Sub-millisecond Transient Thermal Annealing, Macromolecules
+2016, 49, 6462&minus;6470.<br>
+      </td>
+    </tr>
+<tr>
+      <td><a name="jiang"></a>[Jiang]</td>
+      <td>Zhang Jiang, Xiao-Min Lin,
+Michael Sprung, Suresh Narayanan, and Jin Wang: "Capturing the
+Crystalline Phase of Two-Dimensional Nanocrystal Superlattices in
+Action", Nano Lett. 10, 799&ndash;803 (2010).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="jiang2"></a>[Jiang2]<br>
+      </td>
+      <td style="vertical-align: top;">Zhang Jiang, Dong Ryeol Lee,
+Suresh Narayanan, and Jin Wang: "Waveguide-enhanced grazing-incidence
+small-angle x-ray scattering of buried nanostructures in thin films",
+Phys Rev B 84, 075440 (2011).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="jin"></a>[Jin]</td>
+      <td>Sangwoo
+Jin, Jinhwan Yoon, Kyuyoung Heo, Hae-Woong Park, Jehan Kim, Kwang-Woo
+Kim, Tae Joo Shin, Taihyun Chang, and Moonhor Ree: "Detailed analysis
+of gyroid structures in diblock copolymer thin films with synchrotron
+grazingincidence X-ray scattering", J. Appl. Cryst. 40, 950&ndash;958
+(2007).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="kim"></a>[Kim]<br>
+      </td>
+      <td style="vertical-align: top;">Seung Hyun Kim,
+Matthew J.
+Misner, Ling Yang, Oleg Gang, Benjamin M. Ocko, and Thomas P. Russell:
+"Salt Complexation in Block Copolymer Thin Films", Macromolecules 39,
+8473-8479 (2006).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="kuhlmann"></a>[Kuhlmann]<br>
+      </td>
+      <td style="vertical-align: top;">Marion Kuhlmann, Jan M.
+Feldkamp, Jens Patommel, Stephan V. Roth, Andreas Timmann, Rainer
+Gehrke, Peter Muller-Buschbaum, and Christian G. Schroer: "Grazing
+Incidence Small-Angle X-ray Scattering Microtomography Demonstrated on
+a Self-Ordered Dried Drop of Nanoparticles", Langmuir 25,
+7241&ndash;7243
+(2009).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="lazzari"></a>[Lazzari]</td>
+      <td>R. Lazzari: "IsGISAXS: a program for grazing-incidence
+small-angle X-ray scattering analysis of supported islands", J. Appl.
+Cryst. 35, 406-421 (2002).&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="lee1"></a>[Lee1]<br>
+      </td>
+      <td style="vertical-align: top;">Byeongdu Lee,
+Jinhwan Yoon,
+Weontae Oh, Yongtaek Hwang, Kyuyoung Heo, Kyeong Sik Jin, Jehan Kim,
+Kwang-Woo Kim, and Moonhor Ree: "In-Situ Grazing Incidence Small-Angle
+X-ray Scattering Studies on Nanopore Evolution in Low-<span style="font-style: italic;">k</span> Organosilicate
+Dielectric Thin
+Films", Macromolecules 38, 3395 (2005).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="lee2"></a>[Lee2]<br>
+      </td>
+      <td style="vertical-align: top;">Byeongdu Lee, Insun
+Park,
+Jinhwan Yoon, Soojin Park, Jehan Kim, Kwang-Woo Kim, Taihyun Chang, and
+Moonhor Ree: "Structural Analysis of Block Copolymer Thin Films with
+Grazing Incidence Small-Angle X-ray Scattering", Macromolecules 38,
+4311-4323(2005).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="lee3"></a>[Lee3]</td>
+      <td>Byeongdu
+Lee, Insun Park, Haewoong Park, Chieh-Tsung Lo, Taihyun Chang, and
+Randall E. Winans: "Electron density map using multiple scattering in
+grazing-incidence small-angle X-ray scattering", J. Appl. Cryst. 40,
+496&ndash;504 (2007). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="levine"></a>[Levine]<br>
+      </td>
+      <td style="vertical-align: top;">J. R. Levine, J. B.
+Cohen, Y. W.
+Chung and P. Georgopoulos:"
+Grazing-incidence small-angle X-ray scattering: new tool for studying
+thin film growth" , J. Appl. Cryst. 22, 528-532 (1989).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="Levine2"></a>[Levine2]</td>
+      <td>J. R. Levine Parrill, P. Georgopoulos, Y.-W. Chung, and
+J. B. Cohen:
+&nbsp;"GISAXS - Glancing incidence small angle X-ray scattering",
+J. Phys.
+IV France&nbsp;3-C8, 411-417 (1993).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="li-j"></a>[Li-J]<br>
+      </td>
+      <td style="vertical-align: top;">Jianbo Li, Rahim Munir, YuanYuan Fan, Tianqi Niu, Yucheng Liu, Yufei
+Zhong, Zhou Yang, Bo Liu, Jie Sun, Detlef-M. Smilgies, Aram Amassian,
+Kui Zhao, and Shengzhong (Frank) Liu: "Phase transition control for
+high-performance blade-coated perovskite solar cells", Joule 2018, 2,
+2018, 1313-1330.</td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="li"></a>[Li-M]<br>
+      </td>
+      <td style="vertical-align: top;">Mingqi Li, Kasuji
+Douki, Ken
+Goto, Xuefa Li, Christopher Coenjarts, Detlef M. Smilgies, and
+Christopher K. Ober: "Spatially Controlled Fabrication of Nanoporous
+Block Copolymers", Chem. Mater. 16, 3800-3808 (2004).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="li-r"></a>[Li-R]<br>
+      </td>
+      <td style="vertical-align: top;">Ruipeng Li, Jeremy W. Ward,
+Detlef-M. Smilgies,&nbsp; Marcia&nbsp; M. Payne, John&nbsp; E.&nbsp;
+Anthony, Oana D. Jurchescu, and Aram Amassian: "Direct Structural
+Mapping of Organic Field-Effect Transistors Reveals Bottlenecks to
+Carrier Transport", Adv. Mater. 24, 5553&ndash;5558 (2012).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="lu"></a>[Lu]<br>
+      </td>
+      <td style="vertical-align: top;">Xinhui Lu, Kevin G. Yager,
+Danvers Johnston, Charles T. Black, and Benjamin M. Ocko:
+"Grazing-incidence transmission X-ray scattering: surface scattering in
+the Born approximation", J. Appl. Cryst. 46, 165&ndash;172 (2013).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="mannsfeld"></a>[Mannsfeld]<br>
+      </td>
+      <td style="vertical-align: top;">Stefan C. B. Mannsfeld,
+Ming&nbsp; Lee&nbsp; Tang, and Zhenan Bao: "Thin Film Structure of
+TriisopropylsilylethynylFunctionalized Pentacene and
+Tetraceno[2,3-b]thiophene from Grazing Incidence X-Ray Diffraction",
+Adv. Mater. 23, 127&ndash;131 (2011).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="moore"></a>[Moore]<br>
+      </td>
+      <td style="vertical-align: top;">David T. Moore, Hiroaki Sai, Kwan W. Tan, Detlef-M. Smilgies, Wei
+Zhang, Henry J. Snaith, Ulrich Wiesner, and Lara A. Estroff:
+"Crystallization Kinetics of Organic&minus;Inorganic Trihalide
+Perovskites and the Role of the Lead Anion in Crystal Growth", J. Am.
+Chem. Soc. 2015, 137, 2350&minus;2358. <br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;"><a name="mb"></a>[M&uuml;ller-B]<br>
+      </td>
+      <td style="vertical-align: top;">P. M&uuml;ller-Buschbaum,
+S.V.Roth,
+M. Burghammer, A.Diethert, P. Panagiotou and C. Riekel:
+"Multiple-scaled polymer surfaces investigated with micro-focus
+grazing-incidence small-angle X-ray scattering", Europhys. Lett. 61,
+639&ndash;645 (2003).<br>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="vertical-align: middle; text-align: left;"><a name="metzger"></a>[Metzger]</td>
+      <td>T.
+H. Metzger, I. Kegel, R. Paniago, A. Lorke, J.
+Peisl, J.
+Schulze, I. Eisele, P. Schittenhelm, and G. Abstreiter: "Shape, size,
+strain and correlations in quantum dot systems studied by grazing
+incidence X-ray scattering methods", Thin Solid Films 336,1-8 (1998);
+T. H .Metzger, I. Kegel, R. Paniago and J. Peisl: "Grazing incidence
+x-ray scattering: an ideal tool to study the structure of quantum
+dots", J. Phys. D: Appl. Phys. 32,&nbsp; A202&ndash;A207 (1999).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="narayanan"></a>[Narayanan]<br>
+      </td>
+      <td style="vertical-align: top;">Suresh Narayanan,
+Dong Ryeol
+Lee, Rodney S. Guico, Sunil K. Sinha, and Jin Wang: "Real-Time
+Evolution of the Distribution of Nanoparticles in an
+Ultrathin-Polymer-Film-Based Waveguide", Phys. Rev. Lett. 94, 145504
+(2005).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="naudon"></a>[Naudon]</td>
+      <td>A. Naudon in H. Brumberger (ed.): "Modern Aspects of
+Small-Angle Scattering", (Kluwer Academic Publishers, Amsterdam, 1995),
+p. 191. </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="niu"></a>[Niu]<br>
+      </td>
+      <td style="vertical-align: top;">Tianqi Niu, Jing Lu, Ming-Chun Tang, Dounya Barrit, Detlef M Smilgies,
+Zhou Yang, Jianbo Li, Yuanyuan Fan, Tao Luo, Iain Mcculloch, Aram
+Amassian, Shengzhong Frank Liu and Kui Zhao: "High performance
+ambient-air-stable FAPbI3 perovskite solar cells with
+molecule-passivated Ruddlesden-Popper/3D heterostructured film", Energy Environ. Sci., 2018, 11, 3358-3366.</td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="Ocier"></a>[Ocier]<br>
+      </td>
+      <td style="vertical-align: top;">
+
+Christian Ocier, Detlef-M. Smilgies, Richard Robinson, and Tobias
+Hanrath:&nbsp; "Reconfigurable Nanorod Films: An In-Situ Study of the
+Relationship Between Tunable Nanorod Orientation and the Optical
+Properties of their Self-Assembled Thin Films", Chem. Mater. 27,
+2659&ndash;2665 (2015).</td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="osaka"></a>[Osaka]<br>
+      </td>
+      <td style="vertical-align: top;">Itaru Osaka, Rui Zhang,
+Genevieve Sauve, Detlef-M. Smilgies, Tomasz Kowalewski, and Richard D.
+McCullough: "High-Lamellar Ordering and Amorphous-Like&pi;-Network in
+Short-Chain Thiazolothiazole-Thiophene Copolymers Lead to High
+Mobilities", JACS 131, 2521&ndash;2529 (2009).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="paik"></a>[Paik]</td>
+      <td>Marvin Y. Paik, Joan K. Bosworth,&nbsp;Detlef-M.
+Smilgies,&nbsp;Evan L.
+Schwartz,&nbsp;Xavier Andre, and Christopher K. Ober: "Reversible
+Morphology Control in Block Copolymer Films via Solvent Vapor
+Processing: An In-Situ GISAXS study", Macromolecules Macromolecules
+2010, 43, 4253&ndash;4260.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left; vertical-align: middle;"><a name="papadakis"></a>[Papadakis] </td>
+      <td style="vertical-align: middle;"> C. M.
+Papadakis, P. Busch,
+D. Posselt, and D.-M. Smilgies: "Morphological Transition in Thin
+Lamellar Diblock Copolymer Films as Revealed by Combined GISAXS and AFM
+Studies ", Advances in Solid State Physics, Vol. 44 (Springer Verlag,
+Heidelberg, 2004) p. 327-338. </td>
+    </tr>
+    <tr>
+      <td><a name="Papadakis2"></a>[Papadakis2]</td>
+      <td>Christine M. Papadakis, Zhenyu Di, Dorthe Posselt, and
+Detlef-M.
+Smilgies: "Structural Instabilities in Lamellar Diblock Copolymer Thin
+Films During Solvent Vapor Uptake", Langmuir 24, 13815-13818
+(2008).&nbsp;</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="park-m"></a>[Park-M]<br>
+      </td>
+      <td style="vertical-align: top;">Miri Park,
+Christopher Harrison,
+Paul M. Chaikin, Richard A. Register, Douglas H. Adamson: "Block
+Copolymer Lithography: Periodic Arrays of 10<sup><small><small><small><small>11</small></small></small></small>
+      </sup>Holes in 1 Square Centimeter", Science 276, 1401-1404
+(1997).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="park-i"></a>[Park-I]<br>
+      </td>
+      <td style="vertical-align: top;">Insun Park,
+Byeongdu Lee,
+Jinsook Ryu, Kyuhyun Im, Jinhwan Yoon,
+Moonhor Ree, and Taihyun Chang: "Epitaxial Phase Transition of
+Polystyrene-b-Polyisoprene from Hexagonally Perforated Layer to Gyroid
+Phase in Thin Film", Macromolecules 38, 10532-10536 (2005).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="park-s"></a>[Park-S]<br>
+      </td>
+      <td style="vertical-align: top;">Soojin Park, Dong Hyun Lee, Ji
+Xu, Bokyung Kim, Sung Woo Hong, Unyong Jeong, Ting Xu, Thomas P.
+Russell: "Macroscopic 10-Terabit&ndash;per&ndash;Square-Inch Arrays
+from Block
+Copolymers with Lateral Order", Science 323, 1030-1033 (2009).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="pelletier"></a>[Pelletier]<br>
+      </td>
+      <td style="vertical-align: top;">Vincent Pelletier,
+Koji Asakawa,
+Mingshaw Wu, Douglas H. Adamson, Richard A. Register, and Paul M.
+Chaikin: "Aluminum nanowire polarizing grids: Fabrication and
+analysis", Appl. Phys. Lett. 88, 211114 (2006).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="perez"></a>[Perez]<br>
+      </td>
+      <td style="vertical-align: top;">Louis A. Perez, Kang Wei Chou,
+John A. Love, Thomas S. van der Poll, Detlef-M. Smilgies, Thuc-Quyen
+Nguyen, Edward J. Kramer, Aram Amassian and Guillermo C. Bazan:
+"Solvent Additive Effects on Small Molecule Crystallization in Bulk
+Heterojunction Solar Cells Probed During Spin Casting", Advanced
+Materials 25, Pages: 6380&ndash;6384 (2013). <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="perlich"></a>[Perlich]<br>
+      </td>
+      <td style="vertical-align: top;">J. Perlich, M. Schwartzkopf, V.
+K&ouml;rstgens, D. Erb, J. F. H. Risch, P. M&uuml;ller-Buschbaum, R.
+R&ouml;hlsberger,
+S. V. Roth, and R. Gehrke: "Pattern formation of colloidal suspensions
+by dip-coating: An in situ grazing incidence X-ray scattering study",
+Phys. Status Solidi RRL 6, 253&ndash;255 (2012). <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="pfeiffer"></a>[Pfeiffer]<br>
+      </td>
+      <td style="vertical-align: top;">F. Pfeiffer, U. Mennicke and T.
+Salditt: "Waveguide-enhanced scattering from thin biomolecular films",
+J. Appl. Cryst. 35, 163-167(2002). <br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="pickett"></a>[Pickett]</td>
+      <td>G. Pickett, T. Witten, S. Nagel, Macromolecules 26,
+3194
+(1993). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="posselt"></a>[Posselt]<br>
+      </td>
+      <td style="vertical-align: top;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"> </span><big><small>Dorthe Posselt, Jianqi Zhang, Detlef-M. Smilgies, Anatoly Berezkin,
+Igor I. Potemkin, Christine M. Papadakis: "Restructuring in block
+copolymer thin films: In-situ GISAXS investigations during solvent
+vapor annealing", Progr. Polymer Sci. 66 (2017) 80&ndash;115.</small></big></td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="potemkin"></a>[Potemkin]<br>
+      </td>
+      <td style="vertical-align: top;">Igor I. Potemkin,
+Peter Busch,
+Detlef-M. Smilgies, Dorthe Posselt,
+Christine M. Papadakis: "Effect of the Molecular Weight of AB Diblock
+Copolymers on the Lamellar Orientation in Thin Films: Theory and
+Experiment", Macromol. Rap. Commun. 28, 579-584 (2007). (<a href="../refs/PSPB-theory-cover.pdf">cover</a>)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="Pozdin"></a>[Pozdin]</td>
+      <td style="vertical-align: top;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">Vladimir
+A. Pozdin, Detlef-M. Smilgies, Hon Hang Fong, Michael Sorensen, and
+Mingqian He: "Thermal Reorganization of Alkyl-substituted
+Thienothiophene Semiconductors",&nbsp; J. Mater. Chem. C, 2016, 4, 5255-5262.</span></td>
+    </tr>
+<tr valign="top">
+      <td style="vertical-align: middle;"><a name="rauscher"></a>[Rauscher]</td>
+      <td>M. Rauscher, T. Salditt, and H. Spohn: "Small-angle
+X-ray
+scattering under grazing incidence: the cross section in the
+distorded-wave Born approximation", Phys. Rev. B, 52(23), 16855-16863,
+(1995). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="ree"></a>[Ree]<br>
+      </td>
+      <td style="vertical-align: top;">M. Ree: "Probing the
+Self-Assembled Nanostructures of Functional Polymers with Synchrotron
+Grazing Incidence X-Ray Scattering", Macromol. Rapid Commun. 2014, 35,
+930&minus;959.<br>
+      </td>
+    </tr>
+<tr>
+      <td><a name="renaud"></a>[Renaud]</td>
+      <td>G. Renaud et al.: "Real-Time Monitoring of Growing
+Nanoparticles", Science 300, 1416 (2003). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="rivnay"></a>[Rivnay]<br>
+      </td>
+      <td style="vertical-align: top;">Jonathan Rivnay, Rodrigo
+Noriega, R. Joseph Kline, Alberto Salleo, and Michael F. Toney:
+"Quantitative analysis of lattice disorder and crystallite size in
+organic semiconductor thin films", Phys. Rev. B 84, 045203 (2011).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="roth"></a>[Roth]<br>
+      </td>
+      <td style="vertical-align: top;">S. V. Roth, M. Burghammer, C.
+Riekel, P. M&uuml;ller-Buschbaum, A. Diethert, P. Panagiotou, H.
+Walter:
+"Self-assembled gradient nanoparticle-polymer multilayers investigated
+by an advanced characterisation method: Microbeam grazing incidence
+x-ray scattering", Appl.Phys.Lett. 82, 1935 (2003). <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="rudov"></a>[Rudov]<br>
+      </td>
+      <td style="vertical-align: top;">Rudov, A. A.; Patyukova, E. S.;
+Neratova, I. V.; Khalatur, P. G.; Posselt, D.; Papadakis, C. M.;
+Potemkin, I. I. Macromolecules 2013, 46, 5786&ndash; 5795.<br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="rueda"></a>[Rueda]<br>
+      </td>
+      <td style="vertical-align: top;">D. R. Rueda, I.
+Mart&iacute;n-Fabiani,
+M. Soccio, N. Alayo, F. P&eacute;rez-Murano, E. Rebollar, M. C.
+Garc&iacute;a-Guti&eacute;rrez, M. Castillejo and T. A. Ezquerra:
+"Grazing-incidence
+small-angle X-ray scattering of soft and hard nanofabricated gratings",
+J. Appl. Cryst. 45 (2012).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="sanyal"></a>[Sanyal]<br>
+      </td>
+      <td style="vertical-align: top;">Monamie Sanyal, Benjamin
+Schmidt-Hansberg, Michael F. G. Klein, Alexander Colsmann, Carmen
+Munuera, Alexei Vorobiev, Uli Lemmer, Wilhelm Schabel, Helmut Dosch,
+and Esther Barrena: "In Situ X-Ray Study of Drying-Temperature
+Influence on the Structural Evolution of Bulk-Heterojunction
+Polymer&ndash;Fullerene Solar Cells Processed by Doctor-Blading", Adv.
+Energy
+Mater. 2011, 1, 363&ndash;367.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="sasaki"></a>[Sasaki]<br>
+      </td>
+      <td style="vertical-align: top;">Sono Sasaki,
+Hiroyasu Masunaga,
+Hiroo Tajiri, Katsuaki Inoue, Hiroshi Okuda, Hiromichi Noma, Kohji
+Honda, Atsushi Takaharad and<br>
+Masaki Takata: "In situ investigation of annealing effect on lamellar
+stacking structure of polyethylene thin films by synchrotron
+grazing-incidence small-angle and wide-angle X-ray scattering", J.
+Appl. Cryst. 40, s642&ndash;s644 (2007).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="saunders"></a>[Saunders]<br>
+      </td>
+      <td style="vertical-align: top;">Aaron E. Saunders,
+Ali
+Ghezelbash, Detlef-M. Smilgies, Michael B.
+Sigman Jr., and Brian A. Korgel: "Columnar Self-Assembly of Colloidal
+Nanodisks", Nano Letters 6, 2959-2963(2006). Erratum: <span class="textbold">Nano Letters </span><span class="textitalics">7,</span><span class="text">
+541 (2007).</span></td>
+    </tr>
+    <tr>
+      <td><a name="schultz"></a>[Schultz]</td>
+      <td>David G. Schultz,
+Xiao-Min Lin, Dongxu Li, Jeff Gebhardt, Mati Meron, P. James Viccaro,
+and Binhua Lin: "Structure, Wrinkling, and Reversibility of Langmuir
+Monolayers of Gold Nanoparticles", J. Phys. Chem. B, 110, 24522-24529
+(2006).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="sendja"></a>[Sendja]</td>
+      <td style="vertical-align: top;">B Thiodjio Sendja, R Eba Medjo,
+J Mane Mane, G Ben
+Bolie, D Diop and P Owono Ateba: "A GISAXS study of the angular
+dependence of carbon nanotubes grown on a plain substrate by the dc HF
+CCVD process", Phys. Scr. 82, 025601 (2010).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="senesi"></a>[Senesi]<br>
+      </td>
+      <td style="vertical-align: top;">Andrew J. Senesi, Daniel J.
+Eichelsdoerfer, Robert J. Macfarlane, Matthew R. Jones, Evelyn Auyeung,
+Byeongdu Lee, and Chad A. Mirkin: "Stepwise Evolution of
+DNA-Programmable Nanoparticle Superlattices", Angew. Chem. Int. Ed. 52,
+6624 &ndash;6628 (2013).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="sinha"></a>[Sinha]<br>
+      </td>
+      <td style="vertical-align: top;">S. K. Sinha, E. B.
+Sirota, S.
+Garoff, and H. B. Stanley: "X-ray and neutron scattering from rough
+surfaces", Phys. Rev. B 38, 2297-2311 (1988). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;">[<a name="sirringhaus"></a>[Sirringhaus]<br>
+      </td>
+      <td>H. Sirringhaus, P. J. Brown, R. H. Friend, M. M. Nielsen, K.
+Bechgaard, B.
+M. W. Langeveld-Voss, A. J. H. Spiering, R. A. J. Janssen, E. W.
+Meijer, P. Herwig, and D. M. de Leeuw: "Two-dimensional charge
+transport in self-organized, high-mobility conjugated polymers", Nature
+401, 685-688 (1999).<br>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="vertical-align: middle;"> <a name="smilgies"></a>[<a href="../refs/SRN-GISAXS.pdf">Smilgies</a>] </td>
+      <td>Detlef-M. Smilgies, Peter Busch, Dorthe Posselt, and
+Christine M. Papadakis: "Characterization of Polymer Thin Films with
+Small-Angle X-ray Scattering under Grazing Incidence (GISAXS)",
+Synchrotron Radiation News, Issue 15(5), p. 35-42, 2002. (<a href="../refs/SRN-GISAXS.pdf">reprint)</a> </td>
+    </tr>
+    <tr>
+      <td><a name="Smilgies2"></a>[Smilgies2]</td>
+      <td>Detlef-M. Smilgies, Ruipeng Li, Zhenyu Di, Charles
+Darko,
+Christine M. Papadakis, and Dorthe Posselt: "Probing the
+Self-Organization Kinetics in Block Copolymer Thin Films.", Mater. Res.
+Soc. Symp. Proc.&nbsp;1147-OO01-01 (2009). (<a href="http://staff.chess.cornell.edu/%7Esmilgies/refs/PSPB-Solvent-Anneal-MRS.pdf">reprint</a>).</td>
+    </tr>
+    <tr>
+      <td><a name="smilgies3"></a>[Smilgies3]</td>
+      <td>D.-M.
+Smilgies and D. R.
+Blasini: "Indexation scheme for oriented molecular thin films studied
+with grazing-incidence reciprocal-space mapping", J. Appl. Cryst. 40,
+716-718 (2007).</td>
+    </tr>
+    <tr>
+      <td><a name="Smilgies4"></a>[Smilgies4]</td>
+      <td>Detlef-M.
+Smilgies: "Scherrer Grain-Size Analysis Adapted to Grazing-Incidence
+Scattering with Area Detectors", J. Appl. Cryst. 42, 1030-1034 (2009).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="smilgies5"></a>[Smilgies5]<br>
+      </td>
+      <td style="vertical-align: top;">Detlef-M. Smilgies, Andrew T.
+Heitsch, and Brian A. Korgel: "Stacking of Hexagonal Nanocrystal Layers
+during Langmuir&minus;Blodgett Deposition", J. Phys. Chem. B 116,
+6017&minus;6026
+(2012).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="smilgies6"></a>[Smilgies6]<br>
+      </td>
+      <td style="vertical-align: top;">Detlef-M. Smilgies, Ruipeng Li,
+Gaurav Giri, Kang Wei Chou, Ying
+Diao, Zhenan Bao, and Aram Amassian: "Look fast: Crystallization of
+conjugated molecules during solution shearing probed in-situ and in
+real time by X-ray scattering", Phys. Status Solidi - Rapid Research
+Letter 7, 177-179 (2013).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="smilgies7"></a>[Smilgies7]<br>
+      </td>
+      <td style="vertical-align: top;">Detlef-M. Smilgies:
+"Grazing-Incidence Small-Angle Scattering (GISAXS)" in: Heimo
+Schnabelegger and Yashveer Sing: "The SAXS Guide, 4th Edition" (Anton
+Paar GmbH, 2017, ISBN 18012013) Chapter 6.2. (<a href="tutorial/SAXS-Guide-Smilgies.pdf">preprint</a>)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="smilgies8"></a>[Smilgies8]<br>
+      </td>
+      <td style="vertical-align: top;">Detlef-M. Smilgies and Tobias Hanrath: "Superlattice self-assembly:
+Watching nanocrystals in action", EPL 119 (2017) 28003.</td>
+    </tr>
+<tr>
+      <td><a name="smith"></a>[Smith]</td>
+      <td>Danielle K. Smith, Brian Goodfellow, Detlef M.
+Smilgies, and
+Brian A.
+Korgel: "Self-Assembled Simple Hexagonal AB2 Binary Nanocrystal
+Superlattices: SEM, GISAXS and Substitutional Defects", J. Am. Chem.
+Soc. 131, 3281&ndash;3290 (2009).</td>
+    </tr>
+    <tr>
+      <td><a name="stein"></a>[Stein]<br>
+      </td>
+      <td style="vertical-align: top;">Gila E. Stein,
+Edward J. Kramer,
+Xuefa Li, and Jin Wang: "Layering Transitions in Thin Films of
+Spherical-Domain Block Copolymers", Macromolecules 40, 2453-2460 (2007).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="sun"></a>[Sun]<br>
+      </td>
+      <td style="vertical-align: top;">Tao
+Sun, Zhang Jiang, Joseph Strzalka, Leonidas Ocola, and Jin Wang:
+"Three-dimensional coherent X-ray surface scattering imaging near total
+external reflection", Nature Photonics 6, 586-590 (2012).<br>
+      </td>
+    </tr>
+    <tr>
+      <td><a name="tang"></a>[Tang]<br>
+      </td>
+      <td style="vertical-align: top;">Chuanbing Tang,
+Adam
+Tracz, Michal Kruk, Rui Zhang, Detlef-M. Smilgies, Krzysztof
+Matyjaszewski, Tomasz Kowalewski:"Long-range Ordered Thin Films of
+Block Copolymers
+by Zone-Casting and Their Thermal Conversion into Ordered
+Nanostructured Carbon",&nbsp; <span class="textitalics">J.
+Am. Chem.
+Soc.</span> 127 <span class="textbold">(Communication),</span><span class="text"> 6918-6919 (2005).</span></td>
+    </tr>
+    <tr>
+      <td><a name="tate"></a>[Tate]<br>
+      </td>
+      <td style="vertical-align: top;">Michael P. Tate,
+Vikrant N.
+Urade, Jonathon D. Kowalski, Ta-chen Wei,
+Benjamin D. Hamilton, Brian W. Eggiman, and Hugh W. Hillhouse:
+"Simulation and Interpretation of 2D Diffraction Patterns from
+Self-Assembled Nanostructured Films at Arbitrary Angles of Incidence:
+From Grazing Incidence (Above the Critical Angle) to Transmission
+Perpendicular to the Substrate", J. Phys. Chem. B 110, 9882-9892 (2006).</td>
+    </tr>
+    <tr>
+      <td><a name="tate2"></a>[Tate2]</td>
+      <td>Michael
+P. Tate and Hugh W. Hillhouse: "General Method for Simulation of 2D
+GISAXS Intensities for Any Nanostructured Film Using Discrete Fourier
+Transforms", J. Phys. Chem. C111,&nbsp;7645-7654 (2007). </td>
+    </tr>
+    <tr>
+      <td><a name="urade"></a>[Urade]<br>
+      </td>
+      <td style="vertical-align: top;">Vikrant N. Urade,
+Ta-Chen Wei,
+Michael P. Tate, Jonathan D. Kowalski,
+and Hugh W. Hillhouse: "Nanofabrication of Double-Gyroid Thin Films",
+Chem. Mater. 19, 768-777 (2007).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="vinyard"></a>[Vineyard]</td>
+      <td>G. H. Vineyard: "Grazing-incidence diffraction and the
+distorted-wave approximation for the study of surfaces", Phys. Rev. B
+26, 4146-4159 (1982). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="Wan"></a>[Wan]<br>
+      </td>
+      <td style="vertical-align: top;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">
+Jing Wan, Yang Li, Jeffrey G. Ulbrandt, Detlef-M. Smilgies, Jonathan
+Hollin, Adam C. Whalley, and Randall L. Headrick: "Transient phases
+during fast crystallization of organic thin films from solution", APL
+Mater. 4, 016103 (2016). </span></td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="wang-c"></a>[Wang-C]<br>
+      </td>
+      <td style="vertical-align: top;">Cheng Wang,Dong Hyun Lee,
+Alexander Hexemer, Myung Im Kim, Wei Zhao, Hirokazu Hasegawa, Harald
+Ade, and Thomas P. Russell: "Defining the Nanostructured Morphology of
+Triblock Copolymers Using Resonant Soft X-ray Scattering", Nano Lett.
+11, 3906&ndash;3911 (2011).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="wang"></a>[Wang-J]<br>
+      </td>
+      <td style="vertical-align: top;">Jin Wang, Michael J. Bedzyk, and
+Martin Caffrey: "Resonance-Enhanced X-rays in Thin Film: A Structure
+Probe for Membranes and Surface Layers", Science 258, 775-778 (1992).<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="Weidman"></a>[Weidman]<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(255, 204, 102);">
+Mark C. Weidman, Detlef-M. Smilgies and William A. Tisdale: "Kinetics
+of the self-assembly of nanocrystal superlattices measured by real-time
+in situ X-ray scattering", Nature Materials (online 3/2016)&nbsp;&nbsp;
+&lt;DOI: 10.1038/NMAT4600&gt;</td>
+    </tr>
+<tr>
+      <td style="vertical-align: middle;"><a name="wolff"></a>[Wolff]<br>
+      </td>
+      <td style="vertical-align: top;">Max Wolff, Uwe
+Scholz, Rainer
+Hock, Andreas Magerl, Vincent Leiner, and
+Hartmut Zabel: "Crystallization of Micelles at Chemically Terminated
+Interfaces", Phys. Rev. Lett. 92, 255501 (2004).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="xu"></a>[Xu] </td>
+      <td style="vertical-align: top;">T. Xu, J. T.
+Goldbach, M. J.
+Misner, S. Kim, A. Gibaud, O. Gang, B. Ocko, K. W. Guarini, C. T.
+Black, C. J. Hawker, and T. P. Russell: "Scattering Study on the
+Selective Solvent Swelling Induced Surface Reconstruction",
+Macromolecules 37, 2972-2977 (2004). </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="yoneda"></a>[Yoneda]
+      </td>
+      <td style="vertical-align: top;">Y. Yoneda:
+"Anomalous Surface
+Reflection of X Rays", Phys. Rev. 131, 2010-2013 (1963). </td>
+    </tr>
+    <tr>
+      <td><a name="yoon"></a>[Yoon]</td>
+      <td>Jinhwan
+Yoon, Seung Yun Yang, Byeongdu Lee, Wonchul Joo, Kyuyoung Heo, Jin Kon
+Kimb, and Moonhor Ree: "Nondestructive quantitative synchrotron grazing
+incidence X-ray scattering analysis of cylindrical nanostructures in
+supported thin films", J. Appl. Cryst. 40, 305&ndash;312(2007). </td>
+    </tr>
+    <tr>
+      <td><a name="yoon2"></a>[Yoon2]</td>
+      <td>Jinhwan
+Yoon, Kyeong Sik Jin, Hyun Chul Kim, Gahee Kim, Kyuyoung Heo, Sangwoo
+Jin, Jehan Kim, Kwang-Woo Kim ,and Moonhor Ree: "Quantitative analysis
+of lamellar structures in brush polymer thin films by synchrotron
+grazing-incidence X-ray scattering", J. Appl. Cryst.&nbsp;40,
+476&ndash;488 (2007).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="Yu"></a>[Yu]<br>
+      </td>
+      <td style="vertical-align: top;">
+
+
+Yixuan Yu, Avni Jain, Adrien Guillaussier, Vikas Reddy, Thomas M
+Truskett, Detlef Smilgies, Brian A Korgel: "Nanocrystal Superlattices
+that Exhibit Improved Order On Heating: An Example of Inverse
+Melting?", Faraday Discuss.181, 181-192 (2015).
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;"><a name="zhang"></a>[Zhang]<br>
+      </td>
+      <td style="vertical-align: top;">Jun Zhang, Zhiping Luo, Zewei
+Quan, Yuxuan Wang, Amar Kumbhar,
+Detlef-M. Smilgies and Jiye Fang: "Low Packing Density Self-Assembled
+Superstructure of Octahedral Pt3Ni Nanocrystals", Nano Lett. 11,
+2912&ndash;2918 (2011).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="zhang2"></a>[Zhang2]<br>
+      </td>
+      <td style="vertical-align: top;">Jun Zhang, Zhiping Luo, Benjamin
+Martens, Zewei Quan, Amar Kumbhar,
+Nathan Porter, Yuxuan Wang, Detlef-M. Smilgies, and Jiye Fang:
+"Reversible Kirkwood-Alder Transition Observed in Pt3Cu2 Nanoctahedron
+Assemblies under Controlled Solvent Annealing/Drying Conditions", J.
+Am. Chem. Soc. 134, 14043&ndash;14049 (2012).</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: middle;"><a name="zhang-j"></a>[Zhang-J]<br>
+      </td>
+      <td style="vertical-align: top;">Jianqi Zhang, Dorthe Posselt,
+Alessandro&nbsp; Sepe, Xuhu Shen, Jan Perlich, Detlef-M. Smilgies,
+Christine M. Papadakis: "Structural Evolution of Perpendicular Lamellae
+in Diblock Copolymer Thin Films during Solvent Vapor Treatment
+Investigated by Grazing-Incidence Small-Angle X-Ray Scattering",
+Macromol. Rapid Commun. 34, 1289&minus;1295 (2013).<br>
+      </td>
+    </tr><tr>
+      <td style="vertical-align: top;"><a name="zhang-Q"></a>[Zhang-Q]<br>
+      </td>
+      <td style="vertical-align: top;">Qi Zhang, Fumiaki Matsuoka, Hyo
+Seon Suh, Peter Beaucage, Shisheng Xiong, Detlef-M. Smilgies, Kwan Wee
+Tan, J&ouml;rg Werner, Paul Nealey and Ulrich Wiesner: "Pathways to
+Mesoporous Resin/Carbon Thin Films with Alternating Gyroid Morphology",
+ACS Nano 2018,&nbsp; 12, 347-358.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="zhang-x"></a>[Zhang-X]<br>
+      </td>
+      <td style="vertical-align: top;"> Xu Zhang, Xiaodong Ren, Bin Liu, Rahim Munir, Xuejie Zhu, Dong Yang,
+Jianbo Li, Yucheng Liu, Detlef-M Smilgies, Ruipeng Li, Zhou Yang,
+Tianqi Niu, Xiuli Wang, Aram Amassian, Kui Zhao, Shengzhong Frank Liu:
+"Stable high efficiency two-dimensional perovskite solar cells via
+cesium doping",&nbsp; Energy Environ. Sci., 2017, 10, 2095-2102.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a name="zhong"></a>[Zhong]<br>
+      </td>
+      <td style="vertical-align: top;">Yufei Zhong, Rahim Munir, Jianbo Li, Ming-Chun Tang, Muhammad R. Niazi,
+Detlef-M. Smilgies, Kui Zhao, and Aram Amassian: "Blade-Coated Hybrid
+Perovskite Solar Cells<br>
+
+with E&#64259;ciency &gt; 17%: An In Situ Investigation", ACS Energy Lett.
+2018, 3, 1078&minus;1085.</td>
+    </tr>
+
+  </tbody>
+</table>
+</p>
+
+</body></html>
