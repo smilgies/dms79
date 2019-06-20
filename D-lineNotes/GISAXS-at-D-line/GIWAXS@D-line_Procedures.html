@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>GIWAXS@D-line_Procedures</title>
+</head>
+<body>
+<big><span style="font-weight: bold;"></span></big>
+<h2><span style="font-weight: bold;"><big><span
+ style="color: rgb(204, 0, 0);"></span></big></span><span
+ style="color: rgb(204, 0, 0);">GIWAXS @ D-line: Procedures</span></h2>
+<h3><span style="font-weight: bold; color: rgb(0, 0, 153);">Switch to
+Line-up Mode</span></h3>
+<ul>
+  <li>disable garage door (switch on garage door controller)<br>
+  </li>
+  <li>disable ccd macros&nbsp; &gt;&nbsp; ccdoff</li>
+  <li>go into hutch, move CCD back, put ion chamber in, and change
+samples<br>
+  </li>
+  <li>new data file&nbsp; &gt;&nbsp; newfile</li>
+  <li>open CCD shutter&nbsp; &gt;&nbsp; shopen</li>
+  <li>direct beam line-up <br>
+  </li>
+  <ul>
+    <li>switch video to sample position; the horizontal cross hair
+indicates the beam position at the sample<br>
+    </li>
+    <li>move sample positions back&nbsp; &gt;&nbsp; wsam; mv samth 0;
+mv samz 0; mv samx 0; mv samaz 0</li>
+    <li>move beamstop out of the direct beam&nbsp; &gt;&nbsp; wbs; mv
+bsx 2; mv bsz -1</li>
+    <li>if there is no signal on Idet yet, move sample down 1
+mm&nbsp;&nbsp; &gt;&nbsp;
+mvr samz -1; wsam; wbs<br>
+    </li>
+    <li>height line-up &gt;&nbsp; dscan samz -1 1 20 1; mv samz CEN<br>
+    </li>
+    <li>make sample parallel to beam &gt;&nbsp; dscan samth -1 1 20 1;
+mv samth CEN<br>
+    </li>
+    <li>redo height line-up&nbsp; &gt;&nbsp; dscan samz -.5 .5 20 1; mv
+samz
+CEN<br>
+    </li>
+  </ul>
+  <li>reflectivity line-up&nbsp; <br>
+  </li>
+  <ul>
+    <li>block direct beam&nbsp; &gt;&nbsp; mv bsz 0.1<br>
+    </li>
+    <li>find reflectivity&nbsp; &gt;&nbsp; dscan samth -.5 .5 50 1;
+laser<br>
+    </li>
+    <li>determine ZERO of samth from print-out&nbsp; &gt;&nbsp; mv
+samth
+[ZERO]; set samth 0</li>
+    <li>fine-tune sample height&nbsp; &gt;&nbsp; mv samth 0.1; dscan
+samz -.3
+.3 30 1; mv samz CEN</li>
+    <li>measure specular reflectivity&nbsp; &gt;&nbsp; ascan samth 0 1
+100 1</li>
+    <li>(optional: determine electronic offset of Idet&nbsp; &gt;&nbsp;
+shclose; tseries 1 10; shopen)</li>
+    <li>(optional: measure reflectivity between critical angles of film
+and substrate&nbsp; &gt;&nbsp; ascan samth .1 .25 150 1)</li>
+  </ul>
+</ul>
+<h3><span style="font-weight: bold; color: rgb(0, 0, 153);">Switch to
+CCD
+mode</span></h3>
+<ul>
+  <li>verify that rod beamstop is in the reflected beam&nbsp;
+&gt;&nbsp; mv samth
+0.1; mv bsx 0&nbsp; &gt;&nbsp; Idet should read low</li>
+  <li>remove blade&nbsp; &gt;&nbsp; mv bsz -.5&nbsp; &gt;&nbsp; Idet
+should still read low<br>
+  </li>
+  <li>close shutter&nbsp; &gt;&nbsp; shclose</li>
+  <li>enable ccd macros&nbsp; &gt;&nbsp; ccdon</li>
+  <li>go into hutch and remove ion chamber</li>
+  <li>switch video to detector camera<br>
+  </li>
+  <li>enable and open garage door; watch on video<br>
+  </li>
+  <li>take a test image for 0.1 sec&nbsp; &gt; corr 1
+0.1</li>
+  <li>check test image with fit2d; make sure that image is set to log
+scale and range 1 to 15,000 (z-scaling &gt; user min/max)<br>
+  </li>
+  <li>look for hot spots, in particular close to beam stop - use the
+zoom!<br>
+  </li>
+  <li>if necessary, finetune beamstop position <br>
+  </li>
+  <ul>
+    <li>step of +/- 0.1 mm in bsx&nbsp; &gt;&nbsp; mvr bsx 0.1&nbsp; or
+mvr bsx -0.1<br>
+    </li>
+    <li>take test images &gt; corr 1 0.1</li>
+  </ul>
+  <li>take images at various incident angles and samx positions</li>
+  <ul>
+    <li>check out some characteristic points first (maximum of
+reflectivity, samx or samaz min &amp; max)&nbsp; &gt;&nbsp; corr 1 1</li>
+    <li>determine at what exposure the most intense features will
+saturate - maximum CCD intensity before overexposure is 15,000</li>
+    <li>check whether corresponding dark image exists&nbsp; &gt;&nbsp;
+ls dark</li>
+    <li>if not, create new dark image for exposure time EXPT by&nbsp;
+&gt;&nbsp; dark [EXPT]</li>
+    <li>take image with best exposure time EXPT&nbsp; &gt;&nbsp; corr 2
+[EXPT]<br>
+    </li>
+  </ul>
+</ul>
+<span style="font-weight: bold; color: rgb(0, 0, 153);"></span><br>
+( note: after&nbsp; "&gt;"&nbsp; follows the spec command, as it is
+typed in )<br>
+( note: [ZERO] denotes the numerical value of the zero offset )<br>
+( note: [EXPT] denotes the values (in seconds) of the maximum exposure
+time )<br>
+<br>
+<h3><span style="font-weight: bold; color: rgb(0, 0, 153);">Set-up notes</span></h3>
+starting SPEC and FIT2D from scratch<br>
+<h4><span style="font-weight: bold; color: rgb(0, 0, 153);"></span></h4>
+<ul>
+  <li>create a terminal; home directory is "/home/specuser"</li>
+  <li>check that "images" directory is cleaned up&nbsp; &gt;&nbsp; ls
+images</li>
+  <li>make user directory [USER] from LINUX prompt&nbsp; &gt;&nbsp;
+mkdir [USER]; mkdir [USER]/data<br>
+  </li>
+  <li>goto the user directory&nbsp; &gt;&nbsp; cd [USER]</li>
+  <li>start SAXS version of SPEC&nbsp; &gt;&nbsp; saxs</li>
+  <li>create CCD image directories from within SPEC&nbsp; &gt;&nbsp;
+ccdroot [USER]</li>
+  <li>goto a new LINUX desk top, make a window, and goto the user image
+directory&nbsp; &gt;&nbsp; cd [USER]/corr</li>
+  <li>start fit2d* program&nbsp; &gt;&nbsp; fit2d</li>
+  <li>go back to SPEC desk top - you are ready to roll!<br>
+  </li>
+</ul>
+* the program "fit2d" is available free of charge from
+http://www.esrf.fr/<br>
+<span style="font-weight: bold; color: rgb(0, 0, 153);"><br>
+<br>
+<br>
+</span>
+</body>
+</html>

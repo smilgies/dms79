@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>GIWAXS@D1_Conversions</title></head>
+<body style="background-color: rgb(255, 204, 0); color: rgb(0, 0, 102);" alink="#993399" link="#0000ff" vlink="#ff0000">
+<h1 style="text-align: center; background-color: rgb(255, 204, 0); color: rgb(204, 0, 0);">WAXS
+/ GIWAXS @ D1: Conversions</h1>
+<h2 style="text-align: center; background-color: rgb(255, 204, 0); color: rgb(204, 0, 0);">Detlef
+Smilgies, CHESS</h2>
+<h2>Index<br>
+</h2>
+<ol id="mozToc">
+<!--mozToc h3 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
+  <li><a href="#mozTocId569646">WAXS
+- Conversions </a></li>
+  <li><a href="#mozTocId599658">WAXS in reflection geometry</a></li>
+  <li><a href="#mozTocId230695">GIWAXS - Conventions</a></li><li><a href="#refraction_correction">Refraction correction</a></li><li><a href="#indexation">Indexation</a></li>
+  <li><a href="#mozTocId983633">Calibrations</a></li><li><a href="#questions_comments">Questions &amp; Comments</a></li>
+</ol>
+<br>
+<h3><a class="mozTocH3" name="mozTocId569646"></a>WAXS - Conversions<br>
+</h3>
+WAXS (Wide-Angle X-ray Scattering) is a close relative of powder
+diffraction. Usually, the term WAXS is used in connection with diffuse
+scatterers with only short range order, while powder diffraction is
+used for polycrystalline samples. In terms of the use area detectors
+both methods require identical data treatment. Another method requiring
+similar data analysis is fiber diffraction.<br>
+<br>
+In the WAXS regime with scattering angles larger than 5 deg the usual
+small angles approximation <span style="font-style: italic;">alpha</span>=sin(<span style="font-style: italic;">alpha</span>)=tan(<span style="font-style: italic;">alpha</span>) does not hold any more. Now
+we need to perform the full transformation from a plane (the detector)
+to a sphere (the Ewald sphere). As it turns out, this transformation is
+not very difficult. <br>
+<br>
+If direct beam hits the area detector at (<span style="font-style: italic;">xpixelD, zpixelD</span>) and an arbitrary
+point (<span style="font-style: italic;">xpixel, zpixel</span>), then
+the scattering angle <span style="font-style: italic;">tth</span> is
+given by<br>
+<br>
+<div style="margin-left: 40px;">tan(<span style="font-style: italic;">tth</span>)
+= <span style="font-style: italic;">conversion</span> sqrt{ (<span style="font-style: italic;">xpixel-xpixelD</span>)<small><sup>2</sup></small>
++ (<span style="font-style: italic;">zpixel-zpixelD</span>)<small><sup>2</sup></small>
+} / <span style="font-style: italic;">LSD</span><br>
+</div>
+<br>
+The <span style="font-style: italic;">conversion</span> from pixels to
+microns is 46.9 microns per pixel for the MedOptics CCD, and <span style="font-style: italic;">LSD</span> is the sample-detector
+distance. From this we determine the length of the scattering vector <span style="font-style: italic;">q</span> the usual way:<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">q</span>
+= 4 <span style="font-style: italic;">PI</span> sin(<span style="font-style: italic;">tth</span>/2) / <span style="font-style: italic;">lambda</span><br>
+</div>
+<br>
+where <span style="font-style: italic;">lambda</span> denotes the
+x-ray wavelength. For an isotropic sample we would be done now. In view
+of the further treatment we have already introduced the CHESS default
+hutch coordinate system with x towards the storage ring, y along the
+beam and the vertical direction z. <br>
+<br>
+For anisotropic samples we introduce
+the azimuth angle azi round the direct beam with respect to the x axis.<br>
+Using the atan2 function which is used in transformations between 2D
+Cartesian
+and 2D polar coordinates, we get:<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">azi</span>
+= atan2(<span style="font-style: italic;">xpixel, zpixel</span>)<br>
+</div>
+<br>
+(The atan2 unction is implemented in many programs and programming
+languages for the conversion from 2D cartesian to polar coordinates.)<br>
+<br>
+Now we can determine the components of the<span style="font-style: italic;"></span> incident and final wave vectors
+for elastic
+scattering in the lab system by<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">kilabx
+= kilabz = 0<br>
+kilaby = k = </span>2<span style="font-style: italic;"> PI </span>/<span style="font-style: italic;"> lambda<br>
+<br>
+kflabx</span> = <span style="font-style: italic;">k</span> sin(<span style="font-style: italic;">tth</span>) cos(<span style="font-style: italic;">azi</span>)<br>
+<span style="font-style: italic;">kflabz</span> = <span style="font-style: italic;">k</span> sin(<span style="font-style: italic;">tth</span>) sin(<span style="font-style: italic;">azi</span>)<br>
+<span style="font-style: italic;">kflaby</span> = <span style="font-style: italic;">k</span> cos(<span style="font-style: italic;">tth</span>)<br>
+<br>
+</div>
+The scattering vector q is then obtained as usual as <br>
+<br>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">q</span>
+= <span style="font-weight: bold;">k<sub>f,lab</sub></span> - <span style="font-weight: bold;">k<sub>i,lab</sub></span><br>
+</div>
+<br>
+The <span style="font-style: italic;">qy</span>
+coordinate is very small and thus is often ignored for diffuse
+scatterers. Aternatively the parallel momentum transfer <span style="font-style: italic;">qpar</span> can be introduced by <br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">qpar</span>
+= sqrt(<span style="font-style: italic;">qx</span><small><sup>2</sup></small>
++ <span style="font-style: italic;">qy</span><small><sup>2</sup></small>)<br>
+</div>
+<br>
+This notation makes use of the CHESS hutch coordinate system; other
+choices
+of the coordinates are often used (e.g. <span style="font-style: italic;">qx</span>,<span style="font-style: italic;">
+qy</span> in the detector plane). <br>
+<br>
+Radial integrations of such patterns can be obtained by converting to
+polar coordinates and integrating over <span style="font-style: italic;">azi</span>. Such integration can also be
+obtained using <span style="font-family: monospace;">fit2d</span>.
+Textured samples, i.e. when the WAXS powder ring
+are inhomogenous, can also be analyzed conveniently with <span style="font-family: monospace;">fit2d </span>in polar
+coordinates (<span style="font-style: italic;">tth</span>, <span style="font-style: italic;">azi</span>) using the <span style="font-family: monospace;">CAKE </span>feature (see my <a href="fit2d-GIXS-primer.html">fit2d primer</a>).<br>
+<br>
+<br>
+<h3><a class="mozTocH3" name="mozTocId599658"></a>WAXS in reflection
+geometry<br>
+</h3>
+The conventions introduced above are also suitable for WAXS in the
+reflection geometry, i.e. whenever the incident angle is large enough,
+so that surface scattering features can be
+ignored for the most part. Some dynamical effects remain when the exit
+angle approaches the critical angle of the sample studied. For a
+treatment of surface scattering under
+grazing incidence see section below.<br>
+<br>
+<br>
+<h3><a class="mozTocH3" name="mozTocId230695"></a>GIWAXS - Conversions<br>
+</h3>
+In GIWAXS we will comply with the notations established for GISAXS,
+GID, and diffuse reflectivity. We introduce a surface coordinate system
+by defining the following scattering angles: and q-components:<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">alpha</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+incident angle<br>
+<span style="font-style: italic;">psi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>in-plane scattering angle<br>
+<span style="font-style: italic;">beta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>exit angle<br>
+</div>
+<br>
+<div style="text-align: center;"><img style="width: 640px; height: 318px;" alt="surface and lab frames" src="Surface&amp;LabFrames.png"><br>
+<br>
+<span style="font-style: italic;">Figure 1. Definition of surface
+scattering angles and lab scattering angles (following psi-circle
+convention)<br>reference: &nbsp;Smilgies &amp; Blasini,&nbsp;J. Appl. Cryst. 40,
+716-718 (2007)</span>.<span style="font-style: italic;"> </span>
+</div>
+<br>
+For the surface coordinates we need to determine the incident angle <span style="font-style: italic;">alpha
+</span>which is given by the surface alignment. Usually the samth
+turntable get calibrated during line-up by measuring a reflectivity
+curve. If there are problems
+with the line-up due to sample imperfections, <span style="font-style: italic;">alpha </span>can also be determined very
+precisely for each GISAXS image from the spill-over reflected beam
+close to the beamstop:<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">alphaR
+</span>=&nbsp; <span style="font-style: italic;">tthR</span>/2<br>
+</div>
+<br>
+<span style="font-style: italic;">tthR </span>is the angle of the
+reflected beam measured on the detector.<br>
+<br>
+For <span style="font-style: italic;">alpha</span>=0, there are
+convenient formulae for <span style="font-style: italic;">psi </span>and
+<span style="font-style: italic;">beta </span>(see Handbook of
+International Crystallography under "Fiber Diffraction"):<br>
+<br>
+<div style="margin-left: 40px;">tan(<span style="font-style: italic;">psi0</span>)&nbsp;&nbsp;
+= <span style="font-style: italic;">conversion</span> (<span style="font-style: italic;">xpixel-xpixelD</span>)/
+<span style="font-style: italic;">LSD<br>
+</span>tan(<span style="font-style: italic;">beta0</span>)
+= <span style="font-style: italic;">conversion</span> (<span style="font-style: italic;">zpixel-zpixelD</span>)<small><sup> </sup></small>/
+sqrt{ (<span style="font-style: italic;">xpixel-xpixelD</span>)<small><sup>2</sup></small>
++&nbsp; <span style="font-style: italic;">LSD</span><sup><small>2</small></sup>}<br>
+</div>
+<span style="font-style: italic;"><br>psi0</span> and <span style="font-style: italic;">beta0</span> correspond to the longitude
+and latitude of the exit wave vector, respectively, when the incident
+beam points to the intersection of the Greenwich meridian and&nbsp; the
+equator. In fiber diffraction the angles <span style="font-style: italic;">psi0 </span>and <span style="font-style: italic;">beta0 </span>sometimes are called <span style="font-style: italic;">mu</span> and <span style="font-style: italic;">nu</span>, respectively; on a psi-circle
+diffractometer they are called <span style="font-style: italic;">nu </span>and
+<span style="font-style: italic;">delta</span>, respectively. We will
+call this frame the lab frame.<br>
+<br>
+The scattering angle <span style="font-style: italic;">tth</span>
+is&nbsp; related&nbsp; to <span style="font-style: italic;">psi0</span>
+and&nbsp; <span style="font-style: italic;">beta0</span>&nbsp; via the
+relation:<br>
+<br>
+<div style="margin-left: 40px;">cos(<span style="font-style: italic;">tth</span>)&nbsp;&nbsp;
+=&nbsp; cos(<span style="font-style: italic;">psi0</span>) cos(<span style="font-style: italic;">beta0</span>) <br>
+</div>
+<br>
+For closer examination of the scattering features we need to introduce
+the surface frame relative to the sample surface.<br>
+If <span style="font-style: italic;">alpha </span>is non-zero,
+but small, i.e. less than 1 deg as typically used in GIWAXS, a small
+correction applies to <span style="font-style: italic;">beta</span>:<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">beta</span>
+=&nbsp; <span style="font-style: italic;">beta0</span> - <span style="font-style: italic;">alpha</span> cos(<span style="font-style: italic;">psi0</span>)<br>
+<span style="font-style: italic;">psi</span>&nbsp;&nbsp; =&nbsp; <span style="font-style: italic;">psi0</span><br>
+</div>
+<span style="font-style: italic;"></span><br>
+<span style="font-style: italic;"></span>The scattering vector relative
+to the surface frame (<span style="font-style: italic;">qz </span>in
+direction of the surface normal, <span style="font-style: italic;">qx </span>along
+the projection of the beam onto the surface) is then
+given by (see for instance Smilgies, Rev. Sci. Instrum.
+73, 1706 (2002) ):<br>
+<br>
+
+<div style="margin-left: 40px;"><span style="font-style: italic;">qx&nbsp;
+</span>=<span style="font-style: italic;"> k </span>{ cos(<span style="font-style: italic;">beta</span>) cos(<span style="font-style: italic;">psi</span>) - cos(<span style="font-style: italic;">alpha</span>) }<br>
+<span style="font-style: italic;">qy&nbsp; </span>= <span style="font-style: italic;">k</span> { cos(<span style="font-style: italic;">beta</span>) sin(<span style="font-style: italic;">psi</span>) }<br>
+<span style="font-style: italic;">qz&nbsp; </span>= <span style="font-style: italic;">k</span> { sin(<span style="font-style: italic;">beta</span>) + sin(<span style="font-style: italic;">alpha</span>) }<br>
+</div><br>So any point in the detector plane has a <span style="font-style: italic;">qy</span> and <span style="font-style: italic;">qz</span> component associated with it,
+but also a small <span style="font-style: italic;">qx</span> compont.
+In surface diffraction from single crystals and 2D powders we would
+want to plot the scattering intensity as the perpendicular scattering
+vectot component <span style="font-style: italic;">q_perp</span>
+versus the parallel component <span style="font-style: italic;">q_par</span>,
+with<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">q_perp</span>
+= <span style="font-style: italic;">qz</span><br>
+<span style="font-style: italic;">q_par </span>=
+sqrt(<span style="font-style: italic;">qx</span><sup><small>2</small></sup><span style="font-style: italic;">+qy</span><sup><small>2</small></sup>)<span style="font-style: italic;"> = k</span> sqrt{&nbsp; cos(<span style="font-style: italic;">alpha</span>)<sup><small>2</small></sup> -
+2 cos(<span style="font-style: italic;">alpha</span>) cos(<span style="font-style: italic;">psi</span>) cos (<span style="font-style: italic;">beta</span>) + cos(<span style="font-style: italic;">beta</span>)<sup><small>2</small></sup>}<br>
+</div>
+<br>
+Bragg scattering in GIWAXS is closely related to the various forms
+Grazing-Incidence Diffraction, as discussed in the book by Als-Nielsen
+and McMorrow.<br>
+<br>
+Close to the incident plane given by <span style="font-style: italic;">psi</span>=0,
+i.e. the scattering signals right above the beam stop, the Bragg
+condition cannot be fulfilled.
+Hence any scattering features in this region should be treated as
+diffuse. <span style="font-style: italic;">qx </span>describes
+the offset of the cut
+of the Ewald sphere through the diffuse Bragg sheet from the actual
+Bragg reflection (at <span style="font-style: italic;">qx</span>=0).
+Diffuse Bragg sheets are a means to characterize roughness correlations
+in thin films and multilayers/lamellar films. The theoretical
+description is in the framework of Distorted Wave Born Approximation
+(see Sinha et al., Phys Rev B 38, 2297-2311, 1988 and Gutmann et al,
+Physica B 283, 40-44, 2000).<br>
+<br>
+This situation is similar to the meridional "reflections"
+in fiber diffraction, and the "reflections" close to the oscillation
+axis in protein crystallography, which are actually due to diffuse
+scattering.
+The limiting curve dividing the Bragg region from the diffuse
+scattering region has the form<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-style: italic;">q_perp&nbsp;</span>
+&lt; <span style="font-style: italic;">q_perp_lim </span>= sqrt{ 2<span style="font-style: italic;"> k q_par</span><span style="font-style: italic;"></span><span style="font-style: italic;"></span><span style="font-style: italic;"></span><span style="font-style: italic;"></span>
+- <span style="font-style: italic;">q_par</span><span style="font-style: italic;"></span><sup><small>2</small></sup><span style="font-style: italic;"></span> <span style="font-style: italic;"></span>}<br>
+<br>
+</div>
+for small incident angles <span style="font-style: italic;">alpha</span>.
+Thus, in the Bragg region (for <span style="font-style: italic;">q_perp
+</span>&lt;
+<span style="font-style: italic;">q_perp_lim</span>),&nbsp; <span style="font-style: italic;">q_perp </span>should be plotted versus <span style="font-style: italic;">q_par</span>. Otherwise <span style="font-style: italic;">q_perp </span>versus <span style="font-style: italic;">qy</span> may be a better choice for
+diffuse Bragg sheets.<br>
+<div style="text-align: center;"><br>
+<br>
+</div>
+<div style="text-align: center;"><img style="width: 358px; height: 301px;" alt="limiting qz" src="limiting-qz.png"><br>
+<br>
+<span style="font-style: italic;">Figure 2. Limiting q_perp value
+versus q_par for a typical range of q values (in Å<sup>-1</sup>) for the
+CHESS D1 set-up.</span><br style="font-style: italic;">
+</div>
+<br>
+<br>
+For single
+crystalline films the sample will have to be oscillated during exposure
+of the detector (<a href="../../Publications.html">Smilgies </a>et
+al., J. Synchrotron Rad.
+12, 807&#8211;811 (2005)), so that the Bragg condition can be met for all
+points along the scattering rod covered by the detector. Finally the
+surface
+frame
+is mandatory to describe dynamic effects that occur when either
+incident
+and exit angle are located between the critical angles of film and
+substrate. See for instance Busch et al., J. Appl. Cryst. 39, 433-442
+(2006).<br>
+<br>
+If the scattering is dominated by the mosaicity of the thin film, or if
+determination of the mosaic distribution is the primary goal,
+the coordinate system that was introduced for texture studies (see in
+the WAXS section above) may be
+more suitable.<br>
+<br><br><h3><a name="refraction_correction"></a>Refraction correction</h3>For
+scattering from thin films, refraction of the x-ray beam has to be
+taken into account, in order to determine the d-spacing inside the
+film. Refraction affects only the <span style="font-style: italic;">kz</span> vector components, while the
+parallel components of the wave vector are maintained across the interface {see Busch et al., J. Appl. Cryst. 39, 433-442
+(2006) ) :<br><br><div style="margin-left: 40px;"><span style="font-style: italic;">kpari' = kpari &nbsp; &nbsp; &nbsp;kparf' = kparf &nbsp; &nbsp; qpar' &nbsp;= &nbsp;(kparf' - kpari')</span><br></div><br>The perpendicular components can by obtained from Snell's law which reads in the x-ray case<br><div style="margin-left: 40px;"><span style="font-style: italic;"><br>|kzi'| = </span>Re{<span style="font-style: italic;"> </span>sqrt(<span style="font-style: italic;">kzi<sup>2</sup> - kc<sup>2</sup></span>) }<span style="font-style: italic;"> = k </span>Re{ sqrt{ sin(<span style="font-style: italic;">alpha</span>)<span style="font-style: italic;"></span><span style="font-style: italic;"><sup>2</sup> - </span>sin(<span style="font-style: italic;">alpha_cF</span>)<sup>2</sup> }<span style="font-style: italic;"> </span>}<br style="font-style: italic;"><span style="font-style: italic;">&nbsp;kzf' &nbsp;= </span>Re{<span style="font-style: italic;"> </span>sqrt(<span style="font-style: italic;">kzf<sup>2</sup> - kc<sup>2</sup></span>) }<span style="font-style: italic;"> = k </span>Re{ sqrt{ sin(<span style="font-style: italic;">beta</span>)<span style="font-style: italic;"><sup>2</sup> -</span> sin(<span style="font-style: italic;">alpha_cF</span>)<sup>2</sup><span style="font-style: italic;"> </span>} }<br></div><br><span style="font-style: italic;">kc</span> is the critical wavevector as given by the critical angle of the film <span style="font-style: italic;">alpha_cF</span><br><div style="margin-left: 40px;"><span style="font-style: italic;"><br>kc = k </span>sin(<span style="font-style: italic;">alpha_cF</span>)<span style="font-style: italic;"><br><br></span></div>The scattering vector inside the film is then given as usual<br><br><div style="margin-left: 40px;"><span style="font-style: italic;">qz' = kzf' + |kzi'|</span></div><br><div style="margin-left: 40px;"><h4>references</h4><ul><li>Lee et al., Macromolecules 38, 3395 (2005); Macromolecules 38,
+4311-4323 (2005).</li><li><a href="../../Publications.html">Busch</a> et al., J. Appl. Cryst. 39, 433-442
+(2006).</li><li>Breiby et al., J. Appl. Cryst. 41, 262-271 (2008).</li></ul></div><br><br><h3><a name="indexation"></a>Indexation</h3>The surface coordinate system introduced above is well-matched to describe surface
+scattering features such as scattering rods which will extend along <span style="font-style: italic;">qz</span> of the surface coordinate system
+(see for instance: <a href="../../Publications.html">Smilgies </a>et
+al., J. Synchrotron Rad.
+12, 807&#8211;811 (2005)). Moreover,
+this frame is the correct one to determine the scattering vectors of
+Bragg reflections for 2D powders and single-crystals. For determination
+of lattice parameters and indexation of reflections see Smilgies &amp;
+Blasini, J. Appl. Cryst. 40, 716-718 (2007).<br><br>The refraction correction is essential for reflections with small exit angles {see Busch et al., J. Appl. Cryst. 39, 433-442
+(2006) and Breiby et al., J. Appl. Cryst. 41, 262-271 (2008)}.
+The diffraction corrected q-values (<span style="font-style: italic;">qpar',qz'</span>)
+can then be used for indexing (see for instance Smilgies &amp; Blasini,
+J. Appl. Cryst. 40,
+716-718 (2007)). While the technicalities are well understood,
+indexation of surface scattering data from unknown lattices remains
+still a bit a matter of trial &amp; error to get the six lattice
+parameters right.&nbsp; Fully automated indexation routines for surface
+diffraction data have not yet been described nor made available to my
+knowledge.<br><div style="margin-left: 40px;"><h4>references</h4><ul><li>Salzmann &amp; Resel, J. Appl. Cryst. 37, 1029 (2004).</li><li><a href="../../Publications.html">Smilgies</a> &amp; Blasini, J. Appl. Cryst. 40,
+716-718 (2007).</li><li>Breiby et al., J. Appl. Cryst. 41, 262-271 (2008).</li></ul></div><br>
+<h3><a class="mozTocH3" name="mozTocId983633"></a>Calibrations</h3>
+Often the sample-detector distance <span style="font-style: italic;">LSD</span>
+and/or the x-ray wavelength <span style="font-style: italic;">lambda</span>
+are only good to a couple of percent. In this case it is advisable to
+doublecheck the calibration using a silver behenate or silver stearate
+standard. The powder rings obtained from these samples allow to improve
+<span style="font-style: italic;">LSD</span> or <span style="font-style: italic;">lambda</span>. An absolute angle
+measurement and distance measurement can be performed using 2
+exposures, where the CCD is moved back by a well-known amount. The
+x-ray wavelength can be determined precisely using the CHESS energy
+analyzer ( using the Si(111) and Si(333) reflections ).<br>
+<br>
+The other important calibration is the direct beam position which
+should be measured regularly, and in particular, whenever the detector
+is moved. The GIWAXS macro set at D1 includes a convenient automatic macro
+for this measurement.<br>
+<br>
+<br>
+<h3><a name="questions_comments"></a>Questions &amp; Comments</h3>
+If you have questions or comments, I would be glad to hear back from you -
+just click <a href="mailto:dms79@cornell.edu">here</a>. <br>If this page was useful for your work I would appreciate very much, if you referenced it.<br>
+<br>
+</body></html>

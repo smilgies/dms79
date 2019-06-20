@@ -1,0 +1,8 @@
+plotting procedure
+
+fit2d PRINT:                 fit2d image -> ps
+ghost view:                  ps -> png
+powerpoint:                  png's -> emf/ppt
+MS picture and fax viewer:   emf -> HR png
+MS picture manager:          HR png -> resized LR png
+Composer/ Sea Monkey:        LR png -> web page

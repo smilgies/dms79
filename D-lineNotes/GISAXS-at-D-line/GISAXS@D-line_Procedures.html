@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>GISAXS@D-line_Procedures</title>
+</head>
+<body>
+<big><span style="font-weight: bold;"><br>
+<big><span style="color: rgb(204, 0, 0);">GISAXS @ D-line: Procedures</span></big></span></big><br>
+<br>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">Switch to CCD
+mode</span><br>
+<ul>
+  <li>move beamstop to bsx=0, bsz=1&nbsp; &gt;&nbsp; wbs; mv bsx 0 bsz 1<br>
+  </li>
+  <li>verify that rod beamstop is in the reflected beam&nbsp;
+&gt;&nbsp; mv samth
+0.1; dscan bsx -2 2 20 1<br>
+  </li>
+  <li>close shutter&nbsp; &gt;&nbsp; shclose</li>
+  <li>enable ccd macros&nbsp; &gt;&nbsp; ccdon</li>
+  <li>go into hutch and remove ion chamber</li>
+  <li>enable and open garage door</li>
+  <li>take a test image for 0.1 sec&nbsp; &gt; corr 1
+0.1</li>
+  <li>finetune beamstop position <br>
+  </li>
+  <ul>
+    <li>step of +/- 0.1 mm in bsx&nbsp; &gt;&nbsp; mvr bsx 0.1&nbsp; or
+mvr bsx -0.1<br>
+    </li>
+    <li>take test images &gt; corr 1 0.1<br>
+    </li>
+  </ul>
+</ul>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">Switch to
+Line-up Mode</span><br>
+<ul>
+  <li>disable garage door (switch on garage door controller)<br>
+  </li>
+  <li>disable ccd macros&nbsp; &gt;&nbsp; ccdoff</li>
+  <li>go into hutch, put ion chamber back in and change samples<br>
+  </li>
+  <li>open CCD shutter&nbsp; &gt;&nbsp; shopen</li>
+  <li>new data file&nbsp; &gt;&nbsp; newfile<br>
+  </li>
+  <li>direct beam line-up <br>
+  </li>
+  <ul>
+    <li>move beamstop out of the direct beam&nbsp; &gt;&nbsp; wbs; mv
+bsx 2; mv bsz -1</li>
+    <li>move sample positions back&nbsp; &gt;&nbsp; wsam; mv samth 0;
+mv samz 0; mv samx 0; mv samaz 0</li>
+    <li>if there is no signal on Idet yet, move sample down 1 mm &gt;
+mvr samz -1; wsam; wbs<br>
+    </li>
+    <li>height line-up &gt;&nbsp; dscan samz -1 1 20 1; mv samz CEN<br>
+    </li>
+    <li>make sample parallel to beam &gt;&nbsp; dscan samth -1 1 20 1;
+mv samth CEN<br>
+    </li>
+    <li>redo height line-up &gt;&nbsp; dscan samz -.5 .5 20 1; mv samz
+CEN<br>
+    </li>
+  </ul>
+  <li>reflectivity line-up&nbsp; <br>
+  </li>
+  <ul>
+    <li>block direct beam&nbsp; &gt;&nbsp; mv bsz 1 (for 1200 - 1800
+mm) or mv bsz 0.3 (for 600 - 700 mm flightpath)<br>
+    </li>
+    <li>find relectivity &gt;&nbsp; dscan samth -.5 .5 50 1; laser<br>
+    </li>
+    <li>determine ZERO of samth from print-out &gt;&nbsp; mv samth
+[ZERO]; set samth 0</li>
+    <li>fine-tune sample height &gt;&nbsp; mv samth 0.2; dscan samz -.3
+.3 30 1; mv samz CEN</li>
+    <li>measure specular reflectivity &gt;&nbsp; ascan samth 0 1 100 1</li>
+    <li>(optional: determine constant offset of Idet with closed
+beamstops &gt;&nbsp; ct 100)</li>
+    <li>(optional: measure reflectivity between critical angles of film
+and substrate &gt;&nbsp; ascan samth .1 .25 75 1)</li>
+  </ul>
+</ul>
+<br>
+( note: after&nbsp; "&gt;"&nbsp; follows the spec command, as it is
+typed in )<br>
+( note: [ZERO] denotes the numerical value of the zero offset )<br>
+<br>
+<br>
+</body>
+</html>

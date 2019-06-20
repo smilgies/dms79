@@ -1,0 +1,6 @@
+graphics conversion 7/2/09
+
+what worked using ppt2003 and pictureManager2003
+- export as wmf (emf yileds lower quality!)
+- edit > crop > ok
+- export > png / original size (don't redigitize image)

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>D1-rock-trouble</title></head><body>
+<h2 style="color: rgb(0, 0, 153);">Trouble shooting: Rock line-up</h2>
+<ul>
+  <li><big>check whether you have opened the shutter</big></li>
+  <li><big>check whether you put a sample on the sample stage, and whether the sample is place correctly</big></li>
+  <li><big>check whether you have a sample with a different thickness than the previous one</big></li>
+  <ul>
+    <li><big>if so, rerun "new", keep sample name and scan number the same, type in a better estimate for the substrate thickness</big></li>
+  </ul>
+</ul>
+<br>
+<span style="font-weight: bold;">if
+all else fails (bad scans continue, limit errors occur):</span>
+<ul style="color: rgb(204, 0, 0);">
+<li><big><span style="font-family: monospace;"></span></big>list "user" and "dial" positions : <big><span style="font-family: monospace;">&gt; wsam</span></big></li><li>I lined up the "dial" positions such that the sample holder is
+parallel to the beam</li><li>set the <span style="font-family: Courier New,Courier,monospace;">samth</span>
+position to the dial value : &gt; <big><span style="font-family: monospace;">set samth [DIAL]</span></big><br>
+</li><li>&nbsp;move <big><span style="font-family: monospace;">samth</span></big>
+to 0 : <big><span style="font-family: monospace;">&gt;
+mv samth 0</span></big><br>
+</li><li>&nbsp;restart the <big><span style="font-family: monospace;">rock</span></big>
+macro</li>
+  <ul>
+    <li>if other motors seem to be off (<big><span style="font-family: monospace;">samx</span></big>, <big><span style="font-family: monospace;">samaz</span></big>), you may want to reset them as well<br>
+    </li>
+  </ul>
+</ul>
+<span style="font-weight: bold;">if there are still problems:</span><br>
+
+<ul>
+<li style="color: rgb(204, 0, 0);">if <big><span style="font-family: monospace;">samz</span></big>
+shows a too large discrepancy between user and dial positions
+(&gt;0.2 mm), follow the procedure for <big><span style="font-family: monospace;">samth</span></big></li><li style="color: rgb(204, 0, 0);">start value for
+&nbsp;<big><span style="font-family: monospace;">samz</span></big>
+is the negative sample thickness</li><li style="color: rgb(204, 0, 0);">after resetting
+<big><span style="font-family: monospace;">samth</span></big>
+and <big><span style="font-family: monospace;">samz</span></big>
+you may also restart from scratch using <big><span style="font-family: monospace;">new</span></big>&nbsp;</li><li style="color: rgb(204, 0, 0);">please make
+sure that&nbsp;</li><ul><li style="color: rgb(204, 0, 0);">the x-ray
+shutters are open and that&nbsp;</li><li style="color: rgb(204, 0, 0);">the substrate thickness is
+reasonable before you redo <big><span style="font-family: monospace;">rock</span></big> - these are the 2 most
+common errors causing run-away scans !</li><li style="color: rgb(204, 0, 0);">my motor limits are set for a reason, so try the above steps first, before changing limits&nbsp;</li><li><span style="color: rgb(204, 0, 0);"><span style="color: rgb(204, 0, 0);"><span style="color: rgb(204, 0, 0);">take a look into the hutch: the sample holder should be horizontal (water level)</span></span></span></li></ul>
+</ul>
+
+  
+
+</body></html>

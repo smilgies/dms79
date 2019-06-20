@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>D1-Troubleshooting</title></head><body style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 0);" alink="#993399" link="#0000ff" vlink="#ff0000">
+<h1 style="text-align: center; color: rgb(204, 0, 0);"><big>D1
+Troubleshooting</big></h1>
+<h2 style="text-align: center; color: rgb(204, 0, 0);">Detlef Smilgies,
+CHESS</h2>
+<h2>Remark<br>
+</h2><big><big>
+The following procedures are written for SAXS and GISAXS/GIWAXS users
+as well as for the CHESS operators. It is recommended that the users
+work with the CHESS Operator to start-up the station computers or
+troubleshoot the detector. Read the whole subsection dealing with your
+problem carefully, identify which symptom fits your problem best, and
+then go through the steps in order. <span style="font-weight: bold;">If nobody has any idea&nbsp;what I'm talking about, you should give me a yell.</span></big></big><br><br>
+<h1>Rock'n'Roll Trouble Shooting<br>
+</h1>
+
+
+Rock'n' Roll refers to the semiautomatic line-up macros for lining-up
+samples for grazing incidence scattering and for calibrating the
+incident angle.<br>
+
+Rock'n Roll works in over 95% of all line-ups, but occasionally there
+can be a problem, either due to a non-ideal sample or an operator error.<br>
+
+<br>
+
+Here is a trouble shooting list<br>
+
+<ol>
+<li>Check whether the shutter was open during the line-up scan; if not, redo line up with shutter open</li><ol><li>you can redo "rock" as many times as needed, but do not repeat "roll"</li><li>if "roll does not work (only noise in the scans, no reflected beam), your sample may have poor x-ray reflectivity</li><li>for poor reflectivity samples run rock a couple of times, and then set "samth" and "samz" to ZERO<br>
+    </li></ol><li>Check in the hutch whether something is blocking the beam<br>
+  </li><li>Type "wsam" and compare user values and dial values for motors samz and samth.</li><ol><li>I carefully align the sample stage relative to the beam; these motor positions are saved as "dial" values<br>
+    </li><li>if
+values differ by more than 10%, use the "set" command to set the motors
+to the dial values: set samz &lt;dial value&gt;;set samth &lt;dial
+value&gt;<br>
+    </li><li>use the "mv" command to move motors to zero: mv samz 0; mv samth 0</li></ol><li>Make sure that you use a proper sample name containing only (A-Z, a-z, 0-9, -, _); otherwise an error results</li><ol><li>redo "new" with a proper sample name<br>
+    </li></ol><li>Make sure that you supply the correct sample thickness when using the "new" command</li><li>Check that the shutter is open.</li><li>Run the "rock" and "roll" macros again.</li>
+</ol>
+
+If this does not help<br>
+
+<ol>
+  <li>Remove the sample, move samz and samth to ZERO, and carefully line up the sample holder with "rock"; then set "samz" and "samth" to ZERO as you new starting values <br>
+  </li>
+  <ol>
+    <li>you may want to note the dial values shown by "wsam" in your logbook</li>
+    <li>if the sample stage does not look horizontal, you can level it with a water level, before doing "rock"</li>
+    <li>if the Imon signal is low or high throught the samz scan in "rock", the sample stage is either too high or too low, respectively</li>
+    <ol>
+      <li>type "gclose" to protect the detector, then "shopen"<br>
+      </li>
+      <li>move the "samz" manually with the "mv" command</li>
+      <li>note a position when the beam intensity is starting to decrease</li>
+      <li>redo "rock"<br>
+      </li>
+    </ol>
+  </ol>
+  <li>Put the sample back on, do "new" with a new sample name, and
+chose the correct sample thickness (wafer: between 0.5mm and 0.7mm,
+glass slide: 1-1.5mm, ITO/FTO coated glass: 2mm)</li>
+  <li>Try "Rock" and "Roll" again<br>
+  </li>
+  <ol>
+    <li>Does the sample look flat? rough samples are always hard to
+align - "rock" is you best bet, "roll" won't work most likely (see
+above)</li>
+  </ol>
+</ol>
+<br>
+<h2>The monitor intensity Imon has steadily dropped - what's wrong with the mono?<br>
+ </h2>
+
+<ul>
+  <li>Call the CHESS operator to help.</li>
+  <li>Run the macro "monolup"</li>
+  <ul>
+    <li>The report from "monolup" is printed out on the laser printer in the F2 control area</li>
+    <li>Operator, please file the printout</li>
+  </ul>
+  <li>If this doesn't help, call me or other CHESS staff familiar with mono line-up <br>
+  </li>
+</ul>
+Background: Eversince we have been running in the special orbit for the undulators, the D1 beam&nbsp; has been less stable.<br>
+<br>
+<br>
+<h2>The Pilatus detector doesn't take images and/or SPEC gets stuck during taking an image</h2>
+
+<ul>
+<li>Call the CHESS operator for help.</li><li>If SPEC gets stuck, exit the waitinng loop with "Ctrl-C"<br>
+  </li><li>Pull out the screen and keboard of the detector computer, and wait until the detector GUI appears.</li><li>Take some (3+) images manually by hitting the "Start" button</li><ul><li>if image acquisition does not stop automatically, hit the "Stop" button</li><li>check the exposure time, correct it to a smaller number (1s) if need be, and try again to take an image with "Start"</li></ul><li>when the detector responds normally, run "movie_setup" with new
+parameters (filename, exposure time) and check that the GUI values on
+the detector computer are properly updated</li><ul><li>if the detector computer remains unresponsive, close the GUI
+and click the "Stop" icon and wait until all detector windows are
+closed. Then click the "Start" icon.</li><li>try again with "movie_setup" and "shoot"</li><li>if the detector is still unresponsive, have the CHESS operator
+call in help (Scott Smith - detector group, Phil Sorensen - LINUX
+software group)<br>
+    </li></ul>
+</ul>
+
+<h2><br>
+</h2>
+
+<h2>The laser printer does not print - how do I get the printer to cooperate again ?</h2>
+
+<ul>
+<li>check whether there is paper in the printer - the CHESS operator can get more paper from the stock room</li><li>powercycle the printer and wait 5 min</li><li>sometimes the cause for printer failure is a bad job<br>
+</li><ul><li>if printed from LINUX (station computer)</li></ul><ul><ul><li>open a new window&nbsp;</li><li>check the D1 print queue <span style="font-family: Courier New,Courier,monospace;">&gt; lpq</span></li><li>remove the top job<span style="font-family: Courier New,Courier,monospace;"> &gt; lprm</span></li><li>wait 5 min</li></ul><li>if failed job printed from Windows (analysis computer)</li><ul><li>check the print manager and remove stalled jobs</li></ul></ul><li>see the CHESS operator for help</li>
+</ul>
+<br><h2>SPEC refuses to let me open a new data file</h2>SPEC
+only permits the user to have a finite number of files open. Usually
+thsi does not cause problems, but under certain conditions that I have
+not yet clearly identified SPEC "forgets" to close old&nbsp;data files
+and &nbsp;hence new ones cannot be opened. Here's the fix:<br><ul><li>list all open files by typing&nbsp; <span style="font-family: Courier New,Courier,monospace;">&gt; on()</span></li><ul><li>note: the parentheses "<span style="font-family: Courier New,Courier,monospace;">()</span>" need to be typed!<br></li></ul><li>close all old data files that are not in use any more &gt; <span style="font-family: Courier New,Courier,monospace;">close("</span><span style="font-style: italic;">&lt;data file name&gt;</span><span style="font-family: Courier New,Courier,monospace;">")</span></li><ul><li>note: close only the files that you recognize as old data files!</li></ul><li>you should be able to use "newfile" or "new" now</li></ul><br>
+
+
+<h2>I accidently closed the SPEC window - how do I restart SPEC ?</h2>
+Call the CHESS operator for help. Often the <span style="font-family: monospace;">SPEC </span>process is still active
+in the computer, and does not allow you to start <span style="font-family: monospace;">SPEC </span>again. In this case,
+first the old process needs to be killed, before <span style="font-family: monospace;">SPEC </span>can be restarted.<br>
+<ul>
+  <li>open a new window (window icon on the bottom left)</li>
+  <li>type "ps -ef&nbsp; | grep -i saxs" and find the process id of the
+process called "saxs"</li>
+  <ul>
+    <li>of the two numbers listed, this is usually the second one<br>
+    </li>
+  </ul>
+
+  <li>type "kill -9 [process id]"</li>
+  <ul><li>note: read the process table carefully: if you kill the wrong
+process, the computer may crash</li></ul>
+  <li>open a new window&nbsp;, type "saxs"</li>
+</ul><br><h2>How do I recover from a crash of the D1 station computer ?</h2>
+Only the CHESS operator or other qualified CHESS staff should reboot the
+station computer. This following shows how to reconfigure the SPEC
+interface:<br><ul><li>log in and open a window (window icon on the bottom left in the command bar)</li><li>type "<span style="font-family: monospace;">saxs"</span></li><li><span style="font-family: monospace;"></span>all relevant macros should be loaded automatically when SPEC
+starts, even from a fresh start</li></ul><h2><br>
+</h2>
+<h2>How do I recover from a crash of the D1 analysis computer ?</h2>
+<ul><li>reboot the Windows PC</li><li>start "captureGIXS36" using the icon on the desk top&nbsp;</li><li>images are on the S: drive on the Terabyte server <br>
+</li><li>find your user directory on the S: drive, image data should be in the "pilatus" subdirectory<br>
+</li></ul><h2><br>
+</h2>
+<h2>Film thickness monitor hung up&nbsp;</h2>
+<ul><li>try to quit and restart the soft ware</li><li>if this does not help: try to reboot the computer (hutch, on top of the FilMetrics controller)</li><li>note: the USB cable has to be connected to start the acquisition program</li></ul><h2><br>
+</h2>
+<h2>Microscope computer</h2>
+<ul><li>check that the USB cable between camera and the hutch computer is properly connected<br>
+</li>
+  <li>close and restart "Debut" program<br>
+  </li>
+</ul>
+<h2><br>
+</h2>
+<h2>Microbeam stage: motor does not respond</h2>
+<ul>
+<li>identidy controller (1-3) and channel (1-8) of problem motor</li><li>switch to manual by pushing knob on the corresponding manual controller 1, 2 or 3&nbsp;</li><li>dial up motor channel using the V or P push buttons </li><li>hold knob of manual control down for 2 seconds - motor will be reinitialized and moved to home position</li><li>if this does not help: power-cycle the controller</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<big>NOTE:&nbsp; After 15 years of faithful heavy duty at D1, the MedOptics detector has been retired in favor of the Pilatus 200k.</big>
+<h2 style="font-weight: normal;">What do I do when the CCD camera seems to be hung up?</h2>
+
+<h3>sympton 1:</h3>
+<ul>
+  <li>no image</li>
+</ul>
+go through checklist:<br>
+<ol>
+  <li>is the personal safety shutter open?</li>
+  <li>is the garage door open?</li>
+  <li>is the ion chamber removed?</li>
+  <li>is the sample at a reasonable position (<span style="font-family: monospace;">wsam</span>)?</li>
+  <li>is the beamstop at a reasonable position (<span style="font-family: monospace;">wbs</span>)?</li>
+  <li>is there signal on Idet in line-up mode (GISAXS users) or on the
+photodiode (SAXS users) ?</li>
+  <li>is there an obstacle in the beam, like a fallen down cable,
+shielding etc. ?</li>
+</ol>
+in many cases steps 1-7 fixed the problem, and the CCD turned out to be
+just fine.<br>
+<br>
+if none of the 7 steps bring an improvement, move on to symptom 2<br>
+<h3>symptom 2:</h3>
+<ul>
+  <li>always the same image, regardless whether there are x-rays on the
+sample or not</li>
+</ul>
+explanation: the IDL interface does not notice, when it loses
+connection to the CCD controller - this time the CCD is definitely hung
+up<br>
+<br>
+troubleshooting steps:<br>
+<ul>
+  <li>check that the water interlock on the CCD rack is okay (yellow
+control light on)<br>
+  </li>
+  <li>check that the CCD controller is on (green LED on front)</li>
+  <ul>
+    <li>if the controller had been off for a while, wait 10 min for the
+CCD to cool down before proceeding</li>
+  </ul>
+  <li>stop the acquisition program by hitting <span style="font-family: monospace;">q</span> on the Windows PC keyboard in
+the CCD camera rack</li>
+  <li>restart the program by typing <span style="font-family: monospace;">allez</span></li><li><span style="font-family: monospace;">take a test image<br></span></li>
+  </ul>if the CCD is still unresponsive: <br><ul><li>exit the IDL program</li><li>restart by
+double-clicking the IDL icon on the desk top&nbsp;</li><li>type "allez" on the command line</li><li>take a test image</li></ul>whenever you feel completely lost at one of these steps<ul>
+  <li>call Detlef</li>
+</ul>
+
+<h3>symptom 3:</h3>
+<ul>
+  <li>the CCD macros return without any delay without producing an image</li>
+</ul>
+when an image gets terminated with <span style="font-family: monospace;">Ctrl-C</span> before the end of the
+exposure time (NOT recommended !!!), the CCD can end up in an undefined
+state<br>
+<ul>
+  <li>type "<span style="font-family: monospace;">ccd_off</span>", then
+type "<span style="font-family: monospace;">ccd_on" </span>to reset the
+CCD interface</li>
+</ul><br><br>
+</body></html>

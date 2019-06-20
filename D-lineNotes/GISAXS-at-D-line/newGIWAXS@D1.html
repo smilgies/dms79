@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>newGIWAXS@D1</title></head>
+
+<body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 153);" alink="#993399" link="#0000ff" vlink="#ff0000">
+<h1 style="color: rgb(204, 0, 0);"><br></h1><h1 style="color: rgb(204, 0, 0); text-align: center;">New D1 GIWAXS
+procedure</h1><h2 style="color: rgb(204, 0, 0); text-align: center;">Detlef Smilgies</h2>
+<h3><span style="font-weight: bold;">mount sample</span></h3>
+<ul>
+  <li>go into hutch and move CCD camera back</li>
+  <li>mount new sample<br>
+  </li>
+  <li>put <big style="font-family: Courier New,Courier,monospace;">Idet</big><span style="font-family: Courier New,Courier,monospace;">
+</span>ion chamber in</li>
+  <li>interlock hutch and open main shutter</li>
+</ul>
+<h3><span style="font-weight: bold;">align sample</span></h3>
+<ul>
+  <li>new data file <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">new</big></li>
+  <ul>
+    <li>put in new sample name<br>
+    </li>
+    <li>OR hit return to continue with old name</li>
+  </ul>
+  <li>find sample height <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">rock</big></li>
+  <li>reflectivity curve <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">xr</big></li>
+  <li>determine absolute value of incident angle roughly from substrate critical angle on
+print-out<br>
+  </li>
+  <li>calibrate <big><span style="font-family: monospace;">samth</span></big><big><small>
+<span style="font-family: Courier New,Courier,monospace;">&gt; </span></small><span style="font-family: Courier New,Courier,monospace;">mv samth</span></big>
+    <span style="font-style: italic;">[critical angle position]</span><big><span style="font-family: monospace;">; </span><span style="font-family: Courier New,Courier,monospace;">set samth</span></big> <span style="font-style: italic;">[critical angle value]</span><br>
+  </li>
+  <li>make more detailed reflectivity scans, if desired</li><ul><li>for finetuning <span style="font-family: Courier New,Courier,monospace;">xrfine</span> scan parameters, use<span style="font-family: Courier New,Courier,monospace;"> &gt; set_xrfine</span></li></ul>
+  
+</ul>
+<h3><span style="font-weight: bold;">take images</span></h3>
+<ul>
+  <li>enable CCD macros <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">ccdon</big><br>
+  </li>
+  <li>go into hutch, remove <big><span style="font-family: monospace;">Idet
+    </span></big>ion chamber, and move CCD against clamp<br>
+  </li>
+  <li>open main shutter, enable and open garage door on controller<br>
+  </li>
+  <li>test image to verify correct beamstop position&nbsp; <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">corr
+1 .1</big></li>
+  <ul>
+    <li>if CCD is overloaded, fix problem (if you think you can) or call Detlef !!!<br>
+    </li>
+  </ul>
+  <li>take images at various <big><span style="font-family: monospace;">samth</span></big>
+and <big><span style="font-family: monospace;">samx</span></big>
+positions using <big><span style="font-family: monospace;">corr</span></big>
+and <big><span style="font-family: monospace;">dark</span></big></li>
+  <ul>
+    <li>usage <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">corr</big>
+      <span style="font-style: italic;">[mode] [exposure]</span></li>
+    <ul><li>without dezingering: <span style="font-style: italic;">mode=1</span></li><li>&nbsp;with dezingering for exposures &gt; 5 sec: <span style="font-style: italic;">mode = 2</span></li><li>image averaging:<span style="font-style: italic;"> &nbsp;2 &lt;= mode &lt;= 10<br></span></li></ul>
+    <li>usage <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">dark</big>
+      <span style="font-style: italic;">[exposure]</span></li>
+    <ul><li>dark images only need to be taken once a day; create new dark
+image for new exposure time</li><li>view list of previous dark images<span style="font-family: Courier New,Courier,monospace;"> &gt; </span><big style="font-family: Courier New,Courier,monospace;">ls dark</big><br>
+    </li></ul>
+    
+  </ul>
+  <li>take image of direct beam <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">beam</big></li>
+  <li>disable CCD macros <span style="font-family: Courier New,Courier,monospace;">&gt; </span><big style="font-family: Courier New,Courier,monospace;">ccdoff</big></li></ul><span style="font-weight: bold;"><br></span><h3><span style="font-weight: bold;">
+additional macros (expert use only)</span></h3>
+<ul>
+  <li>open CCD shutter manually (make sure CCD is protected by closing the garage door !!!) &gt; <big><span style="font-family: monospace;">shopen</span></big></li>
+  <li>close CCD shutter manually &gt; <big><span style="font-family: monospace;">shclose</span></big><br>
+  </li>
+  <li>determine electronic offset of <big><span style="font-family: monospace;">Idet</span></big> for high-quality
+reflectivity scans &gt; <big><span style="font-family: monospace;">offset</span></big></li>
+  <ul>
+    <li><big><span style="font-family: monospace;"></span></big>the
+offset count rate is saved in the log file as <big><span style="font-family: monospace;">tseries</span></big> scan<br>
+    </li>
+  </ul>
+</ul>
+the following macros are used by <big><span style="font-family: monospace;">rock</span></big>, <big><span style="font-family: monospace;">xr</span></big>, and <big><span style="font-family: monospace;">beam</span></big> to control the
+beamstop position<br>
+<ul>
+  <li>move beamstop in &gt; <big><span style="font-family: monospace;">bsin</span></big></li>
+  <li>move beamstop out &gt; <big><span style="font-family: monospace;">bsout</span></big></li>
+  <li>move blade in for reflectivity &gt; <big><span style="font-family: monospace;">blade</span></big></li>
+  <li>move attenuator in for beam image &gt; <big><span style="font-family: monospace;">attin</span></big><br>
+  </li>
+</ul>
+</body></html>

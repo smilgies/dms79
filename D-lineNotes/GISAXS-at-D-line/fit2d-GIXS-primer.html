@@ -1,0 +1,703 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>fit2d-GIXS-primer</title></head><body style="color: rgb(0, 0, 153); background-color: rgb(255, 255, 255);" alink="#993399" link="#0000ff" vlink="#ff0000">
+<h1 style="text-align: center; color: rgb(204, 0, 0);"><br>
+</h1>
+<h1 style="text-align: center; color: rgb(204, 0, 0);">a<span style="font-family: monospace;"> <big>fit2d</big> </span>SAXS/WAXS
+primer<br>
+</h1>
+<div style="text-align: center;">
+<h2 style="color: rgb(204, 0, 0);">Detlef Smilgies, CHESS D1 station</h2>
+<h3>version&nbsp; 7/2/2009<br>
+</h3>
+<br>
+<div style="text-align: left;"><big style="font-weight: bold;">INDEX</big><br>
+</div>
+</div>
+<ul id="mozToc">
+<!--mozToc h2 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
+  <li><a href="#disclaimer">disclaimer</a></li>
+  <li><a href="#start-up">start-up</a></li>
+  <li><a href="#display-image">display an image</a></li>
+  <li><a href="#display-series">display a series of images</a></li>
+  <li><a href="#background-subtraction">background subtraction</a></li><li><a href="#graphics_output">graphics output</a></li>
+  <li><a href="#calibrated-plots">calibrated
+plots</a></li>
+  <ul>
+    <li><a href="#direct-beam">direct beam</a></li>
+    <li><a href="#calibration">distance/wavelength
+calibration</a></li>
+    <li><a href="#azimuthal-integration">azimuthal
+integration</a></li>
+    
+    
+    <li><a href="#cake">cake</a></li>
+    <li><a href="#cake-integration">special option: integrations with <span style="font-family: monospace;">CAKE</span></a></li><li><a href="fit2d-GIXS-primer.html#projections">(projections)</a></li>
+    <li><a href="#2D-plots">(calibrated 2D
+plots)</a></li><li><a href="fit2d-GIXS-primer.html#peak-fitting">1D peak
+fitting of calibrated data</a></li>
+  </ul>
+  <li><a href="#final_remark">final remark</a></li>
+</ul>
+<br>
+<h2><a class="mozTocH2" name="disclaimer"></a>disclaimer</h2>
+<span style="font-family: monospace;">fit2d </span>is a free program
+running on <span style="font-family: monospace;">LINUX </span>and <span style="font-family: monospace;">MS Windows</span> and can be
+downloaded from <a href="http://www.esrf.eu/computing/scientific/FIT2D/">ESRF</a>. Check
+out the <span style="font-family: monospace;">fit2d </span><a href="http://www.esrf.eu/computing/scientific/FIT2D/">homepage</a>
+for terms and the latest version. Click <a href="http://www.esrf.fr/computing/scientific/FIT2D/FIT2D_REF/fit2d_r.html">here</a>
+for the <span style="font-family: monospace;">fit2d</span> on-line
+manual; an introduction can be found <a href="http://www.esrf.eu/computing/scientific/FIT2D/FIT2D_INTRO/fit2d.html">here</a>.
+For use of the advanced <span style="font-family: monospace;">fit2d
+</span>features please include an <a href="http://www.esrf.fr/computing/scientific/FIT2D/FIT2D_REF/node268.html">acknowledgement</a>.<br>
+<br>
+This <span style="font-family: monospace;">fit2d </span>primer is
+meant for the SAXS/WAXS users at CHESS D1 station. The incomplete subset of <span style="font-family: monospace;">fit2d </span>features
+explained here, are some things that work for me and come up all the time. <span style="font-family: monospace;">fit2d </span>has a 300 page plus <a href="http://www.esrf.fr/computing/scientific/FIT2D/FIT2D_REF/fit2d_r.html">manual</a>
+that can be viewed on-line or downloaded from ESRF - please take a look
+to find out about further details. I'll be glad for <a href="mailto:dms79@cornell.edu">feedback</a> on this primer and to
+learn new tricks - but don't ask me any detailed <span style="font-family: monospace;">fit2d</span> questions: this primer
+sums up pretty much what I know and use of <span style="font-family: monospace;">fit2d</span>.<br>
+<br>
+No ready-made program will take care of all fine details of the
+analysis by itself.&nbsp; For instance proper Lorentz and polarization
+factor corrections depend on the experiment. So if you are very picky,
+the best way is to do this part yourself. This is particularly true
+for
+GISAXS and GIWAXS data, for which I still have some questions
+about proper data processing. <br><h3>
+a final hint </h3>The
+way the various items are ordered roughly
+corresponds to when you would need to use them. The order also reflects
+the degree of sophistication. If you are unfamiliar with <span style="font-family: monospace;">fit2d</span>, it may make sense to go
+through the list in order. Right-click <a href="AgBehenate.tif">here</a>
+and choose "save target as" to download the datafile I used in the
+examples below.<br><br>
+<br>
+<h2><a class="mozTocH2" name="start-up"></a>start-up</h2>
+<ul>
+  <li><span style="font-family: monospace;">Click the fit2D icon on the analysis PC.</span><br>
+    <span style="font-family: monospace;"></span></li>
+  <li><span style="font-family: monospace;">fit2d</span> needs to
+reserve some initial memory space for reading in images. For the
+MedOptics detector&nbsp; use 1024 by 1024 as number of bins.</li>
+  <li>Use memory arrays (answer <span style="font-family: monospace;">YES</span>)
+for speedy data handling, don't use variance arrays (answer <span style="font-family: monospace;">NO</span>).</li>
+  <li>Click <span style="font-family: monospace;">O.K</span> which
+gets
+you to
+the <span style="font-family: monospace;">fit2d</span> <span style="font-family: monospace;">&nbsp;main </span>menu.</li>
+</ul>
+<h2><a class="mozTocH2" name="display-image"></a>display an image</h2>
+<ul>
+  <li>goto <span style="font-family: monospace;"></span><span style="font-family: monospace;">SAXS/GISAXS</span> &gt; <span style="font-family: monospace;">INPUT</span></li><li><span style="font-family: monospace;">go
+all the way up in the file tree, until you get to the hard drives. The
+specuser directory of the data acquisition computer is mapped to drive
+H:\ </span>on the analysis PC</li><li><span style="font-family: monospace;">go to your user directory and then onto the corr subdirectory</span></li><li><span style="font-family: monospace;">INPUT </span>an image<span style="font-family: monospace;"> <br></span></li>
+  
+  
+  <li>set the scale: <span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">Z-SCALING</span>; choose "<span style="font-family: monospace;">LOG SCALE</span>" and set "<span style="font-family: monospace;">USER MIN/MAX</span>" to 15 and 15000:
+these are the default values to see at a glance, whether the MedOptics detector is
+happy - I want you to use this z-scale, while optimizing the CCD exposure</li><ul><li>NOTE:
+white regions indicate that the exposure was too long and that the
+detector is oversaturated - immediately reduce the exposure time by a factor of
+10 !!!</li></ul><li>get back to <span style="font-family: monospace;">SAXS/GISAXS</span>
+menu by hitting <span style="font-family: monospace;">EXIT</span></li><ul><li>NOTE: this will be the default in many submenus and I won't mention it again</li></ul><li>the
+default false color scheme ("geographic") is very powerful - I want you
+to use this scheme, while optimizing the CCD&nbsp; exposure</li><ul><li>see manual for other choices (Black &amp; White etc.)</li></ul>
+  
+  <li>use <span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">ZOOM IN </span>to zoom
+into a
+region; use &nbsp;<span style="font-family: monospace;">ZOOM&nbsp;OUT </span>or&nbsp;<span style="font-family: monospace;">FULL</span>&nbsp; to zoom out&nbsp;or get back to the full image, respectively</li><ul><li>use the <span style="font-family: monospace;">REMEMBER ROI</span>&nbsp; /&nbsp;<span style="font-family: monospace;">FORGET ROI</span>&nbsp;
+toggle switch to remember / forget the Region Of Interest &nbsp;(ROI)
+defined by&nbsp;your zoom choice for successive images</li></ul></ul><br><div style="text-align: center;"><img alt="sample input: WAXS raw data" src="AgBeh-raw.jpg" style="width: 496px; height: 523px;"><br>
+</div>
+<span style="font-style: italic;">Figure 1. Raw WAXS data of MedOptics
+CCD camera: silver behenate calibration sample (10 keV photons, sample-detector distance about 100mm).<br>
+<br>
+<br>
+</span>
+<h2><a class="mozTocH2" name="display-series"></a>display a series of
+images</h2>
+<ul>
+  <li>go back to <span style="font-family: monospace;">main menue </span>&gt; <span style="font-family: monospace;">FILE SERIES</span> &gt; <span style="font-family: monospace;">COMPOSITE</span></li>
+  <li>input first and last file and <span style="font-family: monospace;">FILE INCREMENT</span> (for instance
+increment=2
+reads in every other file)</li>
+  <li><span style="font-family: monospace;">SUBTRACT</span>: <span style="font-family: monospace;">NO</span></li>
+  <li><span style="font-family: monospace;">ROI</span>: as needed<span style="font-family: monospace;"> YES </span>or <span style="font-family: monospace;">NO</span></li>
+  <li><span style="font-family: monospace;">NO. PER ROW</span>: aim for
+square arrays for best quality; if some images are missing to fill the
+array, empty images are given in black<br>
+  </li>
+  <li><span style="font-family: monospace;">RE-BIN NO.</span>: the
+image size for a composite image gets too large, if
+the resolution is not reduced by adding adjacent pixels together ("binning"). Increase the suggested binning number by 1, since <span style="font-family: monospace;">fit2d</span> tends to underestimate, how much memory it needs.<br>
+  </li>
+</ul>
+<h3>notes: </h3>
+<ul>
+  <li>only files with identical names other than the file number can be
+combined into a series (otherwise make renamed copies of the files)</li>
+  <li>this feature is very useful to create an overview of all data</li>
+</ul>
+<br>
+<h2><a class="mozTocH2" name="background-subtraction"></a>background
+subtraction</h2>
+for very weak scatterers or strongly scattering sample environments
+such as x-ray capillaries or liquid cells it may be important to take
+background images, in order to subtract out the sample cell scatter.
+This can be
+done in the <span style="font-family: monospace;">SAXS/GISAXS </span>or the<span style="font-family: monospace;"> IMAGE PROCESSING</span>
+menu:<br>
+<ul>
+  <li>read in background image using <span style="font-family: monospace;">INPUT</span></li>
+  <li>click <span style="font-family: monospace;">EXCHANGE</span></li>
+  <li>read in data image via <span style="font-family: monospace;">INPUT</span></li>
+  <li>click <span style="font-family: monospace;">MATH</span> &gt; <span style="font-family: monospace;">SCALED SUB</span>: scaled subtraction
+allows finetuning a background scaling parameter of the form <span style="font-style: italic;">signal - factor*background</span> which can be adjusted after the inital attempts - I usually use a <span style="font-style: italic;">factor</span> of 1 for starters<span style="font-family: monospace;"><br>
+    </span></li>
+  <li>finetune the scalefactor by going up or down in 1% or 10% steps</li><ul><li>a
+good value for the factor is found when the far corner of the detector
+shows intensity close to zero - you will need to reset the z-scaling
+parameter (1 to 15000 is often a good range) - you should still be able
+to see the detector noise</li><li>a constant offset of 20 ("pedestal")
+was used for the automatic image correction. If the subtraction factor
+is below 90% or above 110%, the pedestal should be removed first (can
+also be done in the math menu), and then use the scaled subtraction<span style="font-family: monospace;"><br></span></li></ul>
+  <li>you can save the background-subtracted image using<span style="font-family: monospace;"> OUTPUT </span>to create a file in <span style="font-family: monospace;">tiff </span>format for further
+processing at a later time</li>
+</ul><h2><a name="pixel-space-ops"></a>simple operations in pixel space</h2>These simple operations are useful for a quick check of images right while the data are streaming in. <ul><li>use <span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">DISPLAY </span>&gt; <span style="font-family: monospace;">SLICE </span>to make a 1D cut through
+the image</li><li>use <span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">DISPLAY </span>&gt; <span style="font-family: monospace;">PROJECTION </span>to project a range of data onto a given axis</li><ul><li>you first define the projection axis with 2 clicks and then the projection range with 2 clicks</li><li>projection take a bit more work than the 1D cut, but yields better statistics</li><li>horizontal and vertical projections are very useful for GISAXS images</li></ul></ul><h2><a name="graphics_output"></a>graphics output</h2><ul><li>use
+OUTPUT &gt; TIFF16 to save processed images for&nbsp;further processing
+at a later time; such output can be read with fit2d again</li>
+  <li>in order to keep track of GISAXS images during beamtime, I recommend using an electronic log: <br>
+  </li>
+  <ul>
+    <li>use <span style="font-family: monospace;">Alt-PrtScr</span> to copy the active window (which in this case would be the fit2D window)</li>
+    <li>paste the image into <span style="font-family: monospace;">MS Powerpoint</span> or MS Word or some program of your choice using<span style="font-family: monospace;"> Ctrl-V</span> or the paste function</li>
+    <li>you can email these log files to your advisor or collaborator so that they are informed how things are going</li>
+    <li>these logs are also extremely useful, in case you want to get
+back to me with a question after the run; in particular a program like <span style="font-family: monospace;">Powerpoint</span> allows you to mark up features with arrows, add comments etc.<br>
+    </li>
+  </ul>
+<li>only if you want to use fit2D for publication-style graphics: use PRINT to save fit2d graphics output to a <span style="font-family: monospace;">postscript</span> file</li><ul><li>provide as path for the output file <span style="font-family: monospace;">H:\</span><span style="font-style: italic;">&lt;my user directory&gt;</span>, so that all files remain on the data acquisition computer; use the file extension <span style="font-family: monospace;">.ps</span> to facilitate further processing (in fact you may want to make a <span style="font-family: monospace;">ps</span> subdirectotory for the output)</li></ul><ul><li>with the free program <span style="font-family: monospace;">Ghostview</span> or with <span style="font-family: monospace;">Adobe Reader Professional</span> such <span style="font-family: monospace;">postscript</span> files can be converted to convenient image formats such as <span style="font-family: monospace;">PNG</span> or <span style="font-family: monospace;">JPEG</span> for use in publication-quality graphics</li><li>the postscript file can also be sent directly to a color <span style="font-family: monospace;">postscript</span> printer</li><ul><li>NOTE: please DO NOT use the black&amp;white printer at the beamline for image output - it uses up the toner in no time</li></ul></ul><li>use OUTPUT &gt; CHIPLOT for xy plots</li><ul><li>an automatic path is generated putting the file back into the corr directory with its original name and extension .chi</li><li>these files can be imported as <span style="font-family: monospace;">ASCII</span> into&nbsp;<span style="font-family: monospace;">Excel</span> , <span style="font-family: monospace;">Origin</span>, etc. for further processing</li></ul></ul>
+<br>
+<h2><a class="mozTocH2" name="calibrated-plots"></a>calibrated plots</h2>
+<h3><a class="mozTocH3" name="direct-beam"></a>direct beam position</h3>
+<ul>
+  <li>first task is always to find the direct beam mark (through an
+attenuator!). I usually make sure that at least one set of calibration
+data is collected for each detector configuration. Calibration files
+typically contain "AgBeh" or "beam" in their name and I keep track of them in my log.</li><li>zoom into the beam mark to limit the fitting range</li>
+  <li>go to <span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">BEAM CENTRE</span> &gt; <span style="font-family: monospace;">2D GAUSSIAN FIT </span>and click on
+the beam mark</li>
+  <li>the program will remember this position, unless a new beam center
+calibration is performed; fit results are provided on the <span style="font-family: monospace;">fit2d </span>ASCII window<br>
+  </li>
+</ul>
+<h3><a class="mozTocH3" name="calibration"></a>distance &amp; wavelength
+calibration</h3>
+<ul>
+  <li>Usually I measure the x-ray wavelength to better than 1% from the mono
+calibration (checked at each beginning of a run or sometime at the end) using the CHESS energy analyzer<br>
+</li>
+  <li>Estimate the sample/detector distance <span style="font-style: italic;">L_est</span> with a ruler (WAXS) or a tape measure (SAXS) to about 10%.</li>
+  <li>I use a Ag behenate standard (d-spacing <span style="font-style: italic;">d</span>001=58.38
+A, corresponding to a q-value of 1.0763 nm-1) which works for the full
+range of sample-to-detector distances available (100mm to 1500mm).<span style="font-style: italic;"></span><br>
+  </li>
+  <li><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span><span style="font-family: monospace;"></span>fit the direct beam mark as described in the previous section</li><li>use&nbsp;<span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">INTEGRATE </span>to do an angular integration of the intensity - see next section for a detailed description of the menue features</li><ul><li>follow the instructions in the "integration" section - I should have provided you with the wavelength</li><li>for a first sample-detector distance use the <span style="font-style: italic;">L_est</span> value from above</li><li>do the integration in wavevector space (more robust)</li><li>zoom in onto the first behenate peak and click on the maximum - in the left upper corner of the fit2d graphics window the <span style="font-style: italic;">q_est</span> value is displayed</li><li>do a simple calculation to get the calibrated distance <span style="font-style: italic;">L_cal</span> : &nbsp; &nbsp;<span style="font-style: italic;">L_cal</span> &nbsp;= <span style="font-style: italic;">L_est</span> * <span style="font-style: italic;">q_est</span> / 1.0763 nm-1</li><li>now the detector is self-consistently calibrated using the well-known <span style="font-style: italic;">q</span>-value of the first Ag behenate ring</li><li>sanity check: redo the integration by clicking <span style="font-family: monospace;">EXCHANGE</span> and then <span style="font-family: monospace;">INTEGRATE, now </span>using <span style="font-style: italic;">L_cal</span> - the first <span style="font-style: italic;">q</span> maximum should be right at the correct value!</li></ul></ul><h3>notes</h3><ul>
+  <li>this simple procedure yields a precision better than 1% for SAXS and GISAXS - this is sufficient !!!</li><li>the procedure yields only a precision of 2-3% for GIWAXS, which is often sufficient for diffuse scatterers like polymers</li>
+  <ul>
+    <li>note: if the sample is off-center by 1 mm, this already corresponds to an error of 1% at 100 mm distance<br>
+    </li>
+  </ul>
+<li>if&nbsp;crystallographic
+precision (&lt;1%) is needed in GIWAXS, images and beam images should
+be taken at 2 distances using a calibrated spacer, so that an absolute
+measurement of the scattering angle is performed; <span style="font-style: italic;">L_cal</span> gets determined by fitting several diffraction spots or powder rings taken at different distances<br>
+  </li>
+  <li>a
+pragmatic way of handling the GIWAXS calibration is using the behenate
+calibration for a first orientation during the measurements, and do the
+more precise procedure afterwards</li>
+  <ul>
+    <li>moving the detector is not recommended for the new detector stage<br>
+    </li>
+  </ul>
+
+</ul>
+<h3><a class="mozTocH3" name="azimuthal-integration"></a>azimuthal
+integration</h3>
+for SAXS/WAXS from non-textured samples you want to simply integrate
+the intensity rings and create a simple radial plot:<br>
+<ul>
+  <li>choose an appropreation section of the image by zooming in;
+specifically the region close to the edge of the detector should be
+removed</li><ul><li>use the <span style="font-family: monospace;">REMEMBER ROI</span>&nbsp;feature for&nbsp; integration of multiple images</li></ul><li>go to <span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">INTEGRATE</span></li>
+  <li>integration needs a fair amount of input data, however, these
+will be saved, and can be recalled for the next image to be analyzed</li>
+  <li>the important input parameters are:</li>
+  <ul>
+    <li>pixel size: 46.9 microns for the MedOptics detector in both
+directions<br>
+    </li>
+    <li>sample to detector distance <span style="font-style: italic;">L_cal</span> (see section above)<br>
+    </li>
+    <li>wavelength <span style="font-style: italic;">&#955;</span>: will be
+provided by me</li>
+    <li>the direct beam coordinates were already determined in the
+previous step<br>
+    </li>
+  </ul>
+</ul>
+<ul>
+</ul>
+You have a choice of plot axes:<br>
+<ul>
+  <li>scattering vector Q (inverse nm)</li>
+  <li>scattering angle 2theta (deg)</li>
+  <li>d-spacing (Angstroem)</li>
+</ul>
+There are some other parameters that are related to the rescaling of
+the intensity, which however, depend on the scattering geometry:<br>
+<ul>
+  <li><span style="font-family: monospace;">CONSERVE INT</span>. : <span style="font-family: monospace;">NO </span>is recommended in
+combination with other<span style="font-family: monospace;"> fit2d </span>features</li>
+  <li><span style="font-family: monospace;">POLARIZATION</span>&nbsp; :
+does not explain whether it is s- or p-polarization, so if I really
+care, I choose <span style="font-family: monospace;">NO </span>and do
+it myself. This factor does not have effect on SAXS, and also for WAXS
+from organics, scattering angles are still smaller than 20 deg with the
+MedOptics camera, so this correction is not very important either.</li>
+  <li><span style="font-family: monospace;">GEOMETRY COR.</span> takes
+care of the transformation from a planar area detector to angle space
+(for math freaks: it's the Jacobian), so for this one I use: <span style="font-family: monospace;">YES</span></li>
+</ul>
+Some processing parameters:<br>
+<ul>
+  <li><span style="font-family: monospace;">MAX. ANGLE</span>: I use
+the default suggested by <span style="font-family: monospace;">fit2d</span></li>
+  <li><span style="font-family: monospace;">SCAN BINS</span>: a value
+of about 500-1000 yields smooth curves</li>
+  <li><span style="font-family: monospace;">MAX. D-SPACING</span>:
+depends on your sample: <br>
+  </li>
+  <ul>
+    <li>for WAXS, 100 Å is a good start <br>
+    </li>
+    <li>for SAXS, 2000 Å will do for all D1 can resolve<br>
+    </li>
+  </ul>
+</ul><h3>notes:</h3>
+<ul>
+  <li>You only have to set-up all of these parameters once, and then you
+can go through your hundreds of images, provided the scattering
+geometry remained the same</li>
+  <li>You can save the numeric output data using <span style="font-family: monospace;">SAXS/GISAXS</span> &gt; <span style="font-family: monospace;">OUTPUT </span>and choose option <span style="font-family: monospace;">CHIPLOT</span> for further analysis
+of the integrated curves with your own favorite software. The default values in the <span style="font-family: monospace;">CHIPLOT</span> menu will result in an
+ASCII file with a small header and the plot values written as an x and
+a y column of values (don't try to understand the settings). You can
+choose/modify the filename using the <span style="font-family: monospace;">FILE</span> <span style="font-family: monospace;">NAME</span> option.<br>
+  </li>
+  <li>You can save any plots using <span style="font-family: monospace;">SAXS/GISAXS</span>
+&gt; <span style="font-family: monospace;">PRINT</span>; the plot is
+written to a <span style="font-family: monospace;">postscript </span>file.</li>
+  <li>Before you <span style="font-family: monospace;">INPUT</span>
+the next file to process, use <span style="font-family: monospace;">EXCHANGE</span>
+to get the program into the right mode. This is important in the <span style="font-family: monospace;">SAXS/GISAXS</span> menu, some of the
+other menus are more forgiving.&nbsp;</li><li>If you forget to use <span style="font-family: monospace;">EXCHANGE, </span>you will have to click <span style="font-family: monospace;">FULL</span> a couple of times to display an image. Make sure to reset the pixel size in the <span style="font-family: monospace;">INTEGRATE</span> menue to the correct value, the next time you use&nbsp;<span style="font-family: monospace;">INTEGRATE</span>
+- they are still set to the step size of the 1D output plot, and
+without correcting this, you will get some very stange output..<br>
+  </li>
+</ul>
+<span style="font-style: italic;">Reference</span>:
+A&nbsp;P&nbsp;Hammersley, S&nbsp;O&nbsp;Svensson, M&nbsp;Hanfland,
+A&nbsp;N&nbsp;Fitch, and D&nbsp;Häusermann, ``Two-Dimensional
+Detector Software: From Real Detector to Idealised Image or Two-Theta
+Scan'', <i>High Pressure Research</i>, <b>14</b>, pp235-248, (1996) <br>
+<br><br><span style="font-style: italic;">
+</span>
+<h3><a class="mozTocH3" name="cake"></a>cake plots and sector integration</h3><span style="font-family: monospace;">CAKE</span>&nbsp;provides much more sophisticated integration features than <span style="font-family: monospace;">INTEGRATE </span>and
+I will get into these in quite some detail. In particular if there is
+parasitic scattering in the images or if the integration area includes
+corner sections, it is most useful to be able to choose "clean" sectors
+of the image for highest quality integrations.
+<ul>
+  <li>for textured samples, i.e. if powder rings have structure or for
+partial powder rings, you
+may want to fit the angular width of these features. Here the <span style="font-family: monospace;">CAKE </span>menu comes handy: <span style="font-family: monospace;">CAKE </span>converts the <span style="font-style: italic;">x</span>,<span style="font-style: italic;">y</span>
+image to
+a calibrated polar plot, where the <span style="font-style: italic;">x</span>
+axis can be <span style="font-style: italic;">2-Theta</span> (deg), <span style="font-style: italic;">q</span>
+(inverse nm), or <span style="font-style: italic;">d </span>(Å),
+and the y axis is the azimuth angle around the beam</li>
+  <li>so cake yields another 2D image, which however is very suitable
+to determine <span style="font-style: italic;">angular</span> widths</li>
+  <li>the 2D plot can also be used to yield 1D integrated plots for radial and angular intensity distributions<br>
+  </li>
+  
+</ul>
+<span style="font-family: monospace;">CAKE </span>uses the same
+parameters as <span style="font-family: monospace;">INTEGRATE </span>(see
+above); additionally you have to indicate <br>
+<ul>
+  <li><span style="font-family: monospace;">START AZIMUTH</span>:
+choose in first quadrant for a continuous output angular range<br>
+  </li>
+  <li><span style="font-family: monospace;">END AZIMUTH</span>: go in
+counter-clockwise direction from start azimuth</li>
+  <li><span style="font-family: monospace;">INNER RADIUS</span>: can be
+as small as the direct beam position</li>
+  <li><span style="font-family: monospace;">OUTER RADIUS</span>: can be
+as far out as the image extends</li>
+  <li>note: the <span style="font-family: monospace;">CAKE </span>plot
+will always provide a 360 deg range starting from the <span style="font-family: monospace;">START AZIMUTH</span> and going in
+counter-clockwise direction. <br>
+  </li>
+</ul>
+some conversion parameters:<br>
+<ul>
+  <li><span style="font-family: monospace;">1 DEG AZ</span> : <span style="font-family: monospace;">YES </span>if 1deg steps yield decent
+output,&nbsp; <span style="font-family: monospace;">NO </span>- for a
+finer grid<br>
+  </li>
+  <li><span style="font-family: monospace;">AZIMUTH BINS</span>:&nbsp;200-500 steps, depending on the angular range, yields smooth curves
+  </li>
+  <li><span style="font-family: monospace;">RADIAL BINS</span>: 200-500 looks good</li>
+  <li>note: for this transformation you will appreciate how
+lightning-fast <span style="font-family: monospace;">fit2d </span>cranks
+through the data - try the same in Origin!</li>
+  <li>note: the usual fit2d features seem to have some problem with the
+transformed plot. In particular the pixel size does not come out right.
+However, choosing <span style="font-family: monospace;">1 DEG AZ</span>.
+: <span style="font-family: monospace;">YES</span>, or similar,
+provides a simple angular bin size (of 1 deg) for further processing.
+Ideally slices or projections (integration of intensity over a range
+onto a line) could be used to determine angular width.<br>
+  </li>
+</ul>
+Other parameters<br>
+<ul>
+  <li>some other parameters as explained in <span style="font-family: monospace;">INTEGRATE </span>above</li>
+  <li>after the transformation, go to <span style="font-family: monospace;">ASPECT RATIO</span> and choose <span style="font-family: monospace;">NO</span> for a full size plot<br>
+  </li>
+  <li>for printing or writing the&nbsp;<span style="font-family: monospace;">CAKE</span> plot to a spreadsheet see <a href="#calibrated_2D_plots">below</a>.</li>
+</ul>
+<br>
+<div style="text-align: center;"><img alt="sample output from CAKE" src="AgBeh-CakePlot-MaxRange.jpg" style="width: 372px; height: 378px;"><br>
+</div>
+<br>
+<div style="text-align: center;">
+<div style="text-align: left;"><span style="font-style: italic;">Figure
+3. Sample output from CAKE:
+Shown are the silver behenate rings from the raw image converted to a
+azimuth-versus-Q_radial plot. The powder rings are homogeneous showing
+the high quality of the conversion. For a textured sample powder ring
+features can be fitted to&nbsp; measure angular features. </span><br>
+<br>
+</div>
+</div>
+<br>
+<h3><span style="font-weight: bold;"><a name="cake-integration"></a>special
+option: integrations with</span>
+<span style="font-family: monospace;">CAKE</span></h3>
+<span style="font-family: monospace;"></span>The <span style="font-family: monospace;">CAKE </span>integration features
+shall be demonstrated with
+a more realistic example. Poly(hexyl thiophene) (P3HT) is a common
+semiconducting polymer. The side-chains order the polymer backbone in
+lamellae parallel to a silicon wafer surface. Polymer backbones are
+closely packed due to pi-stacking of the monomer aromatic rings. The
+degree of order depends on details of the preparation conditions, and
+is subject to current studies.<br>
+<span style="font-family: monospace;"><br>
+</span>
+<div style="text-align: center;"><span style="font-family: monospace;"><img style="width: 534px; height: 615px;" alt="GIWAXS from P3HT film" src="p3ht-40c_22.jpg"></span><br>
+<span style="font-family: monospace;"></span></div>
+<span style="font-family: monospace;"><br>
+</span>
+<div style="text-align: center;"><span style="font-style: italic;">Figure
+4. GIWAXS from a poly(hexyl thiophene) (P3HT) film spin coated onto a
+silicon
+wafer covered with the native oxide.<br>
+Incident angle was chosen as 0.3°. Other parameters are &#955;=1.24
+Å, sample-detector distance L = 101.75mm, <br>
+direct beam position on detector: x0=950.2 pixels, z0=54.2 pixels. <br>
+<br>
+I would like to thank Satoyuki Nomura and George Malliaras, Cornell,
+for providing an image from a P3HT sample.</span><span style="font-family: monospace;"></span><br>
+<span style="font-family: monospace;"></span></div>
+<span style="font-family: monospace;"><br>
+</span><br>
+&nbsp;Two <span style="font-family: monospace;">CAKE </span>special
+options are of
+immediate interest:<span style="font-family: monospace;"><br>
+</span>
+<ul>
+  <li>By setting azimuthal bins to 1, a single 1-D radial <span style="font-style: italic;">2-Theta</span> or <span style="font-style: italic;">Q</span>-space scan can be obtained which
+is integrated over a sector whose angular width is given by the azimuth
+parameters. This way the integration region and the signal-to-noise
+ratio can be better controlled and problematic regions (edges, bad
+spots) can be
+better avoided than using <span style="font-family: monospace;">INTEGRATE</span>.</li>
+</ul>
+<div style="text-align: center;"><img style="width: 880px; height: 421px;" alt="p3ht radial scans" src="p3ht-radial-scans.png"><br>
+</div>
+<br>
+<div style="text-align: center;"><span style="font-style: italic;">Fig
+5. Radial scans perpendicular and parallel to the film. </span><br>
+<span style="font-style: italic;"></span><br>
+<span style="font-style: italic;">Left panel: Radial scan (90-890
+pixels in 800
+steps), integrated over azimuth range of 90°-120°. The (H00)
+reflections indicative of lamellae formed by the ordering of the alkyl
+side-chains show up prodominantly in the
+perpendicular direction, i.e. the lamellae are mostly parallel to the
+surface. The broad powder ring is due to the amorphous silicon oxide
+layer at
+the wafer surface.</span><br>
+<span style="font-style: italic;"></span><span style="font-style: italic;"></span><br>
+<span style="font-style: italic;">Right panel: Radial scan (90-890
+pixels in 800
+steps),</span><span style="font-style: italic;"> integrated over
+azimuth range
+of 120°-180°.</span><span style="font-style: italic;"></span><span style="font-style: italic;"> In the in-plane direction the
+(010) peak due to the pi-stacking of the
+aromatic rings of the polymer back-bone can be found, i.e. polymer
+chains are parallel to the surface and parallel to each other. The weak
+(010) peak is superimposed to the silicon oxide powder ring (dashed
+curve). Weak
+(H00) powderrings indicate that some parts of the film contain lamellae
+that have arbitrary orientation (3D powder).</span><br>
+</div>
+<br>
+<br>
+<ul>
+  <li>By setting the number of radial bins to 1, and selecting the
+''cake'' as an sector with specific radial vales, an integration of
+intensity versus azimuth may be obtained. This is very useful for
+texture analysis. In the P3HT case, the azimuthal width characterizes,
+how parallel the P3HT lamellae are with regard to the substrate. <br>
+  </li>
+</ul>
+<br>
+<div style="text-align: center;"><img style="width: 556px; height: 529px;" alt="p3ht azimuth scans" src="p3ht-azimuth-scans.png"><br>
+<br>
+</div>
+<span style="font-style: italic;">Fig 6. Azimuthal scans fron 90°
+to 180°
+in steps of 1° for the four reflections identified above. A narrow
+radial range was chosen around each arc of intensity: (a) 90-250 pixels
+for the (100) reflection, (b) 250-400 pixels for (200), (c) 450-540 for
+(300), and (d) 680-790 pixels for the (010) reflections. Azimuthal
+widths of all four reflections are comparable (about 40° FWHM).
+Note that (010) is perpendicular
+to the (H00) reflections and the its background is higher, as
+(010) is located on top of the broad powder ring of the amorphous
+silicon oxide layer. </span><br>
+<br>
+<br>
+For further analysis the azimuth distributions can be fitted&nbsp; as
+shown <a href="#peak-fitting">below</a>&nbsp; For writing the
+distributions to an <span style="font-family: monospace;">ASCII </span>file
+for creating
+publishable figures and or further data analysis, use <span style="font-family: monospace;">OUTPUT </span>&gt;
+<span style="font-family: monospace;">CHIPLOT</span>. <br>
+<br>
+<br>
+<br>
+<span style="font-weight: bold;">Tricks &amp; Traps - Some things I
+found the hard way</span><br>
+<ul>
+  <li>before you <span style="font-family: monospace;">INPUT</span>
+the next image, hit <span style="font-family: monospace;">EXCHANGE</span>:
+this recalls the previous 2D data image settings (and the detector
+pixel size
+before the transform !!). <br>
+  </li>
+  <li>If you forget to <span style="font-family: monospace;">EXCHANGE</span>,
+chack <span style="font-family: monospace;">INTEGRATION </span>parameters
+carefully, and fix whatever looks wrong - in particular pixel sizes,
+and radial range.<br>
+  </li>
+  <li>use <span style="font-family: monospace;">REMEMBER ROI</span> to
+save your integration region - this way you will get the same region each
+time in a file series: you can skip <span style="font-family: monospace;">START AZIMUTH</span> etc. and directly
+proceed to <span style="font-family: monospace;">INTEGRATE</span>. By
+default this feature is enabled on <span style="font-family: monospace;">fit2d </span>start-up.<span style="font-family: monospace;"><br>
+    </span></li>
+  <li>At times I have gotten stuck in <span style="font-family: monospace;">CAKE </span>beyond rescue - in the
+worst case close <span style="font-family: monospace;">fit2d </span>and
+restart from scratch.</li>
+</ul>
+<h3><a name="projections"></a>(projections)</h3>Projections onto
+calibrated axes are an extremely powerful tool, in particular for the
+analysis of GISAXS data. Fit2D provides such a tool in the SAXS/GISAXS
+menue, however, I have not been able to get it to work reliably. The
+manual states:<br><br>
+<div style="margin-left: 40px;"><span style="font-family: monospace;">"PROJECTION</span> : Integrate
+rectangular region to 1-D scan. This uses the beam centre and a user
+input coordinate to define an integration line. A second user input
+coordinate defines the width of the integration region. Pixels within
+this region are effectively ``collapsed'' onto the integration line,
+and then re-binned to the required 1-D output scan. This type of
+integration is specifically for grazing incidence data."<br></div><br>
+Disclaimer: I have never figured out how to do this correctly.But here
+is a kludge that seems to give reasonable results - but not guarantees
+given (you should always check with a standard or a known sample):<br>
+<ul>
+  <li>horizontal projection</li>
+  <ul>
+    <li>click on the left limit of the range keeping the cross hair at the same height as the direct beam mark ( white cross).</li>
+    <li>click on the right limit of the range keeping the crosshair at the same height as the direct beam mark</li>
+    <li>choose top and bottom of the projection range with the cursor</li>
+    <li>you will get the calibration menu, as in INTEGRATE or CAKE (2 pages) - check that calibration parameters are correct</li>
+    <li>the third page just informs you about the units in x and y - just hit return</li>
+    <li>the plot will show, often with some strange range or scaling</li>
+    <li>zoom in to the relevant range</li>
+    <li>see <a href="#graphics_output">graphic output</a> how to save the data to an ASCII xy table for use with other programs (Excel, Origin, etc.)</li>
+  </ul>
+</ul>
+<ul>
+  <li>vertical projections</li>
+  <ul>
+    <li>click on the top of the range keeping the crosshair above the direct beam mark</li>
+    <li>click on the bottom of the range keeping the crosshair in line
+with the dircet beam mark - choosing a poit above the mark is fine</li>
+    <ul>
+      <li>do not exchange the order of inputs, or you may not get the range you wanted</li>
+    </ul>
+    <li>now continue as described above for the horizontal case</li>
+    <ul>
+      <li>the range displayed is even crazier as for horizontal - ignore all of the negative q-range when you zoom in</li>
+      <li>note that in a GISAXS detector image, the Yoneda peak occurs
+at alf_i+alf_c, or in q-space, q_Y&nbsp; = k {(sin(alf_i)+sin(alf_c)}<br>
+      </li>
+    </ul>
+  </ul>
+</ul>
+<br>
+<h3><a class="mozTocH3" name="2D-plots"></a>(calibrated 2D plots)</h3>
+I have not yet been able to find a feature in <span style="font-family: monospace;">fit2d </span>which handles this common task
+in an elegant way, i.e. converting from <span style="font-style: italic;">x</span>,<span style="font-style: italic;">
+y</span> (pixels) to <span style="font-style: italic;">q_x</span>, <span style="font-style: italic;">q_y</span> (inverse Angstroem).<br>
+<br>
+Here's the brute force way which is only good for SAXS or GISAXS maps,
+when the transformation from pixel space to angle space or Q-space are essentially linear:<br>
+<ul>
+  <li>determine the (<span style="font-style: italic;">q_x_min</span>, <span style="font-style: italic;">q_y_min</span>) values of the left bottom
+corner
+point of the image from the beam
+center and Ag behenate calibration</li>
+  <li>determine the stepsize per pixel <span style="font-style: italic;">q_x_step</span> and <span style="font-style: italic;">q_y_step</span><br>
+  </li>
+  <li>generate a plot using commands from above, then rescale the plot
+axes to these values:</li>
+  <ul>
+    <li>go to the keyboard interface: <span style="font-family: monospace;">MAIN </span>&gt; <span style="font-family: monospace;">KEYBOARD <br>
+      </span></li>
+    <li>now typ the following command on the ASCII screen which will
+prompt you for the four values determined above: <span style="font-family: monospace;">AXES SCALES &gt; </span><span style="font-style: italic;">q_x_min, q_x_step, q_y_min, q_y_step</span></li>
+    <li>switch back to graphical interface: <span style="font-family: monospace;">IMAGE</span>; this has to be done
+after each step for changes to take effect on the image<br>
+    </li>
+    <li>other useful commands to generate publication-grade figures
+include <br>
+    </li>
+    <ul>
+      <li>remove default labels: <span style="font-family: monospace;">SET
+X-LABEL STYLE</span> &gt; <span style="font-style: italic;">no</span>;
+        <span style="font-family: monospace;">SET Y-LABEL STYLE</span>
+&gt; <span style="font-style: italic;">no</span><br>
+      </li>
+      <li>make numbers larger: <span style="font-family: monospace;">SET
+ENUMERATION STYLE</span> ; in menu choose color <span style="font-style: italic;">BLACK</span> and size <span style="font-style: italic;">2</span></li>
+      <li>define major ticks: <span style="font-family: monospace;">SET
+TICK POSITIONS</span></li>
+      <li>define minor ticks: <span style="font-family: monospace;">SET
+AXES STYLE</span></li>
+      <li>define user region of image: <span style="font-family: monospace;">REGION</span></li>
+      <li>high quality output: <span style="font-family: monospace;">PUBLICATION
+QUALITY</span><br>
+      </li>
+      <li>for more detailed information see reference manual<br>
+      </li>
+    </ul>
+    <li>if a series of images is to be reformatted, it is worth while
+to learn how to write a <span style="font-family: monospace;">fit2d </span>macro<br>
+    </li>
+  </ul>
+  <li><span style="font-family: monospace;">PRINT </span>to postscript
+file <br>
+  </li>
+  <li>a program like <span style="font-family: monospace;">ghostview </span>(available
+free on the internet) can reformat the <span style="font-family: monospace;">postscript </span>to a graphics file
+format like <span style="font-family: monospace;">png </span>or <span style="font-family: monospace;">jpeg </span>for use in publications</li>
+  <li>unfortunately 1D slices from the rescaled plot do not conserve
+the calibration and are plotted in relative pixel units</li>
+  <li>calibrated projections onto a line can be obtained using <span style="font-family: monospace;">PROJECTION</span>. Please check the <span style="font-family: monospace;">fit2d</span> manual for details (I
+still have to work this out).</li>
+</ul>
+See also Peter Busch's <span style="font-family: monospace;">fit2d</span>
+<a href="http://g-line.chess.cornell.edu/G-lineStatus/G-lineManuals/CheatSheets/FIT2D_MAIN.html">notes</a>.<br>
+<br>
+For D1-style GIWAXS, the non-linear coordinate transformation form
+pixels to scattering angles to q-components has to be done with another
+program, for instance an Origin 7.0 spreadsheet. See <a href="GIWAXS@D1_Conversions.html">GIWAXS at D-line</a> .<br>
+<br><br>
+<h3><a class="mozTocH3" name="peak-fitting"></a>1D peak fitting of
+calibrated data</h3>
+<ul><li>before you get started, the <span style="font-family: monospace;">Z-SCALING</span>
+mode has to be set to <span style="font-family: monospace;">LINEAR </span>(in
+any menu you happen to be in). In order to make data visible again, if
+you come from <span style="font-family: monospace;">LOGARITHMIC</span>,
+use <span style="font-family: monospace;">FULLY AUTOMATIC </span>or <span style="font-family: monospace;">WEAK PEAKS</span>. These features work
+for the <span style="font-family: monospace;">LINEAR </span>scale,
+but yield poor scaling in the <span style="font-family: monospace;">LOG
+    </span>scale.<br>
+  </li><li>goto <span style="font-family: monospace;">MAIN </span>&gt; <span style="font-family: monospace;">MFIT </span>&gt; <span style="font-family: monospace;">INITIALIZE</span><br>
+  </li><li>provide rough starting parameter:</li><ul><li>use <span style="font-family: monospace;">POLYNOMINAL </span>for
+the background; a polynom of 6th order
+works for me</li><li>choose model for peaks (<span style="font-family: monospace;">GAUSSIAN</span>,
+etc.) and follow instructions</li><li>provide starting values for each peak<br>
+    </li><li>starting curves are shown that should look reasonable</li><li style="font-family: monospace;">EXIT</li></ul><li><span style="font-family: monospace;">OPTIMISE </span>should
+give you a nice fit</li><li><span style="font-family: monospace;">RESULTS </span>displays
+the fit parameters in your chosen calibrated
+coordinates which can be saved to a file using <span style="font-family: monospace;">SAVE</span></li><li>ASCII <span style="font-family: monospace;">OUTPUT </span>can
+be optained using <span style="font-family: monospace;">CHIPLOT </span>(to
+be tested)<span style="font-family: monospace;"><br>
+    </span></li><li><span style="font-family: monospace;">PRINT </span>the output,
+if you want to use the graphics (see
+"calibrated 2D plots")</li></ul>
+<br>
+<div style="text-align: center;"><img alt="sample outpit: integration and fit" src="AgBeh-fit-polynom6&amp;Gauss.png" style="width: 496px; height: 436px;"><br>
+</div>
+<span style="font-style: italic;">Figure 2. Integration of AgBeh raw
+input data and succesive fit (6th order polynominal background and 7
+Gaussians; the 2 small peaks on the right were not attempted to be
+fitted). The bottom plot shows the residuals.<br>
+<br>
+</span>Reference: A&nbsp;P&nbsp;Hammersley and C&nbsp;Riekel, ``MFIT:
+Multiple Spectra Fitting Program'', <i>Synchrotron Rad. News</i>, <b>2</b>,
+pp24-26, (1989) .<br>
+<span style="font-style: italic;"></span><br><br>
+<h2><a name="final_remark"></a>final remark</h2>
+This page&nbsp;a work in progress. Nonetheless it has provided the backbone
+for
+on-line and off-line data analysis for the users of CHESS D1 station in the past years. Please report errors
+to me. If you find another useful <span style="font-family: monospace;">fit2d
+</span>feature to include in this page, please let me know.&nbsp; <a href="mailto:dms79@cornell.edu">DS</a> <br>
+<br>
+<ul>
+</ul>
+</body></html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>SAXS@D-line_Procedures</title>
+</head>
+<body>
+<big><span style="font-weight: bold;"><big><span
+ style="color: rgb(204, 0, 0);">SAXS @ D-line: Procedures</span></big></span></big><br>
+<br>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">Switch to CCD
+mode</span><br>
+<ul>
+  <li>move beamstop into the beam &gt; mv bsx 0; mv bsz 0;&nbsp; wbs<br>
+  </li>
+  <li>verify that beamstop is in the beam : Idet counts should be small<br>
+  </li>
+  <li>close shutter&nbsp; &gt;&nbsp; shclose</li>
+  <li>check: Imon counts should be small<br>
+  </li>
+  <li>enable ccd macros&nbsp; &gt;&nbsp; ccdon</li>
+  <li>go into hutch and remove ion chamber</li>
+  <li>move CCD flush against marker clamp trying to avoid angular offset<br>
+  </li>
+  <li>interlock hutch, enable and open garage door</li>
+  <li>take a test image for 0.1 sec&nbsp; &gt;&nbsp; corr 1
+0.1</li>
+  <li>if necessary, finetune beamstop position <br>
+  </li>
+  <ul>
+    <li>move bsx or bsz in steps of 0.1 mm and
+take test image &gt; corr 1 0.1</li>
+  </ul>
+</ul>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">Take direct
+beam image (if necessary)</span><br>
+<ul>
+  <li>go into hutch and attach absorber (lead tape @ 10 keV) to
+entrance of flight path<br>
+  </li>
+  <li>interlock hutch and open garage door</li>
+  <li>move beam stop out of the way &gt; mv bsx 2</li>
+  <li>TAKE TEST IMAGE &gt; corr 1 0.1</li>
+  <li>if image okay (all dark), try 1 sec and then 10sec exposure</li>
+  <li>move beamstop back in &gt; mv bsx 0<br>
+  </li>
+  <li>go into hutch and remove absorber<br>
+  </li>
+</ul>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">Switch to
+Line-up Mode</span><br>
+<ul>
+  <li>disable garage door (switch on controller)<br>
+  </li>
+  <li>disable ccd macros&nbsp; &gt;&nbsp; ccdoff</li>
+  <li>go into hutch, move CCD back, put ion chamber in and change
+samples<br>
+  </li>
+  <li>interlock hutch and open CCD shutter&nbsp; &gt;&nbsp; shopen</li>
+  <li>new data file&nbsp; &gt;&nbsp; newfile [sample name]<br>
+  </li>
+  <li>direct beam line-up<br>
+  </li>
+  <ul>
+    <li>move beamstop out &gt; wbs; mv bsx 2<br>
+    </li>
+    <li>move sample to ZERO position &gt; wsam; mv sx 0<br>
+    </li>
+    <li>scan sample through beam &gt; dscan samx -19 19 76 1<br>
+    </li>
+    <li>note sx positions with promising absorption to take images there</li>
+  </ul>
+  <li>beamstop line-up (if needed)</li>
+  <ul>
+    <li>&gt; dscan bsx -3 3 30 1</li>
+    <li>move bsx to the center of the blocked area using the numerical
+scan output<br>
+    </li>
+    <li>&gt; dscan bsz -3 3 30 1</li>
+    <li>move bsz to the center of the blocked area using the numerical
+scan output<br>
+    </li>
+  </ul>
+</ul>
+( note: after&nbsp; "&gt;"&nbsp; follows the spec command, as it is
+typed in )<br>
+<br>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>GISAXS@D-line_Procedures</title>
+
+</head>
+<body>
+<big><span style="font-weight: bold;"><br>
+</span></big>
+<h1><span style="font-weight: bold;"><span style="color: rgb(204, 0, 0);">GISAXS @ D-line: Procedures</span></span></h1>
+<span style="font-weight: bold; color: rgb(0, 0, 153);"><br>
+</span>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Line-up
+mode</span></h2>
+<ul>
+<li>disable CCD macros&nbsp; &gt;&nbsp; <span style="font-family: Courier New,Courier,monospace;">ccdoff</span></li>
+<li>reset all sample positions and chose a new filename &gt;<span style="font-family: Courier New,Courier,monospace;"> new</span></li>
+<li>go into hutch, put ion chamber in, and change samples<br>
+</li>
+<li>direct beam line-up</li>
+<ul>
+<li>make sample parallel to beam &gt; <span style="font-family: Courier New,Courier,monospace;">rock</span>&nbsp;</li>
+<ul>
+<li>if the angular scan shows the "shark tooth" profile,
+you can proceed</li>
+<li>if the angular file has a flat top, or does not go to
+zero on one side, redo <span style="font-family: Courier New,Courier,monospace;">rock</span></li>
+</ul>
+</ul>
+<li>reflectivity line-up&nbsp;&nbsp;</li>
+<ul>
+<li>measure a calibration reflectivity curve <span style="font-family: Courier New,Courier,monospace;">&gt;
+xr</span></li>
+<ul>
+<li>extrapolate the onset of samth scan to find the proper
+zero value <span style="font-family: Courier New,Courier,monospace;">[ZERO]</span>
+using pencil &amp; ruler on the print-out</li>
+<li>reset the zero of <span style="font-family: Courier New,Courier,monospace;">samth</span>
+<span style="font-family: Courier New,Courier,monospace;">&gt;
+mv samth [ZERO]; set samth 0</span></li>
+</ul>
+<li>measure
+a proper reflectivity curve<span style="font-family: Courier New,Courier,monospace;"> &gt; xrfine</span></li>
+<ul>
+<li>in order to change scan parameters, use<span style="font-family: Courier New,Courier,monospace;">
+&gt; set_xrfine<br>
+</span></li>
+<li>redo<span style="font-family: Courier New,Courier,monospace;"> xrfine </span>with
+the new settings <br>
+</li>
+</ul>
+</ul>
+</ul>
+( note: after&nbsp; "&gt;"&nbsp; follows the spec command,
+as it is
+typed in )<br>
+( note: [ZERO] denotes the numerical value of the zero offset )<br>
+<br>
+<br>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Switch
+to CCD
+mode</span></h2>
+<ul>
+<li>enable ccd macros&nbsp; <span style="font-family: Courier New,Courier,monospace;">&gt;&nbsp;
+ccdon</span></li>
+<li>go into hutch and remove ion chamber</li>
+<li>open garage door</li>
+<li>take a test image for 0.1 sec&nbsp; <span style="font-family: Courier New,Courier,monospace;">&gt;
+corr 1
+0.1</span></li>
+<li>finetune beamstop position , if needed<br>
+</li>
+<ul>
+<li>step of +/- 0.1 mm in <span style="font-family: Courier New,Courier,monospace;">bsx</span>&nbsp;
+&gt;&nbsp; <span style="font-family: Courier New,Courier,monospace;">mvr bsx
+0.1</span><br>
+</li>
+<li>whenever you move the beam stop: take a test image after
+each step <span style="font-family: Courier New,Courier,monospace;">&gt;
+corr 1 0.1</span></li>
+<li>set the new <span style="font-family: Courier New,Courier,monospace;">bsx </span>position
+to zero <span style="font-family: Courier New,Courier,monospace;">&gt;
+set bsx 0<br>
+</span></li>
+</ul>
+<li>collect images<span style="font-family: Courier New,Courier,monospace;">&nbsp;</span></li>
+<ul>
+<li>increase the exposure time - please no more than a factor
+of 10 per step</li><ul><li>check that dark image exists &gt; <span style="font-family: Courier New,Courier,monospace;">ls dark</span></li><ul><li><span style="font-family: Courier New,Courier,monospace;">i</span>f not, collect a dark image first<span style="font-family: Courier New,Courier,monospace;"> &gt; dark [new exposure time]</span></li><li>it is sufficient to update dark images once a day<span style="font-family: Courier New,Courier,monospace;"><br></span></li></ul></ul>
+<ul>
+<li>check image in <span style="font-family: Courier New,Courier,monospace;">fit2d</span>
+: maximum linear range of CCD is 15,000 units, the CCD saturates above
+16,000 units</li>
+<li>recommended z-scaling in <span style="font-family: Courier New,Courier,monospace;">fit2d</span>
+: logarithmic with user min/max of 15 and 15,000<span style="font-family: Courier New,Courier,monospace;"><br>
+</span></li>
+</ul>
+<li>choose a variety of <span style="font-family: Courier New,Courier,monospace;">samth</span>
+values, to optimize contrast&nbsp;</li>
+<li>choose a couple of <span style="font-family: Courier New,Courier,monospace;">samx</span>
+values, to check homogeneity of the sample</li>
+<ul>
+<li>within +/- 2 mm all remains well-aligned</li>
+<li>if you need a larger <span style="font-family: Courier New,Courier,monospace;">samx</span>
+range (&gt;5mm) use the <span style="font-family: Courier New,Courier,monospace;">level</span>&nbsp;macro
+in connection with <span style="font-family: Courier New,Courier,monospace;">samtilt</span></li>
+</ul>
+<li>for anisotropic samples</li><ul><li>coarse check: turn sample 90
+deg on holder and redo line-up, before collecting images</li></ul>
+<ul><li>fine scan: choose a variety of
+samaz values (+/-20 deg)</li></ul>
+<ul><ul>
+<li>the <span style="font-family: Courier New,Courier,monospace;">samaz</span>
+axis is unfortunately not well aligned</li>
+<li>hence <span style="font-family: Courier New,Courier,monospace;">samth</span>
+should be corrected so that the reflected beam or the horizon or the
+Yoneda band appear at the same position in the image</li>
+<li>it is useful to make a little calibration of position
+shift (in pixels) vs. <span style="font-family: Courier New,Courier,monospace;">samth</span>
+offset</li>
+</ul></ul>
+</ul>
+</ul>
+
+</body></html>

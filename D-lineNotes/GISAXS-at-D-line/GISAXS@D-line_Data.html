@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>GISAXS@D-line_Data</title></head><body>
+<big><span style="font-weight: bold;"></span></big>
+<h1><small><span style="font-weight: bold;"><big><span style="color: rgb(204, 0, 0);">GISAXS @ D-line: Data</span></big></span></small></h1>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Q: Where
+are my data ?</span></h2>
+Each D-line user gets a user directory assigned on <span style="font-family: monospace;">/home/specuser/USER</span>, where <span style="font-family: monospace;">USER </span>corresponds to the name
+of the PI of the experiment. USER has the following default
+subdirectories:<br>
+<ul>
+  <li style="font-family: monospace;">data</li>
+  <li style="font-family: monospace;">corr</li>
+  <li style="font-family: monospace;">dark</li>
+</ul>
+The <span style="font-family: monospace;">data </span>directory
+contains the <span style="font-family: monospace;">SPEC </span>output
+files. These are all line-up and reflectivity scans, all appended to
+one file <span style="font-family: monospace;">FILENAME</span>, the
+name of which is declared in the <span style="font-family: monospace;">newfile
+</span>command. This file contains other important information, such as
+all motor positions at the beginning of each scan or CCD exposure
+(which corresponds to a <span style="font-family: monospace;">tseries </span>scan
+in <span style="font-family: monospace;">SPEC</span>)
+and the count
+rates of all monitor detectors along the beamline. The log file is in
+ASCII and can be read by any decent text editor, e.g. "gedit", "emacs",
+or "vi" (LINUX) or "notepad++"&nbsp; and "MS Word" (Windows).<br>
+<br>
+<span style="color: red;"></span><br>
+The <span style="font-family: monospace;">corr </span>and <span style="font-family: monospace;">dark </span>directories contain all
+your images, the automatically corrected ones in <span style="font-family: monospace;">corr</span>, the dark images in <span style="font-family: monospace;">dark</span>. Data format is TIFF.<br>
+<br>
+The <span style="font-family: monospace;">/home/specuser/images</span>
+directory contains all raw data files that
+the CCD
+collects. At the end of a user experiment
+<span style="font-family: monospace;">~/images</span> can be copied
+to <span style="font-family: monospace;">USER/raw</span>, if users
+would like to keep the raw images:<br>
+<ul>
+  <li>cd ~/images</li>
+  <li>mv *.tif ~/[user]/raw</li>
+</ul>Otherwise, raw images will be removed to make space for the next
+user
+group. According to new NSF guidelines on scientific ethics, old data
+files need to be stored at CHESS. At present the archiving procedure is
+not yet defined; for the time being corrected files and log files are
+being kept on the acquisition computer and the analysis PC.<br>
+<br>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Q: How do I
+take my data home ?</span></h2>The following
+procedure has proven to be solid:<br>
+<ul>
+  <li>when you come to CHESS make sure to bring a flash drive (8G) or an external hard disk (USB)<br>
+</li>
+  <li>go to the CHESS User Computer Room and mount your drive using the USB extension ports <br>
+  </li>
+
+  <li>use the "ssh Secure File Transfer" program to directly copy the data to your disk</li></ul>
+<ul>
+  <li>Alternatively you can&nbsp; copy to the hard disk of you laptop -
+there are
+plenty of high-speed ethernet connections in the Computer Room and
+there is a local wireless network. Using the letter you can directly
+mount the hard disk of the acquisition computer.</li>
+</ul>
+<ul>
+
+  <li>Because of the large amount of data produced by the area
+detector, I discourage the use of the <span style="font-family: monospace;">CD </span>or <span style="font-family: monospace;">DVD </span>burners.</li>
+</ul>
+<ul>
+
+  <li><span style="font-weight: bold;">DO NOT</span> try to hook up
+external storage devices to the beamline computer - it is too easy to
+crash <span style="font-family: monospace;">LINUX </span>this way and
+make a huge mess.</li>
+  <li>Access to CHESS beamline computers from the outside has been disabled.<br>
+  </li>
+
+</ul>
+
+<br>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Q: How do I
+set up a lap top at D-line ?</span></h2>
+The easiest and most reliable way is to connect the lap top to an
+ethernet connector (there are 2 user ports at the desk top and 1 at the
+prep table) and choose
+"find address automatically". No special password is required. Please
+do not hook up lap tops to the ethernet switch connecting the beamline computer
+and the CCD computer.<br>
+<br>
+The Wilson Lab wireless network requires a password. Please contact the
+CHESS Operator for assistance. Despite
+the metal hutch walls, the wireless works reasonable in the beamline control area.<br>
+<span style="font-weight: bold;"><br>
+</span><br>
+<big style="color: rgb(0, 0, 153);"><span style="font-weight: bold;"></span></big><br>
+<big style="color: rgb(0, 0, 153);"><span style="font-weight: bold;"></span></big><br>
+
+</body></html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>GISAXS@D-line_Disk</title>
+</head>
+<body>
+<big><span style="font-weight: bold;"></span></big>
+<h1><small><span style="font-weight: bold;"><big><span
+ style="color: rgb(204, 0, 0);">GISAXS @ D-line: Data</span></big></span></small></h1>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Q: Where
+are my data ?</span></h2>
+Each D-line user gets a user directory assigned on <span
+ style="font-family: monospace;">/home/specuser/USER</span>, where <span
+ style="font-family: monospace;">USER </span>corresponds to the name
+of the PI of the experiment. USER has the following default
+subdirectories:<br>
+<ul>
+  <li style="font-family: monospace;">data</li>
+  <li style="font-family: monospace;">corr</li>
+  <li style="font-family: monospace;">dark</li>
+</ul>
+The <span style="font-family: monospace;">data </span>directory
+contains the <span style="font-family: monospace;">SPEC </span>output
+files. These are all line-up and reflectivity scans, all appended to
+one file <span style="font-family: monospace;">FILENAME</span>, the
+name of which is declared in the <span style="font-family: monospace;">newfile
+</span>command. This file contains other important information, such as
+all motor positions at the beginning of each scan or CCD exposure
+(which corresponds to a <span style="font-family: monospace;">tseries </span>scan
+in <span style="font-family: monospace;">SPEC</span>) and the count
+rates of all monitor detectors along the beamline. The contents, i.e.
+the important header lines, of such a log file can be listed using the
+D1 <span style="font-family: monospace;">scan </span>command. At the
+LINUX prompt, type:<br>
+<div style="margin-left: 40px;"><br>
+</div>
+<div style="margin-left: 40px;"><span style="font-family: monospace;">scan
+FILENAME</span><br>
+</div>
+<br>
+which generates a list of information on the screen, or<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-family: monospace;">scan
+FILENAME &gt; FILENAME.LOG</span><br>
+</div>
+<div style="margin-left: 40px;"><br>
+</div>
+which writes the file information to a file <span
+ style="font-family: monospace;">FILENAME.LOG </span>which can
+complement your logbook notes. <span style="font-family: monospace;">scan</span>
+is a <span style="font-family: monospace;">awk</span> script that will
+run on <span style="font-family: monospace;">UNIX </span>and <span
+ style="font-family: monospace;">LINUX </span>computers.<br>
+<br>
+The <span style="font-family: monospace;">corr </span>and <span
+ style="font-family: monospace;">dark </span>directories contain all
+your images, the automatically corrected ones in <span
+ style="font-family: monospace;">corr</span>, the dark images in <span
+ style="font-family: monospace;">dark</span>.<br>
+<br>
+The <span style="font-family: monospace;">/home/specuser/images</span>
+directory contains all raw data files that
+the CCD
+collects. At the end of a user experiment
+<span style="font-family: monospace;">~/images</span> should be copied
+to <span style="font-family: monospace;">USER/raw</span>, if users
+would like to keep the raw images:<br>
+<ul>
+  <li>cd ~/images</li>
+  <li>mv *.tif ~/[user]/raw</li>
+</ul>
+Otherwise, raw images will be removed to make space for the next user
+group.<br>
+<br>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Q: How do I
+take my data home ?</span></h2>
+After several years of struggling with this problem, the following
+procedure has proven to be solid:<br>
+<ul>
+  <li>go to the CHESS User Computer Room and copy your file to one of
+the computers there (Windows XP, Mac OS-X, Linux) using ftp or ssh.</li>
+  <li>the most suitable storage device I have seen is a hard disk. <br>
+  </li>
+  <ul>
+    <li>You can either copy to the hard disk of you Lap Top (there are
+plenty of high-speed ethernet connections in the Computer Room)</li>
+    <li>or use an external hard disk. External <span
+ style="font-family: monospace;">USB </span>and <span
+ style="font-family: monospace;">Firewire </span>ports are provided
+for each of the User Computers, and data can be copied directly to the
+external drive (i.e. without buffering them on the User Computer).</li>
+  </ul>
+  <li>because of the large amount of data produced by the area
+detector, I discourage the use of the <span
+ style="font-family: monospace;">CD </span>or <span
+ style="font-family: monospace;">DVD </span>burners.</li>
+  <li><span style="font-weight: bold;">DO NOT</span> try to hook up
+external storage devices to the beamline computer - it is too easy to
+crash <span style="font-family: monospace;">LINUX </span>this way and
+make a huge mess.<br>
+  </li>
+</ul>
+<br>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Q: How do I
+set up a lap top at D-line ?</span></h2>
+The easiest and most reliable way is to connect the lap top to an
+ethernet connector (there are 2 user ports at the desk top and 1 at the
+prep table) and choose
+"find address automatically". No special password is required. Please
+do not hook up lap tops to the switch connecting the beaamline computer
+and the CCD computer.<br>
+<br>
+The Wilson Lab wireless network requires a password. Please contact the
+CHESS Computing Group for assistance. There may be interference with
+the metal hutch walls, so the beamline control area is not ideal for
+wireless networks.<br>
+<span style="font-weight: bold;"><br>
+</span><br>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">for
+internal use: beamline computer hard disk back-up<br>
+</span></h2>
+The present 120GB hard disk at D-line is relatively limited in its
+capacity for high-throuput GISAXS.<br>
+Hence when the user partition of the disk reaches 95%, I have to move
+files to the back-up server.<br>
+In the following a set of the relevant commands.&nbsp;<br>
+<ul>
+  <li>start differential back-up:</li>
+  <ul>
+    <li>&gt; cd /usr/local/backup/</li>
+    <li>&gt; ./backup-script &amp;</li>
+    <ul>
+      <li>the "&amp;" let's backup-script run in the background</li>
+      <li>always use "&amp;" when logged in via modem<br>
+      </li>
+    </ul>
+    <li>&gt; cat rsync.log <br>
+    </li>
+    <ul>
+      <li>this allows to watch the backup as it progresses<br>
+      </li>
+    </ul>
+    <li>note: computer performance will&nbsp; slow down during back-up</li>
+    <li>check log and error log to verify successful transfer, and
+create a copy of the log<br>
+    </li>
+    <ul>
+      <li>&gt; cat rsync.log</li>
+      <li>&gt; cat rsync_error.log</li>
+      <li>&gt; cp rsync.log May12-05.log<br>
+      </li>
+    </ul>
+  </ul>
+  <li>list files and directories on back-up server</li>
+  <ul>
+    <li>&gt; rsync
+rsync://offsite.chess.cornell.edu/CHESS/specuser/d1/chess/cornell.edu/specuser/</li>
+    <li>&gt; rsync
+rsync://offsite.chess.cornell.edu/CHESS/specuser/d1/chess/cornell.edu/specuser/[subdirectory]/</li>
+    <li>note: the final slash "/" is important, so that the content of
+the directory will be listed!</li>
+  </ul>
+  <li>copy files and directories from back-up server</li>
+  <ul>
+    <li>copy file: <br>
+    </li>
+    <li>&gt; rsync
+rsync://offsite.chess.cornell.edu/CHESS/specuser/d1/chess/cornell.edu/specuser/[sub]/[file]&nbsp;
+[sub]/.</li>
+    <ul>
+      <li>note: wildcards are allowed, but may produce strange
+behaviour,
+if directory name is part of the set<br>
+      </li>
+    </ul>
+    <li>copy directory:</li>
+    <li>&gt; rsync
+rsync://offsite.chess.cornell.edu/CHESS/specuser/d1/chess/cornell.edu/specuser/[sub]/&nbsp;&nbsp;
+[sub]/</li>
+    <ul>
+      <li>note: copies the contents of the subdirectory to the target
+subdirectory<br>
+      </li>
+    </ul>
+    <li>&gt; rsync
+rsync://offsite.chess.cornell.edu/CHESS/specuser/d1/chess/cornell.edu/specuser/[sub]
+[sub]</li>
+    <ul>
+      <li>note: copies the subdirectory</li>
+    </ul>
+  </ul>
+</ul>
+<br>
+<big style="color: rgb(0, 0, 153);"><span style="font-weight: bold;"></span></big><br>
+<big style="color: rgb(0, 0, 153);"><span style="font-weight: bold;"></span></big><br>
+</body>
+</html>
