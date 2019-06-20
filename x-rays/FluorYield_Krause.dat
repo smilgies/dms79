@@ -1,0 +1,507 @@
+#F FluorYield_Krause.dat
+#UT Atomic Radiative Yields for K and L Shells (M.O. Krause)
+#C  This file has been created using the mucal.f subroutine
+#C  This file belongs to the DABAX library. More information on
+#C  DABAX can be found at:
+#C  http://www.esrf.fr/computing/expg/subgroups/theory/DABAX/dabax.html
+#U3W Sheet_Stand
+#UD Atomic Radiative Yields for K and L Shells (M.O. Krause)
+#UD 
+#UD This data set contains data calculated by using mucal (A subroutine to 
+#UD calculate x-ray crossections) by Pathikrit Badyopadhyay.
+#UD 
+#UD data is available for all the elements from 1 to 94.
+#UD 
+#UD REFERENCE
+#UD 
+#UD  M.O. Krause "Atomic Radiative and Raduiattionless Yields for K and
+#UD  L Shells", J. Phys. Chem. Ref. Data, Vol. 8, No 2, 1979, pag 307-327
+#UD 
+#UD The mucal program can be found at: 
+#UD    http://xafsdb.iit.edu:80/exafs-database/programs/mcmaster/
+#UD and a Periodic Table WWW interface is at:
+#UD    http://www.csrri.iit.edu/periodic-table.html
+#UD 
+#UD Column description:
+#UD      1:FluorescenceY(K)
+#UD      2:FluorescenceY(L1)
+#UD      3:FluorescenceY(L2)
+#UD      4:FluorescenceY(L3)
+#UD 
+#UD The scan #S 1000 contains the information for all the elements, where the first 
+#UD column is the Atomic Number Z. This is useful to make plots of the values of a 
+#UD  given variable as a function of Z.
+#UD 
+#S   1 H 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+   0.  0.  0.  0.
+#S   2 He
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+   0.  0.  0.  0.
+#S   3 Li
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+   0.  0.  0.  0.
+#S   4 Be
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+   0.  0.  0.  0.
+#S   5 B 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     1.70000E-03  0.  0.  0.
+#S   6 C 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     2.80000E-03  0.  0.  0.
+#S   7 N 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     5.20000E-03  0.  0.  0.
+#S   8 O 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     8.30000E-03  0.  0.  0.
+#S   9 F 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     1.30000E-02  0.  0.  0.
+#S  10 Ne
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     1.80000E-02  0.  0.  0.
+#S  11 Na
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     2.30000E-02  0.  0.  0.
+#S  12 Mg
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     3.00000E-02    2.90000E-05    1.20000E-03    1.20000E-03
+#S  13 Al
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     3.90000E-02    2.60000E-05    7.50000E-04    7.50000E-04
+#S  14 Si
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     5.00000E-02    3.00000E-05    3.70000E-04    3.80000E-04
+#S  15 P 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     6.30000E-02    3.90000E-05    3.10000E-04    3.10000E-04
+#S  16 S 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     7.80000E-02    7.40000E-05    2.60000E-04    2.60000E-04
+#S  17 Cl
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+     9.70000E-02    1.20000E-04    2.40000E-04    2.40000E-04
+#S  18 Ar
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.118000    1.80000E-04    2.20000E-04    2.20000E-04
+#S  19 K 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.140000    2.40000E-04    2.70000E-04    2.70000E-04
+#S  20 Ca
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.163000    3.10000E-04    3.30000E-04    3.30000E-04
+#S  21 Sc
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.188000    3.90000E-04    8.40000E-04    8.40000E-04
+#S  22 Ti
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.214000    4.70000E-04    1.50000E-03    1.50000E-03
+#S  23 V 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.243000    5.80000E-04    2.60000E-03    2.60000E-03
+#S  24 Cr
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.275000    7.10000E-04    3.70000E-03    3.70000E-03
+#S  25 Mn
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.308000    8.40000E-04    5.00000E-03    5.00000E-03
+#S  26 Fe
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.340000    1.00000E-03    6.30000E-03    6.30000E-03
+#S  27 Co
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.373000    1.20000E-03    7.70000E-03    7.70000E-03
+#S  28 Ni
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.406000    1.40000E-03    8.60000E-03    9.30000E-03
+#S  29 Cu
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.440000    1.60000E-03    1.00000E-02    1.10000E-02
+#S  30 Zn
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.474000    1.80000E-03    1.10000E-02    1.20000E-02
+#S  31 Ga
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.507000    2.10000E-03    1.20000E-02    1.30000E-02
+#S  32 Ge
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.535000    2.40000E-03    1.30000E-02    1.50000E-02
+#S  33 As
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.562000    2.80000E-03    1.40000E-02    1.60000E-02
+#S  34 Se
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.589000    3.20000E-03    1.60000E-02    1.80000E-02
+#S  35 Br
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.618000    3.60000E-03    1.80000E-02    2.00000E-02
+#S  36 Kr
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.643000    4.10000E-03    2.00000E-02    2.20000E-02
+#S  37 Rb
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.667000    4.60000E-03    2.20000E-02    2.40000E-02
+#S  38 Sr
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.690000    5.10000E-03    2.40000E-02    2.60000E-02
+#S  39 Y 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.710000    5.90000E-03    2.60000E-02    2.80000E-02
+#S  40 Zr
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.730000    6.80000E-03    2.80000E-02    3.10000E-02
+#S  41 Nb
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.747000    9.40000E-03    3.10000E-02    3.40000E-02
+#S  42 Mo
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.765000    1.00000E-02    3.40000E-02    3.70000E-02
+#S  43 Tc
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.780000    1.10000E-02    3.70000E-02    4.00000E-02
+#S  44 Ru
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.794000    1.20000E-02    4.00000E-02    4.30000E-02
+#S  45 Rh
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.808000    1.30000E-02    4.30000E-02    4.60000E-02
+#S  46 Pd
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.820000    1.40000E-02    4.70000E-02    4.90000E-02
+#S  47 Ag
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.831000    1.60000E-02    5.10000E-02    5.20000E-02
+#S  48 Cd
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.843000    1.80000E-02    5.60000E-02    5.60000E-02
+#S  49 In
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.853000    2.00000E-02    6.10000E-02    6.00000E-02
+#S  50 Sn
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.862000    3.70000E-02    6.50000E-02    6.40000E-02
+#S  51 Sb
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.870000    3.90000E-02    6.90000E-02    6.90000E-02
+#S  52 Te
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.877000    4.10000E-02    7.40000E-02    7.40000E-02
+#S  53 I 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.884000    4.40000E-02    7.90000E-02    7.90000E-02
+#S  54 Xe
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.891000    4.60000E-02    8.30000E-02    8.50000E-02
+#S  55 Cs
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.897000    4.90000E-02    9.00000E-02    9.10000E-02
+#S  56 Ba
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.902000    5.20000E-02    9.60000E-02    9.70000E-02
+#S  57 La
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.907000    5.50000E-02    1.03000E-01    1.04000E-01
+#S  58 Ce
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.912000    5.80000E-02   0.110000   0.111000
+#S  59 Pr
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.917000    6.10000E-02   0.117000   0.118000
+#S  60 Nd
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.921000    6.40000E-02   0.124000   0.125000
+#S  61 Pm
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.925000    6.60000E-02   0.132000   0.132000
+#S  62 Sm
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.929000    7.10000E-02   0.140000   0.139000
+#S  63 Eu
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.932000    7.50000E-02   0.149000   0.147000
+#S  64 Gd
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.935000    7.90000E-02   0.158000   0.155000
+#S  65 Tb
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.938000    8.30000E-02   0.167000   0.164000
+#S  66 Dy
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.941000    8.90000E-02   0.178000   0.174000
+#S  67 Ho
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.944000    9.40000E-02   0.189000   0.182000
+#S  68 Er
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.947000    1.00000E-01   0.200000   0.192000
+#S  69 Tm
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.949000   0.106000   0.211000   0.201000
+#S  70 Yb
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.951000   0.112000   0.222000   0.210000
+#S  71 Lu
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.953000   0.120000   0.234000   0.220000
+#S  72 Hf
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.955000   0.128000   0.246000   0.231000
+#S  73 Ta
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.957000   0.137000   0.258000   0.243000
+#S  74 W 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.958000   0.147000   0.270000   0.255000
+#S  75 Re
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.959000   0.144000   0.283000   0.268000
+#S  76 Os
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.961000   0.130000   0.295000   0.281000
+#S  77 Ir
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.962000   0.120000   0.308000   0.294000
+#S  78 Pt
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.963000   0.114000   0.321000   0.306000
+#S  79 Au
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.964000   0.107000   0.334000   0.320000
+#S  80 Hg
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.965000   0.107000   0.347000   0.333000
+#S  81 Tl
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.966000   0.107000   0.360000   0.347000
+#S  82 Pb
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.967000   0.112000   0.373000   0.360000
+#S  83 Bi
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.968000   0.117000   0.387000   0.373000
+#S  84 Po
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.968000   0.122000   0.401000   0.386000
+#S  85 At
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.969000   0.128000   0.415000   0.399000
+#S  86 Rn
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.969000   0.134000   0.429000   0.411000
+#S  87 Fr
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.970000   0.139000   0.443000   0.424000
+#S  88 Ra
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.970000   0.146000   0.456000   0.437000
+#S  89 Ac
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.971000   0.153000   0.468000   0.450000
+#S  90 Th
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.971000   0.161000   0.479000   0.463000
+#S  91 Pa
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.972000   0.162000   0.472000   0.476000
+#S  92 U 
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.972000   0.176000   0.467000   0.489000
+#S  93 Np
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.973000   0.187000   0.466000   0.502000
+#S  94 Pu
+#N 4
+#L FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+    0.973000   0.205000   0.464000   0.514000
+#S 1000 all elements
+#N 5
+#L Z  FluorescenceY(K)  FluorescenceY(L1)  FluorescenceY(L2)  FluorescenceY(L3)
+   1  0.  0.  0.  0.
+   2  0.  0.  0.  0.
+   3  0.  0.  0.  0.
+   4  0.  0.  0.  0.
+   5    1.70000E-03  0.  0.  0.
+   6    2.80000E-03  0.  0.  0.
+   7    5.20000E-03  0.  0.  0.
+   8    8.30000E-03  0.  0.  0.
+   9    1.30000E-02  0.  0.  0.
+   10    1.80000E-02  0.  0.  0.
+   11    2.30000E-02  0.  0.  0.
+   12    3.00000E-02    2.90000E-05    1.20000E-03    1.20000E-03
+   13    3.90000E-02    2.60000E-05    7.50000E-04    7.50000E-04
+   14    5.00000E-02    3.00000E-05    3.70000E-04    3.80000E-04
+   15    6.30000E-02    3.90000E-05    3.10000E-04    3.10000E-04
+   16    7.80000E-02    7.40000E-05    2.60000E-04    2.60000E-04
+   17    9.70000E-02    1.20000E-04    2.40000E-04    2.40000E-04
+   18   0.118000    1.80000E-04    2.20000E-04    2.20000E-04
+   19   0.140000    2.40000E-04    2.70000E-04    2.70000E-04
+   20   0.163000    3.10000E-04    3.30000E-04    3.30000E-04
+   21   0.188000    3.90000E-04    8.40000E-04    8.40000E-04
+   22   0.214000    4.70000E-04    1.50000E-03    1.50000E-03
+   23   0.243000    5.80000E-04    2.60000E-03    2.60000E-03
+   24   0.275000    7.10000E-04    3.70000E-03    3.70000E-03
+   25   0.308000    8.40000E-04    5.00000E-03    5.00000E-03
+   26   0.340000    1.00000E-03    6.30000E-03    6.30000E-03
+   27   0.373000    1.20000E-03    7.70000E-03    7.70000E-03
+   28   0.406000    1.40000E-03    8.60000E-03    9.30000E-03
+   29   0.440000    1.60000E-03    1.00000E-02    1.10000E-02
+   30   0.474000    1.80000E-03    1.10000E-02    1.20000E-02
+   31   0.507000    2.10000E-03    1.20000E-02    1.30000E-02
+   32   0.535000    2.40000E-03    1.30000E-02    1.50000E-02
+   33   0.562000    2.80000E-03    1.40000E-02    1.60000E-02
+   34   0.589000    3.20000E-03    1.60000E-02    1.80000E-02
+   35   0.618000    3.60000E-03    1.80000E-02    2.00000E-02
+   36   0.643000    4.10000E-03    2.00000E-02    2.20000E-02
+   37   0.667000    4.60000E-03    2.20000E-02    2.40000E-02
+   38   0.690000    5.10000E-03    2.40000E-02    2.60000E-02
+   39   0.710000    5.90000E-03    2.60000E-02    2.80000E-02
+   40   0.730000    6.80000E-03    2.80000E-02    3.10000E-02
+   41   0.747000    9.40000E-03    3.10000E-02    3.40000E-02
+   42   0.765000    1.00000E-02    3.40000E-02    3.70000E-02
+   43   0.780000    1.10000E-02    3.70000E-02    4.00000E-02
+   44   0.794000    1.20000E-02    4.00000E-02    4.30000E-02
+   45   0.808000    1.30000E-02    4.30000E-02    4.60000E-02
+   46   0.820000    1.40000E-02    4.70000E-02    4.90000E-02
+   47   0.831000    1.60000E-02    5.10000E-02    5.20000E-02
+   48   0.843000    1.80000E-02    5.60000E-02    5.60000E-02
+   49   0.853000    2.00000E-02    6.10000E-02    6.00000E-02
+   50   0.862000    3.70000E-02    6.50000E-02    6.40000E-02
+   51   0.870000    3.90000E-02    6.90000E-02    6.90000E-02
+   52   0.877000    4.10000E-02    7.40000E-02    7.40000E-02
+   53   0.884000    4.40000E-02    7.90000E-02    7.90000E-02
+   54   0.891000    4.60000E-02    8.30000E-02    8.50000E-02
+   55   0.897000    4.90000E-02    9.00000E-02    9.10000E-02
+   56   0.902000    5.20000E-02    9.60000E-02    9.70000E-02
+   57   0.907000    5.50000E-02    1.03000E-01    1.04000E-01
+   58   0.912000    5.80000E-02   0.110000   0.111000
+   59   0.917000    6.10000E-02   0.117000   0.118000
+   60   0.921000    6.40000E-02   0.124000   0.125000
+   61   0.925000    6.60000E-02   0.132000   0.132000
+   62   0.929000    7.10000E-02   0.140000   0.139000
+   63   0.932000    7.50000E-02   0.149000   0.147000
+   64   0.935000    7.90000E-02   0.158000   0.155000
+   65   0.938000    8.30000E-02   0.167000   0.164000
+   66   0.941000    8.90000E-02   0.178000   0.174000
+   67   0.944000    9.40000E-02   0.189000   0.182000
+   68   0.947000    1.00000E-01   0.200000   0.192000
+   69   0.949000   0.106000   0.211000   0.201000
+   70   0.951000   0.112000   0.222000   0.210000
+   71   0.953000   0.120000   0.234000   0.220000
+   72   0.955000   0.128000   0.246000   0.231000
+   73   0.957000   0.137000   0.258000   0.243000
+   74   0.958000   0.147000   0.270000   0.255000
+   75   0.959000   0.144000   0.283000   0.268000
+   76   0.961000   0.130000   0.295000   0.281000
+   77   0.962000   0.120000   0.308000   0.294000
+   78   0.963000   0.114000   0.321000   0.306000
+   79   0.964000   0.107000   0.334000   0.320000
+   80   0.965000   0.107000   0.347000   0.333000
+   81   0.966000   0.107000   0.360000   0.347000
+   82   0.967000   0.112000   0.373000   0.360000
+   83   0.968000   0.117000   0.387000   0.373000
+   84   0.968000   0.122000   0.401000   0.386000
+   85   0.969000   0.128000   0.415000   0.399000
+   86   0.969000   0.134000   0.429000   0.411000
+   87   0.970000   0.139000   0.443000   0.424000
+   88   0.970000   0.146000   0.456000   0.437000
+   89   0.971000   0.153000   0.468000   0.450000
+   90   0.971000   0.161000   0.479000   0.463000
+   91   0.972000   0.162000   0.472000   0.476000
+   92   0.972000   0.176000   0.467000   0.489000
+   93   0.973000   0.187000   0.466000   0.502000
+   94   0.973000   0.205000   0.464000   0.514000

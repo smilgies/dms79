@@ -1,0 +1,161 @@
+.MCAD 304020000 1 74 98 0
+.CMD PLOTFORMAT
+0 0 1 1 1 0 0 1 1 
+0 0 1 1 1 0 0 1 1 
+0 1 0 0 1 1 NO-TRACE-STRING
+0 2 1 0 1 1 NO-TRACE-STRING
+0 3 2 0 1 1 NO-TRACE-STRING
+0 4 3 0 1 1 NO-TRACE-STRING
+0 1 4 0 1 1 NO-TRACE-STRING
+0 2 5 0 1 1 NO-TRACE-STRING
+0 3 6 0 1 1 NO-TRACE-STRING
+0 4 0 0 1 1 NO-TRACE-STRING
+0 1 1 0 1 1 NO-TRACE-STRING
+0 2 2 0 1 1 NO-TRACE-STRING
+0 3 3 0 1 1 NO-TRACE-STRING
+0 4 4 0 1 1 NO-TRACE-STRING
+0 1 5 0 1 1 NO-TRACE-STRING
+0 2 6 0 1 1 NO-TRACE-STRING
+0 3 0 0 1 1 NO-TRACE-STRING
+0 4 1 0 1 1 NO-TRACE-STRING
+0 1 1 21 15 0 0 3 
+.CMD FORMAT  rd=d ct=10 im=i et=3 zt=15 pr=3 mass length time charge temperature tr=0 vm=0
+.CMD SET ORIGIN 0
+.CMD SET TOL 0.001000000000000
+.CMD SET PRNCOLWIDTH 8
+.CMD SET PRNPRECISION 4
+.CMD PRINT_SETUP 1.200000 1.216667 1.200000 1.200000 0
+.CMD HEADER_FOOTER 1 1 *empty* *empty* *empty* 0 1 *empty* *empty* *empty*
+.CMD HEADER_FOOTER_FONT fontID=14 family=Arial points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD HEADER_FOOTER_FONT fontID=15 family=Arial points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFAULT_TEXT_PARPROPS 0 0 0
+.CMD DEFINE_FONTSTYLE_NAME fontID=0 name=Variables
+.CMD DEFINE_FONTSTYLE_NAME fontID=1 name=Constants
+.CMD DEFINE_FONTSTYLE_NAME fontID=2 name=Text
+.CMD DEFINE_FONTSTYLE_NAME fontID=4 name=User^1
+.CMD DEFINE_FONTSTYLE_NAME fontID=5 name=User^2
+.CMD DEFINE_FONTSTYLE_NAME fontID=6 name=User^3
+.CMD DEFINE_FONTSTYLE_NAME fontID=7 name=User^4
+.CMD DEFINE_FONTSTYLE_NAME fontID=8 name=User^5
+.CMD DEFINE_FONTSTYLE_NAME fontID=9 name=User^6
+.CMD DEFINE_FONTSTYLE_NAME fontID=10 name=User^7
+.CMD DEFINE_FONTSTYLE fontID=0 family=Times^New^Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=1 family=Times^New^Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=2 family=Arial points=10 bold=0 italic=0 underline=0 colrid=13
+.CMD DEFINE_FONTSTYLE fontID=4 family=Arial points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=5 family=Courier^New points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=6 family=System points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=7 family=Script points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=8 family=Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=9 family=Modern points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=10 family=Times^New^Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD UNITS U=1
+.CMD DIMENSIONS_ANALYSIS 0 0
+.CMD COLORTAB_ENTRY 0 0 0
+.CMD COLORTAB_ENTRY 128 0 0
+.CMD COLORTAB_ENTRY 0 128 0
+.CMD COLORTAB_ENTRY 128 128 0
+.CMD COLORTAB_ENTRY 0 0 128
+.CMD COLORTAB_ENTRY 128 0 128
+.CMD COLORTAB_ENTRY 0 128 128
+.CMD COLORTAB_ENTRY 128 128 128
+.CMD COLORTAB_ENTRY 192 192 192
+.CMD COLORTAB_ENTRY 255 0 0
+.CMD COLORTAB_ENTRY 0 255 0
+.CMD COLORTAB_ENTRY 255 255 0
+.CMD COLORTAB_ENTRY 0 0 255
+.CMD COLORTAB_ENTRY 255 0 255
+.CMD COLORTAB_ENTRY 0 255 255
+.CMD COLORTAB_ENTRY 255 255 255
+.CMD COLORTAB_ENTRY 10 36 106
+.TXT 4 1 1 0 0
+Cg a73.000000,73.000000,35
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard {\ul Length scales and }{
+\ul scattering}{\ul  angles}}
+.TXT 4 0 37 0 0
+Cg a73.000000,73.000000,35
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard energy (keV) and wave 
+vector (invA)}
+.TXT 0 35 56 0 0
+Cg a38.000000,38.000000,23
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard flight path length (mm)}
+.EQN 4 -35 39 0 0
+{0:E}NAME:10
+.EQN 0 17 42 0 0
+{0:k}NAME:(2*{0:\p}NAME)/(12.4)*{0:E}NAME
+.EQN 0 18 57 0 0
+{0:L}NAME:100
+.TXT 4 -35 22 0 0
+Cg a73.000000,73.000000,21
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard typical lengths (A) :}
+.EQN 3 0 23 0 0
+({0:d}NAME)[(0):1
+.EQN 0 8 24 0 0
+({0:d}NAME)[(1):2
+.EQN 0 9 25 0 0
+({0:d}NAME)[(2):5
+.EQN 3 -17 89 0 0
+({0:d}NAME)[(3):10
+.EQN 0 8 90 0 0
+({0:d}NAME)[(4):20
+.EQN 0 9 91 0 0
+({0:d}NAME)[(5):50
+.EQN 3 -17 29 0 0
+({0:d}NAME)[(6):100
+.EQN 0 8 30 0 0
+({0:d}NAME)[(7):200
+.EQN 0 9 31 0 0
+({0:d}NAME)[(8):500
+.EQN 3 -17 32 0 0
+({0:d}NAME)[(9):1000
+.EQN 0 8 33 0 0
+({0:d}NAME)[(10):2000
+.EQN 0 9 34 0 0
+({0:d}NAME)[(11):5000
+.EQN 3 -17 35 0 0
+({0:d}NAME)[(12):10000
+.EQN 6 0 44 0 0
+{0:i}NAME:0;12
+.TXT 3 0 40 0 0
+Cg a73.000000,73.000000,25
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard scattering vectors (invA)}
+.TXT 0 25 68 0 0
+Cg a38.000000,38.000000,23
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard scattering angles (deg)}
+.TXT 0 22 67 0 0
+Cg a32.000000,32.000000,24
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard displacement on CCD (mm)}
+.EQN 5 -47 52 0 0
+({0:q}NAME)[({0:i}NAME):(2*{0:\p}NAME)/(({0:d}NAME)[({0:i}NAME))
+.EQN 0 25 70 0 0
+({0:tth}NAME)[({0:i}NAME):2*{0:asin}NAME((({0:q}NAME)[({0:i}NAME))/(2*{0:k}NAME))
+.EQN 0 23 69 0 0
+({0:x}NAME)[({0:i}NAME):{0:L}NAME*{0:tan}NAME(({0:tth}NAME)[({0:i}NAME))
+.TXT 9 -37 92 0 0
+Cg a73.000000,73.000000,5
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard table}
+.EQN 2 24 93 0 0
+(({0:tth}NAME)[({0:i}NAME))/({0:deg}NAME)=
+.EQN 1 -24 94 0 0
+{0:i}NAME=
+.EQN 0 5 95 0 0
+({0:d}NAME)[({0:i}NAME){19040}=
+.EQN 0 8 96 0 0
+({0:q}NAME)[({0:i}NAME){19046}=
+.EQN 0 26 97 0 0
+({0:x}NAME)[({0:i}NAME){19043}=
+.TXT 1 -7 98 0 0
+Cg a40.000000,40.000000,132
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard ---------\par      |\par 
+XRD\par      |\par      |\par ---------\par      |\par WAXS\par      |
+\par ---------\par      |\par SAXS\par      |\par ---------\par      |
+\par USAXS\par      |\par ---------}

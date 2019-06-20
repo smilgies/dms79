@@ -1,0 +1,140 @@
+#F CrystalCell.dat
+#UT Crystal structures: Cell dimensions a,b,c, alpha, beta and gamma.
+#UIDL xfh
+#U3W Sheet_Cell
+#C  This file has been created using CrystalCell.pro on Thu Sep 19 17:22:53 1996
+#UD 
+#UD This file contains the cell constants a b and c in 
+#UD Anstrongs and the cell angles alpha, beta and gamma 
+#UD in degrees for a number of crystals.
+#UD Created by M. Sanchez del Rio (srio@esrf). 
+#UD 
+#UD The strcutures in this file are the same as in CrystalStructures.dat
+#UD Reference for almost all data:
+#UD R.W.G. Wyckoff, "Crystal Structures" Interscience Publ. 1965
+#UD 
+#S 14 Si
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.26 T=25C
+      5.43070      5.43070      5.43070      90.0000      90.0000      90.0000
+#S 32 Ge
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.26 T=20C
+      5.65735      5.65735      5.65735      90.0000      90.0000      90.0000
+#S 6 Diamond
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.26 T=20C
+      3.56679      3.56679      3.56679      90.0000      90.0000      90.0000
+#S 33 GaAs
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.110
+      5.65370      5.65370      5.65370      90.0000      90.0000      90.0000
+#S 31 GaP
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.110
+      5.45050      5.45050      5.45050      90.0000      90.0000      90.0000
+#S 49 InAs
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.110
+      6.03600      6.03600      6.03600      90.0000      90.0000      90.0000
+#S 49 InP
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.110
+      5.86870      5.86870      5.86870      90.0000      90.0000      90.0000
+#S 51 InSb
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.110 T=25C
+      6.47820      6.47820      6.47820      90.0000      90.0000      90.0000
+#S 14 SiC
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1
+      4.34800      4.34800      4.34800      90.0000      90.0000      90.0000
+#S 17 NaCl
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p. 88, T=18C, 2nd value
+      5.63978      5.63978      5.63978      90.0000      90.0000      90.0000
+#S 55 CsF
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p. 86
+      6.00800      6.00800      6.00800      90.0000      90.0000      90.0000
+#S 9 LiF
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p. 86
+      4.02630      4.02630      4.02630      90.0000      90.0000      90.0000
+#S 19 KCl
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p. 86, T=25C
+      6.29294      6.29294      6.29294      90.0000      90.0000      90.0000
+#S 55 CsCl
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p. 86, T=450C
+      7.02000      7.02000      7.02000      90.0000      90.0000      90.0000
+#S 4 Be
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, T=22C
+      2.28660      2.28660      3.58330      90.0000      90.0000      120.000
+#S 6 Graphite
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, pag 28
+      2.45600      2.45600      6.69600      90.0000      90.0000      120.000
+#S 8 PET
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C 
+      6.10000      6.10000      8.73000      90.0000      90.0000      90.0000
+#S 14 Beryl
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C 
+      9.08800      9.08800      9.18960      90.0000      90.0000      120.000
+#S 19 KAP
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C 
+      6.46000      9.60000      13.8500      90.0000      90.0000      90.0000
+#S 37 RbAP
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C 
+      6.56100      10.0640      13.0680      90.0000      90.0000      90.0000
+#S 81 TlAP
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C 
+      6.61500      10.0470      12.8780      90.0000      90.0000      90.0000
+#S 19 Muscovite
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 4, pag 346, KAl2(AlSi3)O10(OH)2 '
+      5.18900      8.99500      20.0970      90.0000      95.1800      90.0000
+#S 14 AlphaQuartz
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, T=25C
+      4.91304      4.91304      5.40463      90.0000      90.0000      120.000
+#S 29 Copper
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C Wyckoff vol 1, p.10 T=18C
+      3.61496      3.61496      3.61496      90.0000      90.0000      90.0000
+#S 41 LiNbO3
+#N 6
+#L X[A]  Y[A]  Z[A]  alpha[deg]  beta[deg]  gamma[deg]
+#C R.S. Weis and T.K. Gaylord, Appl. Phys. 191-203 (1985)
+      5.148      5.148     13.863      90.0000      90.0000      120.0000
