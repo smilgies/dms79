@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+  <title>ScatteringDepth</title>
+
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  
+  <meta content="MSHTML 6.00.2900.2627" name="GENERATOR">
+
+</head><body style="color: rgb(0, 0, 128); background-color: rgb(255, 192, 64);" alink="#00ffff" link="#0000ff" vlink="#008000">
+<h1 style="color: rgb(204, 0, 0); text-align: center;"><br>
+</h1>
+<h1 style="color: rgb(204, 0, 0); text-align: center;">Penetration Depth and Scattering Depth</h1>
+<div style="text-align: center;">
+</div>
+<h2 style="color: rgb(204, 0, 0); text-align: center;">Detlef Smilgies</h2>
+
+<br>
+
+<p>In order to discuss the scattering depth or information depth, it is
+useful to take a step back from our beautiful description, and consider
+the following: We would like to know the scattered intensity from a
+little test volume dV at a depth z below the surface. An incident wave
+with amplitude A gets attenuated before it reaches dV which we can
+write using the penetration depth <font face="Symbol">L</font><sub>i</sub>(<font face="Symbol">a</font>) as </p>
+
+<blockquote>A' = A exp{ -z/<font face="Symbol">L</font><sub>i</sub>(<font face="Symbol">a</font>) }</blockquote>
+
+The generated scattered wave in dV leaves the sample and reaches the
+detector with a probability given by the scattering probability f(<font face="Symbol">a,y,b</font>) and the escape depth <font face="Symbol">L</font><sub>f</sub>(<font face="Symbol">b</font>):
+<blockquote>A" = A' f(<font face="Symbol">a,y,b</font>) exp{-z/<font face="Symbol">L</font><sub>f</sub>(<font face="Symbol">b</font>)}</blockquote>
+
+Hence the scattered wave from the test volume dV is related to the
+incident wave by
+<blockquote>A"/A = f(<font face="Symbol">a,y,b</font>) exp{-z [1/<font face="Symbol">L</font><sub>i</sub>(<font face="Symbol">a</font>) +1/<font face="Symbol">L</font><sub>f</sub>(<font face="Symbol">b</font>)] } =
+f(<font face="Symbol">a,y,b</font>) exp{-z/<font face="Symbol">L</font><sub>s</sub>(<font face="Symbol">a,b</font>)}</blockquote>
+
+where we introduced the scattering depth or information depth <font face="Symbol">L</font><sub>s</sub>(<font face="Symbol">a,b</font>) by
+the simple formula
+<blockquote>1/<font face="Symbol">L</font><sub>s</sub>(<font face="Symbol">a,b</font>) = 1/<font face="Symbol">L</font><sub>i</sub>(<font face="Symbol">a</font>) + 1/<font face="Symbol">L</font><sub>f</sub>(<font face="Symbol">b</font>)</blockquote>
+
+The information depth is a function of both the incident angle <font face="Symbol">a</font> and the exit angle <font face="Symbol">b</font>.
+The scattering depth is a very general concept and can be defined for
+various problems. In a full scattering theory taking into account both
+refraction and absorption (e.g. DWBA, dynamic theory), the penetration
+depth effects are automatically included.<br>
+
+<br>
+
+
+<h3 style="color: rgb(204, 0, 0);">A simple integration</h3>
+
+If we make the simplifying assumption that we have a constant density
+of scatterers <font face="Symbol">r</font> within a layer of thickness
+L, and keep the exit angle of detection fixed, then we get a simple
+expression for the scattering intensity as a function of incident angle:<br>
+
+<br>
+
+<div style="margin-left: 40px;">I(<font face="Symbol">a</font>) = &int;<sub>
+0</sub><sup>L</sup> <font face="Symbol">r</font> exp(-z/<font face="Symbol">L</font>(<font face="Symbol">a</font>)) dz<br>
+</div>
+
+<br>
+
+The integral can be evaluated easily:<br>
+
+<br>
+
+<div style="margin-left: 40px;">I(<font face="Symbol">a</font>) = <font face="Symbol">r </font><font face="Symbol">L</font>(<font face="Symbol">a</font>) {1 -&nbsp; exp(-L/<font face="Symbol">L</font>(<font face="Symbol">a</font>)}<br>
+<br>
+</div>
+
+We can distinguish two limiting cases:<br>
+
+<br>
+
+<div style="margin-left: 40px;">(i)&nbsp;&nbsp;&nbsp; L &rarr;
+&infin;&nbsp;&nbsp;&nbsp; (semi-infinite medium) :<br>
+<div style="margin-left: 80px;">I(<font face="Symbol">a</font>) = <font face="Symbol">r </font><font face="Symbol">L</font>(<font face="Symbol">a</font>) <br>
+</div>
+<br>
+(ii)&nbsp;&nbsp; L &lt;&lt; <font face="Symbol">L</font>(<font face="Symbol">a</font>)&nbsp;&nbsp; (thin film) :&nbsp; <br>
+<div style="margin-left: 80px;">I(<font face="Symbol">a</font>) = <font face="Symbol">r L(a) </font>{1 - (1-L/<font face="Symbol">L</font>(<font face="Symbol">a</font>))} = <font face="Symbol">r</font> L<br>
+</div>
+<br>
+</div>
+
+A word of&nbsp; warning: for a nice well-defined thin film,
+interference effects of the wavefields (so-called waveguide modes) may
+cause deviation from this simple behavior, and a full scattering
+calculation may be needed. For relatively thick (more than 200 nm) and
+rough films the above formula may yield good results. <br>
+
+<br>
+
+</body></html>

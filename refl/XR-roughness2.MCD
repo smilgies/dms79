@@ -1,0 +1,309 @@
+.MCAD 304020000 1 74 302 0
+.CMD PLOTFORMAT
+0 0 1 1 1 0 0 1 1 
+0 0 1 1 1 0 0 1 1 
+0 1 0 0 1 1 NO-TRACE-STRING
+0 2 1 0 1 1 NO-TRACE-STRING
+0 3 2 0 1 1 NO-TRACE-STRING
+0 4 3 0 1 1 NO-TRACE-STRING
+0 1 4 0 1 1 NO-TRACE-STRING
+0 2 5 0 1 1 NO-TRACE-STRING
+0 3 6 0 1 1 NO-TRACE-STRING
+0 4 0 0 1 1 NO-TRACE-STRING
+0 1 1 0 1 1 NO-TRACE-STRING
+0 2 2 0 1 1 NO-TRACE-STRING
+0 3 3 0 1 1 NO-TRACE-STRING
+0 4 4 0 1 1 NO-TRACE-STRING
+0 1 5 0 1 1 NO-TRACE-STRING
+0 2 6 0 1 1 NO-TRACE-STRING
+0 3 0 0 1 1 NO-TRACE-STRING
+0 4 1 0 1 1 NO-TRACE-STRING
+0 1 1 21 15 0 0 3 
+.CMD FORMAT  rd=d ct=10 im=i et=3 zt=15 pr=3 mass length time charge temperature tr=0 vm=0
+.CMD SET ORIGIN 0
+.CMD SET TOL 0.001000000000000
+.CMD SET PRNCOLWIDTH 8
+.CMD SET PRNPRECISION 4
+.CMD PRINT_SETUP 1.200000 1.216667 1.200000 1.200000 0
+.CMD HEADER_FOOTER 1 1 *empty* *empty* *empty* 0 1 *empty* *empty* *empty*
+.CMD HEADER_FOOTER_FONT fontID=14 family=Arial points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD HEADER_FOOTER_FONT fontID=15 family=Arial points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFAULT_TEXT_PARPROPS 0 0 0
+.CMD DEFINE_FONTSTYLE_NAME fontID=0 name=Variables
+.CMD DEFINE_FONTSTYLE_NAME fontID=1 name=Constants
+.CMD DEFINE_FONTSTYLE_NAME fontID=2 name=Text
+.CMD DEFINE_FONTSTYLE_NAME fontID=4 name=User^1
+.CMD DEFINE_FONTSTYLE_NAME fontID=5 name=User^2
+.CMD DEFINE_FONTSTYLE_NAME fontID=6 name=User^3
+.CMD DEFINE_FONTSTYLE_NAME fontID=7 name=User^4
+.CMD DEFINE_FONTSTYLE_NAME fontID=8 name=User^5
+.CMD DEFINE_FONTSTYLE_NAME fontID=9 name=User^6
+.CMD DEFINE_FONTSTYLE_NAME fontID=10 name=User^7
+.CMD DEFINE_FONTSTYLE fontID=0 family=Times^New^Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=1 family=Times^New^Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=2 family=Arial points=10 bold=0 italic=0 underline=0 colrid=13
+.CMD DEFINE_FONTSTYLE fontID=4 family=Arial points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=5 family=Courier^New points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=6 family=System points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=7 family=Script points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=8 family=Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=9 family=Modern points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD DEFINE_FONTSTYLE fontID=10 family=Times^New^Roman points=10 bold=0 italic=0 underline=0 colrid=-1
+.CMD UNITS U=1
+.CMD DIMENSIONS_ANALYSIS 0 0
+.CMD COLORTAB_ENTRY 0 0 0
+.CMD COLORTAB_ENTRY 128 0 0
+.CMD COLORTAB_ENTRY 0 128 0
+.CMD COLORTAB_ENTRY 128 128 0
+.CMD COLORTAB_ENTRY 0 0 128
+.CMD COLORTAB_ENTRY 128 0 128
+.CMD COLORTAB_ENTRY 0 128 128
+.CMD COLORTAB_ENTRY 128 128 128
+.CMD COLORTAB_ENTRY 192 192 192
+.CMD COLORTAB_ENTRY 255 0 0
+.CMD COLORTAB_ENTRY 0 255 0
+.CMD COLORTAB_ENTRY 255 255 0
+.CMD COLORTAB_ENTRY 0 0 255
+.CMD COLORTAB_ENTRY 255 0 255
+.CMD COLORTAB_ENTRY 0 255 255
+.CMD COLORTAB_ENTRY 255 255 255
+.TXT 3 1 107 0 0
+Cg a73.000000,73.000000,35
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard roughness models: 
+discrete Gaussian}
+.TXT 2 0 278 0 0
+Cg a73.000000,73.000000,3
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard rms}
+.EQN 0 6 279 0 0
+{0:\s}NAME:20
+.EQN 4 -6 65 0 0
+{0:L}NAME:50
+.EQN 0 7 63 0 0
+{0:p}NAME:(1)/({0:L}NAME)
+.EQN 0 8 67 0 0
+{0:n}NAME:0;{0:L}NAME-1
+.EQN 0 12 68 0 0
+({0:t}NAME)[({0:n}NAME):({0:p}NAME)/(2)+{0:p}NAME*{0:n}NAME
+.EQN 0 11 69 0 0
+({0:h}NAME)[({0:n}NAME):{0:qnorm}NAME(({0:t}NAME)[({0:n}NAME),0,{0:\s}NAME)
+.EQN 0 15 93 0 0
+({0:z}NAME)[({0:n}NAME):({0:h}NAME)[({0:n}NAME)-{0:qnorm}NAME(({0:p}NAME)/(2),0,{0:\s}NAME)
+.EQN 4 -53 70 0 0
+{0:k}NAME:0;2*{0:L}NAME-1
+.EQN 0 15 71 0 0
+({0:v}NAME)[(2*{0:n}NAME):({0:h}NAME)[({0:n}NAME)
+.EQN 0 8 72 0 0
+({0:v}NAME)[(2*{0:n}NAME+1):({0:h}NAME)[({0:n}NAME)
+.EQN 0 10 73 0 0
+({0:w}NAME)[(2*{0:n}NAME):{0:n}NAME*{0:p}NAME
+.EQN 0 10 74 0 0
+({0:w}NAME)[(2*{0:n}NAME+1):({0:n}NAME+1)*{0:p}NAME
+.EQN 6 -19 280 0 0
+{0:x}NAME:-3*{0:\s}NAME,-3*{0:\s}NAME*0.98;3*{0:\s}NAME
+.EQN 1 -23 80 0 0
+&&(_n_u_l_l_&_n_u_l_l_)&({0:w}NAME)[({0:k}NAME),{0:pnorm}NAME({0:x}NAME,0,{0:\s}NAME)@3*{0:\s}NAME&-3*{0:\s}NAME&(_n_u_l_l_&_n_u_l_l_)&({0:v}NAME)[({0:k}NAME),{0:x}NAME
+0 0 1 1 1 0 0 1 1 
+0 0 1 1 1 0 0 1 1 
+0 1 0 0 1 1 NO-TRACE-STRING
+0 1 1 0 1 1 NO-TRACE-STRING
+0 1 3 0 1 1 NO-TRACE-STRING
+0 4 3 0 1 1 NO-TRACE-STRING
+0 1 4 0 1 1 NO-TRACE-STRING
+0 2 5 0 1 1 NO-TRACE-STRING
+0 3 6 0 1 1 NO-TRACE-STRING
+0 4 0 0 1 1 NO-TRACE-STRING
+0 1 1 0 1 1 NO-TRACE-STRING
+0 2 2 0 1 1 NO-TRACE-STRING
+0 3 3 0 1 1 NO-TRACE-STRING
+0 4 4 0 1 1 NO-TRACE-STRING
+0 1 5 0 1 1 NO-TRACE-STRING
+0 2 6 0 1 1 NO-TRACE-STRING
+0 3 0 0 1 1 NO-TRACE-STRING
+0 4 1 0 1 1 NO-TRACE-STRING
+0 1 1 36 17 12 0 3 
+.EQN 28 -1 90 0 0
+{0:n}NAME=
+.EQN 0 4 76 0 0
+({0:h}NAME)[({0:n}NAME)=
+.EQN 0 8 77 0 0
+({0:v}NAME)[({0:n}NAME)=
+.EQN 0 8 78 0 0
+({0:w}NAME)[({0:n}NAME)=
+.EQN 0 15 204 0 0
+{0:n}NAME+1=
+.EQN 0 6 205 0 0
+({0:z}NAME)[({0:n}NAME)=
+.EQN 0 8 206 0 0
+{0:p}NAME*({0:n}NAME+1)=
+.TXT 162 -48 297 0 0
+Cg a73.000000,73.000000,22
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard multilayer calculation}
+.TXT 3 0 218 0 0
+Cg a73.000000,73.000000,6
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard layers}
+.EQN 3 0 230 0 0
+{0:N}NAME:{0:L}NAME-1
+.EQN 0 12 220 0 0
+{0:n}NAME:1;{0:N}NAME
+.TXT 4 -12 222 0 0
+Cg a72.000000,72.000000,18
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard refractive indices}
+.EQN 3 0 223 0 0
+{0:nair}NAME:1
+.EQN 3 0 298 0 0
+{0:nsub}NAME:1-3.28*(10)^(-5)+1i*1*2.36*(10)^(-6)
+.TXT 0 37 283 0 0
+Cg a23.000000,23.000000,4
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard (Pt)}
+.EQN 4 -37 224 0 0
+({0:nrough}NAME)[({0:n}NAME):1+{0:p}NAME*{0:n}NAME*({0:nsub}NAME-1)
+.EQN 4 0 226 0 0
+({0:nrough}NAME)[(1)-1={0}?_n_u_l_l_
+.EQN 4 0 228 0 0
+({0:nrough}NAME)[({0:N}NAME)-1={0}?_n_u_l_l_
+.TXT 6 0 217 0 0
+Cg a73.000000,73.000000,12
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard x-ray energy}
+.EQN 3 0 215 0 0
+{0:E}NAME:10
+.EQN 0 12 216 0 0
+{0:k}NAME:({0:E}NAME)/(2)
+.TXT 3 -12 207 0 0
+Cg a73.000000,73.000000,8
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard kz range}
+.EQN 3 0 208 0 0
+{0:M}NAME:200
+.EQN 0 12 209 0 0
+{0:i}NAME:1;{0:M}NAME
+.EQN 0 12 210 0 0
+{0:kbeg}NAME:0.001
+.EQN 0 17 211 0 0
+{0:kend}NAME:0.399
+.EQN 4 -41 132 0 0
+({0:kz0}NAME)[({0:i}NAME):({0:kend}NAME-{0:kbeg}NAME)/({0:M}NAME)*{0:i}NAME+{0:kbeg}NAME
+.EQN 6 0 133 0 0
+({0:kz}NAME)[({0:n}NAME,{0:i}NAME):\((((({0:nrough}NAME)[({0:n}NAME)))^(2)-1)*({0:k}NAME)^(2)+((({0:kz0}NAME)[({0:i}NAME)))^(2))
+.EQN 6 0 212 0 0
+({0:kzsub}NAME)[({0:i}NAME):\((({0:nsub}NAME)^(2)-1)*({0:k}NAME)^(2)+((({0:kz0}NAME)[({0:i}NAME)))^(2))
+.EQN 7 -1 199 0 0
+&&(_n_u_l_l_&_n_u_l_l_)&({0:z}NAME)[({0:n}NAME-1)@&&(_n_u_l_l_&_n_u_l_l_)&{0:n}NAME
+0 0 1 1 1 0 0 1 1 
+0 0 1 1 1 0 0 1 1 
+0 1 0 0 1 1 NO-TRACE-STRING
+0 2 1 0 1 1 NO-TRACE-STRING
+0 3 2 0 1 1 NO-TRACE-STRING
+0 4 3 0 1 1 NO-TRACE-STRING
+0 1 4 0 1 1 NO-TRACE-STRING
+0 2 5 0 1 1 NO-TRACE-STRING
+0 3 6 0 1 1 NO-TRACE-STRING
+0 4 0 0 1 1 NO-TRACE-STRING
+0 1 1 0 1 1 NO-TRACE-STRING
+0 2 2 0 1 1 NO-TRACE-STRING
+0 3 3 0 1 1 NO-TRACE-STRING
+0 4 4 0 1 1 NO-TRACE-STRING
+0 1 5 0 1 1 NO-TRACE-STRING
+0 2 6 0 1 1 NO-TRACE-STRING
+0 3 0 0 1 1 NO-TRACE-STRING
+0 4 1 0 1 1 NO-TRACE-STRING
+0 1 1 62 15 12 0 3 
+.TXT 37 0 233 0 0
+Cg a73.000000,73.000000,25
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard matrix method calculation}
+.EQN 3 0 253 0 0
+{0:nn}NAME:0;{0:N}NAME
+.EQN 0 13 255 0 0
+({0:x}NAME)[({0:n}NAME):({0:z}NAME)[({0:n}NAME)
+.EQN 0 12 293 0 0
+{0:N}NAME={0}?_n_u_l_l_
+.EQN 4 -25 243 0 0
+({0:kz}NAME)[(0,{0:i}NAME):({0:kz0}NAME)[({0:i}NAME)
+.EQN 0 13 254 0 0
+({0:kz}NAME)[({0:N}NAME+1,{0:i}NAME):({0:kzsub}NAME)[({0:i}NAME)
+.EQN 11 -13 246 0 0
+({2,2}ö({0:m22}NAME)[({0:N}NAME,{0:i}NAME)ö({0:m12}NAME)[({0:N}NAME,{0:i}NAME)ö({0:m21}NAME)[({0:N}NAME,{0:i}NAME)ö({0:m11}NAME)[({0:N}NAME,{0:i}NAME)):({2,2}ö(({0:kz}NAME)[({0:N}NAME,{0:i}NAME)+({0:kzsub}NAME)[({0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME,
+{0:i}NAME))*{0:exp}NAME(1i*(((-{0:kzsub}NAME))[({0:i}NAME)+({0:kz}NAME)[({0:N}NAME,{0:i}NAME))*({0:x}NAME)[({0:N}NAME))ö(({0:kz}NAME)[({0:N}NAME,{0:i}NAME)-({0:kzsub}NAME)[({0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME,{0:i}NAME))*{0:exp}NAME(1i*(((-
+{0:kzsub}NAME))[({0:i}NAME)-({0:kz}NAME)[({0:N}NAME,{0:i}NAME))*({0:x}NAME)[({0:N}NAME))ö(({0:kz}NAME)[({0:N}NAME,{0:i}NAME)-({0:kzsub}NAME)[({0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME,{0:i}NAME))*{0:exp}NAME(1i*(({0:kzsub}NAME)[({0:i}NAME)+({0:kz}NAME)[(
+{0:N}NAME,{0:i}NAME))*({0:x}NAME)[({0:N}NAME))ö(({0:kz}NAME)[({0:N}NAME,{0:i}NAME)+({0:kzsub}NAME)[({0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME,{0:i}NAME))*{0:exp}NAME(1i*(({0:kzsub}NAME)[({0:i}NAME)-({0:kz}NAME)[({0:N}NAME,{0:i}NAME))*({0:x}NAME)[({0:N}NAME))
+)
+.EQN 11 0 247 0 0
+{0:n}NAME:1;{0:N}NAME
+.EQN 8 0 248 0 0
+({2,2}ö({0:m22}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME)ö({0:m12}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME)ö({0:m21}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME)ö({0:m11}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME)):({2,2}ö(({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME)+(
+{0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME))*{0:exp}NAME(-1i*(({0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME)-({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME))*({0:x}NAME)[({0:N}NAME-{0:n}NAME))ö(({0:kz}NAME)[
+({0:N}NAME-{0:n}NAME,{0:i}NAME)-({0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME))*{0:exp}NAME(-1i*(({0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME)+({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME))*({0:x}NAME)[(
+{0:N}NAME-{0:n}NAME))ö(({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME)-({0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME))*{0:exp}NAME(1i*(({0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME)+({0:kz}NAME)[({0:N}NAME-
+{0:n}NAME,{0:i}NAME))*({0:x}NAME)[({0:N}NAME-{0:n}NAME))ö(({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME)+({0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME))/(2*({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME))*{0:exp}NAME(1i*(({0:kz}NAME)[({0:N}NAME-{0:n}NAME+1,
+{0:i}NAME)-({0:kz}NAME)[({0:N}NAME-{0:n}NAME,{0:i}NAME))*({0:x}NAME)[({0:N}NAME-{0:n}NAME)))*({2,2}ö({0:m22}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME)ö({0:m12}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME)ö({0:m21}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME)ö(
+{0:m11}NAME)[({0:N}NAME-{0:n}NAME+1,{0:i}NAME))
+.EQN 24 0 249 0 0
+{0:eps}NAME:0.000000001
+.EQN 0 18 250 0 0
+({0:r}NAME)[({0:i}NAME):(({0:m21}NAME)[(0,{0:i}NAME))/(({0:m11}NAME)[(0,{0:i}NAME))
+.EQN 0 10 256 0 0
+({0:R}NAME)[({0:i}NAME):((|((({0:m21}NAME)[(0,{0:i}NAME))/(({0:m11}NAME)[(0,{0:i}NAME)))))^(2)+{0:eps}NAME
+.EQN 0 19 257 0 0
+({0:RF}NAME)[({0:i}NAME):(((|(({0:kz0}NAME)[({0:i}NAME)-({0:kzsub}NAME)[({0:i}NAME)))/(|(({0:kz0}NAME)[({0:i}NAME)+({0:kzsub}NAME)[({0:i}NAME)))))^(2)+{0:eps}NAME
+.EQN 7 -46 263 0 0
+({0:R}NAME)[(0):1
+.EQN 0 9 264 0 0
+({0:RF}NAME)[(0):1
+.EQN 0 10 281 0 0
+({0:RR}NAME)[({0:i}NAME):({0:RF}NAME)[({0:i}NAME)*{0:exp}NAME(-({0:\s}NAME)^(2)*((2*({0:kz0}NAME)[({0:i}NAME)))^(2))
+.EQN 0 22 295 0 0
+({0:RVV}NAME)[({0:i}NAME):({0:RF}NAME)[({0:i}NAME)*{0:exp}NAME(-({0:\s}NAME)^(2)*4*({0:kz0}NAME)[({0:i}NAME)*{0:Re}NAME(({0:kzsub}NAME)[({0:i}NAME)))
+.EQN 3 -41 292 0 0
+&(10)^(-12)&(_n_u_l_l_&_n_u_l_l_)&({0:R}NAME)[({0:i}NAME),({0:RF}NAME)[({0:i}NAME),({0:RR}NAME)[({0:i}NAME),({0:RVV}NAME)[({0:i}NAME)@&&(_n_u_l_l_&_n_u_l_l_)&({0:kz0}NAME)[({0:i}NAME)
+0 0 1 1 1 0 0 1 1 
+1 0 1 1 1 0 0 1 1 
+0 1 0 0 2 2 NO-TRACE-STRING
+0 1 6 0 2 2 NO-TRACE-STRING
+0 1 2 0 2 2 NO-TRACE-STRING
+0 1 1 0 2 2 NO-TRACE-STRING
+0 1 4 0 1 1 NO-TRACE-STRING
+0 2 5 0 1 1 NO-TRACE-STRING
+0 3 6 0 1 1 NO-TRACE-STRING
+0 4 0 0 1 1 NO-TRACE-STRING
+0 1 1 0 1 1 NO-TRACE-STRING
+0 2 2 0 1 1 NO-TRACE-STRING
+0 3 3 0 1 1 NO-TRACE-STRING
+0 4 4 0 1 1 NO-TRACE-STRING
+0 1 5 0 1 1 NO-TRACE-STRING
+0 2 6 0 1 1 NO-TRACE-STRING
+0 3 0 0 1 1 NO-TRACE-STRING
+0 4 1 0 1 1 NO-TRACE-STRING
+0 1 1 59 21 12 0 3 
+.EQN 38 -1 291 0 0
+&(10)^(-12)&(_n_u_l_l_&_n_u_l_l_)&({0:R}NAME)[({0:i}NAME),({0:RF}NAME)[({0:i}NAME),({0:RR}NAME)[({0:i}NAME),({0:RVV}NAME)[({0:i}NAME)@.1&&(_n_u_l_l_&_n_u_l_l_)&({0:kz0}NAME)[({0:i}NAME)
+0 0 1 1 1 0 0 1 1 
+0 0 1 1 1 0 0 1 1 
+0 1 0 0 2 2 NO-TRACE-STRING
+0 1 6 0 2 2 NO-TRACE-STRING
+0 1 2 0 2 2 NO-TRACE-STRING
+0 1 1 0 2 2 NO-TRACE-STRING
+0 1 4 0 1 1 NO-TRACE-STRING
+0 2 5 0 1 1 NO-TRACE-STRING
+0 3 6 0 1 1 NO-TRACE-STRING
+0 4 0 0 1 1 NO-TRACE-STRING
+0 1 1 0 1 1 NO-TRACE-STRING
+0 2 2 0 1 1 NO-TRACE-STRING
+0 3 3 0 1 1 NO-TRACE-STRING
+0 4 4 0 1 1 NO-TRACE-STRING
+0 1 5 0 1 1 NO-TRACE-STRING
+0 2 6 0 1 1 NO-TRACE-STRING
+0 3 0 0 1 1 NO-TRACE-STRING
+0 4 1 0 1 1 NO-TRACE-STRING
+0 1 1 59 21 12 0 3 
+.TXT 33 1 301 0 0
+Cg a72.000000,72.000000,52
+{\rtf\ansi \deff0{\colortbl;\red0\green0\blue255;}{\fonttbl{\f0
+\fcharset0\fnil Arial;}}\plain\cf1\fs20 \pard note: VV fails for 
+sigma=20A, if Re(ksub) is omitted}

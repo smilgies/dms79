@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="Detlef Smilgies">
+  <meta name="GENERATOR" content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]"><title>XR-Roughness</title></head><body alink="#00ffff" bgcolor="#ffc040" link="#0000ff" text="#000080" vlink="#008000">
+&nbsp;
+<center>
+<p><b><font size="+2">Roughness in Specular Reflectivity</font></b></p>
+</center>
+<p>Depending on the wavelength range of their Fourier components, two
+types
+of roughness are to be distinguished:
+</p>
+<ul>
+  <li>
+If the roughness period is large compared to the coherence length, we
+talk
+about macroscopic roughness.</li>
+  <li>
+If the roughness is small compared to the coherence length, we talk
+about
+microscopic or atomic roughness.</li>
+</ul>
+<p><br>
+Macroscopic roughness is due to facets wider than the coherence
+length, oriented at various angles to the x-ray beam. The symptom of
+macroscopic
+roughness is a specular reflection broader than the resolution function
+of the instrument (as determined by the angular width of the direct
+beam)
+or even split peaks. For x-ray mirrors this type of roughness is called
+slope error. Since the incident angle for such samples is not
+well-defined,
+a quantitative description of such samples is often problematic.
+</p>
+<p>Microscopic or atomic roughness is on a much smaller scale than the
+coherence length and hence describes distortions of the wavefront of
+the
+incident wave yielding a reduction of the intensity of the scattered
+beam
+as compared to an ideal interface. Since in specular reflectivity the
+lateral
+component of the scattering vector is zero, we only have to deal with
+the
+laterally averaged roughness and not with the detailed shape of the
+surface
+defects (point defects, steps, islands, ...). An often used assumption
+is that the surface height function obeys a Gaussian distribution,
+which
+leads to a laterally averaged density with the shape of the error
+function.
+</p>
+<p>One of the earliest descriptions of roughness we find in Lord
+Rayleigh's
+treatment of the reflection of acoustic waves from a hard corrugated
+wall.
+In this case the ideal reflectivity is multiplied with an exponential
+damping
+factor
+</p>
+<blockquote>R<sub>R</sub>(q) = R<sub>F</sub>(q)* exp(-<span style="font-family: Symbol;">&sigma;</span><sup>2</sup>q<sup>2</sup>)</blockquote>
+were R<sub>F</sub> is the Fresnel reflectivity and &amp;sigma;
+is the root mean square roughness (r.m.s. roughness) of the interface.
+<p>This description has some flaws: It cannot be extended easily to the
+case of multiple layers other than that the same roughness is assumed
+for
+each interface or some effective roughness which is some kind of mean
+of
+the various interface roughnesses. Even worse, the Rayleigh model is
+not
+good below and in the vicinity of the critical angle. This can be seen
+if the Rayleigh model is compared to a discrete roughness model, where
+the laterally-averaged density is approximated by thin discrete slabs
+and
+then treated exactly with the matrix method.
+<br>
+&nbsp;
+<br>
+&nbsp;
+<br>
+<br>
+</p>
+<center>
+<p><img src="discrete-approximation.gif" height="269" width="518"></p>
+<p><i>Fig 1. Laterally averaged density &rho;<sub>cont</sub>(z)
+and discrete approximation &rho;<sub>k</sub>
+with
+20 slabs for
+<font face="Symbol">s
+</font>= 1&Aring;.</i></p>
+</center>
+<p><br>
+<br>
+</p>
+<p>The most succesful roughness model so far has been proposed by Nevot
+and Croce [1], and mathematically analyzed by Vidal and Vincent [2]. We
+will refer to it as the NCVV model. In this model, each element of the
+interface matrix in the matrix method is multiplied by a factor
+</p>
+<blockquote>(A<sup>i,i+1,rough</sup>)<sub>j,k</sub> = (A<sup>i,i+1</sup>)<sub>j,k</sub>&nbsp;
+exp{-&sigma;<sup>2</sup> [Re(k<sub>z,i</sub> - (-1)<sup>j+k</sup>
+
+k<sub>z,i+1</sub>)]<sup>2</sup> / 2}</blockquote>
+where the factor (-1)<sup>j+k</sup> yields the correct sign. For the
+reflectivity from a rough interface, this ansatz provides the formula<br>
+<div style="margin-left: 40px;"><br>
+R<sub>VV</sub> = R<sub>F</sub> * exp(-4 <span style="font-family: symbol;">&sigma;</span><sup>2</sup> k<sub>z</sub> Re(k'<sub>z</sub>))<br>
+</div>
+<p><br>
+This model compares well with the discrete model. Since the roughness
+factors are specific to each interface, a detailed description of a
+multilayer
+system can be given. Furthermore, the laterally-averaged density can be
+derived with a specific error function for each interface, as for
+instance
+in the program PARRAT32. Discrete model, Rayleigh model, and NCVV model
+are compared below.
+</p>
+<center>
+<p><img src="xr-rough-log.png" height="326" width="720"></p>
+<p><i>Fig.2. XR from a very rough surface (<span style="font-family: Symbol;">&sigma;</span>=20&Aring;).
+R: discrete roughness model with 50 slabs, RF: Fresnel reflectivity
+from
+an ideal surface, RR: simple Rayleigh model, RVV Vidal-Vincent theory.
+RR follows closely the RVV model beyond the critical angle. However the
+Rayleigh model RR is not useful below the and in the vicinity of the
+critical angle. The discrete model yields results
+closely
+to RVV, but breaks down at about k<sub>z0 </sub>&gt; 0.075&Aring;<sup>-1</sup> due to its discreet nature.</i> <br>
+&nbsp;
+</p>
+<p><img src="xr-rough-lin.png" height="315" width="720"></p>
+<p><i>Fig.3. Same as Fig.2, but with a linear axis.The Rayleigh model
+RR yields
+a bad description below the critical angle. The discrete model and RVV
+agree very well. Note the shift of critical angle compared to RF for
+this
+very rough surface.</i></p>
+</center>
+<p><br>
+<br>
+<br>
+</p>
+<p>References
+</p>
+<p>[1] L. Nevot and P. Croce, Rev. Phys. Appl. 15, 761 (1980).
+<br>
+[2] B. Vidal and P. Vincent, Applied Optics 23, 1794-1801 (1984).
+</p>
+</body></html>

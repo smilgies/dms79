@@ -1,0 +1,138 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+
+  
+  <meta name="Author" content="Detlef-M. Smilgies">
+
+  
+  <meta name="GENERATOR" content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]"><title>MatrixMethod</title></head><body style="color: rgb(0, 0, 128); background-color: rgb(255, 192, 64);" alink="#00ffff" link="#0000ff" vlink="#008000">
+<center>
+<h1 style="color: rgb(204, 0, 0);">Matrix Formalism</h1>
+<h2 style="color: rgb(204, 0, 0);">Detlef Smilgies<br>
+</h2>
+<br>
+
+</center>
+
+
+
+<p>A typical application of a reflectivity measurement is, if we have a
+thin
+film on a substrate. Now we have to deal with two interfaces, air-film and film-substrate. We expect that
+the
+reflected wave from both interfaces interfere with each other and give rise to Kiessig fringes, from which
+the
+thickness of the film can be determined with high precision. We will
+treat
+the most general case now where we have n interfaces and the goal is,
+to
+understand how to solve the system of 2N boundary conditions. <br>
+&nbsp; </p>
+
+<div align="center"><img style="width: 661px; height: 297px;" src="boundary-conditions.gif" alt="boundary cond">
+<br>
+</div>
+
+<p><br>
+Within each region i we have a wave vector k<sub>z,i</sub> as given by
+the
+local index of refraction, and amplitudes a<sub>i</sub> and b<sub>i</sub>
+of the incident and the reflected waves, respectively. For the
+interface between
+layer i and layer i+1 at a distance z<sub>i,i+1</sub> from the top
+surface
+at z<sub>0,1</sub>=0 and wave vectors k<sub>z,i+1</sub> and k<sub>z,i</sub>
+on either side of the boundary, we get the following boundary condition
+for
+the wave amplitudes: </p>
+
+<blockquote>&nbsp;&nbsp;&nbsp;&nbsp; a<sub>i</sub> exp(i k<sub>z,i</sub>
+z<sub>i,i+1</sub>)&nbsp;
+&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b<sub>i</sub> exp(-i k<sub>z,i</sub>
+z<sub>i,i+1</sub>)&nbsp;
+=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a<sub>i+1</sub>
+exp(i k<sub>z,i+1</sub> z<sub>i,i+1</sub>)&nbsp;
+&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; b<sub>i+1
+  </sub>exp(-i k<sub>z,i+1</sub> z<sub>i,i+1</sub>) <br>
+k<sub>z,i</sub> a<sub>i</sub> exp(i k<sub>z,i</sub> z<sub>i,i+1</sub>)&nbsp;
+-&nbsp; k<sub>z,i</sub> b<sub>i</sub> exp(-i k<sub>z,i</sub> z<sub>i,i+1</sub>)&nbsp;
+=&nbsp; k<sub>z,i+1</sub> a<sub>i+1</sub> exp(i k<sub>z,i+1</sub> z<sub>i,i+1</sub>)&nbsp;
+-&nbsp; k<sub>z,i+1</sub> b<sub>i+1</sub> exp(-i k<sub>z,i+1</sub> z<sub>i,i+1</sub>)</blockquote>
+
+and with some re-arranging
+<blockquote>a<sub>i</sub> = A<sub>i,i+1,11</sub> a<sub>i+1</sub> + A<sub>i,i+1,12</sub>
+b<sub>i+1</sub> <br>
+b<sub>i</sub> = A<sub>i,i+1,21</sub> a<sub>i+1</sub> + A<sub>i,i+1,22</sub>
+b<sub>i+1</sub></blockquote>
+
+i.e. the transfer matrix <b>A</b><sub>i,i+1</sub> relates the fields
+on either
+side of the interface i,i+1.
+<p><font color="#cc0000">homework: calculate the components of the
+2&times;2 matrix <b>A</b><sub>i,i+1</sub></font> </p>
+
+<p>For the whole stack of N layers we thus get </p>
+
+<blockquote>(a<sub>0</sub>, b<sub>0</sub>) = <b>A</b><sub>0,1</sub> <b>A</b><sub>1,2</sub>
+...&nbsp; A<sub>i,i+1</sub> ... <b>A</b><sub>N-1,N</sub> (a<sub>N</sub>,
+b<sub>N</sub>)
+= <b>A</b> (a<sub>N</sub>, b<sub>N</sub>)</blockquote>
+
+a<sub>0</sub>,b<sub>0</sub> and a<sub>N</sub>,b<sub>N</sub> are
+special: a<sub>0</sub> is just the incident wave onto the sample, b<sub>0</sub>
+yields
+the reflectivity signal we <br>
+
+observe:
+<blockquote>a<sub>0</sub> = 1 <br>
+b<sub>0</sub> = r</blockquote>
+
+We assume an infinitely thick substrate, so there is no reflected wave
+in
+layer N:
+<blockquote>b<sub>N</sub> = 0</blockquote>
+
+and a<sub>N</sub> is the transmitted wave into the substrate. Hence
+we&nbsp; arrive at
+<blockquote>(1, r) = <b>A</b> (t, 0)</blockquote>
+
+which can be easily solved now for r and t
+<blockquote>t = 1 / <b>A</b><sub>11</sub> <br>
+r = <b>A</b><sub>21</sub> / <b>A</b><sub>11</sub></blockquote>
+
+We see that the general case involves more or less the same amount of
+calculation as the special cases of one or two layers. The outlined algorithm is known as the "matrix method"
+and
+is the algorithm mostly used these days. <br><br>
+History: Parratt at Cornell devised a similar algorithm [L.G. Parratt, Phys.
+Rev.
+B95, 359 (1954)] , which became very popular, in connection with
+Parrat's seminal papers on experimental applications of reflectivity. The matrix method
+is actually a couple of years older than Parratt's algorithm and was
+first published by
+F. Abel&egrave;s [Ann. Physique (Paris) 5, 596 (1950)]. Similar schemes were
+already known in visible optics and spectroscopy - I know of an example
+in
+Max Born, Optik (1924), the predecessor of the classic optics book by
+Born
+and Wolf.
+<p>Note, that the matrix formalism has a direct analogon in quantum
+mechanics, namely reflection and transmission of a particle wave at a
+potential step or barrier (tunnel effect!). The requirement of
+continuity of the wave function &psi; and its derivative at the
+potential step gives
+rise to the same boundary conditions as above. With respect to
+application
+in scattering, the quantum mechanical case is of importance for
+reflectivity
+studies with neutron beams. <br>
+&nbsp; </p>
+
+<br>
+
+<br>
+</body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+
+  
+  <meta name="Author" content="Detlef Smilgies">
+
+  
+  <meta name="GENERATOR" content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]"><title>Refractive Index</title></head><body style="color: rgb(0, 0, 128); background-color: rgb(255, 192, 64);" alink="#00ffff" link="#0000ff" vlink="#008000">
+&nbsp;
+<center>
+<p><b><font point-size="20"><font color="#cc0000">Refractive Index</font></font></b>
+<br>
+<b><font point-size="14"><font color="#cc0000">Detlef Smilgies</font></font></b></p>
+</center>
+
+<p>The Maxwell equations in the presence of a medium are given in SI
+units
+(m kg s A) as:&nbsp;<br>
+
+</p>
+<p>&nabla;&sdot; <b>D</b> = 0 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nabla;&times; <b>E = -</b> &part;/&part;t <b>B</b>
+<br>
+&nabla;&sdot; <b>B</b> = 0 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+
+
+
+&nbsp;&nbsp;&nbsp; &nabla;&times; <b>H</b> = &nbsp; &part;/&part;t <b>D</b> </p>
+<p>Furthermore there are the phenomenological relations between the
+fields
+</p>
+
+<p><b>D</b> = &epsilon; &epsilon;<sub>0</sub> <b>E</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>B</b> = &mu; &mu;<sub>0</sub> <b>H</b>
+</p>
+
+<p>In vacuum &epsilon;=&mu;=1,
+in a medium a microscopic theory is necessary to determine &epsilon;
+and &mu;. The propagation of an
+electromagnetic
+wave through the medium is determined by the wave equation, which can
+be
+derived from the above equations by considering :
+</p>
+
+<p>&nabla; &times; (&nabla; &times; <b>E)</b> = <b>-</b>&nabla; &times;
+(&part;/&part;t <b>B</b>)</p>
+
+<p>The left-hand side simplifies with the help of &nabla;<b>D</b> = 0 to
+</p>
+
+<p>&nabla; &times; (&nabla; &times; <b>E</b>) = &nabla; &times; (&nabla; <b>E</b>)
+- (&nabla;<sup>2</sup>) <b>E</b>&nbsp; = -&nabla;<sup>2</sup><b>E</b>
+</p>
+
+<p>The right-hand side can be rewritten as
+</p>
+
+<p><b>-</b>&nabla; &times; &part;/&part;t<b>B</b>
+= &part;/&part;t &nabla; &times; &mu; &mu;<sub>0</sub><b>H</b> = &mu; &mu;<sub>0</sub> &part;<sup>2</sup>/&part;t<sup>2</sup><b>D</b>
+= &epsilon; &epsilon;<sub>0</sub> &mu; &mu;<sub>0</sub>
+&part;<sup>2</sup>&part;t<sup>2</sup><b>E</b>
+</p>
+
+<p>yielding
+</p>
+
+<p>&nabla;<sup>2</sup> <b>E</b> = 1/c<sup>2
+</sup>&part;<sup>2</sup>/&part;t<sup>2</sup><b>E</b>
+</p>
+<p>with the speed of light in the medium given by c = 1/sqrt( &epsilon; &epsilon;<sub>0</sub>
+&mu; &mu;<sub>0</sub>).
+</p>
+<p>The refractive index n is then defined as the ratio between the
+speed
+of light in vacuum (&epsilon;=&mu;=1)
+and the speed of light in the medium:
+</p>
+
+<p>n = c<sub>0</sub> / c = sqrt(&epsilon; &mu;).
+</p>
+
+<p>Solutions of the wave equation are plane waves
+</p>
+
+<p><b>E</b> = <b>E</b><sub>0</sub> exp(i <b>k r</b> - &omega;t)
+</p>
+
+<p>which have to fulfill the dispersion relation
+</p>
+
+<p>&omega; = c k = (c<sub>0</sub>/n) k
+</p>
+
+<p>where k = || <b>k </b>||.
+<br>
+&nbsp;
+<br>
+&nbsp;
+</p>
+
+<p><b><font color="#cc0000"><font size="+1">Boundary conditions for the
+k
+vector</font></font></b>
+</p>
+
+<p>Let us consider a wave travelling through medium 1 and hitting a
+plane
+interface with medium 2. The most general situation will be that part
+of
+the incident wave is reflected and part of it refracted into medium 2.
+The solutions of the wave equation in both media are subject to
+boundary
+conditions at the interface. First of all, the frequencies of the three
+wave must be equal on either side of the interface:
+</p>
+
+<blockquote>&omega; = &omega;'</blockquote>
+
+This condition implies immediately for the wave vectors:
+<blockquote>k' = n k</blockquote>
+
+The next condition is that the wave vector components parallel to the
+interface
+are equal - only this way we can have continuity of the fields across
+the
+interface:
+<blockquote>k'<sub>||</sub> = k<sub>||</sub></blockquote>
+
+Now we can calculate the relation between the z-components of the wave
+vector:
+<blockquote>k'<sub>z</sub><sup>2</sup> = k'<sup>2</sup> - k'<sub>||</sub><sup>2</sup>
+= (n k)<sup>2</sup> - k<sub>||</sub><sup>2</sup> = (n k)<sup>2</sup> -
+(k<sup>2</sup> - k<sub>z</sub><sup>2</sup>) = (n<sup>2</sup>-1) k<sup>2</sup>
+- k<sub>z</sub><sup>2</sup></blockquote>
+
+</body></html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+
+  
+  <meta name="Author" content="d smilgies">
+
+  
+  <meta name="GENERATOR" content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]"><title>Reflectivity</title></head><body style="color: rgb(0, 0, 128); background-color: rgb(255, 204, 51);" alink="#00ffff" link="#0000ff" vlink="#008000">
+<center><b><font point-size="20"><font color="#cc0000"><br>
+</font></font></b>
+<h1><b><font point-size="20"><font color="#cc0000"><big>X-ray
+Reflectivity</big></font></font></b></h1>
+<h2><b><font point-size="14"><font color="#cc0000"><big>Detlef Smilgies</big><br>
+</font></font></b></h2>
+<p style="text-align: left;"><b><font point-size="14"><font color="#cc0000"><br>
+</font></font></b></p>
+<h3 style="text-align: left;"><b><font point-size="14"><font color="#cc0000">Index</font></font></b></h3>
+<ul style="text-align: left;"><li><a href="#Fresnel_formulae">Fresnel formulae</a></li><li><a href="#q-4_law">The q-4 law</a></li><li><a href="#relative_units">Relative units</a></li><li><a href="#penetration_depth">Penetration depth, escape depth, and
+scattering depth</a></li><li><a href="#practical_units">Appendix: Practical units</a></li></ul>
+
+
+<br>
+</center>
+
+
+<h3><b><font point-size="14"><font color="#cc0000"><a name="Fresnel_formulae"></a>Fresnel formulae</font></font></b></h3>
+
+
+<p>The complete theory of reflection and refraction of an
+electromagnetic
+wave at an interface is given by the Fresnel formulae (around 1830). It
+took 30 years after the discovery of x-rays, until first Kiessig in the
+1930's
+and later Abeles and Parratt in the 1950's applied the Fresnel theory
+to x-rays, and
+thus created a tool to study the structure at interfaces on a scale
+ranging
+from 10 Ĺ to several 1000 Ĺ: X-ray Reflectivity.<br>
+
+</p>
+
+
+From the boundary conditions we already know the wave vector on either
+side of the interface. Thus we can write down
+the boundary condition for the tangential electric fields, where we
+include
+the continous part of the wave&nbsp; exp{i (<b>k</b>|| <b>r</b> -
+&omega;t)}&nbsp;
+
+
+across the interface in E<sub>||</sub>:
+<blockquote><b>E<sub>||</sub></b> exp(i k<sub>z </sub>r<sub>z</sub>) +
+r <b>E<sub>||</sub></b> exp(-i k<sub>z </sub>r<sub>z</sub>)&nbsp; = t
+  <b>E<sub>||</sub></b>
+
+
+
+exp(i k<sub>z</sub>' r<sub>z</sub>)</blockquote>
+
+
+The reflection factor r and the transmission factor t are complex, i.e.
+carry information about both the phase and the magnitude of the
+reflected
+and the transmitted (or refracted) wave as compared to the incident
+wave.
+Choosing the interface boundary at r<sub>z</sub>=0, this condition
+simplifies to
+<blockquote>1 + r = t</blockquote>
+
+
+A second boundary condition is obtained for the parallel component of
+the
+magnetic field <b>H</b>. The magnetic field is related to <b>E </b>via
+the Maxwell equation
+
+<blockquote>-&part;/&part;t (&mu; &mu;<sub>0</sub> <b>H</b>) = &nabla;
+&times; <b>E</b></blockquote>
+
+
+yielding for a plane electromagnetic wave:&nbsp; <br>
+
+
+<blockquote>&omega; &mu; &mu;<sub>0 </sub><b>H</b> = <b>k</b> &#10799; <b>E</b></blockquote>
+
+
+
+
+
+The second boundary condition can thus be rewritten in terms of the
+electric field&nbsp;&nbsp; <br>
+
+
+<blockquote>(<b>k </b>&#10799;<b> E</b>)<sub>||</sub>
+/&mu;&nbsp; =&nbsp; (<b>k</b>' &#10799; <b>E</b>')<sub>||</sub>/&mu;'</blockquote>
+
+
+
+
+
+and reads for the case of <b>E</b> parallel to the interface, and
+considering
+that the z-components of the wave vectors for the reflected and
+transmitted
+waves are given by -k<sub>z</sub> and k'<sub>z</sub>, respectively :
+<blockquote>( k<sub>z</sub> - r k<sub>z</sub> ) / &mu;
+= t k'<sub>z</sub> / &mu;'</blockquote>
+
+
+
+
+
+With <font face="Symbol">m</font> = &mu;' = 1
+for
+non-magnetic materials, we obtain the Fresnel
+formulae
+<blockquote>r = (k<sub>z</sub> - k<sub>z</sub>') / (k<sub>z</sub> + k<sub>z</sub>')
+  <br>
+
+
+
+t = 2 k<sub>z</sub> / (k<sub>z</sub> + k<sub>z</sub>')</blockquote>
+
+
+The reflected and transmitted intensities are proportional to || <b>E</b>
+||<sup>2</sup> and thus
+
+<blockquote>R<sub>F</sub> = | r |<sup>2</sup> <br>
+T<sub>F </sub>= Re(k'<sub>z</sub>/k<sub>z</sub>) | t |<sup>2</sup></blockquote>
+
+
+<p><br>
+</p>
+
+
+<h3><b><font color="#cc0000"><font point-size="14"><a name="q-4_law"></a>The
+q</font><sup><font point-size="10">-4</font></sup><font point-size="14">
+law</font></font></b></h3>
+
+
+<p>R<sub>F</sub> and | t |<sup>2</sup> are plotted below. Above the
+critical
+angle R<sub>F</sub> falls off like k<sub>z</sub><sup>-4</sup> which can
+be seen by expanding k<sub>z</sub>' and r :
+
+</p>
+<blockquote>n<sup>2</sup>-1 &asymp; -2&delta;
+= -&alpha;<sub>c</sub><sup>2</sup> <br>
+k<sub>z</sub>'/k<sub>z</sub> = sqrt( (n<sup>2</sup>-1) k<sup>2</sup>/k<sub>z</sub><sup>2</sup>
+
+
+
+
++ 1) &asymp; sqrt (- <span style="font-family: Symbol;">&alpha;</span><sub>c</sub><sup>2</sup>
+k<sup>2</sup>/k<sub>z</sub><sup>2</sup> + 1) &asymp; 1 - k<sub>zc</sub><sup>2</sup>/
+2 k<sub>z</sub><sup>2</sup> <br>
+
+
+
+
+r&nbsp;&nbsp; = (1-k<sub>z</sub>'/k<sub>z</sub>) / (1+k<sub>z</sub>'/k<sub>z</sub>)&nbsp;
+&asymp; <span style="font-family: Symbol;"></span>
+
+k<sub>zc</sub><sup>2 </sup>/ 4 k<sub>z</sub><sup>2</sup></blockquote>
+for k<sub>z</sub> &gt; k<sub>zc</sub> = k &alpha;<sub>c
+
+</sub>where
+k<sub>zc</sub> is the z-component of k at the critical angle.
+
+<p>Finally we introduce the scattering vector <b>q</b> as <b>q</b> = <b>k</b><sub>f</sub>
+- <b>k</b><sub>i</sub>., where <b>k</b><sub>i</sub> and <b>k</b><sub>f</sub>
+
+
+
+are the wave vectors of the incident and scattered wave, respectively.
+In specular reflectivity only the z-component of <b>q</b> is
+non-vanishing
+and is easily obtained from <b>k</b>=<b>k</b><sub>i</sub>
+</p>
+
+
+<blockquote>q<sub>z</sub> = 2 k<sub>z</sub></blockquote>
+
+
+
+
+
+By substituting k<sub>z</sub> by q<sub>z</sub> we derive the famous q<sup>-4</sup>
+law:
+<blockquote>R<sub>F</sub>&nbsp; =&nbsp; k<sub>zc</sub><sup>4 </sup>/ q<sub>z</sub><sup>4</sup></blockquote>
+
+
+
+
+
+<p><br>
+</p>
+
+
+<h3><b><font point-size="14"><font color="#cc0000"><a name="relative_units"></a>Relative
+units</font></font></b></h3>
+
+
+<p>A frequently used way of presenting reflectivity data is relative
+units.
+If we introduce
+</p>
+
+
+<blockquote>x&nbsp; =&nbsp; k<sub>z</sub>/k<sub>z,c</sub> =&nbsp; <font face="Symbol">a</font>/&alpha;<sub>c</sub>&nbsp;
+
+
+
+=&nbsp; q/q<sub>c</sub> <br>
+y&nbsp; =&nbsp; &beta;/ &delta; <br>
+x' =&nbsp; ( x<sup>2</sup>-1+i y )<sup>0.5</sup></blockquote>
+
+
+
+
+
+where the index c denotes the respective quantity taken at the critical
+angle, the Fresnel reflectivity can be written as<br>
+
+
+<blockquote>R = |r|<sup><sub>2 </sub></sup>= | (x-x') / (x+x') |<sup>2</sup>
+  <br>
+T = |t|<sup><sub>2</sub></sup> = | 2 / (x+x') |<sup>2</sup></blockquote>
+
+
+
+
+
+In the following R and T are shown for different values of&nbsp; y =
+&beta;/&delta;.
+<br>
+
+
+&nbsp;
+<br>
+
+
+&nbsp;
+<br>
+
+
+&nbsp;
+<center>
+<table cols="2" width="83%">
+
+  <tbody>
+
+
+    <tr>
+      <td>
+      <center><img style="width: 350px; height: 350px;" alt="refl" src="refl.gif"></center>
+      </td>
+      <td>
+      <center><img style="width: 350px; height: 350px;" alt="transm" src="transm.gif"></center>
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+</center>
+
+
+<p>The effect of &beta; is that the sharp
+singularites
+at the critical angle are smoothed out. If &beta;
+were larger than 0.5 &delta;, there would hardly
+be
+a clear-cut critical angle any more. However, such exotic conditions
+can
+be only met right at an absorption edge
+<br>
+(for example calcium at 4039 eV).
+</p>
+
+
+<p>| t |<sup>2</sup> describes the strength of the refracted wave
+immediately
+at the interface. At the critical angle, incident and reflected wave
+are
+in phase, so that the field amplitude is doubled. Close to &alpha;=0
+the fields are out of phase, i.e. cancel each other, so that and the
+amplitude
+of the transmitted wave goes to 0.
+
+<br>
+&nbsp;
+
+<br>
+&nbsp;
+</p>
+
+
+
+<h3><b><font point-size="14"><font color="#cc0000"><a name="penetration_depth"></a>Penetration depth, escape depth, and
+scattering depth</font></font></b></h3>
+
+
+<p>Other quantities important for the experiment that can be easily
+extracted
+from our calculation above are the penetration depth <font face="Symbol">L
+</font>and
+the scattering depth &Lambda;<sub>s</sub>.
+We will give here a more complete treatment than needed for the
+specular reflectivity alone, as the arguments also apply for any other
+kind of grazing incidence scattering technique.<font face="Symbol"><br>
+
+</font></p>
+
+
+<p>&Lambda; is related to the damping of the incident wave
+perpendicular to the
+interface
+which is given by the imaginary part of the z-component of the
+transmitted
+wave vector
+
+</p>
+
+
+<blockquote>&Lambda; = 2&pi;
+/ Im(k<sub>z</sub>')<br>
+
+</blockquote>
+
+
+Similarly, there is an escape depth associated with a photon transmited
+at a finite depth below the sample surface:<br>
+
+
+<br>
+
+
+<div style="margin-left: 40px;">&Lambda;<sub>escape</sub>
+
+= 2&pi;
+/ Im(k<sub>f,z</sub>')<br>
+</div>
+
+
+<br>
+
+
+
+where <span style="font-weight: bold;">k</span><sub>f</sub>' is the
+wave vector of this scattered or emitted photon inside the material.<br>
+
+
+
+<br>
+
+
+The scattering depth &Lambda;<sub>s</sub>,
+sometimes also called the information depth, takes into
+account, that for any scattering signal we detect, both the path of
+the incident wave to the scattering event as well as the path of the
+scattered wave through the medium have to be considered:<br>
+
+
+<blockquote>1 / &Lambda;<sub>s</sub> = <span style="font-family: symbol;">1</span>
+
+/ &Lambda;&nbsp; +&nbsp; 1 /&Lambda;<sub>escape</sub><font face="Symbol">&nbsp;&nbsp;</font>
+
+
+&nbsp;&nbsp;</blockquote>
+
+
+In the case of specular reflectivity the exit wave vector k<sub>f,z</sub>'
+is simply -k<sub>z</sub>' and q<sub>z</sub>' = 2 k<sub>z</sub>' and
+hence
+<blockquote>&Lambda;<sub>s</sub> = 2<span style="font-family: Symbol;">&pi;</span>
+
+
+/ Im(q<sub>z</sub>') = &Lambda;
+/ 2<font face="Symbol"><br>
+  </font></blockquote>
+The figure shows the penetration depth as function of x =
+&alpha;/&alpha;<sub>c</sub>
+for different values of &beta;/&delta;.
+Above the critical angle (x&gt;1) the penetration depth is controlled
+mainly
+by x-ray absorption, while below the critical angle refraction
+dominates.
+Note that the limiting value for the penetration depth at zero
+incidence
+is about 50&Aring;, independent of element.
+
+<br>
+
+
+&nbsp;
+<blockquote>
+  <blockquote>
+
+
+    <center><img style="width: 450px; height: 341px;" alt="pen depth" src="pen-depth.gif"></center>
+  </blockquote>
+</blockquote>
+
+
+<br>
+
+
+&nbsp;
+<h3><b><font point-size="14"><font color="#cc0000"><a name="practical_units"></a>Appendix: Practical units</font></font></b></h3>
+
+
+
+<p>In our derivation we used k to characterize the incident wave. In an
+experiment we would usually measure the angle of incidence &alpha;:
+</p>
+
+
+<blockquote>k<sub>z</sub> = k sin &alpha; ~ k &alpha;
+(rad)</blockquote>
+
+
+
+The scattering vector q is given by
+<blockquote>q = 2 k sin &alpha; = 2 k<sub>z</sub></blockquote>
+
+
+With 2 k = 4&pi;/&lambda; =
+12.566/&lambda; and E = h&nu;
+= hc /&lambda; = 12.4 keV &Aring; / &lambda;
+we can use the accidental similarity of the numerical values of 4&pi;
+and hc (keV &Aring;) to write
+<blockquote>q (&Aring;<sup>-1</sup>)&nbsp; =&nbsp; E (keV) sin <font face="Symbol">a</font>&nbsp;
+
+
+~&nbsp; E (keV) &alpha; (mrad)</blockquote>
+
+
+which is very convenient for some first numerical estimates during an
+experiment.
+<br>
+&nbsp;
+
+<br>
+</body></html>
