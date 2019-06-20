@@ -1,0 +1,109 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Olof Svensson">
+   <meta name="GENERATOR" content="Mozilla/4.61 [en] (Win98; I) [Netscape]">
+   <title>Project description</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center>
+<h1>
+ANA Specific Project Descriptions</h1></center>
+
+<pre>ANA - definition of the integration interface
+
+Detlef Smilgies 8/99
+
+general remark about ANA menues: the existing menues should be respected
+unless there are incompatiblities with new items. I may have overlooked
+some existing features.
+
+
+setting values
+==============
+
+modification of existing feature:
+
+set	read	SPec
+		function:
+			read detector versus scan variable from SPEC file
+			read diffractometer angles, if "set int geo" is
+				defined (see below)
+			ignore MCA spectra, if interspersed with scan
+
+new format:
+
+set	read	MCa (spec)
+		function:
+			read single MCA spectrum
+
+
+
+
+set 	integrate
+	
+	"help" should display:
+
+	>GEOmetry <SIXC / ID10B / W21V / W21H>
+	>SCantype <ROcking scan / HKL scan>
+	>BEAmslit     <Horizontal / Vertical> <gap value>
+	>DETectorslit <Horizontal / Vertical> <gap value>
+	>DIAmeter of sample <value>
+	>number of LEft data points for background
+	>number of RIght data points for background
+	>BAckground model <LIne / PArabola / SPline>
+	>SCalefactor (default value is 1)
+	>Output to file <filnename>
+	>NO output
+	>OUtput format	<MInimal: H K L f ferr /
+			 MOre: H K L I err C f ferr /
+			 Verbose : H K L I err alf bet psi P A L R C f err>
+	>LIst all parameters
+	>HElp: display this menue
+
+	"list" should display all the chosen settings
+
+
+operate		>INtegrate [in-spectrum]
+			function: numerically integrate spectrum
+                                  subtract background
+                                  apply corrections
+		>BAckground calculation [in-spectrum] [out-spectrum]
+			function: calculate curve for background model
+				  default: calculate 100 points within
+	                                   scan interval	
+
+
+examples
+========
+
+example: background calculation
+function: calculate and plot background:
+
+ANA>read spec 24 th 1 operate back 1 2 return autoplot fit 
+
+comment: autoplot fit plots spectrum 1 and 2
+         output values are undefined
+         (alternatively one could make a new autoplot function)
+
+example: loop
+function: integrate spec scans #20 to #569
+          and write output to outfile.dat
+
+ANA>set integrate geometry id10b scan rock output "outfile.dat" return
+ANA>set loop before "read spec" after "om 1 op int 1 return" return return  
+ANA>loop 20 569
+
+
+==========================================================================
+new main menue item (also for ROD)
+
+ANA> SAVE
+ 
+function: saves all settings to ANA_INIT.MAC and PLOTINIT.MAC
+(usually only done on quitting ANA)
+</pre>
+</body>
+</html>
