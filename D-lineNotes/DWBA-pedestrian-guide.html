@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>DWBA-pedestrian-guide</title></head><body style="background-color: rgb(255, 153, 0); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<h1 style="color: rgb(0, 0, 153); text-align: center;">A Pedestrian Guide to DWBA</h1>
+<h2 style="color: rgb(0, 0, 153); text-align: center;">Detlef-M. Smilgies, CHESS<br>
+</h2>
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">Distorted Wave Born Approximation
+(DWBA) is already quite a mouthful as a term, let alone the 4-letter
+abbreviation. Here a brief introduction to basic ideas shall be given.</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">Let's take a brief look at the
+Born approximation, the standard scattering theory. In a very
+simplified way we have an incoming plane wave field </span><span style="color: rgb(0, 0, 153);"></span><span style="color: rgb(0, 0, 153);">&#934;</span><span style="color: rgb(0, 0, 153);"><sub>i</sub></span><span style="color: rgb(0, 0, 153);">(k_i,r) that scatters off an electron density distribution </span><span style="color: rgb(0, 0, 153);">&#961;</span><span style="color: rgb(0, 0, 153);">(r) and produces an outgoing plane wave </span><span style="color: rgb(0, 0, 153);">&#934;<sub>f</sub></span><span style="color: rgb(0, 0, 153);"> with wave vector k_f and ||k_k||=||k_i||. Then the scattering intensity is given as</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<div style="margin-left: 80px;"><span style="color: rgb(0, 0, 153);">I(k) = |&lt; &#934;<sub>f</sub> | &#961;(r) | </span><span style="color: rgb(0, 0, 153);">&#934;</span><span style="color: rgb(0, 0, 153);"><sub>i</sub>&gt;|<sup>2</sup></span><br style="color: rgb(0, 0, 153);">
+</div>
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">using the elegant matrix element
+notation from quantum mechanics. The matrix element is easy to rewrite
+as an integral, and we end up that the scattering is given by the
+Fourier transform of the electron density, with the scattering vector
+give as q=kf-ki. But for now we will maintain the matrix element, as it
+greatly simplifies the next step.</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">Now, GISAXS operates in reflection
+mode, so obviously the Born approximation will give poor results.
+However, thing don't have to much get more difficult: the theory and
+wave functions of x-ray reflectivity are well known for stratified
+media, such as thin films. The reflectivity wave functions are given by</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<div style="margin-left: 80px;"><span style="color: rgb(0, 0, 153);">&#936;<sub>i,f</sub> = t(kz) &#934;</span><span style="color: rgb(0, 0, 153);"><sub>i,f</sub></span><span style="color: rgb(0, 0, 153);"> + r(kz) &#934;</span><span style="color: rgb(0, 0, 153);"><sub>i,f</sub></span><br style="color: rgb(0, 0, 153);">
+</div>
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">t(kz) is the transmission
+amplitude into the layer and r(kz) is the reflection from the bottom of
+the layer. Here we have already separated of the part of the plane wave
+travelling parallel to the interface (x and y directions) and are only
+concerned with the part of the wave travelling perpendicular to the
+interface. In the semi-infinite substrate there is just a transmitted
+wave, and in air |r(kz)|2 yields the x-ray reflectivity signal.<br>
+<br>
+This ansatz can be solved for each layer and a laterally averaged
+electron density analytically using the matrix method - brace yourself,
+even for a simply thin film this is already quite a lot of stuff to get
+the complex reflection amplitude r(k_r). But let's not get distracted
+by the technical demands - the physical interpretation of this formula
+is quite straight forward: for each layer we will have an incoming
+plane wave and a reflected wave that are superimposed with a fixed
+phase relation given by r(k_r). <br>
+<br>
+If we have only one interface, we will retrieve the well-known Fresnel
+formula describing the reflection and refraction of a plane wave at a
+planar inteface. Introducing another layer such as a thin film, makes
+the whole phenomenology a lot richer: First of all we will get the
+Kiessig fringes due to the interference of the waves reflected from the
+film surface and the substrate, when the incident angle is above the
+critical angles. Inbetween the critical angles and when the film medium
+is of lower electron density than the substrate, thing will get even
+more interesting: The wave is still strongly reflected by the
+substrate, so a standing wave field develops above the substrate. If
+the film thickness coincides with a node of the standing wave field, we
+obtain a resonance. Under such conditions part of the wave bounces back
+and forth inside the film like a wave in a waveguide. Finally, if we
+stay below the critical angle of the film, we will have an evanescent
+wave in the film, i.e. the amplitude is exponentially attenuated as we
+go deeper. In case the resulting "penetration depth" is a good deal
+smaller than the film thickness,we can consider the film as effectivly semi-infinite, and obtain depth-sensitive information of the surface-near region. </span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">Back to the original task: We need
+to ask where in the wave field scattering will occur. If we study
+surfaces, we may have regular deposits on the surface - this is the
+case for which the popular DWBA software IsGISAXS was originally
+developed for.If we study thin films, the waves will get scattered by
+the density fluctuations del-rho in the film - remember, in our ansatz
+we already solved the exact solution for the laterally averaged
+electron density. So for the latter case we can now simply replace the
+plan waves with the wave function inside the thin film:</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">I(k_f) =  |&lt;Psi_f | del-rho(r) | Psi_i&gt;|2</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">This is already the essence of
+DWBA, and we see that it isw completely analogous to the original Born
+approximation, on that we picked wave functions that are better matched
+to the problem. Instead of the full electron density, we now have the
+density fluctuations. The density fluctuations may be very regular -
+for instance domains in a microphase-separated block copolymer. A
+regular arrangement of objects will give rise to Bragg reflections The
+objects will often also have regular shapes - here enters the form
+factor from transmission SAXS.</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">Now the next step is to consider,
+whether we can solve the DWBA formula, and yes, it's going to be messy,
+but let's keep in mind that the distorted waves are merely the sum of 2
+superimposed plane waves, so just one step more complex. Substituting
+the plane waves for the DWs and&nbsp; performing the&nbsp; | |2 will
+result in 16 terms. Using the rules for complex numbers, the mixed
+terms can by combined, leaving us with 10 terms as shown in detail in a
+variety of papers. However, again let's get back to the original matrix
+element and let's see whether we can learn something without going
+whole hog into the algebra.</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">I(k_f) =  |&lt;t(kz) Phi_f + r(kz) Phi_f | del-rho(r) | t(kz) Phi_i + r(kz) Phi_i&gt;|2</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">If the incident angle is about two
+times the critical angle of the substrate, r(kz) will be lower than
+0.1. At this point the interference of incident and reflected wave can
+be neglected, as the reflected wave is too weak to have much of an
+effect. This does not hold for the outgoing waves: if we use an area
+detector we will see the outgoing scattering intensity in the region of
+the critical angles of film and substrate which will create a nicely
+shaped Yoneda band with various fringes, depending on the film
+thickness. So this we'll get even if there is nothing to scatter from
+inside the film! On the other hand, if we chose the incident angle to
+be right at a waveguide resonance, the overall scattering signal from
+the film will be enhanced. This is particularly useful at the TE0
+resonance where we don't have a node inside the film, i.e. the whole
+film gets illuminated. The higher resonances can be used for more
+sophisticated analysis, however, if we have a weak scatterer and we
+want to get the most of it, TE0 is the way to go! The other appealing
+thing about TE0 is that it is just a tad above the critical angle of
+the film. Right at the critical angle the wave field inside the film is
+parallel to the substrate, and at TE0 this is still approximately the
+case. Hence we are safe from the notorious "double vision" at somewhat
+higher incident angles, where incoming and reflected wave scatter
+independently giving rise to a doubling of scattering features along
+the surface normal.</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">This is about as far as we can go
+without torturing the pencil and comprises my usual introduction to
+GISAXS for my users. Having a bit of a SAXS background is essential -
+remember: the SAXS signal is just the Fourier transform of the electron
+density! (But it helps to know a bunch of examples in the corner&nbsp;
+of one's mind how simple things scatter - see Lazzari's manual.) To
+understand the sometimes confusing dynamic scattering regime inbetween
+critical angles, it is essential to have a good grasp on reflectivity
+theory. Here we can simplify matters by staying above the critical
+angle and go quasi-kinematic. Or hit the TE0 resonance - as long as we are careful to interpret the intensity in the vertical direction with due care.</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+ 
+
+</body></html>

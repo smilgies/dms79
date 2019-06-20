@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>FUJI-ImagePlates</title>
+</head>
+<body
+ style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 51);"
+ alink="#000088" link="#0000ff" vlink="#ff0000">
+<h1 style="text-align: center; color: rgb(204, 0, 0);">FUJI Image
+Plates at D1</h1>
+<h2 style="text-align: center;"><span style="color: rgb(204, 0, 0);">Detlef
+Smilgies</span><br>
+</h2>
+<br>
+<h3>Mount and beamstop</h3>
+<ul>
+  <li>insert a plate, white side facing the beam in the holder with
+back photocarton screen facing upstream</li>
+  <li>gently tighten screws, two diagonal screws are enough</li>
+  <li>the WAXS range is about 200 mm from the sample with beamstop in
+the center</li>
+  <li>use 1/16"Al as attenuator for the direct beam at 10keV; verify
+beam position with a burn and without plate</li>
+  <li>for line-up use ion chamber with beam stop about 500 mmm
+downstream of sample and slide the holder out with a clamp marking the
+scattering position<br>
+  </li>
+  <li>make sure the Uniblitz shutter is closed, before opening stops to
+expose a plate<br>
+  </li>
+  <li>use macro "expose [time]" for taking images of exposure [time];
+monitor intensities will be saved in scan file</li>
+  <li>start with a 1 sec exposure for a new sample<br>
+  </li>
+  <li>put exposed plates in cassette (see directions on cassette) and
+read out;<br>
+  </li>
+  <li>about 10 min after exposure the plate is most stable</li>
+  <li>erase plate for 10 min after read-out in light bath</li>
+</ul>
+<br>
+<h3>Reading the plate</h3>
+<ul>
+  <li>start program "image plate reader" on the Mac</li>
+  <li>start-up parameters:</li>
+  <ul>
+    <li>file name (include number matching scan file)</li>
+    <li>comment optional</li>
+    <li>image plate size: 20 x 25</li>
+    <li>gradation: 1024</li>
+    <li>resolution: 100</li>
+    <li>latitude: 4</li>
+    <li>sensitivity: 4000</li>
+    <li>image size will be about 10MB</li>
+  </ul>
+  <li>press "read" and then "save" in the next menu</li>
+  <li>"image gauge" is automatically launched; use left bar to check
+for overexposed areas on plate; don't save file in this window</li>
+</ul>
+<br>
+<h3>Transferring and converting files to TIFF <br>
+</h3>
+<ul>
+  <li>start the Mac FTP program "fetch"</li>
+  <li>choose mode "binary" and format "raw data" to copy files to
+d1.chess.cornell.edu</li>
+  <li>use program "fuji2tiff [input name] [output name]" from the
+"szebenyi" directory for conversion to TIFF</li>
+  <ul>
+    <li>reader files marked with a red "org" tag should convert fine</li>
+    <li>if accidentally a file was saved with "image gauge" (green tag
+"image"):</li>
+    <ul>
+      <li>open file with"image gauge" by double-clicking icon</li>
+      <li>use "FILE &gt; export &gt; FUJI exchange format" from top
+menu bar</li>
+      <li>the exported file with the ".img" extensition behaves like an
+"org" data file<br>
+      </li>
+    </ul>
+  </ul>
+  <li>evaluate TIFF files with "fit2d" (see tutorial)<br>
+  </li>
+</ul>
+<br>
+</body>
+</html>

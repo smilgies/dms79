@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>XR@D1</title>
+</head>
+<body style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 0);"
+ alink="#993399" link="#0000ff" vlink="#ff0000">
+<h1 style="text-align: center; color: rgb(204, 0, 0);">D1 Reflectivity</h1>
+<h2 style="text-align: center; color: rgb(204, 0, 0);">Detlef Smilgies,
+CHESS</h2>
+<p>The ion chamber used for GISAXS line-up can also provide some useful
+reflectivity data for about 3 to 3.5 orders of magnitude. Particularly
+the reflectivity between the critical angles and just beyond can be
+studied with high resolution (up to 3000 A). In the following I
+describe how the reflectivity data can be used for fitting XR curves.</p>
+<h3>SPEC file</h3>
+The spec log file is organized as follows:<br>
+<ul>
+  <li>for every sample name provided with the <span
+ style="font-family: monospace;">newfile </span>or <span
+ style="font-family: monospace;">new </span>command, a file of equal
+name and no extension is created in the <span
+ style="font-family: monospace;">data </span>subdirectory</li>
+  <li>all scan files used for sample line-up and taking images are
+appended to this <span style="font-family: monospace;">ASCII </span>file</li>
+  <li>a particular scan is identified by the scan number, which is
+given in a line starting with <span style="font-family: monospace;">#S</span>
+followed by the scan number</li>
+  <li>each image with a given number is associated with a <span
+ style="font-family: monospace;">tseries </span>scan of the same
+number which contains all the monitor reading while this image was taken</li>
+  <li>in order to extract files it is the easiest to use a simple text
+editor like <span style="font-family: monospace;">gedit </span>in <span
+ style="font-family: monospace;">LINUX </span>or <span
+ style="font-family: monospace;">Wordpad </span>in <span
+ style="font-family: monospace;">Windows XP</span>, and use the <span
+ style="font-family: monospace;">find </span>command to find the
+correct scan</li>
+  <li>the file header contains further information, such as time and
+date of the scan, and all motor positions before the start of the scan<br>
+  </li>
+  <li>the line starting with <span style="font-family: monospace;">#L</span>
+identifies the scanned motor and all the readout monitors and detectors</li>
+  <li>the <span style="font-family: monospace;">#L</span> line is
+followed by the data in <span style="font-family: monospace;">x y1 y2
+y3 ... yn</span> format</li>
+  <li>it is best to copy this section to a separate file and then read
+it into <span style="font-family: monospace;">Origin </span>or <span
+ style="font-family: monospace;">Excel </span>for further processing</li>
+</ul>
+<h3>Reflectivity macros</h3>
+<ul>
+  <li>the macro <span style="font-family: monospace;">xrfine </span>takes
+a reflectivity scan and also measures the electronic offset <span
+ style="font-style: italic;">Idark </span>of the V/f
+converter of the ion chamber electronics</li>
+  <li>the offset scan is found as a <span
+ style="font-family: monospace;">tseries </span>either right after
+(old version) or right before (new) the reflectivity scan</li>
+  <li>the electronic offset should be subtracted from the reflectivity
+signal <span style="font-style: italic;">Idet</span> as the first
+step; note that the offset measurement uses 10 sec per
+point while the reflectivity scan typically uses 1 sec - the offset has
+to be scaled accordingly</li>
+  <li>if your reflectivity program can handle raw reflectivities, you
+can feed the offset-corrected data to it</li>
+  <li>the incident beam intensity is contained in the initial line-up
+scans, in particular the <span style="font-family: monospace;">samz </span>scan
+- from this you obtain <span style="font-style: italic;">Idirect</span><br>
+  </li>
+  <li>The beam in the synchrotron decays over time - typical CHESS
+lifetimes are around 10 hours. In order to monitor this decay the
+beamline is equipped with severeal monitor detectors, all contained in
+the scan file: <br>
+  </li>
+  <ul>
+    <li><span style="font-style: italic;">Imon </span>(incident beam
+after collimating slits)</li>
+    <li><span style="font-style: italic;">Itot </span>(total
+monochromator output) <br>
+    </li>
+    <li><span style="font-style: italic;">CESR </span>(positron beam
+current)</li>
+  </ul>
+  <li>In order to detect 1% changes, a beam monitor should read at
+least 100,000 count/s. The in-line <span style="font-style: italic;">Imon
+    </span>monitor in helium often does not get that high. In this case
+    <span style="font-style: italic;">Itot </span>may be a more
+reliable signal. <span style="font-style: italic;">CESR </span>outout
+also works quite well.<br>
+  </li>
+  <li>if you use the freeware program PARRATT32 from
+Hahn-Meitner-Institut, Berlin the data need to be processed further:</li>
+  <ul>
+    <li>reflectivities need to be normalized - the most complete way is
+      <span style="font-style: italic;">R</span> = {(<span
+ style="font-style: italic;">Idet</span>/<span
+ style="font-style: italic;">Imon</span>) - (<span
+ style="font-style: italic;">Iback</span>/<span
+ style="font-style: italic;">Imon</span>)}/(<span
+ style="font-style: italic;">Idirect</span>/<span
+ style="font-style: italic;">Imon</span>)</li>
+    <li>the incident angle should be checked whether the ZERO was
+correctly determined; it is good to fit a straight line to the onset to
+refine the absolute zero of the incident angle<br>
+    </li>
+    <li>the incident angle <span style="font-family: monospace;">samth
+      </span>needs to be converted into q_z: q_z = 4*<span
+ style="font-family: monospace;">PI</span>*sin(<span
+ style="font-family: monospace;">samth</span>)/<span
+ style="font-family: monospace;">lambda</span></li>
+    <li><span style="font-family: monospace;">PARRATT32 </span>requires
+a third column with the counting <span style="font-style: italic;">error
+      </span>which can be set to zero; the monitopr ion chamber data
+could be also treated like a scintillation counter. However, keep
+in mind that the electronic really measures an anolog signal which is
+the converted into counts by the V/f converter, so the usual Poisson
+statistics <span style="font-style: italic;">error</span><span
+ style="font-family: monospace;"> </span>= sqrt(<span
+ style="font-style: italic;">Idet</span>) may not be the correct
+way and over- or underestimates the statistical error</li>
+    <li>the energy resolution of the D1 multilayer optics is 1.5%; this
+can be included in a <span style="font-family: monospace;">PARRATT32 </span>fit
+under "velocity selector"</li>
+    <li>often a better fit can be obtained by including a scale factor
+in the fit: <span style="font-style: italic;">R' </span>=<span
+ style="font-style: italic;"> factor R</span>. Unfortunately <span
+ style="font-family: monospace;">PARRATT32</span> does not allow to
+include a scale factor in the fit, it has to be adjusted by hand.<br>
+    </li>
+    <li>other fine points of XR, such as the correction of the finite
+area
+effect, depend on your experience with reflectivity measurement and
+analysis</li>
+    <li>happy fitting!<br>
+    </li>
+  </ul>
+</ul>
+</body>
+</html>

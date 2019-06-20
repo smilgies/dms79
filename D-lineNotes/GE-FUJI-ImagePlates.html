@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>FUJI-ImagePlates</title></head><body style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 51);" alink="#000088" link="#0000ff" vlink="#ff0000">
+<h1 style="text-align: center; color: rgb(204, 0, 0);">GE/Fuji Image
+Plates at D1</h1>
+<h2 style="text-align: center;"><span style="color: rgb(204, 0, 0);">Detlef
+Smilgies</span><br>
+</h2>
+<br>
+<h3>Mount and beamstop</h3>
+<ul>
+  <li>insert a plate, white or blue side facing the beam in the holder with
+the photocarton cover facing upstream</li>
+  <li>gently tighten screws, two diagonal screws are enough, top rear and bottom front screw are the best combination<br>
+</li>
+  <li>for the WAXS range the image plate should be about 200 mm from the sample, with beamstop in
+the center</li>
+  <li>use 1/16"Al as attenuator for the direct beam at 10keV; verify
+beam position with a burn and without plate</li>
+  <li>for line-up use the <span style="font-family: Courier New,Courier,monospace;">Idet</span> ion chamber with beam stop about 500 mmm
+downstream of sample and slide the holder out with a clamp marking the
+scattering position; often <span style="font-family: Courier New,Courier,monospace;">Idet</span> is already set up with the SAXS camera for GIS/WAXS<br>
+  </li>
+  <li>make sure the Uniblitz shutter is closed, before opening stops to
+expose a plate (<span style="font-family: Courier New,Courier,monospace;">shclose</span> command)<br>
+  </li>
+  <li>use macro "<span style="font-family: Courier New,Courier,monospace;">expose</span> <span style="font-family: Courier New,Courier,monospace;">[time]</span>" for taking images of an exposure given by [time];
+monitor intensities will be saved in the scan file</li>
+  <li>start with a 1 sec exposure for a new sample<br>
+  </li>
+  <li>put exposed plate in the holder and read them (see below)</li>
+  <ul>
+    <li>the plate goes with the white or blue side facing up onto the holder; the magnetic backing will make it stick<br>
+    </li>
+  </ul>
+  <ul>
+    <li>place the straight corner in A8, where the finger hole is - then plate orientation is consistent</li>
+    <li>line up the plate with the straight edges of the holder - be careful not to bend the plate</li>
+    <li>put the holder into the reader with the plate facing down, arrow to arrow, and close the lid</li>
+    <li>with a bit of practice this can be done in less than 1 min<br>
+    </li>
+  </ul>
+
+  
+  <li>erase plate after read-out for 5 min in the light bath</li>
+</ul>
+<br>
+<h3>Reading the plate</h3>
+<ul>
+  
+  <li>start program "Typhoon FLA 7000"</li>
+  <li>in <a href="GE-FLA-7000-main.html">main menu</a> choose mode "<span style="font-family: Courier New,Courier,monospace;">Phosphorimaging</span>"<br>
+  </li>
+
+  <li>start-up parameters: <span style="font-family: Courier New,Courier,monospace;">LOAD CONDITION &gt; CHESS</span></li>
+  <ul>
+    <li>in case reader parameters are lost<br>
+    </li>
+    <ul>
+      <li>laser and correction will automatically be selected<br>
+      </li>
+      <li>photo multiplier voltage (<span style="font-family: Courier New,Courier,monospace;">PMT</span>): 800</li>
+      <li><span style="font-family: Courier New,Courier,monospace;">Pixel Size</span>: 100</li>
+      <li><span style="font-family: Courier New,Courier,monospace;">Latitude</span>: 4<br>
+      </li>
+      <li><span style="font-family: Courier New,Courier,monospace;">Mode</span> (image plate size in [cm]): 20 x 25</li>
+      <li>files for the time being are saves as <span style="font-family: Courier New,Courier,monospace;">TIFF</span> and <span style="font-family: Courier New,Courier,monospace;">GEL</span> - both can be read by <span style="font-family: Courier New,Courier,monospace;">fit2d</span><br>
+      </li>
+      <li>image size will be about 10MB either way</li>
+      <li>there are some remaining issues with autoscaling of saved data -&nbsp; to be figured out</li>
+      <ul>
+        <li>the <span style="font-family: Courier New,Courier,monospace;">Edit</span> &gt; <span style="font-family: Courier New,Courier,monospace;">Preferences</span> menu defines the saving mode:</li>
+        <li><span style="font-family: Courier New,Courier,monospace;">Scan Settings</span>: correction - manual, ND Filter - off, Scan Mode - Standard</li>
+        <li>I<span style="font-family: Courier New,Courier,monospace;">mage file settings</span>: File Format - GEL and TIFF<br>
+        </li>
+      </ul>
+    </ul>
+  </ul>
+  <li>check user directory<br>
+  </li>
+  <ul>
+    <li>the <span style="font-family: Courier New,Courier,monospace;">H:</span> drive is mapped to the station computer</li>
+  </ul>
+
+  <ul>
+    <li>go to your user directory, and make a subdirectory for the images, e.g. "<span style="font-family: Courier New,Courier,monospace;">IP</span>"<br>
+</li>
+    </ul>
+  <li>choose a name of the image based on sample name and current scan number<br>
+  </li>
+
+  <li>press "<span style="font-family: Courier New,Courier,monospace;">Start Scan</span>"&nbsp; - the <a href="GE-FLA-7000-reader-auto.html">scanning menu</a> will pop up</li>
+  <li>be patient and wait for the reader</li>
+  <ul>
+    <li>some pixel statistics is provided (inset on the right) - you can judge from that how close you are to saturation</li>
+    <li>use "<span style="font-family: Courier New,Courier,monospace;">linear range</span>" for viewing</li>
+    <ul>
+      <li>the left and right red lines indicating the grayscale range
+can be moved with the mouse to change the image contrast and will show
+up in the grayscale image<br>
+      </li>
+    </ul>
+
+    <li>the image on the left hand provides a gray scale image of the exposure</li>
+    <li>some additional remarks<br>
+    </li>
+  </ul>
+  <ul>
+    <ul>
+      <li>you can "<span style="font-family: Courier New,Courier,monospace;">Stop</span>" reading the plate if necessary (wrong plate etc.)</li>
+      <li>you do not need to use "<span style="font-family: Courier New,Courier,monospace;">Save</span>" - the original image is already saved</li>
+      <li>you do not need to use "<span style="font-family: Courier New,Courier,monospace;">Launch</span>" - the program launched is for fluorescent assays<br>
+      </li>
+    </ul>
+  </ul>
+  <li>wait until the "<span style="font-family: Courier New,Courier,monospace;">Return</span>" botton is active; now the plate can be safely removed</li>
+  <li>images can be analyzed with fit2d (version 12)</li>
+  <ul>
+    <li>image size is 2500 x 2000 pixels</li>
+    <li>typical range (<span style="font-family: Courier New,Courier,monospace;">user min/max</span>) for <span style="font-family: Courier New,Courier,monospace;">TIFF</span> is 65 to 65,000</li>
+    <li><span style="font-family: Courier New,Courier,monospace;">GEL</span> is a horizontally mirrored image of <span style="font-family: Courier New,Courier,monospace;">TIFF</span>; have not figured out range</li>
+    <ul>
+      <li>image autoscaling needs to be reviewed - not enough documentation available<br>
+      </li>
+    </ul>
+
+  </ul>
+</ul><br>
+</body></html>

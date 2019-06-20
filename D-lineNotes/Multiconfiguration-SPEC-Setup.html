@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Multiconfiguration-SPEC-Setup</title>
+</head>
+<body style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 0);"
+ alink="#993399" link="#0000ff" vlink="#ff0000">
+<h1 style="text-align: center; color: rgb(204, 0, 0);"><br>
+</h1>
+<h1 style="text-align: center; color: rgb(204, 0, 0);">Multiconfiguration
+<span style="font-family: courier new,courier,monospace;">spec</span>
+setup</h1>
+<div style="text-align: center; color: rgb(204, 0, 0);">
+<h2>Detlef Smilgies, CHESS</h2>
+</div>
+<br>
+<br>
+In order to administrate 90 or so pre-configured motors, use of the
+geometry feature
+of <span style="font-family: courier new,courier,monospace;">spec </span>was
+made. Three geometries are currently supported:<br>
+<ul>
+  <li><span style="font-family: courier new,courier,monospace;">saxs&nbsp;
+    </span>-&nbsp; SAXS/WAXS and GISAXS experiments</li>
+  <li><span style="font-family: courier new,courier,monospace;">image </span>-&nbsp;
+fluorescence imaging experiments (microbeam imaging, confocal
+microscopy)<br>
+  </li>
+  <li><span style="font-family: courier new,courier,monospace;">radio </span>-&nbsp;
+radiography experiments (e.g. fuel spray, PAD tests)</li>
+</ul>
+<h3 style="color: rgb(0, 0, 153);">Use of the geometry mode</h3>
+Presently supported are the following geometries<br>
+<ul>
+  <li><span style="font-family: courier new,courier,monospace;">common
+/ spec</span>
+    <ul>
+      <li>monochromator <br>
+      </li>
+      <li>incident slits<br>
+      </li>
+      <li>DAC motors</li>
+    </ul>
+  </li>
+  <li><span style="font-family: courier new,courier,monospace;">saxs</span><br>
+  </li>
+  <ul>
+    <li>hutch slits</li>
+    <li>sample stage</li>
+    <li>flighpath</li>
+    <li>beamstop</li>
+    <li>detector</li>
+  </ul>
+  <li style="font-family: courier new,courier,monospace;">image</li>
+  <ul>
+    <li>capillary mount</li>
+    <li>beam block</li>
+    <li>scanning stages (Thorne, Woll)<br>
+    </li>
+    <li>detector</li>
+  </ul>
+  <li style="font-family: courier new,courier,monospace;">radio</li>
+  <ul>
+    <li>fuel jet set-up (Jin Wang)<br>
+    </li>
+  </ul>
+</ul>
+<br>
+The most striking difference of the multi-configuration spec version is
+when you want of add a motor, <span
+ style="font-family: courier new,courier,monospace;">config</span> will
+tell you:<span style="font-family: courier new,courier,monospace;">
+Must display all motors to insert.</span> The keystroke <span
+ style="font-family: courier new,courier,monospace;">shift-g</span>
+will display all motors supported by <span
+ style="font-family: courier new,courier,monospace;">spec</span>. Now
+we seem to have
+lost all the advantages again, as we have to deal with the full number
+of motors. But fear not! After adding and assigning the new motors to a
+geometry, another <span
+ style="font-family: courier new,courier,monospace;">shift-g</span>
+will get rid of the motors not needed.<br>
+<br>
+NOTE: when switching over geometries<br>
+<ul>
+  <li>assign all previously used motor channels to "none" (except for
+"common"
+motors or non-VME motors).</li>
+  <li>start fresh, in order to get rid of not needed macros from the
+previous configuration</li>
+</ul>
+<h3 style="color: rgb(0, 0, 153);"><br>
+</h3>
+<h3 style="color: rgb(0, 0, 153);">Geometry-specific macros</h3>
+Another beauty of the multiconfiguration setup is, that not every macro
+needs to be loaded at start-up, but that configuration
+specific macros can be permanently installed, so that they only load
+under the specific geometry. Use the following steps:<br>
+<ul>
+  <li>unassign all VME motor channels from the previous geometry that
+are not <span style="font-family: courier new,courier,monospace;">common</span><br>
+  </li>
+  <li>start fresh, e.g.&nbsp; <span
+ style="font-family: courier new,courier,monospace;">saxs -f</span>&nbsp;
+to remove macros from the previous geometry that are no longer needed<span
+ style="font-family: courier new,courier,monospace;"><br>
+    </span></li>
+  <li>the necessary macros will be loaded by <span
+ style="font-family: courier new,courier,monospace;">setup.mac</span>
+on <span style="font-family: courier new,courier,monospace;">SPECD/SPEC/</span>
+which is the geometry-dependent configuration directory with <span
+ style="font-family: courier new,courier,monospace;">SPEC</span> = <span
+ style="font-family: courier new,courier,monospace;">spec, saxs,
+image, radio</span></li>
+  <li>in order to edit <span
+ style="font-family: courier new,courier,monospace;">setup.mac</span>
+from the <span style="font-family: courier new,courier,monospace;">spec</span>
+level, type <span style="font-family: courier new,courier,monospace;">setup</span></li>
+  <li>I often use set-up to save some small useful macros and to
+test/debug macros; eventual frequently used macros or macro sets should
+be properly installed
+as D1 macros on <span
+ style="font-family: courier new,courier,monospace;">~/Macros/nondist</span></li>
+</ul>
+</body>
+</html>

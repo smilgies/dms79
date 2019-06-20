@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>GISAXS@D-line_Procedures</title>
+
+</head>
+<body>
+<big><span style="font-weight: bold;"><br>
+</span></big>
+<h1><span style="font-weight: bold;"><span style="color: rgb(204, 0, 0);">GISAXS @ D-line: Procedures</span></span></h1>
+<span style="font-weight: bold; color: rgb(0, 0, 153);">
+</span>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Line-up
+mode</span></h2>
+<ul>
+<li>disable CCD macros&nbsp; &gt;&nbsp; <span style="font-family: Courier New,Courier,monospace;">ccdoff</span></li>
+<li>reset all sample positions and chose a new filename &gt;<span style="font-family: Courier New,Courier,monospace;"> new</span></li>
+<ul>
+<li>provide filename for sample</li>
+<li>provide scan number (hit return for default)</li>
+<li>provide sample thickness (hit return, if unchanged)</li>
+</ul>
+<ul>
+<li>note :<span style="font-family: Courier New,Courier,monospace;"> new </span>moves
+the ion chamber into the beam automatically<span style="font-family: Courier New,Courier,monospace;"><br>
+</span></li>
+</ul>
+<li>go into hutch and change sample</li>
+<ul>
+</ul>
+<li>direct beam line-up</li>
+<ul>
+<li>make sample parallel to beam &gt; <span style="font-family: Courier New,Courier,monospace;">rock</span>&nbsp;</li>
+<ul>
+<li>if the angular scan shows the "shark tooth" profile,
+you can proceed</li>
+<li>if the angular file has a flat top, or does not go to
+zero on one side, redo <span style="font-family: Courier New,Courier,monospace;">rock</span></li>
+<li>for rough samples: do<span style="font-family: Courier New,Courier,monospace;"> rock </span>at
+least twice and then skip to ccd mode</li>
+<li style="font-weight: bold; color: rgb(204, 0, 0);">if
+all else fails (bad scans, limit errors):</li>
+<ul style="color: rgb(204, 0, 0);">
+<li><big><span style="font-family: monospace;">wsam</span></big>
+lists "user" and "dial" positions</li>
+<li>I lined up the "dial" such that the sample holder is
+parallel to the beam</li>
+<li>set the <span style="font-family: Courier New,Courier,monospace;">samth</span>
+position to the dial value : &gt; <big><span style="font-family: monospace;">set samth [DIAL]</span></big><br>
+</li>
+<li>&nbsp;move <big><span style="font-family: monospace;">samth</span></big>
+to 0 : <big><span style="font-family: monospace;">&gt;
+mv samth 0</span></big><br>
+</li>
+<li>&nbsp;restart the <big><span style="font-family: monospace;">rock</span></big>
+macro</li>
+</ul>
+<li style="color: rgb(204, 0, 0);"><span style="font-weight: bold;">if there are still problems:</span><br>
+</li>
+<ul>
+<li style="color: rgb(204, 0, 0);">if <big><span style="font-family: monospace;">samz</span></big>
+shows a too large discrepancy between user and dial positions
+(&gt;0.2 mm), follow the procedure for <big><span style="font-family: monospace;">samth</span></big></li>
+<li style="color: rgb(204, 0, 0);">start value for
+&nbsp;<big><span style="font-family: monospace;">samz</span></big>
+is the negative sample thickness</li>
+<li style="color: rgb(204, 0, 0);">after resetting
+<big><span style="font-family: monospace;">samth</span></big>
+and <big><span style="font-family: monospace;">samz</span></big>
+you may also restart from scratch using <big><span style="font-family: monospace;">new</span></big>&nbsp;</li>
+<li style="color: rgb(204, 0, 0);">please make
+sure that&nbsp;</li>
+<ul>
+<li style="color: rgb(204, 0, 0);">the x-ray
+shutters are open and that&nbsp;</li>
+<li><span style="color: rgb(204, 0, 0);"><span style="color: rgb(204, 0, 0);">the substrate thickness is
+reasonable before you redo </span><big style="color: rgb(204, 0, 0);"><span style="font-family: monospace;">rock</span></big><span style="color: rgb(204, 0, 0);"> - these are the 2 most
+common errors causing run-away scans !</span><br>
+</span></li>
+</ul>
+</ul>
+</ul>
+</ul>
+<li>reflectivity line-up&nbsp; (for smooth samples with
+good reflectivity)<br>
+</li>
+<ul>
+<li>measure a calibration reflectivity curve <span style="font-family: Courier New,Courier,monospace;">&gt;
+roll</span></li>
+<ul>
+<li>extrapolate the onset of samth scan to find the proper
+zero value <span style="font-family: Courier New,Courier,monospace;">[ZERO]</span>
+using pencil &amp; ruler on the print-out</li>
+<li>reset the zero of <span style="font-family: Courier New,Courier,monospace;">samth</span>
+<span style="font-family: Courier New,Courier,monospace;">&gt;
+mv samth [ZERO]; set samth 0</span></li>
+</ul>
+<li>optional : measure
+a proper reflectivity curve<span style="font-family: Courier New,Courier,monospace;">
+&gt; xrfine</span></li>
+<ul>
+<li>in order to change scan parameters, use<span style="font-family: Courier New,Courier,monospace;">
+&gt; set_xrfine<br>
+</span></li>
+<li>redo<span style="font-family: Courier New,Courier,monospace;"> xrfine </span>with
+the new settings <br>
+</li>
+</ul>
+</ul>
+</ul>
+( note: after&nbsp; "&gt;"&nbsp; follows the spec command,
+as it is
+typed in )<br>
+( note: [ZERO] denotes the numerical value of the zero offset )<br>
+<br>
+<br>
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Switch
+to CCD
+mode</span></h2>
+<ul>
+<li>check current sample position using&nbsp; <big><span style="font-family: monospace;">wsam</span></big></li>
+<li><big><small>choose sample position</small><span style="font-family: monospace;"> (samth, samx, samaz)</span></big></li>
+<ul>
+<li>a<span style="font-family: monospace;"> <big>samth</big>
+</span>value of 0.25 deg at 10 keV x-ray energy usually is
+a good starting point</li>
+<li><big><span style="font-family: monospace;">samx</span></big>=0
+is the default line-up point; make sure to take images at 2 other <big><span style="font-family: monospace;">samx</span></big>
+values at least<br>
+</li>
+</ul>
+<li>enable ccd macros&nbsp; <span style="font-family: Courier New,Courier,monospace;">&gt;&nbsp;
+<span style="font-family: Courier;">ccdon</span></span></li>
+<ul>
+<li>moves ccd into the scattering position</li>
+<li>enables ccd macros<br>
+</li>
+</ul>
+<li>open garage door</li>
+<li>take a test image for 0.1 sec&nbsp; <span style="font-family: Courier New,Courier,monospace;">&gt;
+corr 1
+0.1</span></li>
+<li>finetune beamstop position , if needed<br>
+</li>
+<ul>
+<li>step of +/- 0.1 mm in <span style="font-family: Courier New,Courier,monospace;">bsx</span>&nbsp;
+&gt;&nbsp; <span style="font-family: Courier New,Courier,monospace;">mvr bsx
+0.1</span><br>
+</li>
+<li>whenever you move the beam stop: take a test image after
+each step <span style="font-family: Courier New,Courier,monospace;">&gt;
+corr 1 0.1</span></li>
+<li>set the new <span style="font-family: Courier New,Courier,monospace;">bsx </span>position
+to zero <span style="font-family: Courier New,Courier,monospace;">&gt;
+set bsx 0<br>
+</span></li>
+</ul>
+<li>collect images<span style="font-family: Courier New,Courier,monospace;"> (</span>suggestions)&nbsp;</li>
+<ul>
+<li>increase the exposure time - please no more than a factor
+of 10 per step</li>
+<ul>
+<li>check that dark image exists &gt; <span style="font-family: Courier New,Courier,monospace;">ls dark</span></li>
+<ul>
+<li><span style="font-family: Courier New,Courier,monospace;">i</span>f
+not, collect a dark image first<span style="font-family: Courier New,Courier,monospace;">
+&gt; dark [new exposure time]</span></li>
+<li>it is sufficient to update dark images once a day<span style="font-family: Courier New,Courier,monospace;"><br>
+</span></li>
+</ul>
+</ul>
+<ul>
+<li>check image in <span style="font-family: Courier New,Courier,monospace;">fit2d</span>
+: maximum linear range of CCD is 15,000 units, the CCD saturates above
+16,000 units</li>
+<li>recommended z-scaling in <span style="font-family: Courier New,Courier,monospace;">fit2d</span>
+: logarithmic with user min/max of 15 and 15,000<span style="font-family: Courier New,Courier,monospace;"><br>
+</span></li>
+</ul>
+<li>choose a variety of <span style="font-family: Courier New,Courier,monospace;">samth</span>
+values, to optimize contrast&nbsp;</li>
+<li>choose a couple of <span style="font-family: Courier New,Courier,monospace;">samx</span>
+values, to check homogeneity of the sample</li>
+<ul>
+<li>within +/- 2 mm all remains well-aligned</li>
+<li>if you need a larger <span style="font-family: Courier New,Courier,monospace;">samx</span>
+range (&gt;5mm) use the <span style="font-family: Courier New,Courier,monospace;">level</span>&nbsp;macro
+in connection with <span style="font-family: Courier New,Courier,monospace;">samtilt</span></li>
+</ul>
+</ul>
+<li>for anisotropic samples:</li>
+<ul>
+<li>coarse check: turn sample 90
+deg on holder and redo line-up, before collecting images</li>
+<ul>
+<li>note : <span style="font-family: Courier New,Courier,monospace;">samth</span>
+should be corrected so that the reflected beam or the horizon or the
+Yoneda band appear at the same position in the image</li>
+<li>it is useful to make a little calibration of reflected
+beam position
+shift (in pixels) vs. <span style="font-family: Courier New,Courier,monospace;">samth</span>
+offset</li>
+</ul>
+<li>fine scan: choose a variety of
+samaz values (+/-180 deg)</li>
+</ul>
+<ul>
+<ul>
+<li>the ex-situ goniometer with the crossed arcs works best
+for this, in conjunction with a laser beam line-up</li>
+<ul>
+<li>laser line-up: adjust arcs
+such that the reflected laser beam ends up in the same spot independent
+of <big><span style="font-family: monospace;">samaz</span></big></li>
+</ul>
+<ul>
+<li>using azimuth angle pairs with a 180deg difference in
+the azimuth of a specific arc is most efficient.</li>
+<li>please be careful when you spin <big><span style="font-family: monospace;">samaz</span></big>
+manually to disengage the worm gear properly<br>
+</li>
+<ul>
+<li>when you re-engage samaz please check with your
+hand first that the worm gear is properly aligned</li>
+<li>tighten the set screw only after motor is properly
+engaged - this may require moving samaz +/-1deg<br>
+</li>
+</ul>
+<li>a line-up laser can be supplied</li>
+<li>if any of this procedure does not make sense to you,
+please ask for help / training<br>
+</li>
+</ul>
+</ul>
+</ul>
+<ul>
+<ul>
+<ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</body></html>

@@ -1,0 +1,171 @@
+MOTOR MENUE
+
+Number: <>Controller       16:MDRIVE_E  17:MDRIVE_E  18:MDRIVE_E  19:MDRIVE_E
+Unit/[Module/]Channel             0/10         0/11         0/12         0/13
+Name                           Motor A      Motor B      Motor C      Motor D
+Mnemonic                           s1t          s1b          s1n          s1s
+<>Spectrometer                  common       common       common       common
+Steps per degree/mm             3225.2       3225.2       3225.2       3225.2
+Sign of user * dial                  1            1            1            1
+Backlash [steps]                    50          -50           50          -50
+Steady-state rate [Hz]            4000         4000         4000         4000
+Base rate [Hz]                      40           40           40           40
+Acceleration time [msec]            99           99           99           99
+Motor accumulator               -15533         8714         -450          452
+Restrictions <>                   NONE         NONE         NONE         NONE
+
+Dial = accumulator / steps
+  High limit                  100.0000     100.0000     100.0000     100.0000
+  Current                      -4.8161       2.7018      -0.1395       0.1401
+  Low limit                  -100.0000    -100.0000    -100.0000    -100.0000
+User = sign * dial + offset
+  Offset                        9.6134      -9.1960      14.2996      -5.9010
+  `High' limit                109.6134      90.8040     114.2996      94.0990
+  Current                       4.7972      -6.4942      14.1601      -5.7609
+  `Low' limit                 -90.3866    -109.1960     -85.7004    -105.9010
+
+Number of motors (geo/all)   54  /  54     Type ? and H for help, ^C to quit
+
+
+MOTO MENUE 2
+
+Number: <>Controller       16:MDRIVE_E  17:MDRIVE_E  18:MDRIVE_E  19:MDRIVE_E
+Unit/[Module/]Channel             0/10         0/11         0/12         0/13
+Name                           Motor A      Motor B      Motor C      Motor D
+Mnemonic                           s1t          s1b          s1n          s1s
+<>Spectrometer                  common       common       common       common
+
+Home slew rate [Hz]
+Home base rate [Hz]
+Home acceleration [msec]
+Home position [dial]
+Home method
+
+DC dead band [steps]
+DC settle time [sec]
+DC proportional gain
+DC derivative gain
+DC integral gain
+DC integration limit
+DC following error                 100          100          100          100
+DC sampling interval
+
+
+MOTOR MENUE 3
+
+Number of motors (geo/all)   54  /  54     Type ? and H for help, ^C to quit
+
+Number: <>Controller       16:MDRIVE_E  17:MDRIVE_E  18:MDRIVE_E  19:MDRIVE_E
+Unit/[Module/]Channel             0/10         0/11         0/12         0/13
+Name                           Motor A      Motor B      Motor C      Motor D
+Mnemonic                           s1t          s1b          s1n          s1s
+<>Spectrometer                  common       common       common       common
+
+Encoder steps per deg/mm
+Step mode (0=full,1=half)
+Linear/Rotary (1=rotary)
+Readback slop [steps]               10           10           10           10
+Hardware read mode <>
+
+Deceleration [msec]
+
+Torque
+
+Generic parameter 1
+Generic parameter 2
+Generic parameter 3
+Generic parameter 4
+Generic parameter 5
+Generic parameter 6
+
+
+Number of motors (geo/all)   54  /  54     Type ? and H for help, ^C to quit
+
+
+INTERFACE MENUE
+
+Interface Configuration
+
+  CAMAC        DEVICE   ADDR  <>MODE                                      <>TYPE
+     NO
+
+   GPIB        DEVICE   ADDR  <>MODE                                      <>TYPE
+ 0   NO
+
+    VME        DEVICE   ADDR                                              <>TYPE
+ 0  YES                                   SBS Model 616/617/618 (Driverless mod>
+
+  FIELD        DEVICE   ADDR  <>BAUD                                      <>TYPE
+ 0   NO
+
+ SERIAL        DEVICE <>TYPE  <>BAUD                                      <>MODE
+ 0  YES    /dev/ttyS1     <>    9600                                         raw
+ 1  YES    /dev/ttyS0     <>    9600                                         raw
+ 2   NO
+
+IO PORT                 ADDR  <>MODE  NUM
+     NO
+     NO
+     NO
+
+                                           Type ? and H for help, ^C to quit
+MOTOR CONF MENUE
+
+Motor and Counter Device Configuration (Not CAMAC)
+
+ MOTORS        DEVICE   ADDR  <>MODE  NUM                                 <>TYPE
+    YES                    1            4              Oregon Micro Systems PCIx
+    YES                    2            4              Oregon Micro Systems PCIx
+    YES                    3            4              Oregon Micro Systems PCIx
+    YES                    4            4              Oregon Micro Systems PCIx
+    YES    /dev/ttyS1     <>    9600   22       IMS MDrive 17/23/34 (Party Line)
+    YES          slit                  14                           Macro Motors
+    YES                0x1fe            4      DAC as motor (VME A16 addressing)
+    YES   gcavet:5678                   3                    SPEC Motor (TCP/IP)
+
+SCALERS        DEVICE   ADDR  <>MODE  NUM                                 <>TYPE
+    YES                <0000    POLL   16       Joerger VSC16/8 as Timer/Counter
+     NO
+     NO
+     NO
+     NO
+     NO
+     NO
+     NO
+
+
+
+                                           Type ? and H for help, ^C to quit
+
+
+CONFIGURING MESSAGES
+
+getting configuration parameters from "SPECD/spec/config".
+Using SBS Model 618 PCI-VME as unit 0.
+Found OMS "PCIX-004 ver 1.08 s/n 000856" at board address 1, unit 0.
+Found OMS "PCIX-004 ver 1.08 s/n 002317" at board address 2, unit 1.
+Found OMS "PCIX-004 ver 1.08 s/n 002318" at board address 3, unit 2.
+Found OMS "PCIX-004 ver 1.08 s/n 002323" at board address 4, unit 3.
+Using "/dev/ttyS1" for MDrive device in party-line mode.
+VME remote bus error.
+VME interface timeout.
+Server on host "gcavet:5678" unreachable.  Will keep trying.
+Using Joerger VSC16 (TTL) at VME A32 0xe00000, serial 221, polled mode.
+Found MDrive motor "A" (s1t) with firmware 1.048 E.
+Found MDrive motor "B" (s1b) with firmware 1.048 E.
+Found MDrive motor "C" (s1n) with firmware 1.048 E.
+Found MDrive motor "D" (s1s) with firmware 1.048 E.
+Found MDrive motor "E" (s2t) with firmware 1.066 E.
+Found MDrive motor "F" (s2b) with firmware 1.048 E.
+Found MDrive motor "G" (s2n) with firmware 1.048 E.
+Found MDrive motor "H" (s2s) with firmware 1.048 E.
+Found MDrive motor "I" (s3t) with firmware 1.048 E.
+Found MDrive motor "J" (s3b) with firmware 1.048 E.
+Found MDrive motor "K" (s3n) with firmware 1.048 E.
+Found MDrive motor "L" (s3s) with firmware 1.048 E.
+Can't Untitled 1open input file "/usr/local/lib/spec.d/spec/setup.mac".
+Reading file "SPECD/gsetup.mac".
+executing gsetup.mac
+gsetup: 54 motors found and configured
+
+

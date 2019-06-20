@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=IBM850" http-equiv="content-type"><title>RnR-TroubleShooting</title><meta content="Detlef-M. Smilgies, CHESS Cornell University" name="author"></head><body>
+<h1>Rock'n Roll Trouble Shooting</h1>
+<h2>Detlef-M. Smilgies, CHESS</h2>
+Rock'n Roll refers to the semiautomatic line-up macros for lining-up
+samples for grazing incidence scattering and for calibrating the
+incident angle.<br>
+Rock'n Roll works in over 95% of all line-ups, but occasionally there
+can be a problem, either due to a non-ideal sample or an operator error.<br>
+<br>
+Here is a trouble shooting list<br>
+<ol>
+  <li>Check whether the shutter was open during the line-up scan; if not, redo line up with shutter open</li>
+  <ol>
+    <li>you can redo "rock" as many times as needed, but do not repeat "roll"</li>
+    <li>if "roll does not work (only noise in the scans, no reflected beam), your sample may have poor x-ray reflectivity</li>
+    <li>for poor reflectivity samples run rock a couple of times, and then set "samth" and "samz" to ZERO<br>
+    </li>
+  </ol>
+  <li>Check in the hutch whether something is blocking the beam<br>
+  </li>
+  <li>Type "wsam" and compare user values and dial values for motors samz and samth.</li>
+
+  <ol>
+    <li>I carefully align the sample stage relative to the beam; these motor positions are saved as "dial" values<br>
+    </li>
+    <li>if
+values differ by more than 10%, use the "set" command to set the motors
+to the dial values: set samz &lt;dial value&gt;;set samth &lt;dial
+value&gt;<br>
+    </li>
+    <li>use the "mv" command to move motors to zero: mv samz 0; mv samth 0</li>
+  </ol>
+  <li>Make sure that you use a proper sample name containing only (A-Z, a-z, 0-9, -, _); otherwise an error results</li>
+  <ol>
+    <li>redo "new" with a proper sample name<br>
+    </li>
+  </ol>
+  <li>Make sure that you supply the correct sample thickness when using the "new" command</li>
+  <li>Check that the shutter is open.</li>
+  <li>Run the "rock" and "roll" macros again.</li>
+</ol>
+If this does not help<br>
+<ol>
+  <li>Remove the sample and carefully line up the sample holder with "rock"; set "samz" and "samth" to ZERO<br>
+</li>
+  <li>Does the sample look flat? rough samples are always hard to align, best by hand<br>
+  </li>
+
+</ol>
+<br>
+
+  
+
+</body></html>

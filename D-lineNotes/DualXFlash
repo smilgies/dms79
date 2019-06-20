@@ -1,0 +1,16 @@
+dual X-Flash set-up
+-------------------
+0: on serial port
+1: on USB-to-serial converter
+
+MCA- and CCD-Acquisition Type Device Configuration
+
+MCA-like       DEVICE   ADDR  <>MODE                                      <>TYPE
+ 0  YES    /dev/ttyS1     <>  115200                      Roentec XFlash MAX MCA
+ 1  YES  /dev/ttyUSB0     <>  115200                      Roentec XFlash MAX MCA
+ 2   NO
+ 3   NO
+ 4   NO
+ 5   NO
+ 6   NO
+ 7   NO

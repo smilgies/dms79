@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>D1-SampleMicroscope</title></head>
+<body style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<h1 style="text-align: center; color: rgb(204, 0, 0);">D1
+Sample Microscope</h1>
+<h2 style="text-align: center; color: rgb(204, 0, 0);">Detlef
+Smilgies, CHESS</h2>
+<h3><span style="color: rgb(204, 0, 0);">Introduction</span></h3>
+The
+D1 microscope consists of a Navitar motorized zoom and focus module
+with on-axis lighting, as well as several front lenses (0.5x, 0.75x, 1x = no lens, 2x) as well as 2 tubes (1x, 2x).
+Images are collected by streaming video from the SONY CCD camera. The
+system is controlled by the Crystal Centering program developed in the MacCHESS
+group (Richard Gillilan, Dave Schuller). <br><br>Note: Most of the features of the
+centering software on the bottom control bar features&nbsp;are
+currently not used (the spindle rotation is only for crystallography,
+the sample x and z translations are currently only supported within
+SPEC.)<br><br>
+<h3><span style="color: rgb(204, 0, 0);">Cabling &amp; re-activation</span></h3>Most of the cabling is already done and componets are kept in the D1 hutch crate.<br><ul><li>connect serial port cable of&nbsp; focus/zoom controller to centering computer</li><li>connect firewire cable of Sony camera to centering computer</li><li>connect power supply of focus/zoom controller</li><li>connect power supply of on-axis lighting controller</li><li>microscope and camera unit should be already wired (focus, zoom, on-axis lighting)</li></ul>For re-activation of the centering system (for instance after CESR-TA run):<br><ul><li>start centering computer</li><li>switch on zfocus/zoom controller</li><li>switch on lighting controller - make sure that light is not set too bright</li></ul>
+
+<h3 style="color: rgb(204, 0, 0);"><br></h3><h3 style="color: rgb(204, 0, 0);">Starting and using the
+CrystalCentering program</h3>
+<ul>
+<li>On the Linux PC go to the /CrystalCentering directory and
+type center_server to start the program.</li>
+<li>use the "Zoom" tab to adjust Zoom (with the slider) and
+Focus (type value in the box or use the arrows)</li>
+<ul>
+<li>note: check with beamline&nbsp;staff whether the
+microscope is set up to track properly</li>
+</ul>
+<li>use the "Cam" tab to adjust the brightness and color of the
+image&nbsp;</li>
+<ul>
+<li>"Brightness" uses the computer software to brighten images</li>
+<li>"Gain" is the gain of the CCD camera to brighten images</li>
+<li>"Shutter Speed" controls the exposure of the camera to
+brighten images</li>
+<ul>
+<li>if Speed is set too slow, images will be blurry when
+the sample moves</li>
+</ul>
+<li>"White Bal UB" and "White Bal VR" affect the color of the
+images</li>
+<li>the on-axis lighting currently cannot be controlled
+remotely - use the manual control box in the hutch</li>
+</ul>
+<li>"Save Photos" in the top menu bar enables saving of
+microscope images</li>
+<ul>
+<li>only the "single snap" option is currently supported</li>
+</ul>
+<li>"Visual Aids" in the top menu bar toggles the crosshair and
+the scale bar on and off</li>
+<li>"Admin Only" in the top menu bar enables line-up features</li>
+<ul>
+<li>"Set Crosshair" plus doubeclick moves the crosshair to a
+new location</li>
+<li>"Midpoint Tool" determines the center between 2 spots
+vertically&nbsp; (doubleclick on each spot)</li>
+</ul>
+</ul>
+<h3><br>
+</h3>
+<h3 style="color: rgb(204, 0, 0);">Calibrating the
+microscope</h3>
+NOTE: this part is for beamline staff and expert users only<br>
+<br>
+The CrystalCentering program, as used at D1, has 5 calibration
+parameters which are found in conf/server.properties.<br>
+When changing a value, the program needs to be restarted.<br>
+<ul>
+<li>zcenX, zcenY or the coordinates of the invariant point
+under zoom</li>
+<li>beamDiameter defines the diameter of the crosshair
+circle&nbsp;in microns</li>
+<li>zoomSlope and zoomIntercept are used to calibrate the
+onscreen pixels to microns</li>
+</ul>
+<h4>Calibration procedures</h4>
+<ul>
+<li>pixel coordinates and zoom and focus values</li>
+<ul>
+<li>on the main directory type "tail -f center.log" - this
+will provide
+zoom, and focus values as well as the pixel position of the crosshair
+when you use the midpoint tool</li>
+<li>(the "tail" command displays the last 20 lines of the
+logfile and updates automatically)</li>
+</ul>
+</ul>
+<ul>
+<li>finding the invariant point (R. Gillilan)</li>
+</ul>
+<ul>
+<ol>
+<li>using a test object on the xyz sample stage find a sharp
+feature, such as the tip of a needle</li>
+<li>estimate the invariant point from the previous position
+of simply the center of the screen</li>
+<li>zoom in and put the needle tip into the crosshair</li>
+<li>zoom out and move the crosshair to the needle tip</li>
+<li>iterate step 3 and 4 until the crosshair remains on the
+needle tip for all zoom values</li>
+<li>update zcenX and zcenY and restart the centering program.</li>
+</ol>
+</ul>
+<div style="margin-left: 40px;">note: this procedure needs
+to be repeated, whenever the microscope is remounted, or lenses, tubes
+or cameras have been changed<br>
+</div>
+<ul>
+<li>calibration (R. Gillilan)</li>
+</ul>
+<ul>
+<ul>
+<li>zoomSlope and zooIntercept are determined in a graph
+&nbsp;log(pixels/micron) versus zoom units</li>
+<li>use a calibrated test grid for calibration (R. Gillilan
+has an electron microscope scale which works great)</li>
+<li>if
+the the in-line mirror is used the calibration needs to be done both in
+x and z. samth should be aligned such that the x and z values for
+pixels/micron agree</li>
+<li>for every change of the optics the microscope needs to be
+recalibtrated.</li>
+</ul>
+</ul>
+&nbsp;
+</body></html>

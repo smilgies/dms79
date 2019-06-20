@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>D1-motors</title></head>
+<body style="background-color: rgb(255, 204, 0); color: rgb(0, 0, 0);" alink="#0000ee" link="#0000ee" vlink="#551a8b">
+<big style="font-weight: bold; color: rgb(204, 0, 0); font-family: helvetica,arial,sans-serif;"><big><br>
+</big></big>
+<h1 style="color: rgb(204, 0, 0);">D-line
+Notes: Default Motor Configuration</h1>
+<big><br></big><big>D-line motor naming conventions differ somewhat from the rest of CHESS. Please check the link for a <a href="motors/D1-motor-names.html">scheme</a> and the current <a href="motors/D1-motor-names.html">spec configuration</a>.</big><br><big><br>
+</big><big><small>As D-line runs in many configurations, but has only 16 channels
+of
+motor control available (at best), it makes more sense to program a
+flexible interface into spec, rather than attempting to run in a static
+configuration. This is done by chosing suggestive names for the various
+functions of xz stages, goniometers, etc., saving their parameters in
+the config file, but only assign actual motor channels to the motors
+that are used in a specific experiment. </small></big><br><big>
+<br>
+</big>
+
+<h2><span style="font-weight: bold; color: rgb(0, 0, 153);">Basic Motors</span></h2>
+<big>
+</big>
+<h3><span style="font-weight: bold; color: rgb(0, 0, 153);">Optical
+Tables</span></h3>
+<h3><small><span style="font-weight: normal;">The incident beam optical
+table (see link) and the detector optical table are controled by GALIL
+controllers via private ethernet. Each table comprises six
+jacks&nbsp; <span style="font-family: courier new,courier,monospace;">uxu,uxd,uyt,uzu,uzdf,uzfr</span>&nbsp; (<span style="font-family: Courier New,Courier,monospace;">u</span>=upstream, <span style="font-family: Courier New,Courier,monospace;">d</span>=downstream, <span style="font-family: Courier New,Courier,monospace;">f</span>=front,
+<span style="font-family: Courier New,Courier,monospace;">r</span>=rear) (positions: <span style="font-family: Courier New,Courier,monospace;">wujacks</span>) which are combined into three overall translations <span style="font-family: courier new,courier,monospace;">uxt,uyt,uzt</span>
+and three overal roatations <span style="font-family: courier new,courier,monospace;">upitch,uroll,uyaw</span>
+by employing the macromotor feature of <span style="font-family: Courier New,Courier,monospace;">spec</span> (use <span style="font-family: Courier New,Courier,monospace;">wut</span> to see the positions). Additionally the motor group <span style="font-family: Courier New,Courier,monospace;">uxu,uzu,uxd,uzd</span> can be used to line up each table with a pinhole (<span style="font-family: Courier New,Courier,monospace;">wupin</span>). For the downstream detector table replace the first <span style="font-family: Courier New,Courier,monospace;">u</span> in the motorname with <span style="font-family: Courier New,Courier,monospace;">d</span>. </span><span style="color: rgb(0, 0, 153); font-weight: normal;"></span><span style="font-weight: bold; color: rgb(0, 0, 153);"></span></small><span style="font-weight: bold; color: rgb(0, 0, 153);"></span></h3>
+<h3><span style="font-weight: bold; color: rgb(0, 0, 153);">Slit System</span></h3>
+The ADC slit system in the hutch is run on a serial line
+independent of the rest of the motor control system. Although both physical and
+macromotors (for gap and offset) are configured, I have found it to be more reliable to move one blade at a time.<br>
+<ul>
+  <li>NOTE: Various important motor parameters enter the config file as
+generic motor
+parameters (see <a href="NewM-Drive.html">link</a>).<br>
+  </li>
+  
+</ul>
+<h3><span style="font-weight: bold; color: rgb(0, 0, 153);">Sample
+stages</span></h3>
+<ul><li>xz stage plus goniometer: <span style="font-family: courier new,courier,monospace;">samx, samz, samth,
+samtilt/samaz</span> (D1
+GISAXS
+stage)</li><li>xz stage: <span style="font-family: courier new,courier,monospace;">sx, sz</span></li><li>large sample scanner (Woll): <span style="font-family: courier new,courier,monospace;">scanx, scany, scanz</span></li>
+  
+</ul>
+<h3 style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">Flightpath,
+beamstop, detector</span></h3>
+<ul>
+  <li>xz stage for fligh path: <span style="font-family: courier new,courier,monospace;">fpx, fpz</span><br>
+  </li>
+  <li>xz stage for beamstop: <span style="font-family: courier new,courier,monospace;">bsx, bsz</span></li>
+  <li>xz stage for detector: <span style="font-family: courier new,courier,monospace;">detx, detz</span></li>
+</ul>
+<h3><span style="font-weight: bold; color: rgb(0, 0, 153);">Capillary
+set-up</span></h3>The new capillary setup for microSAXS and microGIWAXS uses the micropositioning table shared with the glass puller group.<br>(More info to be added soon.)
+<ul></ul><h3 style="color: rgb(0, 0, 153);">Special Motors</h3>
+For some recurring experiments, some special motor channels have been
+reserved. Presently predefined motor settings exist for<br>
+<ul>
+  <li>SAXS/GISAXS (configured as Basic Motors) - <span style="font-family: courier new,courier,monospace;">spec </span>version
+    <span style="font-family: courier new,courier,monospace;">saxs </span>(see
+below)</li>
+  <li>fluorescence imaging (configured as Basic Motors) - <span style="font-family: courier new,courier,monospace;">spec </span>version
+    <span style="font-family: courier new,courier,monospace;">image </span>(see
+below)</li>
+  <li>radiography - spec version <span style="font-family: courier new,courier,monospace;">radio </span>(see
+below)</li><br></ul><div style="text-align: left;">For more detail see <a href="Multiconfiguration-SPEC-Setup.html">Multiconfiguration <span style="font-family: Courier New,Courier,monospace;">spec</span> setup</a></div><ul><br>
+</ul>
+</body></html>

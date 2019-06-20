@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR"
+ content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]">
+  <title>FluorescenceImaging</title>
+</head>
+<body style="background-color: rgb(255, 204, 0); color: rgb(0, 0, 0);"
+ alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<center style="background-color: rgb(255, 204, 51);"><big><b><font
+ color="#cc0000"><font size="+2"><big><br>
+Fluorescence Imaging</big></font></font></b></big></center>
+<p><b><font color="#000099"><br>
+In fluorescence imaging (FI) x-ray fluorescence lines excited by the
+intense incident beam are simultaneously recorded on an
+energy-dispersive detector, as the sample is scanned through the beam.
+This way, maps of the concentration of specific chemical elements in
+the sample are obtained. Applications range from materials science,
+environmental science, soil science, and biology to archeology and fine
+arts.<br>
+</font></b></p>
+<h3><b><font color="#000099">spec multi-configuration set-up</font></b></h3>
+In order to limit the number of motors and detector to deal with for
+the various configurations, all relevant motors for FI have been
+assigned to spec version "image". This includes the various scanners
+and the energy-dispersive detectors.<br>
+<h3><b><font color="#000099">spec setup for XFlash detector</font></b></h3>
+<p><font color="#000000">The detector is connected by custom cables to
+the XFlash controller through the labyrinth. The serial port of the
+XFlash
+controller is connected to the second serial port of the control
+computer
+(<span style="font-family: courier new,courier,monospace;">ttyS1</span>).</font>
+</p>
+<p><font color="#000000">The following lines have to be added in the <span
+ style="font-family: courier new,courier,monospace;">spec config</span>
+file:<br>
+</font></p>
+<p><font color="#000000">MCA- and CCD-Acquisition Type Device
+Configuration<br>
+<br>
+<span style="font-family: courier new,courier,monospace;">MCA-like&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DEVICE&nbsp;&nbsp; ADDR&nbsp;
+&lt;&gt;MODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;&gt;TYPE</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;0&nbsp;
+YES&nbsp;&nbsp;&nbsp; /dev/ttyS1&nbsp;&nbsp;&nbsp;&nbsp; &lt;&gt;&nbsp;
+115200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Roentec XFlash MAX MCA</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">&nbsp;1&nbsp;&nbsp;
+NO</span><br>
+<br>
+</font></p>
+<p><font color="#000000">The following lines were added to the <span
+ style="font-family: courier new,courier,monospace;">image setup</span>
+file:</font> <br>
+</p>
+<p style="font-family: courier new,courier,monospace;"> # macros for
+fluorescence spectroscopy<br>
+<br>
+# qdofile("~/Macros/donrong.mac")<br>
+<br>
+# create sufficiently large scanfile for fluorescence spectroscopy mesh
+scans<br>
+# data_grp(0,0,2)</p>
+<p><span style="font-family: courier new,courier,monospace;"># query
+max size of default data group</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;"># p
+data_grp(-1,0,0)</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;"># typical
+output:</span><br style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;"># The current
+data group configuration is:</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">#&nbsp;&nbsp;&nbsp;&nbsp;
+Group&nbsp; Width&nbsp; Last_Added&nbsp; Max_Pts</span><br
+ style="font-family: courier new,courier,monospace;">
+<span style="font-family: courier new,courier,monospace;">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp; 32768</span><br>
+</p>
+<p>NOTE: By uncommenting the respective lines macros can be invoked.<br>
+<br>
+</p>
+<h3><b><font color="#000099">Halting scans during CESR refills</font></b></h3>
+<p><font color="#000000">The presently used macro compares the XFlash
+counting
+time and the spec counting time. The latter gets gated with the "HEP in
+Progress" signal from the cross connect. If spec and XFlash counting
+time
+differ by more than 5sec (default used in the "mcasmode" macro - see
+below),
+the data point is remeasured, until it is measured outside a refill.</font>
+</p>
+<p><font color="#000000">A home-built CHESS logic box allows various
+conditions
+to be checked. We typically only make use of the "HEP in Progress"
+signal
+which goes to the "CESR TTL IN" input. The "TTL LOW ON INHIBIT" output
+gets connected to
+the gating logic array in the CAMAC crate.</font>
+</p>
+<p><font color="#000000">Note: Always check whether the "HEP in
+Progress"
+cable is correctly connected at the cross connect. As only 4 of the 10
+channels
+of the crossconnect patch panel at the station are working (to be
+fixed),
+sometimes channels get reassigned (e.g. for CESR timing signal).</font>
+<br>
+&nbsp;
+</p>
+<h3><b><font color="#000099">CHESS MCA macros</font></b></h3>
+<p>Most FI users like to use the CHESS macros, as the generated output
+files are compatible with Rong Huang's analysis software. Here are a
+couple
+of the most useful commands:
+</p>
+<ul>
+  <li>mcasetup</li>
+  <ul>
+setup and initialize detector and mca
+    <ul>
+      <li>detector: 1 [XFlash]</li>
+      <li> <br>
+      </li>
+      <li>pulser frequency: 100Hz per 100sec/spectrum, 1000Hz per
+10sec/spectrum
+(for deadtime calibration)</li>
+      <li>energy range: (as needed)</li>
+    </ul>
+  </ul>
+  <li>mcasmode</li>
+  <ul>
+enables/disables saving of spectra during scans as well as a live
+display
+using "uct [time]" <br>
+bug: the detector is still read out, even if mcasmode is disabled
+  </ul>
+  <li>mcad</li>
+  <ul>
+save spectrum after "ct" or "uct" (which are not saved by default)<br>
+  </ul>
+  <li>mcadisp [xmin] [xmax] [ymax]</li>
+  <ul>
+displays a spectrum or part of a spectrum as specified by xmin, xmax,
+and ymax
+  </ul>
+  <li>mcahelp</li>
+  <ul>
+displays all CHESS mca macros <br>
+note: some macros seem to be obsolete (use "prdef" or "lsdef" to see
+whether the macro is known to spec)<br>
+  </ul>
+  <li>uct</li>
+  <ul>
+provides a life display using spec's uct command when mcasmode is on <br>
+  </ul>
+</ul>
+<ul>
+</ul>
+<p>NOTE: some macros seem to be obsolete (use "prdef" or "lsdef" to see
+whether the macro is known to spec<br>
+</p>
+<p><b><font color="#000099"><br>
+</font></b></p>
+<h3><b><font color="#000099">Rong Huang's macros and MatLab</font></b></h3>
+<p>There is presently an incompatibility between Rong's program and the
+new MatLab version 7.0 for LINUX, with the effect that Rong's program
+can't run on the station
+computer. Please use the Windows computer in the trailer.<br>
+</p>
+<p><br>
+</p>
+<h3><span style="color: rgb(0, 0, 153);">5-element Ge detector</span></h3>
+For the new high energy multilayers getting D-line up to 30 keV,
+getting D-line above the tin K-edge (29.1 keV), we have tested the high
+performance 5-element detector. Only one element was used (#1 is quite
+good, #3 has background problems). Data were acquired with a ORTEC
+Trump-PCA pulse-height analyzer which is implemented in the station
+computer.<br>
+<br>
+<h3><span style="color: rgb(0, 0, 153);">ESRF MCA macros</span></h3>
+For higher functionality with regard to scanning, the G2 version of the
+ESRF MCA macros was implemented at D1. Macros interfacing the ORTEC
+Trump-PCI board ran stable over a week. In terms of performance, it
+turned out that the Trump board was the limiting factor reaching
+saturation, while the detector signal still looked good on the scope
+(limited pile-up, no baseline shift). The PCI board also ran fine with
+the CHESS macros - I will implement an easy switch-over macro in the
+"setup" command, which already exists for the ESRF macros. Users can
+then choose between both macro packages.<br>
+<br>
+NOTE: So far I have not succeeded running the Roentec controller with
+the ESRF macros.<br>
+<br>
+</body>
+</html>

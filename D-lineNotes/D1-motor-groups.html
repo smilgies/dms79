@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>D1-motor-groups</title></head><body style="background-color: rgb(255, 204, 51); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<h1 style="text-align: center; color: rgb(204, 0, 0);">D1 Motors</h1>
+<h2 style="text-align: center;"><span style="color: rgb(204, 0, 0);">Detlef
+Smilgies, CHESS</span><br>
+</h2>
+<span style="color: rgb(0, 0, 153);">D1 is a complex beamline with
+about 40+ motors and just as many pseudomotors. Hence it seems useful to
+organize motors in groups. Each groups has specific "where"macros (provided after "&gt;") to
+track the particular beamline component. The first two columns provide
+physical motors, the second two columns the derived macromotors of combined motions.<br><br>Explanation of the D1 motor naming </span><big><small><a href="motors/D1-motor-names.html">scheme</a></small> </big><span style="color: rgb(0, 0, 153);">and a copy of the full&nbsp;</span><big><small><a href="motors/D1-motor-names.html">spec configuration</a></small></big><span style="color: rgb(0, 0, 153);"> can be found here.<br style="color: rgb(0, 0, 153);"></span>
+<br style="color: rgb(0, 0, 153);">
+<h3 style="color: rgb(0, 0, 153);">Beam group &nbsp; <big><span style="font-family: monospace;">&gt;</span>&nbsp;</big> <big><span style="font-family: monospace;">wbeam, wview<br>
+</span></big></h3>
+<span style="color: rgb(0, 0, 153);">white beam slits and diamond beam
+position mmonitors</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">beamt<br>
+      </td>
+      <td style="vertical-align: top;">top blade<br>
+      </td>
+      <td style="vertical-align: top;">beamx<br>
+      </td>
+      <td style="vertical-align: top;">horizontal offset<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">beamb<br>
+      </td>
+      <td style="vertical-align: top;">bottom blade<br>
+      </td>
+      <td style="vertical-align: top;">beamhg<br>
+      </td>
+      <td style="vertical-align: top;">horizontal gap<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">beamf<br>
+      </td>
+      <td style="vertical-align: top;">front blade<br>
+      </td>
+      <td style="vertical-align: top;">beamz<br>
+      </td>
+      <td style="vertical-align: top;">vertical offset<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">beamr<br>
+      </td>
+      <td style="vertical-align: top;">rear blade<br>
+      </td>
+      <td style="vertical-align: top;">beamvy<br>
+      </td>
+      <td style="vertical-align: top;">vertical gap<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="color: rgb(0, 0, 153);">
+<table style="text-align: left; width: 30%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">viewuz<br>
+      </td>
+      <td style="vertical-align: top;">diamond beam viewer upstream<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">viewdz<br>
+      </td>
+      <td style="vertical-align: top;">diamond beam viewer downstream<br>
+      </td>
+    </tr><tr>
+      <td style="vertical-align: top;">vslit<br>
+      </td>
+      <td style="vertical-align: top;">vertical slit in monobox<br>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+<br>
+<h3 style="color: rgb(0, 0, 153);">Mono group&nbsp; <big><span style="font-family: monospace;">&gt; wmono,wmonotab</span></big></h3>
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">mothu<br>
+      </td>
+      <td style="vertical-align: top;">mono theta upstream<br>
+      </td>
+      <td style="vertical-align: top;">E<br>
+      </td>
+      <td style="vertical-align: top;">mono energy<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">mothd<br>
+      </td>
+      <td style="vertical-align: top;">mono theta downstream<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">montrav<br>
+      </td>
+      <td style="vertical-align: top;">mono travel (y downstream)<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">monoff<br>
+      </td>
+      <td style="vertical-align: top;">mono offset (z downstream)<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">mophid<br>
+      </td>
+      <td style="vertical-align: top;">mono tilt<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">momith<br>
+      </td>
+      <td style="vertical-align: top;">mono mirror theta<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">momiz<br>
+      </td>
+      <td style="vertical-align: top;">mono mirror z<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="color: rgb(0, 0, 153);">
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">mox<br>
+      </td>
+      <td style="vertical-align: top;">mono x position: alignment,
+switch ML<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">mozu<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">moz<br>
+      </td>
+      <td style="vertical-align: top;">mono z<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">mozdf<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">mopitch<br>
+      </td>
+      <td style="vertical-align: top;">mono pitch<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">mozdr<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">moroll<br>
+      </td>
+      <td style="vertical-align: top;">mono roll<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="color: rgb(0, 0, 153);">
+<h3 style="color: rgb(0, 0, 153);">Slit group&nbsp;&nbsp; <big><span style="font-family: monospace;">&gt; wsh, wsg</span></big></h3>
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">sht<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit top<br>
+      </td>
+      <td style="vertical-align: top;">shx<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit horizontal
+offset<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">shb<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit bottom
+      </td>
+      <td style="vertical-align: top;">shhg<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit horizontal gap
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">shf<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit front
+      </td>
+      <td style="vertical-align: top;">shz<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit vertical
+offset
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">shr<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit rear
+      </td>
+      <td style="vertical-align: top;">shvg<br>
+      </td>
+      <td style="vertical-align: top;">collimation slit vertical
+offset
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="color: rgb(0, 0, 153);">
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">sgt<br>
+      </td>
+      <td style="vertical-align: top;">guard slit top<br>
+      </td>
+      <td style="vertical-align: top;">sgx<br>
+      </td>
+      <td style="vertical-align: top;">guard slit horizontal
+offset<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sgb<br>
+      </td>
+      <td style="vertical-align: top;">guard slit bottom
+      </td>
+      <td style="vertical-align: top;">sghg<br>
+      </td>
+      <td style="vertical-align: top;">guard slit horizontal gap
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sgf<br>
+      </td>
+      <td style="vertical-align: top;">guard slit front
+      </td>
+      <td style="vertical-align: top;">sgz<br>
+      </td>
+      <td style="vertical-align: top;">guard slit vertical
+offset
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sgr<br>
+      </td>
+      <td style="vertical-align: top;">guard slit rear
+      </td>
+      <td style="vertical-align: top;">sgvg<br>
+      </td>
+      <td style="vertical-align: top;">guard slit vertical gap
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="color: rgb(0, 0, 153);">
+<h3 style="color: rgb(0, 0, 153);">Sample group&nbsp; <big><span style="font-family: monospace;">&gt; wsam</span></big></h3>
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">samx<br>
+      </td>
+      <td style="vertical-align: top;">sample x<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">samz<br>
+      </td>
+      <td style="vertical-align: top;">sample z<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">samth<br>
+      </td>
+      <td style="vertical-align: top;">sample theta<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">samtilt<br>
+      </td>
+      <td style="vertical-align: top;">sample chi<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">samaz<br>
+      </td>
+      <td style="vertical-align: top;">sample azimuth / phi<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="color: rgb(0, 0, 153);">
+<h3 style="color: rgb(0, 0, 153);">Detector group &nbsp; <big><span style="font-family: monospace;">&gt; wdet, wbs, wfp</span></big></h3>
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">fpx<br>
+      </td>
+      <td style="vertical-align: top;">flight path x<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">fpz<br>
+      </td>
+      <td style="vertical-align: top;">flight path z<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">bsx<br>
+      </td>
+      <td style="vertical-align: top;">beam stop x<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">bsz<br>
+      </td>
+      <td style="vertical-align: top;">beam stop z<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">bsx2<br>
+      </td>
+      <td style="vertical-align: top;">secondary beam stop x<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">bsx2<br>
+      </td>
+      <td style="vertical-align: top;">secondary beam stop z<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">detx<br>
+      </td>
+      <td style="vertical-align: top;">detector x<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">detz<br>
+      </td>
+      <td style="vertical-align: top;">detector z<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4 style="color: rgb(0, 0, 153);">specific positions</h4>
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">detx=0</td>
+      <td style="vertical-align: top;">center of CCD <br>
+      </td>
+      <td style="vertical-align: top;">detz=0&nbsp;&nbsp;  </td>
+      <td style="vertical-align: top;">center of CCD</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">detx=20</td>
+      <td style="vertical-align: top;">corner of CCD</td>
+      <td style="vertical-align: top;">detx=20</td>
+      <td style="vertical-align: top;">  bottom edge of CCD</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">detx=50 <br>
+      </td>
+      <td style="vertical-align: top;">center of ion chamber <br>
+
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <br style="color: rgb(0, 0, 153);">
+<h3 style="color: rgb(0, 0, 153);">Table group&nbsp; <big><span style="font-family: monospace;">&gt; wut (wupin, wujack), wdt (wdpin,
+wdjack)</span><br style="font-family: monospace;">
+</big></h3>
+
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">upstream table<br>
+      </td>
+      <td style="vertical-align: top;">jack<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">table
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">pinhole
+      
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">uxu<br>
+      </td>
+      <td style="vertical-align: top;">x upstream<br>
+      </td>
+      <td style="vertical-align: top;">uxt<br>
+      </td>
+      <td style="vertical-align: top;">x table<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">uxd<br>
+      </td>
+      <td style="vertical-align: top;">x downstream<br>
+      </td>
+      <td style="vertical-align: top;">uzt<br>
+      </td>
+      <td style="vertical-align: top;">z table<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">uyt<br>
+      </td>
+      <td style="vertical-align: top;">y table<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">uzu<br>
+      </td>
+      <td style="vertical-align: top;">z upstream<br>
+      </td>
+      <td style="vertical-align: top;">upitch<br>
+      </td>
+      <td style="vertical-align: top;">table pitch<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">uzdf<br>
+      </td>
+      <td style="vertical-align: top;">z upstream front<br>
+      </td>
+      <td style="vertical-align: top;">uroll<br>
+      </td>
+      <td style="vertical-align: top;">table roll<br>
+      </td>
+      <td style="vertical-align: top;">uzd<br>
+      </td>
+      <td style="vertical-align: top;">pinhole<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">uzdr<br>
+      </td>
+      <td style="vertical-align: top;">z upstream rear<br>
+      </td>
+      <td style="vertical-align: top;">uyaw<br>
+      </td>
+      <td style="vertical-align: top;">table yaw<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br style="color: rgb(0, 0, 153);">
+<table style="text-align: left; width: 60%; color: rgb(0, 0, 153);" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">downstream table<br>
+      </td>
+      <td style="vertical-align: top;">jack<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">table</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">pinhole
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dxu<br>
+      </td>
+      <td style="vertical-align: top;">x upstream<br>
+      </td>
+      <td style="vertical-align: top;">dxt<br>
+      </td>
+      <td style="vertical-align: top;">x table<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dxd<br>
+      </td>
+      <td style="vertical-align: top;">x downstream<br>
+      </td>
+      <td style="vertical-align: top;">dzt<br>
+      </td>
+      <td style="vertical-align: top;">z table<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dyt<br>
+      </td>
+      <td style="vertical-align: top;">y table<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dzu<br>
+      </td>
+      <td style="vertical-align: top;">z upstream<br>
+      </td>
+      <td style="vertical-align: top;">dpitch<br>
+      </td>
+      <td style="vertical-align: top;">table pitch<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dzdf<br>
+      </td>
+      <td style="vertical-align: top;">z upstream front<br>
+      </td>
+      <td style="vertical-align: top;">droll<br>
+      </td>
+      <td style="vertical-align: top;">table roll<br>
+      </td>
+      <td style="vertical-align: top;">dzd<br>
+      </td>
+      <td style="vertical-align: top;">pinhole<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">dzdr<br>
+      </td>
+      <td style="vertical-align: top;">z upstream rear<br>
+      </td>
+      <td style="vertical-align: top;">dyaw<br>
+      </td>
+      <td style="vertical-align: top;">table yaw<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+</body></html>

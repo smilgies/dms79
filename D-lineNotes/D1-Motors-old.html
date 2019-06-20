@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>D1-motors</title></head>
+
+<body>
+<big style="font-weight: bold; color: rgb(204, 0, 0);"><big>D-line
+Notes: default motor configuration</big></big><br>
+<big><br>
+As D-line runs in many configurations, but has only 16 channels of
+motor control available (at best), it makes more sense to program a
+flexible interface into spec, rather than attempting to run in a static
+configuration. This is done by chosing suggestive names for the various
+functions of xz stages, goniometers, etc., saving their parameters in
+the config file, but only assign actual motor channels to the motors
+that are used in a specific experiment. <br>
+<br>
+NOTE: check the current settings! Most motors are 4A, however, there
+are some 1A motors&nbsp; around !!<br>
+<br>
+<br>
+Basic Motors<br>
+<br>
+Slit System<br>
+<br>
+</big><big></big>The ADC slit system is run on a serial line
+independent of CAMAC/StepPak and is a given. Both physical and
+macromotors (for gap and offset) are configured.<br>
+<ul>
+  <li>The macro package "slits.mac" contains further essential
+configuration parameters.</li>
+  <li>The macro "mdrive_stat" reads all current motor settings from the
+MDrives. <br>
+  </li>
+</ul>
+<big>Sample stages<br>
+</big>
+<ul>
+  <li>xz stage: samx, samz</li>
+  <li>heavy duty sample stage with long travel: rockx, rockz<br>
+  </li>
+  <li>xz stage plus goniometer: samx, samz, samth, samtilt (D1 GISAXS
+stage)</li>
+  <li>precision xz stage plus goniometer: xsam, zsam, thsam, phisam (G1
+GISAXS stage)</li>
+</ul>
+<big>Flightpath, beamstop, detector<br>
+</big>
+<ul>
+  <li>xz stage for fligh path: fpx, fpx<br>
+  </li>
+  <li>xz stage for beamstop: bsx, bsz</li>
+  <li>xz stage for detector: detx, detz</li>
+</ul>
+<big>Capillary set-up<br>
+</big>
+<ul>
+  <li>capillary mount: capx, capz<br>
+  </li>
+  <li>beam block: blkx, blkz</li>
+</ul>
+<big>DAC motors<br>
+</big><br>
+digital-to-analog converters signals in Volts are treated like motors
+in SPEC<br>
+currently only motor <span style="font-family: Courier New,Courier,monospace;">dactest</span> configured<br><br>DIO Channels<br><br>digital input/output also via motor config<br>
+<big> </big>
+</body></html>

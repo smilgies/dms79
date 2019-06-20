@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>Medoptics</title></head>
+
+<body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" alink="#0000ee" link="#0000ee" vlink="#551a8b">Mo
+<h1 style="color: rgb(204, 0, 0); text-align: center;">D-line
+Notes: MedOptics Dectector</h1>
+<h2 style="color: rgb(204, 0, 0); text-align: center;">Detlef Smilgies,
+CHESS</h2>
+<h3 style="color: rgb(0, 0, 153);">INDEX</h3>
+<ul>
+  <li><a href="#start-up">start-up</a></li>
+  <li><a href="#cabling">cabling</a></li>
+  <li><a href="#shut-down">shut-down</a></li>
+  <li><a href="#tricks-n-traps">tricks &amp; traps</a></li>
+  <li><a href="#calibration">calibration</a><br>
+  </li>
+</ul>
+<h3><a class="mozTocH3" name="start-up"></a><big style="font-weight: bold; color: rgb(0, 0, 153);">start-up</big></h3>
+<ul>
+  <li>plug in pump and chiller cables into dual extender from "dirty"
+outlet: vacuum pump and chiller should start-up</li>
+  <ul>
+    <li>if not, switch them on<br>
+    </li>
+  </ul>
+  <li>plug in powerstrip cable in to "clean" outlet and switch on
+powerstrip (behind crate backdoor)</li>
+  <li>reset water interlock (on front panel of CCD rack) - the yellow
+control light should come on</li>
+  <ul>
+    <li>if not, check the fuses, also on the front panel (labels
+for 24V and 110V are crossed over)<br>
+    </li>
+  </ul>
+  <li>switch on controller on top of crate<br>
+  </li>
+  <ul>
+    <li>the switch is close to the power plug on the controller backside</li>
+    <li>the green LED control light on the controller frontside should
+come on</li>
+  </ul>
+  <li>switch on computer (toggle switch to start)</li>
+  <li>run Medoptics Windows software (under the Start button) to check
+cool-down; exit when done<br>
+  </li>
+  <li>start <span style="font-family: monospace;">IDL </span>control
+software: <br>
+  </li>
+  <ul>
+    <li>click icon <span style="font-family: monospace;">idlde</span></li>
+    <ul>
+      <li>various numbers from the <span style="font-family: monospace;">IDL </span>- CCD controller interface
+are
+displayed</li>
+      <li>if all numbers are "0" or "1024", connection is lost - try
+(in various stages of despair):<br>
+      </li>
+      <ol>
+        <li>restart <span style="font-family: monospace;">idlde</span></li>
+        <li>power off/on CCD controller and restart <span style="font-family: monospace;">idlde</span></li>
+        <li>power off controller, reboot PC, power on controller,
+restart <span style="font-family: monospace;">idlde</span></li>
+        <li>cry &amp; pray &amp; try step 3 again</li>
+      </ol>
+    </ul>
+    <li>type <span style="font-family: monospace;">allez </span>on
+command line</li>
+    <li>type <span style="font-family: monospace;">1</span></li>
+    <li>type <span style="font-family: monospace;">1</span> again</li>
+    <ul>
+      <li>(note: currently only 1x1 binning is supported)<br>
+      </li>
+    </ul>
+    <ul>
+      <ol>
+      </ol>
+    </ul>
+    <li>notes: <br>
+    </li>
+    <ul>
+      <ol>
+        <ol>
+        </ol>
+      </ol>
+      <li>new timing mode: CCD controller is master,
+SPEC is slave (works, some sync issues remain)<br>
+      </li>
+      <ol>
+        <ol>
+        </ol>
+      </ol>
+      <li>binning enabled : provide xbin and ybin on start-up; existing
+correction files: 1x1 (2x2 not yet implemented)<br>
+      </li>
+      <ol>
+        <ol>
+        </ol>
+      </ol>
+    </ul>
+    <li>to stop "<span style="font-family: courier new,courier,monospace;">allez</span>"
+endless loop:
+hit "<span style="font-family: courier new,courier,monospace;">q</span>"
+on keyboard (only for trouble shooting - see <a href="#tricks-n-traps">tricks
+&amp; traps</a>)<br>
+    </li>
+    <ul>
+      <ol>
+      </ol>
+    </ul>
+  </ul>
+</ul>
+<ul>
+</ul>
+<h3><a class="mozTocH3" name="cabling"></a><big style="font-weight: bold; color: rgb(0, 0, 153);">cabling</big></h3>
+<ul>
+  <li>the Medoptics CCD is usually completely cabled with crate</li>
+  <ul>
+    <li>controller</li>
+    <li>vacuum pump</li>
+    <li>chiller<br>
+    </li>
+  </ul>
+  <li>shutter, controllers, and logic box</li>
+  <ul>
+    <li>dedicated CCD patch panel for CCD interface<br>
+    </li>
+  </ul>
+  <ul>
+    <li>1" shutter in front of&nbsp; <span style="font-family: courier new,courier,monospace;">sg</span> slit
+and&nbsp; <span style="font-family: courier new,courier,monospace;">Imon</span>
+monitor with
+attached cable to shutter controllers on video crate<br>
+    </li>
+    <li>Uniblitz shutter controllers</li>
+    <ul>
+      <li>two controllers needed for controlling each blade of the
+large 1" slit <br>
+      </li>
+      <li>"normally closed" (switch no "normally open" to test shutter
+manually) - switch on front panel</li>
+      <ul>
+        <li>note: the closed position means that solenoids are not
+energized<br>
+        </li>
+      </ul>
+      <li>trigger on rising edge - BNC input on rear<br>
+      </li>
+    </ul>
+  </ul>
+  <ul>
+    <li>home-built logic box on top of MedOptics controller<br>
+    </li>
+  </ul>
+  <ul>
+    <ul>
+      <li>three inputs for the home-built logic box (3-fold OR)<br>
+      </li>
+    </ul>
+  </ul>
+  <ul>
+    <ul>
+      <ul>
+        <li>open by Medoptics<br>
+        </li>
+      </ul>
+      <ul>
+        <li>open by SPEC via DAC motor "shutter" and macros
+opens/closes alias shopen/shclose <br>
+        </li>
+      </ul>
+      <ul>
+        <li>open by garage door&nbsp; controller for intensity checks<br>
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li>output to both Uniblitz controllers via cable "sh/in"</li>
+      <ul>
+        <li>note: the "sh/in" signal traces from the CCD patch panel to
+the video patch panel to the controllers in hutch 19" rack<br>
+        </li>
+      </ul>
+    </ul>
+  </ul>
+  <li>garage door and controller<br>
+  </li>
+  <ul>
+    <li>input "col ok" (collimator okay): voltage from I1 monitor to
+show that beam is in the hutch</li>
+    <li>input "solar ok" (solar cell okay): voltage from I2/Iprot to
+show that beam stop is in place</li>
+    <li>input "hutch door closed": from limit switch "DOOR" via main
+patch panel #10<br>
+    </li>
+    <li>input "garage door open/closed": from garage door to controller
+(square connector)<br>
+    </li>
+    <li>output controller to DC motor (Amphenol connector)</li>
+    <li>output to open shutter from controller to shutter
+logic box</li>
+    <li>output of solar cell to current amplifier I2/Iprot (currently
+not used)<br>
+    </li>
+  </ul>
+  <li>SPEC interface</li>
+  <ul>
+    <li>hardware</li>
+    <ul>
+      <li>on CCD crate:<br>
+      </li>
+    </ul>
+  </ul>
+  <ul>
+    <ul>
+      <ul>
+        <li>"enable": VME digital I/O to CCD "enable" input (crate
+front
+panel)<br>
+        </li>
+        <li>"darksig": VME digital I/O to CCD "dark" input (crate front
+panel)</li>
+        <li>"ready": CCD output flag to SPEC to regain control (via V/f
+and counter) <br>
+        </li>
+        <li>"exposure": obsolete (drifts "HI", when not connected - as
+needed) (VME digital I/O to CCD "exposure" prepared for future use)<br>
+        </li>
+      </ul>
+      <li>on control rack:<br>
+      </li>
+      <ul>
+        <li>NAND box in NIM crate<br>
+        </li>
+      </ul>
+      <ul>
+        <ul>
+          <li>input: CCD enable from VME digital I/O "enable" <br>
+          </li>
+          <li>input: CCD controller shutter output via CCD patch panel<br>
+          </li>
+          <li>output: VME counter gate input</li>
+          <li>idea: if CCD is enabled, the CCD controller shutter
+output gates the SPEC counting<br>
+          </li>
+        </ul>
+      </ul>
+    </ul>
+    <li>interfacing/network</li>
+    <ul>
+      <li><span style="font-family: monospace;">Windows NT</span>
+computer in the hutch:<br>
+      </li>
+    </ul>
+    <ul>
+      <ul>
+        <li>set-up/check:</li>
+        <ul>
+          <li>right-click icon <span style="font-family: monospace;">network
+neighborhood</span>&nbsp; &gt;&nbsp; <span style="font-family: monospace;">map
+network drive</span></li>
+          <li>drive <span style="font-family: monospace;">H:</span>
+should be mapped to <span style="font-family: monospace;">\\D1\specuser</span></li>
+          <li>if not:</li>
+          <ul>
+            <li>choose <span style="font-family: monospace;">\\D1\specuser</span>
+from</li>
+            <li>login as: <span style="font-family: monospace;">specuser</span><br>
+            </li>
+          </ul>
+          <li>server version: <span style="font-family: monospace;">d1
+Samba Server 3.0.2-6.3E</span></li>
+        </ul>
+      </ul>
+      <ul>
+      </ul>
+      <li><span style="font-family: monospace;">spec </span>control
+computer <span style="font-family: monospace;">d1:</span><br>
+      </li>
+      <ul>
+        <li>all raw images are saved in default directory <span style="font-family: monospace;">specuser/images</span>&nbsp;&nbsp;
+-&gt;&nbsp;&nbsp; should be moved
+eventually
+to specuser<span style="font-family: monospace;">/USER/raw</span>, if
+kept<br>
+        </li>
+        <li><span style="font-family: monospace;">spec </span>- <span style="font-family: monospace;">IDL </span>communication via files <span style="font-family: monospace;">names.txt</span> and <span style="font-family: monospace;">times.txt</span> on <span style="font-family: monospace;">specuser/images</span><br>
+        </li>
+      </ul>
+    </ul>
+    <li><span style="font-family: courier new,courier,monospace;">spec</span>
+CCD macros (CHESS)<br>
+    </li>
+    <ul>
+      <li><span style="font-family: courier new,courier,monospace;">ccd_on/ccd_off</span>
+alias <span style="font-family: courier new,courier,monospace;">ccdon/ccdoff</span>:
+enables/disables taking CCD images on <span style="font-family: courier new,courier,monospace;">ct</span>, <span style="font-family: courier new,courier,monospace;">ascan</span>, <span style="font-family: courier new,courier,monospace;">tseries</span>,
+etc.<br>
+      </li>
+      <li><span style="font-family: courier new,courier,monospace;">dark
+[time] </span>collects two dark images of duration [time] and
+dezingers them</li>
+      <li><span style="font-family: courier new,courier,monospace;">corr
+[mode] [time]</span>: corrected image with/without
+dezingering (mode=2/1)</li>
+      <ul>
+        <li>(current correction files are stored in
+/usr/local/lib/Macros/nondist/ )<br>
+        </li>
+      </ul>
+      <li><span style="font-family: courier new,courier,monospace;">opens/closes</span>
+alias <span style="font-family: courier new,courier,monospace;">shopen/shclose</span>
+open or close the Uniblitz shutter manually for line-up<br>
+      </li>
+      <li>regular scans are supported, but without automatic correction<br>
+      </li>
+      <li>for more details see Arthur Woll's help files</li>
+      <li>low-level macros for the VME digital I/O interface are in
+nondist/ (Smilgies)<br>
+      </li>
+    </ul>
+  </ul>
+</ul>
+<h3><a class="mozTocH3" name="shut-down"></a><big style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">shut-down</span></big></h3>
+<ul>
+  <li>stop <span style="font-family: monospace;">IDL </span>control
+program <span style="font-family: monospace;">allez </span>by hitting
+    <span style="font-family: monospace;">q</span>
+on the CCD-PC keyboard<br>
+  </li>
+  <li>switch off controller</li>
+  <li>shut down computer</li>
+  <li>switch off shutter controllers</li>
+  <ul>
+    <li>&nbsp;NOTE: shutter solenoids can get damaged when in the open
+position for prolonged time !!<br>
+    </li>
+  </ul>
+  <li>switch off powerstrip (chiller, vacuum pump)</li>
+  <li>unplug all cables from the clean and dirty outlets</li>
+</ul>
+<h3><a class="mozTocH3" name="tricks-n-traps"></a><big style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">tricks
+&amp; traps<br>
+</span></big></h3>
+<ul>
+  <li>if you only get black images from the camera:</li>
+  <ul>
+    <li>check whether the main beam shutter is open (control lights on
+main interlock panel)<br>
+    </li>
+    <li>check whether the garage door opened (check video camera)<br>
+    </li>
+    <li>check whether the sample is blocking the beam - <span style="font-family: courier new,courier,monospace;">wsam</span> will
+show a typo in <span style="font-family: courier new,courier,monospace;">samth</span>, <span style="font-family: courier new,courier,monospace;">samz</span>
+immediately</li>
+    <li>check whether the CCD controller is tripped (see next t&amp;t)<br>
+    </li>
+  </ul>
+  <li>if you always get the same image from the camera (even without
+beam): <br>
+  </li>
+  <ul>
+    <li>when the
+CCD controller trips (by itself, or water interlock failure), the <span style="font-family: monospace;">IDL </span>pogram will still produce
+"images", in particular by
+repeating the last successfully taken image over and over again - fix:<br>
+    </li>
+  </ul>
+  <ul>
+    <li>stop <span style="font-family: monospace;">IDL </span>by
+hitting <span style="font-family: monospace;">q</span> on the
+keyboard, <br>
+    </li>
+    <li>exit <span style="font-family: monospace;">IDL</span><br>
+    </li>
+    <li>restart controller by switch it off, waiting a minute, and
+switching it on again <br>
+    </li>
+    <li>restart <span style="font-family: monospace;">IDL </span>by
+double-clicking <span style="font-family: monospace;">IDL </span>icon</li>
+    <li>start acquisition program by typing <span style="font-family: monospace;">allez</span>, then <span style="font-family: monospace;">1</span>, then <span style="font-family: monospace;">1</span> again (see <a href="#start-up">start-up</a>)<br>
+    </li>
+    <li>take a test image without beam - the old image should be gone,
+and all should be dark</li>
+    <li>take a test image with the beam in a known sample position that
+produces good scattering <br>
+    </li>
+    <li>(in some cases the PC may have
+to be rebooted)<br>
+    </li>
+  </ul>
+  <li>the garage door controll trips repeatedly and the garage door
+does not open. Fix:<br>
+  </li>
+  <ul>
+    <li>switch off garage door controller for 1 min and then turn it
+back on</li>
+  </ul>
+  <li>there is a long delay, until the shutter opens or closes</li>
+  <ul>
+    <li>this is an indication that some unit providing input to the
+logic box is not switched on: check</li>
+    <ul>
+      <li>garage door controller: switched on?<br>
+      </li>
+      <li>logic box: plugged in?</li>
+      <li>CCD controller: green control light is on? <br>
+      </li>
+      <li>water interlock for CCD: control light is on?</li>
+    </ul>
+  </ul>
+  <li>dark and corrected images can't be saved (error message)</li>
+  <ul>
+    <li>ccd root directory was not declared - fix:</li>
+    <li>if <span style="font-family: monospace;">[user]</span> is the
+user directory, type <span style="font-family: monospace;">ccdroot
+[user]</span>&nbsp; <br>
+    </li>
+    <li>this only needs to be done, when the user directory is set up.</li>
+  </ul>
+</ul>
+<br>
+<h3><big><big style="font-weight: bold;"><span style="color: rgb(0, 0, 153);"><a name="calibration"></a>calibration</span></big></big></h3>
+About once a year the MedOptics detector should be recalibrated. This
+involves the following corrections:<br>
+<ul>
+  <li>flat field</li>
+  <li>distortion<br>
+  </li>
+</ul>
+In both cases the MacCHESS x-ray generator needs to be set up in the D1
+hutch (Bill Miller). <br>
+<br>
+The flat field correction accounts for variation in detector
+sensitivity, which arise over time and usage, as the fluorescent screen
+and the CCD chip age. Typically 4 images with an average intensity of
+about 10,000 counts average should be merged after background
+subtraction. Using the TVX program of the Gruner group the images can
+be processed to yield the new flatfield image of the detector. See <a href="TVX_Introduction71.pdf">TVX manual</a>, pages 20-21.<br>
+<br>
+For the distortion correction a hole mask pattern of 1 mm spacing is
+imaged onto the detector. Again, TVX can be used to evaluate the
+intensity pattern and generate the new correction files that will be
+used for the <span style="font-family: monospace;">dark </span>and <span style="font-family: monospace;">corr </span>commands. <br>
+<br>
+If binning other than 1x1 is to be used, the same steps for flatfield
+and distortion have to be repeated. Typically 2x2 and 4x4 binning are
+the most useful, for increasing read-out spead and/or providing more
+averaging and higher S/N for diffuse scatterers, where the full
+resolution is not needed.<br>
+<br>
+The current correction files are kept in directory ... on the station
+computer and a dated back-up should be made of each set.<br>
+<br>
+<h3 style="color: rgb(0, 0, 153);">set-up of the x-ray generator</h3>
+The x-ray generator is set up by Bill Miller. The set-up will be
+insprected by the Safety Group - most important thing is that the x-ray
+generator does not poit towards the hutch door. Bill will provide
+training to the x-ray generator operator. SOP's are listed in the blue
+folder.<br>
+<ul>
+  <li>the key for the generator is kept in the CHESS Operations key box</li>
+  <li>the door switch must be connected to the generator safety panel</li>
+  <li>the shutter signal goes from the MedOptics controller via CCD
+patch panel "shutter in" to the NAND box in the NIM crate <br>
+  </li>
+  <li>the shutter signal is fed into both inputs A and B, in order to
+invert the signal&nbsp; <br>
+  </li>
+  <ul>
+    <li>note: reverse logic on MedOptics controller: TTL HI = shutter
+closed, TTL LO = shutter open</li>
+  </ul>
+  <li>the&nbsp; inverted signal has enough oomph to feed the shutter
+signal on the control/safety panel of the generator</li>
+  <li>set the toggle switch to manual to test the generator - verify
+that it opens physically and the control light on the panel goes on</li>
+  <li>set the toggle switch to computer and test the shutter by taking
+a dark image with the MedOptics detector<br>
+  </li>
+</ul>
+<br>
+</body></html>

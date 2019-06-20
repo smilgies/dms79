@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>IndexingPowderPatterns</title></head><body>
+<h1 class="firstHeading">Powder diffraction/Indexing powder patterns</h1>
+source: <a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns">WolfWiki</a>&nbsp;&nbsp;&nbsp;&nbsp; http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns<br>
+
+<br>
+<br>
+<br>
+
+		
+			
+			
+												
+			
+<table id="toc" class="toc" summary="Contents">
+<tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul><li class="toclevel-1"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Indexing_a_pattern"><span class="tocnumber">1</span> <span class="toctext">Indexing a pattern</span></a></li><li class="toclevel-1"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Indexing_by_hand"><span class="tocnumber">2</span> <span class="toctext">Indexing by hand</span></a>
+<ul><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Putting_lines_on_reserve"><span class="tocnumber">2.1</span> <span class="toctext">Putting lines on reserve</span></a></li><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#The_working_variable_Q"><span class="tocnumber">2.2</span> <span class="toctext">The working variable Q</span></a></li></ul>
+</li><li class="toclevel-1"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#The_unknowns_of_our_sudoku"><span class="tocnumber">3</span> <span class="toctext">The unknowns of our sudoku</span></a>
+<ul><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Working_your_way_down_the_symmetries"><span class="tocnumber">3.1</span> <span class="toctext">Working your way down the symmetries</span></a></li><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#The_need_for_repetitive_regression"><span class="tocnumber">3.2</span> <span class="toctext">The need for repetitive regression</span></a></li></ul>
+</li><li class="toclevel-1"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Systematic_extinctions"><span class="tocnumber">4</span> <span class="toctext">Systematic extinctions</span></a></li><li class="toclevel-1"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Other_strategies_and_handy_tricks"><span class="tocnumber">5</span> <span class="toctext">Other strategies and handy tricks</span></a>
+<ul><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Zone_finding"><span class="tocnumber">5.1</span> <span class="toctext">Zone finding</span></a></li><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Series_hunting"><span class="tocnumber">5.2</span> <span class="toctext">Series hunting</span></a></li><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#The_addition_and_subtraction_game"><span class="tocnumber">5.3</span> <span class="toctext">The addition and subtraction game</span></a></li><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Generating_hkl_lists"><span class="tocnumber">5.4</span> <span class="toctext">Generating hkl lists</span></a>
+<ul><li class="toclevel-3"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Going_to_the_VBA_IDE"><span class="tocnumber">5.4.1</span> <span class="toctext">Going to the VBA IDE</span></a></li></ul>
+</li><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Logarithmic_plotting"><span class="tocnumber">5.5</span> <span class="toctext">Logarithmic plotting</span></a></li><li class="toclevel-2"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Pseudo-cells"><span class="tocnumber">5.6</span> <span class="toctext">Pseudo-cells</span></a>
+<ul><li class="toclevel-3"><a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns#Leftovers"><span class="tocnumber">5.6.1</span> <span class="toctext">Leftovers</span></a></li></ul>
+</li></ul>
+</li></ul>
+</td></tr></tbody>
+</table>
+
+<a name="Indexing_a_pattern"></a>
+<h3><br>
+ <span class="mw-headline">Indexing a pattern</span></h3>
+http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Indexing_powder_patterns<br>
+<br>
+
+<p>Indexing the pattern is a process where each peak is identified by 
+the (hkl) Miller-index of the lattice plane that it results from and 
+where from a least squares refinement of all positional information 
+available precise values for the lattice parameters are computed.
+</p>
+<p>A successful indexation answers a number of questions:
+</p>
+
+<ol>
+<li> what is the symmetry of the material 
+</li><li> does the pattern really arise from one single (or at least preponderant) phase?
+</li><li> is it possible to find an <i>isostructural</i> material, the pattern (or even structure) of which is known?
+</li>
+</ol>
+
+<p>Success in indexing is by no means guaranteed from the onset. Success depends on:
+</p>
+
+<ol>
+<li> the presence or absence of lines from other phases (absence please)
+</li><li> the precision in the value of the angle (high precision please)
+</li><li> the size of the unit cell (not too big please)
+</li><li> the symmetry of the phase (cubic, hexagonal an tetragonal are 
+fine, orthorhombic not too bad, monoclinic gets iffy, triclinic only on a
+ lucky day)
+</li>
+</ol>
+
+<p>There are a number of computer programs that will do it for you but 
+you still need to know what you are doing because they will usually give
+ you a whole list of possible solutions from which you need to select 
+the correct one. It is also possible to do it by hand particularly using
+ a spreadsheet program like Excel and some experience in fitting by hand
+ is desirable to sharpen your judgment in using the programs
+</p>
+
+<a name="Indexing_by_hand"></a>
+<h3> <span class="mw-headline">Indexing by hand</span></h3>
+
+<a name="Putting_lines_on_reserve"></a>
+<h4> <span class="mw-headline">Putting lines on reserve</span></h4>
+
+<p>First thing to do: determine the <a href="http://wikis.lib.ncsu.edu/index.php/Powder_diffraction/Measuring_diffraction_angles" title="Powder diffraction/Measuring diffraction angles">peak positions as precisely as you can</a>.
+ If peaks overlap and separate positions are hard to determine, do 
+collect the information but leave it aside from any refinement at first.
+ The same thing goes for impurity lines: check if lines could result 
+from small amounts of unreacted material or know side products. <i>Only the strongest lines of those should be visible -if at all- and these lines should be held in reserve as well</i>. (They could be overlapping with a line that does come from your phase).
+</p>
+
+<a name="The_working_variable_Q"></a>
+<h4> <span class="mw-headline">The working variable Q</span></h4>
+
+<p>The best quantity to work with is either sin<sup>2</sup>&#952; usually multiplied by 10<sup>5</sup> or the square scattering vector Q=q<sup>2</sup>. Working with the scattering vector q:
+</p>
+
+<dl>
+<dd> q = 2&#960;(2sin&#952;/&#955;)
+</dd>
+</dl>
+
+<p>has the advantage that the wavelength dependence of the scattering 
+angle has been removed. This particularly handy when comparing data from
+ various beam lines (.922Å for X7B, .62Å for X6B, .12Å at Argonne) and 
+X-ray tubes (1.5405Å for copper, ... for cobalt).
+</p>
+<p>So: prepare a list of Q=q<sup>2</sup> values in a column of your 
+spreadsheet. Intensity values are not critical (they are not related to 
+the unit cell size but to its contents) but they are often important in 
+that sense that weak peaks could be impurity peaks.
+</p>
+<p>How many parameters are needed to describe the values of q<sup>2</sup> depends on the symmetry:
+</p>
+
+<table>
+
+<tbody><tr>
+<th> n</th><th>symmetry</th><th> Q(khl;ABCDEF)</th><th> short </th><th> relation to a,c,b
+</th></tr>
+<tr>
+<td>:<i><b>1</b></i></td><td> <i>cubic</i></td><td>  q<sup>2</sup> = [h<sup>2</sup>+k<sup>2</sup>+l<sup>2</sup>].A </td><td> Q = [M<sup>2</sup>].A</td><td> a= (2&#960;)/&#8730;A;
+</td></tr>
+<tr>
+<td>:<i><b>2</b></i>:</td><td> <i>tetragonal</i>: </td><td>  q<sup>2</sup> = [h<sup>2</sup>+k<sup>2</sup>]. A +[l<sup>2</sup>]. C</td><td>Q = [HK].A+[L<sup>2</sup>].C</td><td> a= (2&#960;)/&#8730;A; c= (2&#960;)/&#8730;C
+</td></tr>
+<tr>
+<td>:<i><b>2</b></i>:</td><td> <i>hexagonal</i>:</td><td>   q<sup>2</sup> = [h<sup>2</sup>+k<sup>2</sup>+ h.k]. A +[l<sup>2</sup>]. C</td><td>Q = [HK].A+[L<sup>2</sup>].C</td><td> a= (4&#960;)/&#8730;(3A); c= (2&#960;)/&#8730;C
+</td></tr>
+<tr>
+<td>:<i><b>3</b></i>:</td><td> <i>orthorhombic</i>: </td><td>  q<sup>2</sup> = [h<sup>2</sup>]A +[k<sup>2</sup>]B +[l<sup>2</sup>].C</td><td> <br>
+</td><td> a= (2&#960;)/&#8730;A; b= (2&#960;)/&#8730;B; c= (2&#960;)/&#8730;C
+</td></tr>
+<tr>
+<td>:<i><b>4</b></i>:</td><td> <i>monoclinic</i>: </td><td>  q<sup>2</sup> = [h<sup>2</sup>]A +[k<sup>2</sup>]B +[l<sup>2</sup>].C + [h.l].D</td><td><br>
+</td><td> a.sin&#946;=(2&#960;)/&#8730;A; b=(2&#960;)/&#8730;B; c.sin&#946;=(2&#960;)/&#8730;C; cos&#946;= -D/2&#8730;(AC)
+</td></tr>
+<tr>
+<td>:<i><b>6</b></i>:</td><td> <i>triclinic</i>:</td><td>   q<sup>2</sup> = [h<sup>2</sup>]A +[k<sup>2</sup>]B +[l<sup>2</sup>].C+ [h.l].D+ [h.k].E+ [k.l].F</td><td><br>
+</td><td> (see Cullity page 501)
+</td></tr></tbody>
+</table>
+
+<p>In addition there are various condition for which (hkl) can be 
+observed and which cannot, depending on which Bravais lattice the unit 
+cell belongs to. More about that below.
+</p>
+<p>The parameters A,B,C,D,E and F can be called <i>cell parameters</i> but they are <i>not</i> the same as a,b,c,&#945;,&#946; and &#947;. However, one set of  parameters can be converted into the other, as shown in the table.
+</p>
+<p>Notice that it makes no difference whether an index is negative 
+or positive for anything above monoclinic: the squares make sure that a 
+reflection like (-100) and (100) are <i>superposed</i> in the pattern. 
+When indexing we can consider them identical. However, the D,E and F 
+terms of the mono- and triclinic cases do necessitate that we worry 
+about signs. For monoclinic (-211) and (211) are two separate lines 
+whose Q values differ by 2*[hl]D= 4D.
+</p>
+
+<a name="The_unknowns_of_our_sudoku"></a>
+<h3> <span class="mw-headline">The unknowns of our sudoku</span></h3>
+
+<p>Each line has its own (hkl) values that are initially unknown and so 
+is the symmetry as well as the values of A,B,C,D,E and F (or subset 
+thereof depending on symmetry).
+</p>
+<p>This means the problem is a kind of scientific <i>sudoku</i>: 
+people who like solving puzzles usually do pretty well. Unfortunately 
+the degree of difficulty of the puzzle is not known in advance either, 
+although a pattern that has few peaks at lower angles separated by 
+relatively large empty spaces are usually easier than ones with lots of 
+closely spaced low angle peaks. The latter typically means a big cell 
+with low symmetry.
+</p>
+<p>There is a variety of strategies. 
+</p>
+
+<a name="Working_your_way_down_the_symmetries"></a>
+<h4> <span class="mw-headline"> Working your way down the symmetries</span></h4>
+
+<p><i><b>Strategy</b></i>
+</p>
+
+<dl>
+<dd><dl><dd><dl><dd>First assume that the symmetry is cubic, if that
+ does not work because it leaves too many lines unexplained go to 
+tetragonal or hexagonal, then to orthorhombic etc.
+</dd></dl>
+</dd></dl>
+</dd>
+</dl>
+
+<p>Let's start with the simplest case:<br>
+If a material is <i>primitive</i> cubic Q= q<sup>2</sup> = [h<sup>2</sup>+k<sup>2</sup>+l<sup>2</sup>].A = [M<sup>2</sup>].A. <br>
+As h,k,l are integers, the value of [M<sup>2</sup>] can be:
+</p>
+
+<dl>
+<dd> 1,2,3,4,5,6,..,8,9,10,11,12,13,14,..,16,17,  etc.
+</dd>
+</dl>
+
+<p>This means that the first line should have [M<sup>2</sup>]=1, thus its Q value gives us <i>Â</i>, an <i>initial estimate</i>
+ for A. If we divide all the Q values by this estimate, we should 
+approximately get to see the above series. Of course, there are always 
+errors in the Q values, so in reality we might see something like:
+</p>
+
+<dl>
+<dd> 1, 1.9923, 3.0032, 3.9899, ...,6.1034,...., 8.1132
+</dd>
+</dl>
+
+<p>This <i>could</i> be 1,2,3,4,6,8 and line 5 might be missing because its intensity might be very low. (Remember: that depends on the atoms <i>inside</i> the unit cell). However, is this really true? Or is the similarity fortuitous?
+</p>
+
+<a name="The_need_for_repetitive_regression"></a>
+<h4> <span class="mw-headline">The need for repetitive regression</span></h4>
+
+<p>The problem we are encountering here is another nasty property of our little sudoku: 
+</p>
+<p>The first line is usually something like (100), not (325) because
+ the latter would mean that all lower indexed lines (at lower angles) 
+must somehow have escaped detection and that is unlikely. 
+</p>
+
+<dl>
+<dd>Thus, attributing (hkl) values (<i>indexing</i>) is <i>easiest</i> for the first line.  However, the <i>estimate Â</i>  that we obtain from it is the <i>least precise</i> of all lines!
+</dd>
+</dl>
+
+<p>After all, the positional error &#916;Q in the line with [M<sup>2</sup>]=16 is typically not very different from the line with [M<sup>2</sup>]=1 but the estimate for A we get from these two lines is:
+</p>
+
+<dl>
+<dd>Â<sub>1</sub>= Q<sub>1</sub> / <b>1</b>
+</dd><dd>Â<sub>16</sub>= Q<sub>16</sub> / <b>16</b>
+</dd>
+</dl>
+
+<p>Thus the error in Â<sub>16</sub> = &#916;Q/16; sixteen times smaller than in Â<sub>1</sub>!
+ Clearly we would like to get our estimates out of the higher angle 
+lines, but these are the hardest to identify as long as all we have are 
+the inferior estimates from the fist lines of the spectrum. Therein lies
+ the catch 22 of our sudoku game..
+</p>
+<p>We need to somehow involve the higher lines to improve our 
+estimate Â, but they are not always easily identified. This is true for 
+cubic phases but even more so for the lower symmetries where we have 
+more parameters to estimate. It already helps a lot if we can use a <i>few</i> lower angle lines at once to get a better estimate. We usually do that by <i>linear regression</i>. Spreadsheets have made this job a lot easier which is why indexing by hand is no longer the monastic job it used to be.
+</p>
+
+<ol>
+<li> depending on the assumed symmetry: create columns for the assigned values of [M<sup>2</sup>] or  [HK] and [L<sup>2</sup>] etc. (see formulas above) .
+</li><li> try to identify a few lines by giving them [M<sup>2</sup>] or  [HK] and [L<sup>2</sup>] values.
+</li><li> select a range of n columns and 5 rows (for cubic, hex, tetr: n=2, orth n=3, mono n=4, tri n=6)
+</li><li> type =LINEST( <i>..range of q<sup>2</sup>..</i>, <i>range of [M<sup>2</sup>] etc..</i>, <b>0</b>,1)
+</li><li> enter the formula with Ctrl+Shift+Enter
+</li>
+</ol>
+
+<p>The <b>0</b> in the Linest function ensures that the model applied 
+does not include a constant term (which it should not according to the 
+above formulas, but sometimes such a term does occur if the calibration 
+of the zero point of the angular values &#952; is not correct.)
+</p>
+<p>Of course we need to identify enough lines to do a regression. 
+There needs to be at least one line more identified with a relatively 
+reliable indexing than there are parameters. (That means that for 
+triclinic we need to guess the (hkl) values of at least 7 lines just to 
+get started!)
+</p>
+<p>Once we have obtained improved values for Â (and/or the other 
+parameters) we can try to identify what the indexing of the following 
+lines can be. It is advisable to add another column in which we 
+calculate the estimated value of Q based on calculation from the 
+estimated cell parameters. Also prepare a column with the deviations 
+between calculated and measured Q.
+</p>
+<p>As new lines are added to the regression, the deviations between the calculated and the measured values should get <i>smaller</i> and the regression fit should get better.
+</p>
+
+<dl>
+<dd> If that does <i>not</i> happen and there are lines we cannot 
+ascribe within reasonable error to a set of indices we may have to drop 
+the symmetry and add one or more parameters (change the model).
+</dd><dd> If it <i>does</i> happen we should add the newly identified lines and redo the regression to get better values yet for the cell parameters.
+</dd>
+</dl>
+
+<p>We should also observe that the correlation R<sup>2</sup> of the regression <i>improves</i>
+ when we add the new lines. It is often advisable to compute Fisher's Z =
+ 1/2 ln[(1+R)/(1-R)] and look at that number. It steadily increases 
+rather than converging to unity as R does. (If often get tedious to 
+distinguish R=.99989 from R=.99998).
+</p>
+<p>For lower symmetries it is advisable to <i>revisit the earlier lines</i>
+ each time a regression is redone to see if alternative indexes do not 
+lead to a better fit. For lower symmetries there are often multiple 
+possibilities for indexing because potential lines may lie within 
+precision from each other, particularly at higher angles. Because lines 
+usually do differ in intensity there is usually only one correct 
+assignment, because one strong line dominates. If that is not so the 
+line is usually broadened by overlap. It may be necessary to put such a 
+line on reserve because it may otherwise interfere with the regression 
+game.
+</p>
+<p>Thus we keep doing the following:
+</p>
+
+<ol>
+<li> using the best estimated values we calculate what the indexing of a higher line might be
+</li><li> we add it to the regression
+</li><li> if it deteriorates the regression, we check if another 
+possibility exist not only for the new line but also for all earlier 
+ones
+</li><li> we continue doing this until we can explain <i>all</i> observed lines.
+</li><li> we then check if we can explain the lines on reserve: do broad lines indeed correspond to expected overlaps?
+</li>
+</ol>
+
+<a name="Systematic_extinctions"></a>
+<h3> <span class="mw-headline">Systematic extinctions</span></h3>
+
+<p>The [M<sup>2</sup>] series: 1,2,3,4,5,6,..,8,9 etc. only has missing 
+values like 7 because it is not possible to add three square integers to
+ produce 7. This series holds for <i>primitive</i> cubic lattices. There are also body centered (I) and face centered cubic (F) lattices. In both these cases there are <i>extinction conditions</i>.
+</p>
+<p>For example for I cells the some of h+k+l must be even for the reflection to be observed, the result is that the [M<sup>2</sup>] becomes:
+</p>
+
+<dl>
+<dd> ..,2,..,4,..,6,..,8,..,10,..,12,..14,..16, etc.
+</dd>
+</dl>
+
+<p>The problem here is that the first line is <i>not</i> (100), it is actually (110).
+</p>
+<p>If -ignorant of that fact- we now divide all Q values by the first one Q<sub>1</sub> we should get something like:
+</p>
+
+<dl>
+<dd>...,1,...,2.0032,...,3.103,...,3.989,...,4.923,...,6.0123,...,<b>7.0123</b>
+</dd>
+</dl>
+
+<p>The (almost) 7 value is a dead give away that we are dealing with a 
+bcc case, because 7 cannot occur in a primitive series. Thus we should 
+multiply everything with 2 to get the proper series. Of course the 
+series would get a lot nicer if we would base our estimate of A on more 
+than just the first line.
+</p>
+<p>In fcc cases we have a similar problem. For this lattice the hkl 
+values have to be either all odd or all even. Again (100) is forbidden 
+as 1 is odd but 0 is even. The first observed line is now (111) (M<sup>2</sup>=3; all odd) and the second one (200) (M<sup>2</sup>=4; all even). The resulting series looks like:
+</p>
+
+<dl>
+<dd> 3,4,8,11,12,16,19,20 etc.
+</dd>
+</dl>
+
+<p>If we simply divide by Q<sub>1</sub> we get something like:
+</p>
+
+<dl>
+<dd> 1, 1.3423, 2.675, 3.712, 3.989,
+</dd>
+</dl>
+
+<p>This does not seem to make sense at all until we multiply everything 
+by 3! Again the systematic extinction causes the first line to be 
+something else than (100).
+</p>
+<p>Lower symmetry lattices also have various Bravais lattices. 
+Tetragonal has I, some of the hexagonal groups have R, orthorombic has 
+F,I and C, monoclinic has C centering. Each of these have their own 
+systematic extinctions.
+</p>
+
+<a name="Other_strategies_and_handy_tricks"></a>
+<h3> <span class="mw-headline">Other strategies and handy tricks</span></h3>
+
+<a name="Zone_finding"></a>
+<h4> <span class="mw-headline">Zone finding</span></h4>
+
+<p>Another way of getting improved values is <i>zone finding</i>. Regardless of what the symmetry or the Miller index is one can always say that:
+</p>
+
+<dl>
+<dd> Q(2h,2k,2l) = 4.Q(hkl)
+</dd><dd> Q(3h,3k,3l)= 9 Q(hkl)
+</dd>
+</dl>
+
+<p>In general the n<sup>th</sup> harmonic of a reflection has a Q value that is n<sup>2</sup> larger. 
+</p>
+<p>This allows us to get a better Q value for one of the low lines provided we can find a few of its harmonics.
+</p>
+
+<a name="Series_hunting"></a>
+<h4> <span class="mw-headline">Series hunting</span></h4>
+
+<p>As shown above cubic lattices have their characteristic series. To 
+some extent that is also true for the a,b planes of hexagonal and 
+tetragonal:
+</p>
+
+<dl>
+<dd>tetragonal: [h<sup>2</sup>+k<sup>2</sup>] = 1,2,4,5,8,9,10,13,16,17,18,..
+</dd><dd>hexagonal: [h<sup>2</sup>+k<sup>2</sup>+ hk] = 1,3,4,7,9,12,..
+</dd>
+</dl>
+
+<p>The c-axis produces its own series:
+</p>
+
+<dl>
+<dd>[l<sup>2</sup>] = 1,4,9,16,25,..
+</dd>
+</dl>
+
+<p>If the shape of the unit cell is highly anisotropic one of the two series <i>dominates</i>.
+ E.g. if the c-axis is long the first few reflections may well just come
+ from the axis-series. Often such materials produce needle-like 
+crystals. The other extreme is platelets wich show mostly the (a,b) 
+series. However there is a caveat here: there is often preferential 
+orientation in the sample in such cases that depending on the sample 
+geometry might enhance one series and suppress the other. E.g. in the 
+case of needles in a capillary perpendicular to the beam (as in the 
+INEL) the (potentially many) l- reflections are suppressed.
+</p>
+<p>Another point to be aware of is that non-symmorphic rotational 
+symmetry like screw axes and glides cause extinctions particularly of 
+axis-reflections. e.g. in P6<sub>1</sub> only every sixth (00l) reflection will be visible.
+</p>
+<p><br>
+</p>
+
+<a name="The_addition_and_subtraction_game"></a>
+<h4> <span class="mw-headline">The addition and subtraction game</span></h4>
+
+<p>The Q values are often <i>additive</i>. Let's consider the orthorhombic case:
+</p>
+
+<dl>
+<dd>Q<sub>100</sub> = A
+</dd><dd>Q<sub>020</sub> = 4B
+</dd><dd>Q<sub>120</sub> = A+ 4B
+</dd>
+</dl>
+
+<p>Clearly &nbsp;:Q<sub>120</sub> = A+ 4B =Q<sub>100</sub> + Q<sub>020</sub>
+</p>
+<p>This means that if (100) is missing (possible extinct for reasons
+ of  symmetry), we can get an estimate for A by taking the difference 
+between Q<sub>120</sub> and Q<sub>020</sub>.
+</p>
+<p>This hold true for all values of k:
+</p>
+
+<dl>
+<dd>Q<sub>130</sub> - Q<sub>030</sub> = A
+</dd><dd>Q<sub>140</sub> - Q<sub>040</sub> = A
+</dd><dd>Q<sub>150</sub> - Q<sub>050</sub> = A
+</dd>
+</dl>
+
+<p>This means that if we prepare a table of all possible differences &#916;Q 
+we should see the value of A (and 4A and 9A etc.) pop up again and 
+again. Unfortunately you also get an awful lot of numbers that do not 
+mean anything, so it is easy to get lost in all the numbers.
+</p>
+
+<a name="Generating_hkl_lists"></a>
+<h4> <span class="mw-headline">Generating hkl lists</span></h4>
+
+<p>During the regression game it is often very useful to have complete 
+list of possible hkl values at hand prefereably showing the calculated 
+value of Q based on the the current best estimate of the cell 
+parameters. Generating such a lits by hand is tedious in Excel but with a
+ modicum of Visual Basic programming it's quite easy.
+</p>
+
+<a name="Going_to_the_VBA_IDE"></a>
+<h5> <span class="mw-headline">Going to the VBA IDE</span></h5>
+
+<p>To go to the Visual Basic IDE: type Alt+F11. (This works on most 
+computers unless some other prgram gets activated by its such as your 
+webcam.. In that case
+</p>
+
+<ol>
+<li> in Excel prior to 2007: go to Tools, Macro and on the pop up opt for visual basic
+</li><li> in Excel 2007 first make sure the Developer is on your ribbon.
+ Click the big office button of the top left, click Excel options and 
+tick off the <i>Show Developer tab on the ribbon</i> option. Then go back and go to developer there should be an icon to go to the VB IDE now.
+</li>
+</ol>
+
+<p>Once in the IDE you can see your current projects on the left (if not go to <i>view</i> and ask for the <i>project explorer</i>) Click on the workbook you want the code to be put into in the <i>project explorer</i> window. Then go to <i>insert</i>
+ and insert a module in the current workbook. An empty window should 
+open in the middle of the screen. This is where you can write your 
+programs. The following code generates all hkl values up to (888) under 
+the condition that the sum of the indices is even (i.e. I-centering):
+</p>
+
+<pre>Sub Icentered()<br>Sheets.Add<br>a = 0<br>For h = 0 To 8<br> For k = h To 8<br>  For l = 0 To 8<br>  If Int((h + k + l) / 2) = (h + k + l) / 2 Then<br>   a = a + 1<br>   Cells(a, 1) = h<br>   Cells(a, 2) = k<br>   Cells(a, 3) = l<br>  End If<br>  Next l<br> Next k<br>Next h<br>End Sub<br></pre>
+
+<pre>Sub Fcentered()<br>Sheets.Add<br>a = 0<br>For h = 0 To 8<br> For k = h To 8<br>  For l = 0 To 8<br>   hev = Application.IsEven(h)<br>   kev = Application.IsEven(k)<br>   lev = Application.IsEven(l)<br>   alleven = hev And kev And lev<br>   allodd = (Not hev) And (Not kev) And (Not lev)<br>   If alleven Or allodd Then<br>    a = a + 1<br>    Cells(a, 1) = h<br>    Cells(a, 2) = k<br>    Cells(a, 3) = l<br>   End If<br>  Next l<br> Next k<br>Next h<br>End Sub<br></pre>
+
+<p><br>
+Just copy and paste one of these to try and see what happens when you 
+hit F5 to run the module. There is an icon top left just under 'file' 
+with the Excel <b>X'</b> symbol that takes you back to the spreadsheet.
+</p>
+<p>As you see the code is pretty simple! I am sure your can adapt it
+ as the need arises. First a new worksheet is generated to put 
+everything in. The variable <i>a</i> is just a counter that counts the reflections being generated. Then there are three nested loops that increment <i>h,k</i> and <i>l</i> from zero to 8. Here I let <i>k</i> start from the current value of <i>h</i> because (120) and (210) end up at the same Q value for tetragonal, so I only need the ones for which k&gt;l.
+</p>
+<p>Then there is an <i>if</i> statement that only allows output if the sum <i>h+k+l</i>
+ is even for body centered. For face centered the indices must either 
+all even or all odd, which is guaranteed with a bit of boolean algebra. 
+The <i>cells</i> statement puts the output in the new sheet.
+</p>
+<p>Once you have this list it is not hard to add some columns in 
+which you use the master formulas and the currently best cell parameters
+ to calculate Q for each reflection. Subsequently sort the whole thing 
+by Q and you have a complete list of where to expect reflections based 
+on your current estimates. If you change the estimates you might have to
+ sort again because some lines might swap positions.
+</p>
+
+<a name="Logarithmic_plotting"></a>
+<h4> <span class="mw-headline">Logarithmic plotting</span></h4>
+
+<p>In the old days you could buy specially prepared logarithmic charts 
+for indexing visually for the hexagonal and tetragonal cases.  Such 
+charts are known as Bunn charts and Hull-Davey charts. They have 
+probably not been used in many years, but they are pretty easy to 
+generate in a spreadsheet. The idea of a Hull-Davey chart is based on 
+plotting the logarithm of Q against all the allowed values of  some 
+function of (hkl). For example for cubic:
+</p>
+
+<dl>
+<dd>Q= [h<sup>2</sup>+k<sup>2</sup>+l<sup>2</sup>].A 
+</dd><dd>lnQ= ln[h<sup>2</sup>+k<sup>2</sup>+l<sup>2</sup>]+lnA 
+</dd>
+</dl>
+
+<div class="thumb tright"><div class="thumbinner" style="width: 182px;"><a href="http://wikis.lib.ncsu.edu/index.php/Image:CH-HullDavy.jpg" class="image" title="CH-HullDavy.jpg"><img style="width: 198px; height: 203px;" alt="" src="http://wikis.lib.ncsu.edu/images/thumb/e/e1/CH-HullDavy.jpg/180px-CH-HullDavy.jpg" class="thumbimage" border="0"></a>  <div class="thumbcaption"><div class="magnify"><a href="http://wikis.lib.ncsu.edu/index.php/Image:CH-HullDavy.jpg" class="internal" title="Enlarge"><img src="http://wikis.lib.ncsu.edu/skins/common/images/magnify-clip.png" alt="" height="11" width="15"></a></div></div></div></div>
+
+<p>Thus if we plot lnQ against ln[h<sup>2</sup>+k<sup>2</sup>+l<sup>2</sup>] we should get a straight line of slope <i>unity</i> and an intercept of lnA. In other words: if we prepare a list of values of ln[h<sup>2</sup>+k<sup>2</sup>+l<sup>2</sup>] and one of lnQ values we should be able to make them coincide if we shift one of them by the appropriate amount (being lnA).
+</p>
+<p>For hexagonal and tetragonal cases there is an additional 
+parameter. One way to deal with that is to introduce an anisotropy 
+parameter &#958;=c/a. If this ratio is unity you have a cubic (or <i>pseudo-</i>cubic cell). You can rewrite the master equation for tetragonal as:
+</p>
+
+<dl>
+<dd>lnQ = lnA + ln[h<sup>2</sup>+k<sup>2</sup>+{l<sup>2</sup>/&#958;<sup>2</sup>}]
+</dd>
+</dl>
+
+<p>So now we can plot the quantity ln[h<sup>2</sup>+k<sup>2</sup>+{l<sup>2</sup>/&#958;<sup>2</sup>}]
+ as a function of the anisotropy parameter &#958; for each reflection and try
+ to make our list of lnQ values match by shifting both horizontally (&#958;) 
+and vertically (lnA). We could easily superpose our measured lnQ values 
+on the vertical scale of the graph and make them shift horizontally (by 
+changing the x coordinate) and vertically (by adding a constant term to 
+lnQ) until we have a match.
+</p>
+<p>Once you have generated a suitable list of possible reflections 
+it is not hard to generate a Hull-Davey plot. All you need to do is 
+generate a row of &#958; values at the top of the sheet and fill a table with
+ the above formula. Make sure you reference to the right cells using 
+dollar signs to prevent a change in reference when copying the formula. 
+The button F4 allows you to toggle between A7, $A$7, A$7 and $A7
+</p>
+<p>Although such graphic methods are now pretty feasible given the 
+abilities of modern spreadsheets they have been almost completely 
+abandoned in favor of indexing programs like TREOR etc. However, it 
+should be kept in mind that such programs are not nearly as user 
+interactive as a spreadsheet is. Most of them were written in the 80's 
+and are console based. They also often fail to give results if there are
+ shortcomings in the data like impurity peaks. Interpreting the output 
+of the program then often becomes a sudoku in its own right. 
+</p>
+
+<a name="Pseudo-cells"></a>
+<h4> <span class="mw-headline">Pseudo-cells</span></h4>
+
+<p>Sometimes the cubic indexing almost works, at least at low q values, 
+but at higher values things start to fall apart, e.g. there are <i>two</i> lines you could call M<sup>2</sup>=19. This is a sure sign that the symmetry is actually lower but the shape of the the cell is <i>almost</i>
+ cubic. It could be e.g. a tetragonal cell with &#958;=c/a very close to one.
+ This means that for lower reflections the distance between says (102) 
+and (201) is too small to result in separate peaks, but the higher 
+reflections do get resolved. This is not an easy case because the lower 
+lines are now almost all broadened doublets ans the measured Q value is 
+less precise. The best thing is to first treat the pattern as cubic to 
+get a rough average of a and c and then only take the higher lines for 
+which you can assign tetragonal indices to refine the tetragonal cell. 
+To really get good cell parameter values the best thing is to do profile
+ fitting with a Rietveld program but then then you must have a structure
+ model.
+</p>
+<p>On the other hand, if the distortion from higher symmetry is a 
+bit bigger this may help to go down the symmetries more easily. The 
+lines will have split enough that they are distinct rather than 
+overlapping but they are close enough that you can still identify them 
+as pairs or triplets. In first instance you could assign e.g. cubic 
+indices, but you need to attribute e.g. M<sup>2</sup>=16 twice or 
+thrice. You then figure out which one is e.g. (400) and which (004) is a
+ tetragonal setting or (400),(040) and (004) in a orthorhombic one. In 
+such cases the pseudo-cubic indexing actually helps you to narrow down 
+the possibilities for the lower symmetry indices.
+</p>
+
+<a name="Leftovers"></a>
+<h5> <span class="mw-headline">Leftovers</span></h5>
+
+<p>Sometimes you get a great fit to the vast majority of strong lines, 
+but there are some weak lines you just cannot identify. They could of 
+course come from an impurity that you have not been able to identify, 
+either because it too is unknown or because some of its lines coincide 
+with those of your main phase and that makes it hard to use the Hanawalt
+ method e.g. However, there could also be another explanation: if your 
+phase has a superstructure this can lead to extra lines because the real
+ unit cell is bigger than that of the subcell. Often you need to double 
+one of the axes to explain the lines, but if on top of that the 
+superstructure is <i>incommensurate</i> the superstructure lines may not
+ be in a simple relationship with the substructure lines even though 
+they do come from one and the same phase. This means that leftover lines
+ do not <i>prove</i> you have an impurity.
+</p>
+
+  
+
+</body></html>

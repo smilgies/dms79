@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>D1-Counters</title>
+</head>
+<body style="background-color: rgb(255, 204, 0); color: rgb(0, 0, 0);"
+ alink="#0000ee" link="#0000ee" vlink="#551a8b">
+<h1 style="background-color: rgb(255, 204, 51);"><small
+ style="color: rgb(204, 0, 0);"><span
+ style="font-family: helvetica,arial,sans-serif;">D-line
+Notes: default counter/ timer configuration</span></small></h1>
+<h3 style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 51);">CAMAC<small><span
+ style="font-weight: bold;"> </span></small>units</h3>
+<ul style="background-color: rgb(255, 204, 51);">
+  <li>channel 0/0: sec (timer fed by MHz clock)<br>
+  </li>
+  <li>channel 0/1: Itot (cave ion chamber - total flux into hutch)<br>
+  </li>
+  <li>channel 1/0: Idet (user ion chamber or diode as detector)<br>
+  </li>
+  <li>channel 1/1: Imon (ion chamber behind shutter or diode beam stop
+- monitor flux through beam-defining slits s1, s2)</li>
+  <li>channel 2/0: Iprot (solar cell or diode on garage door or beam
+stop - equipment protection)</li>
+  <li>channel 2/1: ready ("ready" signal for CCD-SPEC handshake)<br>
+  </li>
+  <li>channel 3/0: ssd1 (solid state detector, channel 1 from quad
+discriminator)</li>
+  <li>channel 3/1: ssd2 (solid state detector, channel 2 from quad
+discriminator)</li>
+</ul>
+(The CAMAC system was decommissioned in summer of 2006)<br>
+<br>
+<h3 style="color: rgb(0, 0, 153); background-color: rgb(255, 204, 51);">VME<small><span
+ style="font-weight: bold;"> </span></small>units</h3>
+<ul>
+  <li>channel 0/0</li>
+  <li>...</li>
+  <li>channel 0/7</li>
+</ul>
+<br>
+<span style="font-weight: bold; color: rgb(0, 0, 153);"></span>
+<h3 style="background-color: rgb(255, 204, 51);"><span
+ style="font-weight: bold; color: rgb(0, 0, 153);">The D-line monitor
+detectors</span></h3>
+<span style="font-weight: bold; color: rgb(0, 0, 153);"></span>Whether
+you use it or not - all you get is <span style="font-weight: bold;">Itot</span>.<br>
+The beam on the sample - <span style="font-weight: bold;">Imon</span>
+will show that it's ample.<br>
+If you want to measure - <span style="font-weight: bold;">Idet</span>
+will do the pleasure.<br>
+If the beam gets too hot - this will tell you <span
+ style="font-weight: bold;">Iprot</span>.<br>
+<br>
+(DS with apologies to the muse of poetry)<br>
+<br>
+<h3 style="background-color: rgb(255, 204, 51);"><span
+ style="color: rgb(0, 0, 153); font-weight: bold;">Gating</span></h3>
+<ul>
+  <li style="background-color: rgb(255, 204, 51);">by timer</li>
+  <li style="background-color: rgb(255, 204, 51);">by each of the other
+7 scalers acting as monitor<br>
+  </li>
+  <li style="background-color: rgb(255, 204, 51);">by Medoptics CCD
+controller via NAND box</li>
+  <li style="background-color: rgb(255, 204, 51);">by "HEP in Progress"
+signal via MacCHESS box</li>
+</ul>
+<h3 style="background-color: rgb(255, 204, 51);"><br>
+<span style="color: rgb(0, 0, 153); font-weight: bold;"></span></h3>
+<h3 style="background-color: rgb(255, 204, 51);"><span
+ style="color: rgb(0, 0, 153); font-weight: bold;">Digital I/O</span></h3>
+The CCD interface was reconfigured from CAMAC A/D converter &amp; V/f
+converter + scaler to a simple digital I/O interface whicg sets and
+reads TTL level signals.<br>
+</body>
+</html>

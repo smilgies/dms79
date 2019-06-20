@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Pilatus-ImageViewer</title></head><body style="color: rgb(0, 0, 0); background-color: rgb(255, 204, 51);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<h1 style="color: rgb(204, 0, 0); background-color: rgb(255, 204, 51);">Pilatus
+ImageViewer (PilView)<br>
+</h1>
+
+<span style="color: rgb(0, 0, 153);">The Pilatus image viewer, in short
+PilView, is a small Scilab program to view and edit file series
+obtained with the CHESS Pilatus 100k detector.</span><span style="color: rgb(0, 0, 153);"> Currently only the vertical mode is
+supported, with the long axis of the detector vertical.<br>
+</span>
+<h2><span style="color: rgb(0, 0, 153);">Scilab installation</span></h2>
+
+<span style="color: rgb(0, 0, 153);">Scilab can be downloaded for free
+from www.scilab.org. The program needs the current stable version&nbsp;
+5.3.3. I run Scilab under Windows 7 in 64-bit mode on a dual core
+processor (2.9 GHz). The program will also run on smaller computers
+including my EEE PC netbook under XP, but naturally at slower speed.</span> <br>
+
+<h2 style="color: rgb(0, 0, 153);">Running PilView<br>
+</h2>
+
+<span style="color: rgb(0, 0, 153);">Scilab 5.3.3. has a little glitch
+in that it does not set the default directory automatically when you
+click the PilView icon. Go to the Console and use
+File&gt;ChangeCurrentDirectory to the directory where PilView.sce is
+kept on your computer. In this directory also the subroutines *.sci are
+kept that the program needs. Load PilView in the editor (this happens
+automatically if you doubleclick the PilView icon) and execute the
+program using Ctrl-Shift-E. The "Pilatus ImageViewer" window should
+appear.<br>
+<br>
+</span><span style="color: rgb(0, 0, 153);">The program window is made for a
+large terminal, so for use on a netbook the size should be reset. If
+you feel inclined to hack the code, please copy it to a different
+folder, so that the general user version is left on the dropbox - this
+way I can work on erors, and everybody get the benefit of the fix.</span><br>
+<span style="color: rgb(0, 0, 153);"><br>Now to the program feature: Before you load a "new" file series to watch the movie, make your
+choices:<br>
+</span>
+<ul style="color: rgb(0, 0, 153);">
+
+  <li>if "movie" is checked, the progam will ask for first and last
+file and display the file series on the screen at highest speed</li>
+  <ul>
+    <li>there is no checking yet whether first and last file are of the
+same series - PilView uses the last filename to generate the fileseries<br>
+    </li>
+  </ul>
+  <li>if "movie" is unchecked, the program will display single snap
+shots</li>
+  <ul>
+    <li>useful to inspect test shots, single shots, or go at random
+through a file series to look for an event&nbsp; <br>
+    </li>
+  </ul>
+  <li>if "convert" is checked, the program will produce png output for
+each file, using the same name but the .png extension</li>
+  <ul>
+    <li>I found that png provided the highest quality output<br>
+    </li>
+    <li>it is good to play with the other settings first, to make a
+nice movie - keep reading!<br>
+    </li>
+    <li>I like Windows 7 MovieMaker to generate movies from series of
+png files. <br>
+    </li>
+    <ul>
+      <li>The MovieMaker can be downloaded for free from Windows Life</li>
+      <ul>
+        <li>http://explore.live.com/windows-live-movie-maker<br>
+        </li>
+      </ul>
+
+      <li>It's similar to the XP movie maker, but saves a lot of
+clicks!&nbsp;</li>
+    </ul>
+  </ul>
+  <li>if "folder" is clicked, the name of the file folder is displayer
+in the top left corner, and also part of the png image</li>
+  <ul>
+    <li>make sure you use useful folder names from which the sample can
+be identified</li>
+  </ul>
+  <li>if "number" is clicked, the filenumber is displayed</li>
+  <li>the bottom row of number inputs helps to make images look nice
+and to let movies run efficiently<br>
+  </li>
+  <ul>
+    <li>"max" sets the maximum intensity (default value 100).<br>
+    </li>
+    <li>"min" produces a small offset to brighten up the background, if
+desired (default value 0).</li>
+    <li>"skip" allows to skip n frames. in case a longer file series is
+to be inspected</li>
+    <ul>
+      <li>example: if skip=3 and first file is ~00001, PilView will
+display files ~00001, ~00004, ~00007,...</li>
+    </ul>
+    <li>so far only the linear scale is supported<br>
+    </li>
+  </ul>
+  <li>"new" starts a new session, according to the choices above.</li>
+  <ul>
+    <li>"new" will open the file input dialog<br>
+    </li>
+  </ul>
+  <ul>
+    <li>PilView will keep loading movies or snaps, until you say
+"Cancel" or "x" on the "open file" window</li>
+    <li>the above parameters can only be reset when you stop opening
+files</li>
+    <ul>
+      <li>note: changes become active, when you plot the next batch of files<br>
+      </li>
+    </ul>
+
+    <li>another click on "new" gets the program to continue reading files<br>
+</li>
+    <li>NOTE: this program is written to crank it - no time wasted on
+niceties!</li>
+  </ul>
+</ul>
+
+<span style="color: rgb(0, 0, 153);"><h3> Crank Away! </h3></span><br>
+
+<br>
+
+</body></html>
